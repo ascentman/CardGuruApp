@@ -15,10 +15,14 @@ class LoginViewController: UIViewController {
     
     // MARK: - Lifecycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animateBackground(imgView: backgroundImageView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presentCurrentViewController()
-        animateBackground(imgView: backgroundImageView)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
