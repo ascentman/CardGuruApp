@@ -6,10 +6,12 @@
 //  Copyright © 2018 Vova. All rights reserved.
 //
 
-// MARK: - Debug
-// ==========================================================
-// Facebook test user: test_ssgzmom_user@tfbnw.net / Zxcv1234
-//===========================================================
+/**
+==========================================================
+ FOR DEBUG:
+ created Facebook test user: test_ssgzmom_user@tfbnw.net / Zxcv1234
+===========================================================
+*/
 
 import UIKit
 import Firebase

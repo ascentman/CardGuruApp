@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+final class User {
     var name: String
     var email: String
     var imageURL: URL?
@@ -17,9 +17,5 @@ class User {
         self.name = name
         self.email = email
         self.imageURL = imageURL
-    }
-    
-    convenience init() {
-        self.init(name: "", email: "", imageURL: nil)
     }
 }

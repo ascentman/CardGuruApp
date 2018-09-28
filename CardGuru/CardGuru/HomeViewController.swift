@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
     var email: String?
     var imageURL: URL?
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = name

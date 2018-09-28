@@ -12,21 +12,11 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeViewController
-        Auth.auth().addStateDidChangeListener() { _, user in
-            if LoginService.sharedInstance.isLoggedIn() {
-                viewController?.name = user?.displayName
-                viewController?.email = user?.email
-                viewController?.imageURL = user?.photoURL
-                if let viewController = viewController {
-                    if !viewController.isViewLoaded {
-                        self.present(viewController, animated: true, completion: nil)
-                    }
-                }
-            }
-        }
+        presentCurrentViewController()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -46,6 +36,24 @@ class LoginViewController: UIViewController {
         LoginService.sharedInstance.signInFb(self) { [weak self] (user, error) in
             SVProgressHUD.show(withStatus: "Signing in")
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
+        }
+    }
+    
+    // MARK: - Private methods
+    
+    private func presentCurrentViewController() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeViewController
+        Auth.auth().addStateDidChangeListener() { _, user in
+            if LoginService.sharedInstance.isLoggedIn() {
+                viewController?.name = user?.displayName
+                viewController?.email = user?.email
+                viewController?.imageURL = user?.photoURL
+                if let viewController = viewController {
+                    if !viewController.isViewLoaded {
+                        self.present(viewController, animated: true, completion: nil)
+                    }
+                }
+            }
         }
     }
     
