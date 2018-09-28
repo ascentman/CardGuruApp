@@ -6,6 +6,11 @@
 //  Copyright © 2018 Vova. All rights reserved.
 //
 
+// MARK: - Debug
+// ==========================================================
+// Facebook test user: test_ssgzmom_user@tfbnw.net / Zxcv1234
+//===========================================================
+
 import UIKit
 import Firebase
 import GoogleSignIn
@@ -21,7 +26,6 @@ final class LoginService: NSObject {
     private var presenter: UIViewController?
     private var singInCompletion: SignInResponse?
     private var disconnectCompletion: DisconnectResponse?
-    private var loginManager: LoginManager?
     
     @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -42,11 +46,6 @@ final class LoginService: NSObject {
     
     // MARK: - UserManagement
     
-    func signOut() {
-        GIDSignIn.sharedInstance().signOut()
-        signOutFb()
-    }
-    
     func signIn(_ controller: UIViewController, completion: SignInResponse?) {
         singInCompletion = completion
         presenter = controller
@@ -58,47 +57,54 @@ final class LoginService: NSObject {
         GIDSignIn.sharedInstance().disconnect()
     }
     
+    func signOut() {
+        GIDSignIn.sharedInstance().signOut()
+        fbSignOutCall()
+    }
+    
     func signInFb(_ controller: UIViewController, completion: SignInResponse?) {
         singInCompletion = completion
         presenter = controller
         fbSignInCall()
     }
     
-    func signOutFb() {
-        loginManager?.logOut()
+    func isLoggedIn() -> Bool {
+        return FBSDKAccessToken.current() != nil || GIDSignIn.sharedInstance().hasAuthInKeychain()
+    }
+    
+    // MARK: - Facebook Login
+    
+    private func fbSignOutCall() {
+        FBSDKLoginManager().logOut()
         FBSDKAccessToken.setCurrent(nil)
         FBSDKProfile.setCurrent(nil)
     }
     
     private func fbSignInCall() {
-        loginManager = LoginManager()
-        loginManager?.logIn(readPermissions: [.publicProfile, .email], viewController : nil) { loginResult in
-            switch loginResult {
-            case .failed(let error):
+        let loginManager = FBSDKLoginManager()
+        loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: nil) { (result, error) in
+            if let error = error {
                 print(error)
-            case .cancelled:
-                break
-            case .success(_, _, _):
-                self.fetchFbData()
+                return
             }
+            guard let accessToken = FBSDKAccessToken.current() else {
+                return
+            }
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            self.retrieveDataWith(credential)
         }
     }
     
-    private func fetchFbData() {
-        if FBSDKAccessToken.current() != nil {
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "first_name, last_name, email, picture.type(large)"], tokenString: FBSDKAccessToken.current().tokenString, version: nil, httpMethod: "GET").start(completionHandler: { (connection, result, error) in
-                if error == nil {
-                    let fields = result as AnyObject
-                    if let firstName = fields.value(forKey: "first_name") as? String,
-                        let lastName = fields.value(forKey: "last_name") as? String,
-                        let email = fields.value(forKey: "email") as? String,
-                        let imageUrl = fields.value(forKeyPath: "picture.data.url") as? String {
-                        let newUser = User(name: "\(firstName) \(lastName)", email: email, imageURL: URL(string: imageUrl))
-                        self.singInCompletion?(newUser, error)
-                    }
-                }
+    private func retrieveDataWith(_ credential: AuthCredential) {
+        Auth.auth().signInAndRetrieveData(with: credential) { authResult, error in
+            if let name = authResult?.user.displayName,
+                let email = authResult?.user.email,
+                let imageURL = authResult?.user.photoURL {
+                let newUser = User(name: name, email: email, imageURL: imageURL)
+                self.singInCompletion?(newUser, error)
             }
-        )}
+        }
     }
 }
 
@@ -109,14 +115,7 @@ extension LoginService: GIDSignInDelegate {
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        Auth.auth().signInAndRetrieveData(with: credential) { authResult, error in
-            if let name = authResult?.user.displayName,
-                let email = authResult?.user.email,
-                let imageURL = authResult?.user.photoURL {
-                let newUser = User(name: name, email: email, imageURL: imageURL)
-                self.singInCompletion?(newUser, error)
-            }
-        }
+        retrieveDataWith(credential)
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text = name
         emailLabel.text = email
-        logoImageView.image = try! UIImage(withContentsOfUrl: imageURL!)
+        logoImageView.image = try! UIImage(withContentsOfUrl: imageURL!) ?? nil // TODO: ! fix later
     }
     
     @IBAction func logoutPressed(_ sender: Any) {

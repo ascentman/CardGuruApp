@@ -8,15 +8,24 @@
 
 import UIKit
 import SVProgressHUD
-import FBSDKLoginKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if FBSDKAccessToken.current() != nil {
-            print("present Home VC")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeViewController
+        Auth.auth().addStateDidChangeListener() { _, user in
+            if LoginService.sharedInstance.isLoggedIn() {
+                viewController?.name = user?.displayName
+                viewController?.email = user?.email
+                viewController?.imageURL = user?.photoURL
+                if let viewController = viewController {
+                    if !viewController.isViewLoaded {
+                        self.present(viewController, animated: true, completion: nil)
+                    }
+                }
+            }
         }
     }
     
@@ -27,15 +36,15 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginWithGoogle(_ sender: Any) {
-        SVProgressHUD.show(withStatus: "Signing in")
         LoginService.sharedInstance.signIn(self) { [weak self] user, error in
+            SVProgressHUD.show(withStatus: "Signing in")
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
         }
     }
     
     @IBAction func loginWithFacebook(_ sender: Any) {
-        SVProgressHUD.show(withStatus: "Signing in")
         LoginService.sharedInstance.signInFb(self) { [weak self] (user, error) in
+            SVProgressHUD.show(withStatus: "Signing in")
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
         }
     }
