@@ -11,12 +11,14 @@ import SVProgressHUD
 import Firebase
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presentCurrentViewController()
+        animateBackground(imgView: backgroundImageView)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -55,6 +57,15 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func animateBackground(imgView: UIImageView){
+        let circlePath = UIBezierPath(arcCenter: view.center, radius: 200, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
+        let animation = CAKeyframeAnimation(keyPath: #keyPath(CALayer.position))
+        animation.duration = 30
+        animation.repeatCount = 100
+        animation.path = circlePath.cgPath
+        imgView.layer.add(animation, forKey: nil)
     }
     
     // MARK: - Segues
