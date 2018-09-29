@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import SVProgressHUD
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -33,14 +33,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginWithGoogle(_ sender: Any) {
         LoginService.sharedInstance.signIn(self) { [weak self] user, error in
-            SVProgressHUD.show(withStatus: "Signing in")
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
         }
     }
     
     @IBAction func loginWithFacebook(_ sender: Any) {
         LoginService.sharedInstance.signInFb(self) { [weak self] (user, error) in
-            SVProgressHUD.show(withStatus: "Signing in")
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
         }
     }
@@ -67,7 +65,7 @@ class LoginViewController: UIViewController {
         let circlePath = UIBezierPath(arcCenter: view.center, radius: 200, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
         let animation = CAKeyframeAnimation(keyPath: #keyPath(CALayer.position))
         animation.duration = 30
-        animation.repeatCount = 100
+        animation.repeatCount = MAXFLOAT
         animation.path = circlePath.cgPath
         imgView.layer.add(animation, forKey: nil)
     }

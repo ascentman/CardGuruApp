@@ -18,6 +18,7 @@ import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
 import FacebookLogin
+import SVProgressHUD
 
 final class LoginService: NSObject {
     
@@ -85,14 +86,13 @@ final class LoginService: NSObject {
     private func fbSignInCall() {
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: nil) { (result, error) in
-            if let error = error {
-                print(error)
+            if let _ = error {
                 return
             }
             guard let accessToken = FBSDKAccessToken.current() else {
                 return
             }
-            
+            SVProgressHUD.show(withStatus: "Signing in")
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
             self.retrieveDataWith(credential)
         }
@@ -114,7 +114,13 @@ final class LoginService: NSObject {
 
 extension LoginService: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard let authentication = user.authentication else { return }
+        if let _ = error {
+            return
+        }
+        guard let authentication = user.authentication else {
+            return
+        }
+        SVProgressHUD.show(withStatus: "Signing in")
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         retrieveDataWith(credential)
