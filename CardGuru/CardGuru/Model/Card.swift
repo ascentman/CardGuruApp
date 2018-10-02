@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class Card {
+final class Card {
     let name: String
     var image: String?
     let barcode: String

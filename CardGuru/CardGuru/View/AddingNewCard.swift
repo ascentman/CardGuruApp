@@ -29,6 +29,7 @@ class AddingNewCard: UIViewController {
                                "customerNumber": customerNumber,
                                "image" : image]
             DatabaseService.shared.cardsRef.childByAutoId().setValue(parameters)
+            _ = navigationController?.popViewController(animated: true)
         }
     }
     private func generateImage(from name: String) -> String {

@@ -23,6 +23,8 @@
 		8093336C21593E8C00C02D11 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8093336B21593E8C00C02D11 /* Login.storyboard */; };
 		8093336E2159489000C02D11 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336D2159488F00C02D11 /* HomeViewController.swift */; };
 		80933370215A37B900C02D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336F215A37B900C02D11 /* User.swift */; };
+		809706362163B91500185E82 /* NavigationControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706352163B91500185E82 /* NavigationControllerService.swift */; };
+		8097063B2163BA3A00185E82 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063A2163BA3A00185E82 /* StoryboardName.swift */; };
 		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		8093336B21593E8C00C02D11 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8093336D2159488F00C02D11 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8093336F215A37B900C02D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		809706352163B91500185E82 /* NavigationControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerService.swift; sourceTree = "<group>"; };
+		8097063A2163BA3A00185E82 /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				809333672159379900C02D11 /* LoginService.swift */,
 				803DDCEE2162361800BD91BC /* DatabaseService.swift */,
+				809706352163B91500185E82 /* NavigationControllerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 		807D95FC2159147C00ABB0D2 /* CardGuru */ = {
 			isa = PBXGroup;
 			children = (
+				809706392163BA3100185E82 /* SupportedFile */,
 				803DDCFC21636E3500BD91BC /* Model */,
 				803DDCFD21636E5200BD91BC /* View */,
 				803DDCFE21636E6400BD91BC /* Controller */,
@@ -134,6 +140,14 @@
 				80053E37215929AD001426C4 /* GoogleService-Info.plist */,
 			);
 			path = CardGuru;
+			sourceTree = "<group>";
+		};
+		809706392163BA3100185E82 /* SupportedFile */ = {
+			isa = PBXGroup;
+			children = (
+				8097063A2163BA3A00185E82 /* StoryboardName.swift */,
+			);
+			path = SupportedFile;
 			sourceTree = "<group>";
 		};
 		F689632D5D7CCD1B0755A983 /* Pods */ = {
@@ -315,10 +329,12 @@
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
 				807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */,
 				807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */,
+				809706362163B91500185E82 /* NavigationControllerService.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
 				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
 				809333682159379900C02D11 /* LoginService.swift in Sources */,
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
+				8097063B2163BA3A00185E82 /* StoryboardName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

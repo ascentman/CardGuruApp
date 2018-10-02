@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presentCurrentViewController()
+        //presentCurrentViewController()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,15 +44,6 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Private methods
-    
-    private func presentCurrentViewController() {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
-//        Auth.auth().addStateDidChangeListener() { _, user in
-//            if LoginService.sharedInstance.isLoggedIn() {
-//                self.present(viewController, animated: true, completion: nil)
-//            }
-//        }
-    }
     
     private func animateBackground(imgView: UIImageView){
         let circlePath = UIBezierPath(arcCenter: view.center, radius: 200, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)

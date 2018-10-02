@@ -20,5 +20,5 @@ class DatabaseService {
     let notessRef = Database.database().reference(withPath: "User/Cards/Notes")
     
     let logoRef = Storage.storage().reference(withPath: "logo.jpg")
-    let cardImageRef = Storage.storage().reference(withPath: "\(Int.random(in: 1..<9999)).png")
+    let cardImageRef = Storage.storage().reference(withPath: "cards/\(Int.random(in: 1..<9999)).png")
 }

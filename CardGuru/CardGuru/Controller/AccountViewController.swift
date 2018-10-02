@@ -35,9 +35,9 @@ class AccountViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func logoutPressed(_ sender: Any) {
-        let loginController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
         LoginService.sharedInstance.signOut()
-        present(loginController, animated: true, completion: nil)
+        NavigationControllerService.shared.presentCurrentUserUI()
     }
 }

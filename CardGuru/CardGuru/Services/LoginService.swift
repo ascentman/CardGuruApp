@@ -31,7 +31,6 @@ final class LoginService: NSObject {
     private var disconnectCompletion: DisconnectResponse?
     
     @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -53,6 +52,7 @@ final class LoginService: NSObject {
         singInCompletion = completion
         presenter = controller
         GIDSignIn.sharedInstance().signIn()
+        saveLoggedState(current: true)
     }
     
     func disconnectUser(completion: DisconnectResponse? = nil) {
@@ -63,17 +63,24 @@ final class LoginService: NSObject {
     func signOut() {
         GIDSignIn.sharedInstance().signOut()
         fbSignOutCall()
+        saveLoggedState(current: false)
     }
     
     func signInFb(_ controller: UIViewController, completion: SignInResponse?) {
         singInCompletion = completion
         presenter = controller
         fbSignInCall()
+        saveLoggedState(current: true)
     }
     
     func isLoggedIn() -> Bool {
         return FBSDKAccessToken.current() != nil || GIDSignIn.sharedInstance().hasAuthInKeychain()
     }
+    
+    func saveLoggedState(current: Bool) {
+        UserDefaults.standard.set(current, forKey: "isLoggedIn")
+    }
+
     
     // MARK: - Facebook Login
     
