@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TbE-5M-a9h">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TbE-5M-a9h">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,27 +15,27 @@
             <objects>
                 <viewController storyboardIdentifier="LoginVC" id="TbE-5M-a9h" customClass="LoginViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S86-Oi-5pn" userLabel="RootView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping" translatesAutoresizingMaskIntoConstraints="NO" id="ufW-YC-3c9" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-84-gzP" userLabel="LoginView">
-                                <rect key="frame" x="10" y="467" width="355" height="170"/>
+                                <rect key="frame" x="10" y="536" width="394" height="170"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-um-WEr" userLabel="Login buttons">
-                                        <rect key="frame" x="5" y="34.5" width="345" height="101"/>
+                                        <rect key="frame" x="5" y="-13.333333333333371" width="384" height="197"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-Mm-RgL">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="47"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="95"/>
                                                 <state key="normal" image="fb"/>
                                                 <connections>
                                                     <action selector="loginWithFacebook:" destination="TbE-5M-a9h" eventType="touchUpInside" id="LZB-Y5-cs5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-ld-duk" userLabel="googleLogIn">
-                                                <rect key="frame" x="0.0" y="53" width="345" height="48"/>
+                                                <rect key="frame" x="0.0" y="101" width="384" height="96"/>
                                                 <state key="normal" image="google"/>
                                                 <connections>
                                                     <action selector="loginWithGoogle:" destination="TbE-5M-a9h" eventType="touchUpInside" id="CrI-3u-f25"/>
@@ -59,7 +59,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoCardGuru" translatesAutoresizingMaskIntoConstraints="NO" id="MEz-Ki-4sj" userLabel="Logo">
-                                <rect key="frame" x="22" y="120" width="330" height="148"/>
+                                <rect key="frame" x="42" y="120" width="330" height="148"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="148" id="kWj-Ok-sbf"/>
                                     <constraint firstAttribute="width" constant="330" id="srM-Ks-dGS"/>
@@ -93,18 +93,18 @@
             </objects>
             <point key="canvasLocation" x="144.80000000000001" y="67.916041979010501"/>
         </scene>
-        <!--HomeVC-->
+        <!--TabBar-->
         <scene sceneID="o2M-QM-hUS">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="HomeVC" id="84h-nn-tsS" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TabBar" id="84h-nn-tsS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VD9-kj-a1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="825" y="30"/>
         </scene>
     </scenes>
     <resources>
-        <image name="fb" width="285" height="47"/>
-        <image name="google" width="285" height="48"/>
+        <image name="fb" width="571" height="95"/>
+        <image name="google" width="570" height="96"/>
         <image name="logoCardGuru" width="1024" height="316"/>
         <image name="shopping" width="1600" height="900"/>
     </resources>

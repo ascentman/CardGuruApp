@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80053E37215929AD001426C4 /* GoogleService-Info.plist */; };
+		803DDCEF2162361800BD91BC /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCEE2162361800BD91BC /* DatabaseService.swift */; };
+		803DDCF1216255BE00BD91BC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF0216255BE00BD91BC /* Card.swift */; };
+		803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF22162662300BD91BC /* AddingNewCard.swift */; };
+		803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */; };
+		803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF82162934500BD91BC /* DetailedViewController.swift */; };
+		803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCFA21635B5A00BD91BC /* AccountViewController.swift */; };
 		807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FD2159147C00ABB0D2 /* AppDelegate.swift */; };
 		807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FF2159147C00ABB0D2 /* LoginViewController.swift */; };
 		807D96032159147C00ABB0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96012159147C00ABB0D2 /* Main.storyboard */; };
@@ -22,6 +28,12 @@
 
 /* Begin PBXFileReference section */
 		80053E37215929AD001426C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		803DDCEE2162361800BD91BC /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		803DDCF0216255BE00BD91BC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		803DDCF22162662300BD91BC /* AddingNewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCard.swift; sourceTree = "<group>"; };
+		803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		803DDCF82162934500BD91BC /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		803DDCFA21635B5A00BD91BC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		807D95FA2159147C00ABB0D2 /* CardGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		807D95FD2159147C00ABB0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		807D95FF2159147C00ABB0D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +62,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		803DDCFC21636E3500BD91BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8093336F215A37B900C02D11 /* User.swift */,
+				803DDCF0216255BE00BD91BC /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		803DDCFD21636E5200BD91BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */,
+				803DDCF22162662300BD91BC /* AddingNewCard.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		803DDCFE21636E6400BD91BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8093336D2159488F00C02D11 /* HomeViewController.swift */,
+				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
+				803DDCFA21635B5A00BD91BC /* AccountViewController.swift */,
+				803DDCF82162934500BD91BC /* DetailedViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		803DDCFF21636E9E00BD91BC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				809333672159379900C02D11 /* LoginService.swift */,
+				803DDCEE2162361800BD91BC /* DatabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		807D95F12159147C00ABB0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -71,15 +121,15 @@
 		807D95FC2159147C00ABB0D2 /* CardGuru */ = {
 			isa = PBXGroup;
 			children = (
-				807D95FD2159147C00ABB0D2 /* AppDelegate.swift */,
-				8093336F215A37B900C02D11 /* User.swift */,
-				8093336D2159488F00C02D11 /* HomeViewController.swift */,
-				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
-				809333672159379900C02D11 /* LoginService.swift */,
+				803DDCFC21636E3500BD91BC /* Model */,
+				803DDCFD21636E5200BD91BC /* View */,
+				803DDCFE21636E6400BD91BC /* Controller */,
+				803DDCFF21636E9E00BD91BC /* Services */,
 				807D96012159147C00ABB0D2 /* Main.storyboard */,
 				8093336B21593E8C00C02D11 /* Login.storyboard */,
-				807D96042159147E00ABB0D2 /* Assets.xcassets */,
 				807D96062159147E00ABB0D2 /* LaunchScreen.storyboard */,
+				807D96042159147E00ABB0D2 /* Assets.xcassets */,
+				807D95FD2159147C00ABB0D2 /* AppDelegate.swift */,
 				807D96092159147E00ABB0D2 /* Info.plist */,
 				80053E37215929AD001426C4 /* GoogleService-Info.plist */,
 			);
@@ -192,6 +242,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -206,6 +257,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,11 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				803DDCEF2162361800BD91BC /* DatabaseService.swift in Sources */,
+				803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */,
+				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
+				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
 				807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */,
 				807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
+				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
 				809333682159379900C02D11 /* LoginService.swift in Sources */,
+				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

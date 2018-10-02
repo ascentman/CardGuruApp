@@ -46,19 +46,12 @@ class LoginViewController: UIViewController {
     // MARK: - Private methods
     
     private func presentCurrentViewController() {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? HomeViewController
-        Auth.auth().addStateDidChangeListener() { _, user in
-            if LoginService.sharedInstance.isLoggedIn() {
-                viewController?.name = user?.displayName
-                viewController?.email = user?.email
-                viewController?.imageURL = user?.photoURL
-                if let viewController = viewController {
-                    if !viewController.isViewLoaded {
-                        self.present(viewController, animated: true, completion: nil)
-                    }
-                }
-            }
-        }
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBar")
+//        Auth.auth().addStateDidChangeListener() { _, user in
+//            if LoginService.sharedInstance.isLoggedIn() {
+//                self.present(viewController, animated: true, completion: nil)
+//            }
+//        }
     }
     
     private func animateBackground(imgView: UIImageView){
@@ -73,12 +66,15 @@ class LoginViewController: UIViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? HomeViewController {
-            if let user = sender as? User  {
-                destination.name = user.name
-                destination.email = user.email
-                destination.imageURL = user.imageURL
+        if let user = sender as? User {
+            guard let imageURL = user.imageURL else { return }
+            let logoImage = try? Data(contentsOf: imageURL)
+            if let logoImage = logoImage {
+                 DatabaseService.shared.logoRef.putData(logoImage)
             }
+            let parameters: [String : Any] = [ "name" : user.name,
+                                               "email" : user.email]
+            DatabaseService.shared.settingsRef.setValue(parameters)
         }
     }
 }
