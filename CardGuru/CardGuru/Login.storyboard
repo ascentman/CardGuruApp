@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping" translatesAutoresizingMaskIntoConstraints="NO" id="ufW-YC-3c9" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-84-gzP" userLabel="LoginView">
                                 <rect key="frame" x="10" y="536" width="394" height="170"/>
                                 <subviews>
@@ -72,11 +69,7 @@
                             <constraint firstItem="MEz-Ki-4sj" firstAttribute="top" secondItem="fQD-Tp-OPi" secondAttribute="top" constant="100" id="D3X-ns-MnL">
                                 <variation key="heightClass=compact-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="ufW-YC-3c9" firstAttribute="top" secondItem="S86-Oi-5pn" secondAttribute="top" id="K2j-xa-2Ut"/>
-                            <constraint firstItem="ufW-YC-3c9" firstAttribute="leading" secondItem="fQD-Tp-OPi" secondAttribute="leading" id="ZXf-9N-XQ1"/>
                             <constraint firstItem="fQD-Tp-OPi" firstAttribute="trailing" secondItem="4bH-84-gzP" secondAttribute="trailing" constant="10" id="gja-ae-pyO"/>
-                            <constraint firstItem="ufW-YC-3c9" firstAttribute="bottom" secondItem="fQD-Tp-OPi" secondAttribute="bottom" id="kjX-KR-ClQ"/>
-                            <constraint firstItem="ufW-YC-3c9" firstAttribute="trailing" secondItem="fQD-Tp-OPi" secondAttribute="trailing" id="mQE-g8-FEY"/>
                             <constraint firstItem="MEz-Ki-4sj" firstAttribute="centerX" secondItem="S86-Oi-5pn" secondAttribute="centerX" id="nyE-bX-yDD"/>
                             <constraint firstItem="fQD-Tp-OPi" firstAttribute="bottom" secondItem="4bH-84-gzP" secondAttribute="bottom" constant="30" id="yMZ-3s-PbG">
                                 <variation key="heightClass=compact-widthClass=compact" constant="5"/>
@@ -85,7 +78,6 @@
                         <viewLayoutGuide key="safeArea" id="fQD-Tp-OPi"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="ufW-YC-3c9" id="YLU-C1-MQw"/>
                         <segue destination="84h-nn-tsS" kind="presentation" identifier="GoToHome" id="mQ6-DO-GUG"/>
                     </connections>
                 </viewController>
@@ -106,6 +98,5 @@
         <image name="fb" width="571" height="95"/>
         <image name="google" width="570" height="96"/>
         <image name="logoCardGuru" width="1024" height="316"/>
-        <image name="shopping" width="1600" height="900"/>
     </resources>
 </document>

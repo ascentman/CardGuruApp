@@ -11,13 +11,12 @@ import Firebase
 import SVProgressHUD
 
 final class LoginViewController: UIViewController {
-    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animateBackground(imgView: backgroundImageView)
+        animateBackground()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -43,13 +42,28 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Private
     
-    private func animateBackground(imgView: UIImageView){
-        let circlePath = UIBezierPath(arcCenter: view.center, radius: 200, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
+    private func animateBackground(){
+        
+        let backGroundLayer = CALayer()
+        backGroundLayer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.frame.width * 2, height: view.frame.height * 4))
+        backGroundLayer.opacity = 0.2
+        backGroundLayer.contents = UIImage(named: "cards")?.cgImage
+        backGroundLayer.contentsGravity = kCAGravityResizeAspectFill
+        
+        let starPath = UIBezierPath()
+        starPath.move(to: CGPoint(x: 0, y: 1800))
+        starPath.addLine(to: CGPoint(x: -1200, y: -900))
+        starPath.addLine(to: CGPoint(x: 2200, y: 500))
+        starPath.addLine(to: CGPoint(x: -1800, y: 0))
+        starPath.addLine(to: CGPoint(x: 2000, y: -800))
+        starPath.close()
+        
         let animation = CAKeyframeAnimation(keyPath: #keyPath(CALayer.position))
-        animation.duration = 30
+        animation.duration = 500
         animation.repeatCount = MAXFLOAT
-        animation.path = circlePath.cgPath
-        imgView.layer.add(animation, forKey: nil)
+        animation.path = starPath.cgPath
+        backGroundLayer.add(animation, forKey: nil)
+        self.view.layer.insertSublayer(backGroundLayer, at: 0)
     }
     
     // MARK: - Segues
