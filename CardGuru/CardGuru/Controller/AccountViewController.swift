@@ -37,7 +37,8 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
-        LoginService.sharedInstance.signOut()
+        FbLoginService.sharedInstance.signOut()
+        GoogleLoginService.sharedInstance.signOut()
         NavigationControllerService.shared.presentCurrentUserUI()
     }
 }

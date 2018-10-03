@@ -19,16 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        LoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
-        setupUI()
+        GoogleLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
+        FbLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
+        setupInitialViewController()
         return true
     }
     
     // MARK: Private
     
-    private func setupUI() {
+    private func setupInitialViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
         NavigationControllerService.shared.presentCurrentUserUI()
     }
-    
 }

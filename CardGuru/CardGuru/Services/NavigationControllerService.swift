@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 final class NavigationControllerService {
     
@@ -23,10 +22,10 @@ final class NavigationControllerService {
     func presentCurrentUserUI() {
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         if isLoggedIn {
-            let homeViewController = UIStoryboard(name: StoryboardName.main, bundle: nil).instantiateInitialViewController()
+            let homeViewController = UIStoryboard(name: Constants.StoryboardName.main, bundle: nil).instantiateInitialViewController()
             self.window?.rootViewController = homeViewController
         } else {
-            let loginViewController = UIStoryboard(name: StoryboardName.login, bundle: nil).instantiateInitialViewController()
+            let loginViewController = UIStoryboard(name: Constants.StoryboardName.login, bundle: nil).instantiateInitialViewController()
             self.window?.rootViewController = loginViewController
         }
         self.window?.makeKeyAndVisible()

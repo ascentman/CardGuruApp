@@ -19,12 +19,14 @@
 		807D96032159147C00ABB0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96012159147C00ABB0D2 /* Main.storyboard */; };
 		807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807D96042159147E00ABB0D2 /* Assets.xcassets */; };
 		807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96062159147E00ABB0D2 /* LaunchScreen.storyboard */; };
-		809333682159379900C02D11 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809333672159379900C02D11 /* LoginService.swift */; };
+		809333682159379900C02D11 /* GoogleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809333672159379900C02D11 /* GoogleLoginService.swift */; };
 		8093336C21593E8C00C02D11 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8093336B21593E8C00C02D11 /* Login.storyboard */; };
 		8093336E2159489000C02D11 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336D2159488F00C02D11 /* HomeViewController.swift */; };
 		80933370215A37B900C02D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336F215A37B900C02D11 /* User.swift */; };
 		809706362163B91500185E82 /* NavigationControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706352163B91500185E82 /* NavigationControllerService.swift */; };
-		8097063B2163BA3A00185E82 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063A2163BA3A00185E82 /* StoryboardName.swift */; };
+		8097063B2163BA3A00185E82 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063A2163BA3A00185E82 /* Constants.swift */; };
+		8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063E2164BEF800185E82 /* FbLoginService.swift */; };
+		809706432164D64700185E82 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseService.swift */; };
 		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,12 +45,14 @@
 		807D96042159147E00ABB0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		807D96072159147E00ABB0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		807D96092159147E00ABB0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		809333672159379900C02D11 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		809333672159379900C02D11 /* GoogleLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLoginService.swift; sourceTree = "<group>"; };
 		8093336B21593E8C00C02D11 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8093336D2159488F00C02D11 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8093336F215A37B900C02D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		809706352163B91500185E82 /* NavigationControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerService.swift; sourceTree = "<group>"; };
-		8097063A2163BA3A00185E82 /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
+		8097063A2163BA3A00185E82 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8097063E2164BEF800185E82 /* FbLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbLoginService.swift; sourceTree = "<group>"; };
+		809706422164D64700185E82 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +102,9 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				809333672159379900C02D11 /* LoginService.swift */,
+				809333672159379900C02D11 /* GoogleLoginService.swift */,
+				8097063E2164BEF800185E82 /* FbLoginService.swift */,
+				809706422164D64700185E82 /* FirebaseService.swift */,
 				803DDCEE2162361800BD91BC /* DatabaseService.swift */,
 				809706352163B91500185E82 /* NavigationControllerService.swift */,
 			);
@@ -145,7 +151,7 @@
 		809706392163BA3100185E82 /* SupportedFile */ = {
 			isa = PBXGroup;
 			children = (
-				8097063A2163BA3A00185E82 /* StoryboardName.swift */,
+				8097063A2163BA3A00185E82 /* Constants.swift */,
 			);
 			path = SupportedFile;
 			sourceTree = "<group>";
@@ -323,8 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				803DDCEF2162361800BD91BC /* DatabaseService.swift in Sources */,
+				809706432164D64700185E82 /* FirebaseService.swift in Sources */,
 				803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */,
 				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
+				8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
 				807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */,
@@ -332,9 +340,9 @@
 				809706362163B91500185E82 /* NavigationControllerService.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
 				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
-				809333682159379900C02D11 /* LoginService.swift in Sources */,
+				809333682159379900C02D11 /* GoogleLoginService.swift in Sources */,
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
-				8097063B2163BA3A00185E82 /* StoryboardName.swift in Sources */,
+				8097063B2163BA3A00185E82 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     // MARK: - Lifecycle
@@ -20,30 +20,28 @@ class LoginViewController: UIViewController {
         animateBackground(imgView: backgroundImageView)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //presentCurrentViewController()
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
-        
     }
     
     @IBAction func loginWithGoogle(_ sender: Any) {
-        LoginService.sharedInstance.signIn(self) { [weak self] user, error in
+        GoogleLoginService.sharedInstance.signIn(self, onRequestStart: {
+            SVProgressHUD.show(withStatus: "Signing in")
+        }) { [weak self] (user, error) in
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
         }
     }
     
     @IBAction func loginWithFacebook(_ sender: Any) {
-        LoginService.sharedInstance.signInFb(self) { [weak self] (user, error) in
+        FbLoginService.sharedInstance.signIn(self, onRequestStart: {
+            SVProgressHUD.show(withStatus: "Signing in")
+        }) { [weak self] (user, error) in
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
         }
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func animateBackground(imgView: UIImageView){
         let circlePath = UIBezierPath(arcCenter: view.center, radius: 200, startAngle: 0, endAngle: CGFloat(Double.pi*2), clockwise: true)
