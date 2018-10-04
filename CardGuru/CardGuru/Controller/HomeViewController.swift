@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Alamofire
+import AlamofireImage
 import SVProgressHUD
 
 class HomeViewController: UIViewController {
@@ -19,7 +21,40 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadDataFromDb()
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? CardCollectionViewCell,
+            let index = cardsCollectionView.indexPath(for: cell) {
+            if let destination = segue.destination as? DetailedViewController {
+                destination.barcode = cards[index.row].barcode
+                destination.customerNum = cards[index.row].customerNumber
+                
+//                let url = URL(string: cards[index.row].image!)
+//                destination.image = try! UIImage(withContentsOfUrl: url!)
+                
+                    if let image = self.cards[index.row].image,
+                        let url = URL(string: image) {
+                        Alamofire.request(url, method: .get).responseImage { (response) in
+
+                            print(response.response)
+                            debugPrint(response.result)
+
+                            if let image = response.result.value {
+                                destination.image = image
+                            }
+                        }
+                    }
+            }
+        }
+    }
+    
+    // MARK: - Private
+    
+    private func loadDataFromDb() {
         DatabaseService.shared.cardsRef.observe(DataEventType.value) { (snapshot) in
             var cards: [Card] = []
             for child in snapshot.children {
@@ -33,15 +68,10 @@ class HomeViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cell = sender as? CardCollectionViewCell,
-            let index = cardsCollectionView.indexPath(for: cell) {
-            if let destination = segue.destination as? DetailedViewController {
-                destination.barcode = cards[index.row].barcode
-                destination.customerNum = cards[index.row].customerNumber
-                let url = URL(string: cards[index.row].image!)
-                destination.image = try! UIImage(withContentsOfUrl: url!)
-            }
+    func retrieveImage(for url: String, completion: @escaping (UIImage) -> Void) -> Request {
+        return Alamofire.request(url, method: .get).responseImage { response in
+            guard let image = response.result.value else { return }
+            completion(image)
         }
     }
 }
@@ -69,7 +99,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let padding: CGFloat = 10
         let collectionViewSize = collectionView.frame.size.width - padding
         
-        return CGSize(width: collectionViewSize/2, height: collectionViewSize/3)
+        return CGSize(width: collectionViewSize / 2, height: collectionViewSize / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -83,4 +113,3 @@ extension UIImage {
         self.init(data: imageData)
     }
 }
-

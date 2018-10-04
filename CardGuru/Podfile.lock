@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.7.3)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -109,6 +112,8 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage (~> 3.4)
   - FacebookLogin
   - FBSDKLoginKit
   - Firebase/Auth
@@ -120,6 +125,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
     - Bolts
     - FacebookCore
     - FacebookLogin
@@ -144,6 +151,8 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 9ecbe48cfd37c91a93add7f8cec2b4a2c50a1eec
   FacebookLogin: bdaea5789e9b364fa8a1990ba3bbba4fd2197415
@@ -167,6 +176,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 42b0957f12fe137cd1ef913b600a19232ce3346c
+PODFILE CHECKSUM: f80fb0349feb694ca46f407784f02d2f6b4d3043
 
 COCOAPODS: 1.5.3

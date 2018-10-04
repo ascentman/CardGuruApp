@@ -12,5 +12,7 @@ pod 'GoogleSignIn'
 pod 'FBSDKLoginKit'
 pod 'FacebookLogin'
 pod 'SVProgressHUD'
+pod 'Alamofire'
+pod 'AlamofireImage', '~> 3.4'
 
 end

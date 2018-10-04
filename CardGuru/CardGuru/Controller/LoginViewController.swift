@@ -12,6 +12,8 @@ import SVProgressHUD
 
 final class LoginViewController: UIViewController {
     
+    private var backGroundLayer = CALayer()
+    
     // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +31,7 @@ final class LoginViewController: UIViewController {
             SVProgressHUD.show(withStatus: "Signing in")
         }) { [weak self] (user, error) in
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
+            self?.saveLoginDataToDb(user)
         }
     }
     
@@ -37,47 +40,45 @@ final class LoginViewController: UIViewController {
             SVProgressHUD.show(withStatus: "Signing in")
         }) { [weak self] (user, error) in
             self?.performSegue(withIdentifier: "GoToHome", sender: user)
+            self?.saveLoginDataToDb(user)
         }
     }
     
     // MARK: - Private
     
     private func animateBackground(){
-        
-        let backGroundLayer = CALayer()
-        backGroundLayer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.frame.width * 2, height: view.frame.height * 4))
+        if view.layer.superlayer == backGroundLayer {
+            view.layer.removeFromSuperlayer()
+        }
+        backGroundLayer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.frame.width * 1.5, height: view.frame.height * 3))
         backGroundLayer.opacity = 0.2
         backGroundLayer.contents = UIImage(named: "cards")?.cgImage
         backGroundLayer.contentsGravity = kCAGravityResizeAspectFill
         
         let starPath = UIBezierPath()
-        starPath.move(to: CGPoint(x: 0, y: 1800))
-        starPath.addLine(to: CGPoint(x: -1200, y: -900))
-        starPath.addLine(to: CGPoint(x: 2200, y: 500))
-        starPath.addLine(to: CGPoint(x: -1800, y: 0))
-        starPath.addLine(to: CGPoint(x: 2000, y: -800))
+        starPath.move(to: CGPoint(x: 0, y: backGroundLayer.bounds.height / 2))
+        starPath.addLine(to: CGPoint(x: -backGroundLayer.bounds.height / 2, y: -backGroundLayer.bounds.width / 2))
+        starPath.addLine(to: CGPoint(x: backGroundLayer.bounds.width * 2, y: backGroundLayer.bounds.width / 2))
+        starPath.addLine(to: CGPoint(x: -backGroundLayer.bounds.width * 1.5, y: 0))
+        starPath.addLine(to: CGPoint(x: backGroundLayer.bounds.height / 2, y: -backGroundLayer.bounds.width / 2))
         starPath.close()
         
         let animation = CAKeyframeAnimation(keyPath: #keyPath(CALayer.position))
-        animation.duration = 500
+        animation.duration = 400
         animation.repeatCount = MAXFLOAT
         animation.path = starPath.cgPath
         backGroundLayer.add(animation, forKey: nil)
         self.view.layer.insertSublayer(backGroundLayer, at: 0)
     }
     
-    // MARK: - Segues
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let user = sender as? User {
-            guard let imageURL = user.imageURL else { return }
-            let logoImage = try? Data(contentsOf: imageURL)
-            if let logoImage = logoImage {
-                 DatabaseService.shared.logoRef.putData(logoImage)
-            }
-            let parameters: [String : Any] = [ "name" : user.name,
-                                               "email" : user.email]
-            DatabaseService.shared.settingsRef.setValue(parameters)
+    private func saveLoginDataToDb(_ user: User) {
+        guard let imageURL = user.imageURL else { return }
+        let logoImage = try? Data(contentsOf: imageURL)
+        if let logoImage = logoImage {
+            DatabaseService.shared.logoRef.putData(logoImage)
         }
+        let parameters: [String : Any] = [ "name" : user.name,
+                                           "email" : user.email]
+        DatabaseService.shared.settingsRef.setValue(parameters)
     }
 }

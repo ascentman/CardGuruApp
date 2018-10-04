@@ -14,6 +14,11 @@ class AddingNewCard: UIViewController {
     @IBOutlet private weak var barcodeField: UITextField!
     @IBOutlet private weak var customerNumberField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        customerNumberField.delegate = self
+    }
+    
     @IBAction func saveClicked(_ sender: Any) {
         let name = nameField.text
         let barcode = barcodeField.text
@@ -32,10 +37,26 @@ class AddingNewCard: UIViewController {
             _ = navigationController?.popViewController(animated: true)
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // MARK: - Private
+    
     private func generateImage(from name: String) -> String {
         let formattedName = name.replacingOccurrences(of: " ", with: "_")
         let randomColor = UIColor.random
-        return "https://dummyimage.com/600x400/\(randomColor))/ffffff.png&text=\(formattedName)"
+        return "https://dummyimage.com/600x400/\(randomColor)/ffffff.png&text=\(formattedName)"
+    }
+}
+
+// MARK: - Extensions
+
+extension AddingNewCard: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
