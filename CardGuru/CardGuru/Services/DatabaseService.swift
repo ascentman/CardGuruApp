@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class DatabaseService {
+class DatabaseService { //final
     
     static let shared = DatabaseService()
     private init() {}
@@ -20,5 +20,6 @@ class DatabaseService {
     let notessRef = Database.database().reference(withPath: "User/Cards/Notes")
     
     let logoRef = Storage.storage().reference(withPath: "logo.jpg")
-    let cardImageRef = Storage.storage().reference(withPath: "cards/\(Int.random(in: 1..<9999)).png")
+    let cardImageRef = Storage.storage().reference(withPath: "cards/\(Int.random(in: 1..<9999)).png") // це шось погане дуже, може використати назви рандомно генеровані, наприклад UUID().uuidString 1
+    /// Create a UUID from a string such as "E621E1F8-C36C-495A-93FC-0C247A3E6E5F".
 }

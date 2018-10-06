@@ -25,6 +25,8 @@ final class LoginViewController: UIViewController {
         super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
     }
+
+    // ті ж самі проблеми з доступом - private
     
     @IBAction func loginWithGoogle(_ sender: Any) {
         GoogleLoginService.sharedInstance.signIn(self, onRequestStart: {
@@ -34,6 +36,9 @@ final class LoginViewController: UIViewController {
             self?.saveLoginDataToDb(user)
         }
     }
+
+    // ті ж самі проблеми з доступом
+
     
     @IBAction func loginWithFacebook(_ sender: Any) {
         FbLoginService.sharedInstance.signIn(self, onRequestStart: {
@@ -45,7 +50,9 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - Private
-    
+
+
+    // краще мати окремий обєкт для анімацій - це ж моджна просто перевикористати і це призведе до зменшення к-ті коду в проекті
     private func animateBackground(){
         if view.layer.superlayer == backGroundLayer {
             view.layer.removeFromSuperlayer()
@@ -70,7 +77,10 @@ final class LoginViewController: UIViewController {
         backGroundLayer.add(animation, forKey: nil)
         self.view.layer.insertSublayer(backGroundLayer, at: 0)
     }
-    
+
+    // контролер зберігає лого? та може ж його додати в ресурси проекту - це ж лого воно не буде мінятися 100500 раз
+    // нашо його взагалі на сервер пушити?
+    // знову дані краще окремо опрацбовувати в класі відмінному від viewControllmer
     private func saveLoginDataToDb(_ user: User) {
         guard let imageURL = user.imageURL else { return }
         let logoImage = try? Data(contentsOf: imageURL)

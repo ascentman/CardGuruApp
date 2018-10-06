@@ -13,6 +13,8 @@ enum Constants {
         static let login = "Login"
         static let main = "Main"
     }
+    // це краще окремим файликом enum і до файлів з логінізацією
+    // виглядає так шо в тебе тут буде 100500 enum різних в яких потім ладу ніхьто не дасть
     enum LoginMethod {
         static let facebook = "Facebook"
         static let google = "Google"

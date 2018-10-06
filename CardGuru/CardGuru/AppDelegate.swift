@@ -9,6 +9,17 @@
 import UIKit
 import Firebase
 
+// репозиторій містить 1 гілку - чому це погано - виправити
+//конвертувати на swift 4.2
+// warnings всі поправити
+// fb додаток ще в dev процесі - треба в public перевести шоб мож було спробувати
+// перший раз якшо запустити то скрін пустий і якшо клікнути з табки на табку то буде якийсь блінк і потім зявляться картки якість - я ж нічого не додавав
+
+// button "+", enter all data, save -> crash - якщо ввести всю інформацію
+//             let imageData = try? Data(contentsOf: URL(string: image)!) - force UNWRAP! - то все повидаляти ці всі force - 100500 раз обговорювали
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

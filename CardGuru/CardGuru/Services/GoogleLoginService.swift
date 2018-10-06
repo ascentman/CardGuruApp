@@ -20,7 +20,8 @@ final class GoogleLoginService: NSObject {
     private var singInCompletion: SignInResponse?
     private var disconnectCompletion: DisconnectResponse?
     private var status: Status?
-    
+
+    // чому тут @discardableResult
     @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if let url = Bundle.main.url(forResource: "GoogleService-Info", withExtension: "plist"),
             let data = try? Data(contentsOf: url) {
@@ -61,7 +62,8 @@ final class GoogleLoginService: NSObject {
     func isLoggedIn() -> Bool {
         return GIDSignIn.sharedInstance().hasAuthInKeychain()
     }
-    
+
+    // цей метод не тільки до гугла ж відноситься - те ж саме в тебе і до fb - а якшо буде 40 соціалок - буде 40 методів? шо буде якшо в цих 40 методів назву ключа змінити - будеш всі методи міняти - це хіба ок? думай про розширення відразу
     func saveLoggedState(current: Bool) {
         UserDefaults.standard.set(current, forKey: "isLoggedIn")
     }
@@ -72,10 +74,11 @@ final class GoogleLoginService: NSObject {
 extension GoogleLoginService: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let _ = error {
-            return
+            return //  self.singInCompletion?(user, error) ніколи не повернеться користувачу і буде вічний лоадер
         }
         guard let authentication = user.authentication else {
-            return
+            return // тут             self.singInCompletion?(user, error) ніколи не повернеться користувачу і буде вічний лоадер
+            // думай про рідкісні випадки
         }
         self.status?()
         FirebaseService.shared.retrieveData(from: Constants.LoginMethod.google, with: authentication.accessToken, completion: {(user, error) -> () in

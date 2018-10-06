@@ -6,6 +6,7 @@
 //  Copyright © 2018 Vova. All rights reserved.
 //
 
+// коментарі нікого не цікавлять - видалити
 /**
  ==========================================================
  FOR DEBUG:
@@ -69,9 +70,10 @@ final class FbLoginService: NSObject {
     
     private func fbSignInCall() {
         let loginManager = FBSDKLoginManager()
+        // краще в константи permissions
         loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: nil) { (result, error) in
             if let _ = error {
-                return
+                return // ті ж самі проблеми як і в гугл
             }
             guard let accessToken = FBSDKAccessToken.current() else {
                 return

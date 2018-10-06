@@ -15,4 +15,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     func setCellImage(from: UIImage) {
         cellImageName.image = from
     }
+
+    // prepareForReuse
+    //awake from nib - налаштування - де це?
 }

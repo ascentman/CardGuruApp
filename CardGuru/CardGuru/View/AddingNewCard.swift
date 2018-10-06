@@ -8,7 +8,8 @@
 
 import UIKit
 
-class AddingNewCard: UIViewController {
+// контролер в папці View? :(
+class AddingNewCard: UIViewController { // final
 
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var barcodeField: UITextField!
@@ -19,15 +20,15 @@ class AddingNewCard: UIViewController {
         customerNumberField.delegate = self
     }
     
-    @IBAction func saveClicked(_ sender: Any) {
+    @IBAction func saveClicked(_ sender: Any) { //private
         let name = nameField.text
         let barcode = barcodeField.text
         let customerNumber = customerNumberField.text
         
         if let name = name {
             let image = generateImage(from: name)
-            let imageData = try? Data(contentsOf: URL(string: image)!)
-            DatabaseService.shared.cardImageRef.putData(imageData!)
+            let imageData = try? Data(contentsOf: URL(string: image)!) //force - crash
+            DatabaseService.shared.cardImageRef.putData(imageData!) //force - crash
             
             let parameters = [ "name" : name,
                                "barcode" : barcode,
@@ -38,12 +39,13 @@ class AddingNewCard: UIViewController {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { //wtf?
         self.view.endEditing(true)
     }
     
     // MARK: - Private
-    
+
+    // extenstion?
     private func generateImage(from name: String) -> String {
         let formattedName = name.replacingOccurrences(of: " ", with: "_")
         let randomColor = UIColor.random
@@ -60,7 +62,8 @@ extension AddingNewCard: UITextFieldDelegate {
     }
 }
 
-extension UIColor {
+extension UIColor { //wtf - чого це в контролері а не в окремому файлі
+    //звикай зразу робити нормально - бо це буде звичка погано коли все погано написано і то ок бо то тимчасово - в тебе тичасове перетворилося на постійне - а обіцяв поправити код коли я дивився в офісі
     static var random: String {
         let r:CGFloat = .random(in: 0...0.9)
         let g:CGFloat = .random(in: 0...0.9)

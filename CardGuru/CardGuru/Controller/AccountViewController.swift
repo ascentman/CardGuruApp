@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Firebase
+import Firebase // оце скрізь - має бути твій сервіс який знає про firebase - шо буде якшо я скажу змінити baas з Firebase на інше - тоді тобі тупо весь код мінти і перебирати - якшо ж буде в сервісі то лише 1 файл і все - переробити
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController { // final
 
     @IBOutlet weak var accountImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,7 +17,9 @@ class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
+        // те ж саме про контроль даних як і в інщих контролерах
         DatabaseService.shared.settingsRef.observe(DataEventType.value) { (snapshot) in
             if snapshot.exists() {
                 let data = snapshot.value as? [String: Any]
@@ -35,8 +37,9 @@ class AccountViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func logoutPressed(_ sender: Any) {
+
+    //mark
+    @IBAction func logoutPressed(_ sender: Any) { //private
         FbLoginService.sharedInstance.signOut()
         GoogleLoginService.sharedInstance.signOut()
         NavigationControllerService.shared.presentCurrentUserUI()

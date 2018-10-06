@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DetailedViewController: UIViewController {
+class DetailedViewController: UIViewController { //final
 
     @IBOutlet private weak var barcodeLabel: UILabel!
     @IBOutlet private weak var customerNumberLabel: UILabel!
     @IBOutlet private weak var nameImageView: UIImageView!
     
-    var barcode: String = ""
+    var barcode: String = "" // access modifiers
     var customerNum: String = ""
     var image: UIImage? = nil {
         didSet {
-            print("sdfsdf")
+            print("sdfsdf") // шо це? -таке лишив як було - 
             self.nameImageView.image = image
 
         }
@@ -27,7 +27,7 @@ class DetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("sdfsdf234234") 
+        print("sdfsdf234234")  // шо це?
         self.barcodeLabel.text = barcode
         self.customerNumberLabel.text = customerNum
     }
