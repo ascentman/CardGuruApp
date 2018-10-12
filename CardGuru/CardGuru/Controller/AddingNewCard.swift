@@ -8,8 +8,7 @@
 
 import UIKit
 
-// контролер в папці View? :(
-class AddingNewCard: UIViewController { // final
+final class AddingNewCard: UIViewController {
 
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var barcodeField: UITextField!
@@ -20,7 +19,7 @@ class AddingNewCard: UIViewController { // final
         customerNumberField.delegate = self
     }
     
-    @IBAction func saveClicked(_ sender: Any) { //private
+    @IBAction private func saveClicked(_ sender: Any) {
         let name = nameField.text
         let barcode = barcodeField.text
         let customerNumber = customerNumberField.text
@@ -59,23 +58,5 @@ extension AddingNewCard: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-}
-
-extension UIColor { //wtf - чого це в контролері а не в окремому файлі
-    //звикай зразу робити нормально - бо це буде звичка погано коли все погано написано і то ок бо то тимчасово - в тебе тичасове перетворилося на постійне - а обіцяв поправити код коли я дивився в офісі
-    static var random: String {
-        let r:CGFloat = .random(in: 0...0.9)
-        let g:CGFloat = .random(in: 0...0.9)
-        let b:CGFloat = .random(in: 0...0.9)
-        
-        var color = String(
-            format: "%02lX%02lX%02lX",
-            lroundf(Float(r * 255)),
-            lroundf(Float(g * 255)),
-            lroundf(Float(b * 255))
-        )
-        color += String(format: "%02lX", lroundf(Float(0.9)))
-        return color
     }
 }

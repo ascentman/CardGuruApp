@@ -25,10 +25,10 @@ final class LoginViewController: UIViewController {
         super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
     }
-
-    // ті ж самі проблеми з доступом - private
     
-    @IBAction func loginWithGoogle(_ sender: Any) {
+    // MARK: - IBActions
+    
+    @IBAction private func loginWithGoogle(_ sender: Any) {
         GoogleLoginService.sharedInstance.signIn(self, onRequestStart: {
             SVProgressHUD.show(withStatus: "Signing in")
         }) { [weak self] (user, error) in
@@ -36,11 +36,8 @@ final class LoginViewController: UIViewController {
             self?.saveLoginDataToDb(user)
         }
     }
-
-    // ті ж самі проблеми з доступом
-
     
-    @IBAction func loginWithFacebook(_ sender: Any) {
+    @IBAction private func loginWithFacebook(_ sender: Any) {
         FbLoginService.sharedInstance.signIn(self, onRequestStart: {
             SVProgressHUD.show(withStatus: "Signing in")
         }) { [weak self] (user, error) in
@@ -60,7 +57,7 @@ final class LoginViewController: UIViewController {
         backGroundLayer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.frame.width * 1.5, height: view.frame.height * 3))
         backGroundLayer.opacity = 0.2
         backGroundLayer.contents = UIImage(named: "cards")?.cgImage
-        backGroundLayer.contentsGravity = kCAGravityResizeAspectFill
+        backGroundLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
         
         let starPath = UIBezierPath()
         starPath.move(to: CGPoint(x: 0, y: backGroundLayer.bounds.height / 2))

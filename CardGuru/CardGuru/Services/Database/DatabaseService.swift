@@ -14,8 +14,8 @@ class DatabaseService { //final
     static let shared = DatabaseService()
     private init() {}
     
-    let userRef = Database.database().reference(withPath: "User")
-    let settingsRef = Database.database().reference(withPath: "User/Settings")
+    let userRef = Database.database().reference(withPath: "Users")
+    let settingsRef = Database.database().reference(withPath: "Users/Settings")
     let cardsRef = Database.database().reference(withPath: "User/Cards")
     let notessRef = Database.database().reference(withPath: "User/Cards/Notes")
     

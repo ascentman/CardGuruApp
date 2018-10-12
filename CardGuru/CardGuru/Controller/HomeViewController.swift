@@ -12,9 +12,9 @@ import Alamofire
 import AlamofireImage
 import SVProgressHUD
 
-class HomeViewController: UIViewController { //final
+final class HomeViewController: UIViewController { //final
     
-    @IBOutlet weak var cardsCollectionView: UICollectionView! //private - короче це скрізь відстунє - виправити
+    @IBOutlet private weak var cardsCollectionView: UICollectionView!
     private var cards: [Card] = []
     
     // MARK: - Lifecycle

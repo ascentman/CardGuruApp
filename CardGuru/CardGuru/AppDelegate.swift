@@ -9,9 +9,6 @@
 import UIKit
 import Firebase
 
-// репозиторій містить 1 гілку - чому це погано - виправити
-//конвертувати на swift 4.2
-// warnings всі поправити
 // fb додаток ще в dev процесі - треба в public перевести шоб мож було спробувати
 // перший раз якшо запустити то скрін пустий і якшо клікнути з табки на табку то буде якийсь блінк і потім зявляться картки якість - я ж нічого не додавав
 
@@ -27,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private var navigationService: NavigationControllerService?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
         GoogleLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)

@@ -20,14 +20,21 @@ final class NavigationControllerService {
     }
     
     func presentCurrentUserUI() {
-        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn") //це краще в extension (робота з UserDefaults)
-        if isLoggedIn {
-            let homeViewController = UIStoryboard(name: Constants.StoryboardName.main, bundle: nil).instantiateInitialViewController()
+        if UserDefaults().isLoggedIn {
+            let homeViewController = UIStoryboard(name: StoryboardName.main, bundle: nil).instantiateInitialViewController()
             self.window?.rootViewController = homeViewController
         } else {
-            let loginViewController = UIStoryboard(name: Constants.StoryboardName.login, bundle: nil).instantiateInitialViewController()
+            let loginViewController = UIStoryboard(name: StoryboardName.login, bundle: nil).instantiateInitialViewController()
             self.window?.rootViewController = loginViewController
         }
         self.window?.makeKeyAndVisible()
+    }
+}
+
+extension UserDefaults {
+    var isLoggedIn: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "isLoggedIn")
+        }
     }
 }

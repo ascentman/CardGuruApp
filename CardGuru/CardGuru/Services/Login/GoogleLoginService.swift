@@ -22,7 +22,7 @@ final class GoogleLoginService: NSObject {
     private var status: Status?
 
     // чому тут @discardableResult
-    @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if let url = Bundle.main.url(forResource: "GoogleService-Info", withExtension: "plist"),
             let data = try? Data(contentsOf: url) {
             let dictionary = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String : AnyObject]
@@ -35,8 +35,8 @@ final class GoogleLoginService: NSObject {
         return true
     }
     
-    func handleURLIn(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+    func handleURLIn(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
     
     // MARK: - UserManagement
@@ -81,7 +81,7 @@ extension GoogleLoginService: GIDSignInDelegate {
             // думай про рідкісні випадки
         }
         self.status?()
-        FirebaseService.shared.retrieveData(from: Constants.LoginMethod.google, with: authentication.accessToken, completion: {(user, error) -> () in
+        FirebaseService.shared.retrieveData(from: LoginMethod.google, with: authentication.accessToken, completion: {(user, error) -> () in
             self.singInCompletion?(user, error)
         })
     }

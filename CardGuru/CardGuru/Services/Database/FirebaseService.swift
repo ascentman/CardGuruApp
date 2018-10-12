@@ -23,9 +23,9 @@ class FirebaseService { // final
         var credentials: AuthCredential? = nil
         
         switch from {
-        case Constants.LoginMethod.facebook:
+        case LoginMethod.facebook:
             credentials = FacebookAuthProvider.credential(withAccessToken: token)
-        case Constants.LoginMethod.google:
+        case LoginMethod.google:
             credentials = GoogleAuthProvider.credential(withIDToken: "", accessToken: token)
         default:
             break

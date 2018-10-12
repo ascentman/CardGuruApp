@@ -6,7 +6,6 @@
 //  Copyright © 2018 Vova. All rights reserved.
 //
 
-// коментарі нікого не цікавлять - видалити
 /**
  ==========================================================
  FOR DEBUG:
@@ -27,13 +26,13 @@ final class FbLoginService: NSObject {
     private var singInCompletion: SignInResponse?
     private var status: (() -> ())?
     
-    @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 
-    func handleURLIn(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+    func handleURLIn(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
     
     // MARK: - UserManagement
@@ -71,7 +70,7 @@ final class FbLoginService: NSObject {
     private func fbSignInCall() {
         let loginManager = FBSDKLoginManager()
         // краще в константи permissions
-        loginManager.logIn(withReadPermissions: ["public_profile", "email"], from: nil) { (result, error) in
+        loginManager.logIn(withReadPermissions: Permissions.fb, from: nil) { (result, error) in
             if let _ = error {
                 return // ті ж самі проблеми як і в гугл
             }
@@ -79,7 +78,7 @@ final class FbLoginService: NSObject {
                 return
             }
             self.status?()
-            FirebaseService.shared.retrieveData(from: Constants.LoginMethod.facebook, with: accessToken.tokenString, completion: {(user, error) -> () in
+            FirebaseService.shared.retrieveData(from: LoginMethod.facebook, with: accessToken.tokenString, completion: {(user, error) -> () in
                 self.singInCompletion?(user, error)
             })
         }

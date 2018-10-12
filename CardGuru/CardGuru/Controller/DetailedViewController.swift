@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailedViewController: UIViewController { //final
+final class DetailedViewController: UIViewController {
 
     @IBOutlet private weak var barcodeLabel: UILabel!
     @IBOutlet private weak var customerNumberLabel: UILabel!
@@ -18,16 +18,15 @@ class DetailedViewController: UIViewController { //final
     var customerNum: String = ""
     var image: UIImage? = nil {
         didSet {
-            print("sdfsdf") // шо це? -таке лишив як було - 
             self.nameImageView.image = image
-
         }
     }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("sdfsdf234234")  // шо це?
         self.barcodeLabel.text = barcode
         self.customerNumberLabel.text = customerNum
     }
