@@ -19,6 +19,8 @@
 		804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */; };
 		804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F42176479D004AC960 /* UserDefaults+LoginData.swift */; };
 		804239F721764EDA004AC960 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F621764EDA004AC960 /* Animations.swift */; };
+		804239FB21773669004AC960 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FA21773669004AC960 /* ScannerViewController.swift */; };
+		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806EEF052170D57D00A6EFE6 /* LoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF042170D57D00A6EFE6 /* LoginMethod.swift */; };
 		807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FD2159147C00ABB0D2 /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+isLoggedIn.swift"; sourceTree = "<group>"; };
 		804239F42176479D004AC960 /* UserDefaults+LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+LoginData.swift"; sourceTree = "<group>"; };
 		804239F621764EDA004AC960 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		804239FA21773669004AC960 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		804239FC217764A8004AC960 /* ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerService.swift; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806EEF042170D57D00A6EFE6 /* LoginMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethod.swift; sourceTree = "<group>"; };
 		807D95FA2159147C00ABB0D2 /* CardGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,7 @@
 			children = (
 				803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */,
 				804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */,
+				804239FA21773669004AC960 /* ScannerViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		806EEF062170D60500A6EFE6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				804239FC217764A8004AC960 /* ScannerService.swift */,
 				806EEF042170D57D00A6EFE6 /* LoginMethod.swift */,
 				809333672159379900C02D11 /* GoogleLoginService.swift */,
 				8097063E2164BEF800185E82 /* FbLoginService.swift */,
@@ -179,10 +185,10 @@
 				803DDCFF21636E9E00BD91BC /* Services */,
 				807D95FD2159147C00ABB0D2 /* AppDelegate.swift */,
 				804239F0217643B2004AC960 /* UIImage+Extension.swift */,
+				804239F621764EDA004AC960 /* Animations.swift */,
 				807D96042159147E00ABB0D2 /* Assets.xcassets */,
 				807D96092159147E00ABB0D2 /* Info.plist */,
 				80053E37215929AD001426C4 /* GoogleService-Info.plist */,
-				804239F621764EDA004AC960 /* Animations.swift */,
 			);
 			path = CardGuru;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */,
 				804239F1217643B2004AC960 /* UIImage+Extension.swift in Sources */,
 				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
+				804239FD217764A8004AC960 /* ScannerService.swift in Sources */,
 				8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
@@ -398,6 +405,7 @@
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
 				806EEF052170D57D00A6EFE6 /* LoginMethod.swift in Sources */,
 				804239F721764EDA004AC960 /* Animations.swift in Sources */,
+				804239FB21773669004AC960 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

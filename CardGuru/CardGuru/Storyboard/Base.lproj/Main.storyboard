@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" title="Cards" id="71n-Ru-S3W">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BGL-H9-nBU">
                             <connections>
-                                <segue destination="Hmg-35-5Rl" kind="show" id="LCQ-1t-Vdu"/>
+                                <segue destination="bT4-O8-MaT" kind="show" identifier="" id="Li7-Vh-1vQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -83,6 +83,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1840.8" y="29.23538230884558"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="41P-BR-bdJ">
+            <objects>
+                <viewController id="bT4-O8-MaT" customClass="ScannerViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="meL-qg-7qS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ajL-Nk-jBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="Hmg-35-5Rl" kind="show" identifier="AddNewCard" id="52i-NE-7zE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5r-nK-euw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2681" y="31"/>
         </scene>
         <!--Adding New Card-->
         <scene sceneID="kmv-dM-c2Z">
@@ -187,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Az-fR-j9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="29.23538230884558"/>
+            <point key="canvasLocation" x="3484" y="29"/>
         </scene>
         <!--Title-->
         <scene sceneID="rVy-Dv-040">
