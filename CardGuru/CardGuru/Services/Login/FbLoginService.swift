@@ -69,7 +69,6 @@ final class FbLoginService: NSObject {
     
     private func fbSignInCall() {
         let loginManager = FBSDKLoginManager()
-        // краще в константи permissions
         loginManager.logIn(withReadPermissions: Permissions.fb, from: nil) { (result, error) in
             if let _ = error {
                 return // ті ж самі проблеми як і в гугл

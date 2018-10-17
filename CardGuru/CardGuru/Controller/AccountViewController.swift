@@ -17,22 +17,14 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        DatabaseService.shared.settingsRef.observe(DataEventType.value) { (snapshot) in
-            if snapshot.exists() {
-                let data = snapshot.value as? [String: Any]
-                self.nameLabel.text = data?["name"] as? String
-                self.emailLabel.text = data?["email"] as? String
-            }
-        }
-        DatabaseService.shared.logoRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
-            if let error = error {
-                print(error)
-            } else {
-                if let data = data {
-                    self.accountImageView.image = UIImage(data: data)
-                }
-            }
+        
+        if let userEmail = UserDefaults().email,
+        let userName = UserDefaults().name,
+            let userLogo = UserDefaults().logo {
+            
+            self.nameLabel.text = userName
+            self.emailLabel.text = userEmail
+            self.accountImageView.image = UIImage(data: userLogo)
         }
     }
 

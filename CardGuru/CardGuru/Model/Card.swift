@@ -11,7 +11,7 @@ import Firebase
 
 final class Card {
     let name: String
-    var image: String?
+//    var image: String?
     let barcode: String
     let customerNumber: String
     
@@ -19,20 +19,20 @@ final class Card {
         self.name = name
         self.barcode = barcode
         self.customerNumber = customerNumber
-        self.image = nil
+//        self.image = nil
     }
     
     init?(snapshot: DataSnapshot) {
         guard let value = snapshot.value as? [String : AnyObject],
         let name = value["name"] as? String,
         let barcode = value["barcode"] as? String,
-        let image = value["image"] as? String,
+//        let image = value["image"] as? String,
         let customerNumber = value["customerNumber"] as? String else {
             return nil
         }
         self.name = name
         self.barcode = barcode
         self.customerNumber = customerNumber
-        self.image = image
+//        self.image = image
     }
 }

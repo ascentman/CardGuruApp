@@ -30,11 +30,3 @@ final class NavigationControllerService {
         self.window?.makeKeyAndVisible()
     }
 }
-
-extension UserDefaults {
-    var isLoggedIn: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "isLoggedIn")
-        }
-    }
-}

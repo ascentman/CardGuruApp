@@ -21,7 +21,6 @@ final class GoogleLoginService: NSObject {
     private var disconnectCompletion: DisconnectResponse?
     private var status: Status?
 
-    // чому тут @discardableResult
     @discardableResult func registerInApplication(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if let url = Bundle.main.url(forResource: "GoogleService-Info", withExtension: "plist"),
             let data = try? Data(contentsOf: url) {
