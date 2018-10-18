@@ -54,6 +54,10 @@ final class AddingNewCard: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func setBarcode(from: String) {
         barcode = from
     }
@@ -63,7 +67,7 @@ final class AddingNewCard: UIViewController {
 
 extension AddingNewCard: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        self.view.endEditing(true)
         return true
     }
 }

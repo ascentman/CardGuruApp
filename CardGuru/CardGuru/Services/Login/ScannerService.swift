@@ -11,6 +11,7 @@ import AVFoundation
 
 protocol ScannerServiceDelegate: class {
     func get(barcode: String)
+    func changeSquareColor()
 }
 
 final class ScannerService: NSObject {
@@ -74,8 +75,8 @@ extension ScannerService: AVCaptureMetadataOutputObjectsDelegate {
             }
             
             if let barcode = metadataObject.stringValue {
-                print(barcode)
                 self.delegate?.get(barcode: barcode)
+                self.delegate?.changeSquareColor()
                 session?.stopRunning()
             }
         } else {

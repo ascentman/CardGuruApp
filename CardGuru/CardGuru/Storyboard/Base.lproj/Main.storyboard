@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5r-nK-euw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2681" y="31"/>
+            <point key="canvasLocation" x="2680.8000000000002" y="30.134932533733135"/>
         </scene>
         <!--Adding New Card-->
         <scene sceneID="kmv-dM-c2Z">
