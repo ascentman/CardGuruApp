@@ -15,21 +15,21 @@ final class Layers {
     private var squareLayer: CALayer?
     private var backLayer: CAShapeLayer?
     
-    func setPhoneLayer(for view: UIView) -> CALayer {
-        let phoneImage = UIImage(named: "iphone")?.cgImage
+    func setPhoneLayer(for view: UIView) {
+        let phoneImage = UIImage(named: "iphone")?.maskWithColor(color: UIColor.orange).cgImage
         self.phoneLayer = CALayer()
         guard let phoneLayer = phoneLayer else {
-            return CALayer()
+            return
         }
         phoneLayer.contents = phoneImage
         phoneLayer.contentsGravity = CALayerContentsGravity.resizeAspect
         phoneLayer.frame = CGRect(x: 0, y: 0, width: 120, height: 120)
         phoneLayer.position = CGPoint(x: view.frame.midX, y: view.frame.minY + 150)
-        return phoneLayer
+        view.layer.addSublayer(phoneLayer)
     }
     
     func setCardLayer(for view: UIView) -> CALayer {
-        let cardImage = UIImage(named: "card")?.cgImage
+        let cardImage = UIImage(named: "card")?.maskWithColor(color: UIColor.orange).cgImage
         cardLayer = CALayer()
         guard let cardLayer = cardLayer else {
             return CALayer()
@@ -42,7 +42,7 @@ final class Layers {
     }
     
     func setCheckLayer(for view: UIView) -> CALayer {
-        let checkImage = UIImage(named: "check")?.cgImage
+        let checkImage = UIImage(named: "check")?.maskWithColor(color: UIColor.orange).cgImage
         checkLayer = CALayer()
         guard let checkLayer = checkLayer else {
             return CALayer()
@@ -54,35 +54,35 @@ final class Layers {
         return checkLayer
     }
     
-    func setSquareLayer(for view: UIView) -> CALayer {
+    func setSquareLayer(for view: UIView) {
         squareLayer = CALayer()
         let barcodeImage = UIImage(named: "barcode")?.image(alpha: 0.3)?.cgImage
         guard let squareLayer = squareLayer else {
-            return CALayer()
+            return
         }
         squareLayer.borderColor = UIColor.orange.cgColor
         squareLayer.contents = barcodeImage
         squareLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
         squareLayer.opacity = 0.5
-        squareLayer.borderWidth = 3
+        squareLayer.borderWidth = 4
         squareLayer.frame = CGRect(x: 0, y: 0, width: 300, height: 180)
         squareLayer.position = view.center
-        return squareLayer
+        view.layer.addSublayer(squareLayer)
     }
     
-    func setBackLayer(for view: UIView) -> CAShapeLayer {
+    func setBackLayer(for view: UIView) {
         let viewPath = UIBezierPath(rect: view.frame)
         let rectPath = UIBezierPath(rect: CGRect(x: view.bounds.width / 2 - 150, y: view.bounds.height / 2 - 90, width: 300, height: 180))
         viewPath.append(rectPath)
         viewPath.usesEvenOddFillRule = true
         backLayer = CAShapeLayer()
         guard let backLayer = backLayer else {
-            return CAShapeLayer()
+            return
         }
         backLayer.path = viewPath.cgPath
         backLayer.fillRule = CAShapeLayerFillRule.evenOdd
         backLayer.fillColor = UIColor.lightGray.cgColor
         backLayer.opacity = 0.6
-        return backLayer
+        view.layer.addSublayer(backLayer)
     }
 }

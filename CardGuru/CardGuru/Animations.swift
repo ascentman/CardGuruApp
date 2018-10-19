@@ -38,9 +38,8 @@ final class Animations {
         }
         cardAnimation.fromValue = CGPoint(x: UIScreen.main.bounds.maxX + 100, y: 150)
         cardAnimation.toValue = CGPoint(x: UIScreen.main.bounds.midX, y: 150)
-        cardAnimation.duration = 3.0
+        cardAnimation.duration = 4.0
         cardAnimation.isRemovedOnCompletion = true
-        cardAnimation.repeatCount = 1//.infinity
         return cardAnimation
     }
     
@@ -51,7 +50,7 @@ final class Animations {
         }
         checkAnimation.fromValue = 0
         checkAnimation.toValue = 1
-        checkAnimation.duration = 2.0
+        checkAnimation.duration = 1.0
         return checkAnimation
     }
 }

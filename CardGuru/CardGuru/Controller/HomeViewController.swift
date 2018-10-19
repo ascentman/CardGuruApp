@@ -25,16 +25,17 @@ final class HomeViewController: UIViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        (segue.destination as? ScannerViewController)?.delegate = self
+        if let destination = segue.destination as? ScannerViewController {
+            destination.delegate = self
+        }
+        
         if let cell = sender as? CardCollectionViewCell,
             let index = cardsCollectionView.indexPath(for: cell) {
             if let destination = segue.destination as? DetailedViewController {
                 destination.setDetailedCard(name: cards[index.row].name,
-                                            barcode: cards[index.row].barcode,
-                                            customerNum: cards[index.row].customerNumber)
+                                            barcode: cards[index.row].barcode)
             }
-        }
-        if let destination = segue.destination as? AddingNewCard {
-            destination.delegate = self
         }
     }
     
@@ -98,11 +99,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-extension HomeViewController: SendCardDelagate {
+extension HomeViewController: ScannerViewControllerDelegate {
     
-    // MARK: - HomeViewController - SendCardDelagate
-    
-    func userDidEnterData(card: Card) {
+    // MARK: - HomeViewController - ScannerViewControllerDelegate
+
+    func userDidEnterCard(_ card: Card) {
         cards.append(card)
         self.cardsCollectionView.reloadData()
     }

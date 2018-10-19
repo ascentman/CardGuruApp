@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SendCardDelagate: class {
+protocol AddingNewCardDelagate: class {
     func userDidEnterData(card: Card)
 }
 
@@ -16,44 +16,41 @@ final class AddingNewCard: UIViewController {
 
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var barcodeField: UITextField!
-    @IBOutlet private weak var customerNumberField: UITextField!
     
      var name: String = ""
      var barcode: String = ""
      var customerNum: String = ""
     
-    weak var delegate: SendCardDelagate?
+    weak var delegate: AddingNewCardDelagate?
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.nameField.text = name
         self.barcodeField.text = barcode
-        self.customerNumberField.text = customerNum
-        customerNumberField.delegate = self
+        setupCustomBackItem()
+        nameField.delegate = self
+
     }
     
     @IBAction private func saveClicked(_ sender: Any) {
         
-        DatabaseService.shared.settingsRef.observeSingleEvent(of: .value) { (snapshot) in
-            guard let dict = snapshot.value as? [String: String],
-                let userEmail = dict["email"] else {
-                    return
-            }
+        let userEmail = UserDefaults().email
+        if let userEmail = userEmail {
             let userRef = userEmail.replacingOccurrences(of: ".", with: "_")
             let name = self.nameField.text
             let barcode = self.barcodeField.text
-            let customerNumber = self.customerNumberField.text
-            
-            self.delegate?.userDidEnterData(card: Card(name!, barcode: barcode!, customerNumber!))
+            self.delegate?.userDidEnterData(card: Card(name!, barcode: barcode!))
             
             let parameters = [ "name" : name,
-                               "barcode" : barcode,
-                               "customerNumber": customerNumber]
+                               "barcode" : barcode]
             DatabaseService.shared.usersRef.child(userRef).child("Cards").childByAutoId().setValue(parameters)
         }
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
+    // needed to hide keyboard when clicked anywhere on a view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -61,11 +58,24 @@ final class AddingNewCard: UIViewController {
     func setBarcode(from: String) {
         barcode = from
     }
+    
+    private func setupCustomBackItem() {
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Cards", style: UIBarButtonItem.Style.plain, target: self, action: #selector(back))
+        self.navigationItem.leftBarButtonItem = newBackButton
+    }
+    
+    @objc private func back() {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 // MARK: - Extensions
 
 extension AddingNewCard: UITextFieldDelegate {
+    
+    // MARK: - UITextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true

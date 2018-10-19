@@ -16,21 +16,8 @@ final class DatabaseService {
     
     let usersRef = Database.database().reference(withPath: "Users")
     let settingsRef = Database.database().reference(withPath: "Settings")
-    //    let cardsRef = Database.database().reference(withPath: "User/Cards")
     let notessRef = Database.database().reference(withPath: "User/Cards/Notes")
-    
     let logoRef = Storage.storage().reference(withPath: "logo.jpg")
     let rootImageRef = Storage.storage().reference()
     
-//    func getUserRef() -> String {
-//        var userRef = ""
-//        DatabaseService.shared.settingsRef.observeSingleEvent(of: .value) { (snapshot) in
-//            guard let dict = snapshot.value as? [String: String],
-//                let userEmail = dict["email"] else {
-//                    return
-//            }
-//            userRef = userEmail.replacingOccurrences(of: ".", with: "_")
-//        }
-//        return userRef
-//    }
 }
