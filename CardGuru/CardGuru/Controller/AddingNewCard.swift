@@ -17,9 +17,8 @@ final class AddingNewCard: UIViewController {
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var barcodeField: UITextField!
     
-     var name: String = ""
-     var barcode: String = ""
-     var customerNum: String = ""
+     private var name: String = ""
+     private var barcode: String = ""
     
     weak var delegate: AddingNewCardDelagate?
     

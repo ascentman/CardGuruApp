@@ -8,12 +8,9 @@ pod 'Firebase/Auth'
 pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Firebase/Database'
-pod 'CodableFirebase'
 pod 'GoogleSignIn'
 pod 'FBSDKLoginKit'
 pod 'FacebookLogin'
 pod 'SVProgressHUD'
-pod 'Alamofire'
-pod 'AlamofireImage', '~> 3.4'
 
 end

@@ -9,10 +9,9 @@
 import Foundation
 import Firebase
 
-class FirebaseService { // final
+final class FirebaseService {
 
     // сервіс є але все розкидано з firebase по проекту - дуже погано!
-    
     
     typealias SignInResponse = (_ user: User, _ error: Error?) -> ()
     

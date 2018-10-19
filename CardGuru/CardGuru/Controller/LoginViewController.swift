@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import Firebase // оце скрізь - має бути твій сервіс який знає про firebase - шо буде якшо я скажу змінити baas з Firebase на інше - тоді тобі тупо весь код мінти і перебирати - якшо ж буде в сервісі то лише 1 файл і все - переробити
 import SVProgressHUD
 
 final class LoginViewController: UIViewController {
@@ -25,8 +25,6 @@ final class LoginViewController: UIViewController {
         super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
     }
-    
-    // MARK: - IBActions
     
     @IBAction private func loginWithGoogle(_ sender: Any) {
         GoogleLoginService.sharedInstance.signIn(self, onRequestStart: {

@@ -25,7 +25,7 @@ final class HomeViewController: UIViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        (segue.destination as? ScannerViewController)?.delegate = self
+        
         if let destination = segue.destination as? ScannerViewController {
             destination.delegate = self
         }
@@ -66,18 +66,13 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    // MARK: - HomeViewController - dataSource & delegate
+    // MARK: - dataSource & delegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // краще шоб cell мав метод який його буде налаштовувавти - у випадк з асинхронним реквестом не дуже підходить так тому краще мати окремо модель на цел - обговорювали
-        // в даному випадку ця логіка для завантадження малюнки дуже погана
-        // 1- вона не робить так як ти хочеш - додай 100 карток і поскроль - побачиш результат
-        // 2 - вона блочить головний потік бо UIImage(withContentsOfUrl: url!) виконується синхронно - нашо Alamofire тоді?
-        
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
             
             let card = cards[indexPath.row].name
@@ -101,7 +96,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension HomeViewController: ScannerViewControllerDelegate {
     
-    // MARK: - HomeViewController - ScannerViewControllerDelegate
+    // MARK: - ScannerViewControllerDelegate
 
     func userDidEnterCard(_ card: Card) {
         cards.append(card)

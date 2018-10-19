@@ -91,7 +91,7 @@ final class ScannerViewController: UIViewController {
 
 extension ScannerViewController: ScannerServiceDelegate {
     
-    // MARK: ScannerServiceDelegate
+    // MARK: - ScannerServiceDelegate
     
     func get(barcode: String) {
         performSegue(withIdentifier: "AddNewCard", sender: barcode)
@@ -103,7 +103,7 @@ extension ScannerViewController: ScannerServiceDelegate {
 
 extension ScannerViewController: CAAnimationDelegate {
     
-    // MARK: CAAnimationDelegate
+    // MARK: - CAAnimationDelegate
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         cardLayer?.removeAnimation(forKey: "position")
@@ -128,6 +128,8 @@ extension ScannerViewController: CAAnimationDelegate {
 
 extension ScannerViewController: AddingNewCardDelagate {
 
+     // MARK: - AddingNewCardDelagate
+    
     func userDidEnterData(card: Card) {
         delegate?.userDidEnterCard(card)
     }

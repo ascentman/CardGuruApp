@@ -19,5 +19,4 @@ final class DatabaseService {
     let notessRef = Database.database().reference(withPath: "User/Cards/Notes")
     let logoRef = Storage.storage().reference(withPath: "logo.jpg")
     let rootImageRef = Storage.storage().reference()
-    
 }

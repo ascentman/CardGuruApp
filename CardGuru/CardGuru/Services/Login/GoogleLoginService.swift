@@ -76,7 +76,7 @@ extension GoogleLoginService: GIDSignInDelegate {
             return //  self.singInCompletion?(user, error) ніколи не повернеться користувачу і буде вічний лоадер
         }
         guard let authentication = user.authentication else {
-            return // тут             self.singInCompletion?(user, error) ніколи не повернеться користувачу і буде вічний лоадер
+            return // тут self.singInCompletion?(user, error) ніколи не повернеться користувачу і буде вічний лоадер
             // думай про рідкісні випадки
         }
         self.status?()
