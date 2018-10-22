@@ -557,7 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
+				DEVELOPMENT_TEAM = Z4LCCQ9WEN;
 				INFOPLIST_FILE = CardGuru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,7 +576,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
+				DEVELOPMENT_TEAM = Z4LCCQ9WEN;
 				INFOPLIST_FILE = CardGuru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
