@@ -14,5 +14,6 @@ enum LoginMethod {
 }
 
 enum Permissions {
-    static let fb = ["public_profile", "email"]
+    static let login = ["public_profile", "email"]
+    static let data = ["fields": "email, name, picture.width(480).height(480)"]
 }

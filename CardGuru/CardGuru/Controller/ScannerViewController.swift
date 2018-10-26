@@ -14,12 +14,12 @@ protocol ScannerViewControllerDelegate: class {
 }
 
 final class ScannerViewController: UIViewController {
-
+    
+    @IBOutlet weak var animatedView: AnimatedView!
     @IBOutlet weak var userView: UIView!
-    private var cardLayer: CALayer?
-    private var squareLayer: CALayer?
-
     weak var delegate: ScannerViewControllerDelegate?
+    
+    // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,100 +29,62 @@ final class ScannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ScannerService.shared.setupSession()
+        ScannerService.shared.setupSession { (cameraGranted) in
+            if !cameraGranted {
+                animatedView.backgroundColor = UIColor.black
+                requestCameraAccess()
+            }
+        }
         if let videoLayer = ScannerService.shared.setupVideoLayer() {
             videoLayer.frame = view.layer.bounds
-            view.layer.addSublayer(videoLayer)
+            view.layer.insertSublayer(videoLayer, at: 0)
         }
-        setupLayers()
         ScannerService.shared.session?.startRunning()
         ScannerService.shared.delegate = self
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.userView.isHidden = false
-            self.userView.tintColor = UIColor.orange
-            self.view.bringSubviewToFront(self.userView)
+            UIView.transition(with: self.userView, duration: 2.0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
+                self.userView.isHidden = false
+            }, completion: nil)
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        animatedView.removeFromSuperview()
     }
-    
+
     @IBAction func enterClicked(_ sender: Any) {
         performSegue(withIdentifier: "AddNewCard", sender: nil)
-    }
-    
-    // Private
-    
-    private func setupLayers() {
-        let layers = Layers()
-        layers.setSquareLayer(for: view)
-        layers.setBackLayer(for: view)
-        layers.setPhoneLayer(for: view)
-        cardLayer = layers.setCardLayer(for: view)
-        if let cardLayer = cardLayer {
-            setCardAnimation(on: cardLayer)
-        }
-    }
-    
-    private func setCardAnimation(on layer: CALayer) {
-        view.layer.addSublayer(layer)
-        let animations = Animations()
-        let cardAnimation = animations.setCardAnimation(on: layer)
-        cardAnimation.delegate = self
-        layer.add(cardAnimation, forKey: "position")
     }
     
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? AddingNewCard)?.delegate = self
         if let destination = segue.destination as? AddingNewCard,
             let barcode = sender as? String {
             destination.setBarcode(from: barcode)
             destination.delegate = self
         }
+        if let destination = segue.destination as? AddingNewCard {
+            destination.delegate = self
+        }
+    }
+    
+    private func requestCameraAccess() {
+        presentAlert(withTitle: "Camera access", message: "The CardGuru needs camera access. Enable it in Settings to continue")
     }
 }
 
 // Extensions
 
 extension ScannerViewController: ScannerServiceDelegate {
-    
+
     // MARK: - ScannerServiceDelegate
-    
+
     func get(barcode: String) {
         performSegue(withIdentifier: "AddNewCard", sender: barcode)
-    }
-    func changeSquareColor() {
-        self.squareLayer?.borderColor = UIColor.green.cgColor
-    }
-}
-
-extension ScannerViewController: CAAnimationDelegate {
-    
-    // MARK: - CAAnimationDelegate
-    
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        cardLayer?.removeAnimation(forKey: "position")
-
-        let layers = Layers()
-        let animations = Animations()
-        let checkLayer = layers.setCheckLayer(for: view)
-        view.layer.addSublayer(checkLayer)
-        let checkAnimation = animations.setCheckAnimation(on: checkLayer)
-        
-        CATransaction.begin()
-        CATransaction.setCompletionBlock {
-            checkLayer.removeFromSuperlayer()
-        }
-        checkLayer.add(checkAnimation, forKey: "opacity")
-        CATransaction.commit()
-        if let cardLayer = cardLayer {
-            setCardAnimation(on: cardLayer)
-        }
     }
 }
 

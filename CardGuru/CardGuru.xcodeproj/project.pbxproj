@@ -17,13 +17,22 @@
 		804239EF21764106004AC960 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */; };
 		804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */; };
 		804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F42176479D004AC960 /* UserDefaults+LoginData.swift */; };
-		804239F721764EDA004AC960 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F621764EDA004AC960 /* Animations.swift */; };
 		804239FB21773669004AC960 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FA21773669004AC960 /* ScannerViewController.swift */; };
 		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
-		804B8AB12178E1E200E8FBC0 /* Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B8AB02178E1E200E8FBC0 /* Layers.swift */; };
-		804B8AB32178F39E00E8FBC0 /* Layers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B8AB22178F39E00E8FBC0 /* Layers+Extensions.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
-		806EEF052170D57D00A6EFE6 /* LoginMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF042170D57D00A6EFE6 /* LoginMethod.swift */; };
+		806EEF052170D57D00A6EFE6 /* LoginMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF042170D57D00A6EFE6 /* LoginMethods.swift */; };
+		8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2E52180597E00C380AD /* AnimatedView.xib */; };
+		8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2E721805B0000C380AD /* AnimatedView.swift */; };
+		8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2EA21805C4100C380AD /* BackLayer.swift */; };
+		8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2EC21805C6500C380AD /* CardLayer.swift */; };
+		8073E2EF21805CB300C380AD /* CheckLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2EE21805CB300C380AD /* CheckLayer.swift */; };
+		8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F021805CDE00C380AD /* PhoneLayer.swift */; };
+		8073E2F421805D2A00C380AD /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F321805D2A00C380AD /* CALayer+Extensions.swift */; };
+		8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */; };
+		8073E2F92180608C00C380AD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F82180608C00C380AD /* Animations.swift */; };
+		8073E2FB2180609E00C380AD /* CAAnimation+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2FA2180609E00C380AD /* CAAnimation+Block.swift */; };
+		8073E2FE2180694800C380AD /* SquareLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2FD2180694800C380AD /* SquareLayer.swift */; };
+		8073E3052181CD1B00C380AD /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */; };
 		807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FD2159147C00ABB0D2 /* AppDelegate.swift */; };
 		807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FF2159147C00ABB0D2 /* LoginViewController.swift */; };
 		807D96032159147C00ABB0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96012159147C00ABB0D2 /* Main.storyboard */; };
@@ -50,13 +59,23 @@
 		804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+isLoggedIn.swift"; sourceTree = "<group>"; };
 		804239F42176479D004AC960 /* UserDefaults+LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+LoginData.swift"; sourceTree = "<group>"; };
-		804239F621764EDA004AC960 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		804239FA21773669004AC960 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		804239FC217764A8004AC960 /* ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerService.swift; sourceTree = "<group>"; };
-		804B8AB02178E1E200E8FBC0 /* Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layers.swift; sourceTree = "<group>"; };
-		804B8AB22178F39E00E8FBC0 /* Layers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layers+Extensions.swift"; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
-		806EEF042170D57D00A6EFE6 /* LoginMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethod.swift; sourceTree = "<group>"; };
+		806EEF042170D57D00A6EFE6 /* LoginMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethods.swift; sourceTree = "<group>"; };
+		8073E2E52180597E00C380AD /* AnimatedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedView.xib; sourceTree = "<group>"; };
+		8073E2E721805B0000C380AD /* AnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedView.swift; sourceTree = "<group>"; };
+		8073E2EA21805C4100C380AD /* BackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLayer.swift; sourceTree = "<group>"; };
+		8073E2EC21805C6500C380AD /* CardLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayer.swift; sourceTree = "<group>"; };
+		8073E2EE21805CB300C380AD /* CheckLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLayer.swift; sourceTree = "<group>"; };
+		8073E2F021805CDE00C380AD /* PhoneLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneLayer.swift; sourceTree = "<group>"; };
+		8073E2F321805D2A00C380AD /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
+		8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		8073E2F82180608C00C380AD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		8073E2FA2180609E00C380AD /* CAAnimation+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAnimation+Block.swift"; sourceTree = "<group>"; };
+		8073E2FD2180694800C380AD /* SquareLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareLayer.swift; sourceTree = "<group>"; };
+		8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		8073E3062183054D00C380AD /* CardGuru.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CardGuru.entitlements; sourceTree = "<group>"; };
 		807D95FA2159147C00ABB0D2 /* CardGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		807D95FD2159147C00ABB0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		807D95FF2159147C00ABB0D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -100,8 +119,9 @@
 		803DDCFD21636E5200BD91BC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */,
-				804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */,
+				8073E2E921805BCA00C380AD /* Animated View */,
+				8073E2FF2180ABAD00C380AD /* Cell */,
+				8073E2F721805DBB00C380AD /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +132,7 @@
 				803DDCF22162662300BD91BC /* AddingNewCard.swift */,
 				8093336D2159488F00C02D11 /* HomeViewController.swift */,
 				804239FA21773669004AC960 /* ScannerViewController.swift */,
+				8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */,
 				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
 				803DDCFA21635B5A00BD91BC /* AccountViewController.swift */,
 				803DDCF82162934500BD91BC /* DetailedViewController.swift */,
@@ -122,6 +143,7 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8073E2B0217DB76200C380AD /* Scanner */,
 				806EEF062170D60500A6EFE6 /* Login */,
 				806EEF0B2170D68D00A6EFE6 /* Database */,
 				806EEF092170D66100A6EFE6 /* Navigation */,
@@ -132,8 +154,7 @@
 		806EEF062170D60500A6EFE6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				804239FC217764A8004AC960 /* ScannerService.swift */,
-				806EEF042170D57D00A6EFE6 /* LoginMethod.swift */,
+				806EEF042170D57D00A6EFE6 /* LoginMethods.swift */,
 				809333672159379900C02D11 /* GoogleLoginService.swift */,
 				8097063E2164BEF800185E82 /* FbLoginService.swift */,
 				804239F42176479D004AC960 /* UserDefaults+LoginData.swift */,
@@ -159,6 +180,64 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		8073E2B0217DB76200C380AD /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				804239FC217764A8004AC960 /* ScannerService.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		8073E2E921805BCA00C380AD /* Animated View */ = {
+			isa = PBXGroup;
+			children = (
+				8073E2E721805B0000C380AD /* AnimatedView.swift */,
+				8073E2E52180597E00C380AD /* AnimatedView.xib */,
+				8073E2F221805CF400C380AD /* Layers */,
+				8073E2FC218060CF00C380AD /* Animation */,
+			);
+			path = "Animated View";
+			sourceTree = "<group>";
+		};
+		8073E2F221805CF400C380AD /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				8073E2EA21805C4100C380AD /* BackLayer.swift */,
+				8073E2FD2180694800C380AD /* SquareLayer.swift */,
+				8073E2EC21805C6500C380AD /* CardLayer.swift */,
+				8073E2EE21805CB300C380AD /* CheckLayer.swift */,
+				8073E2F021805CDE00C380AD /* PhoneLayer.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		8073E2F721805DBB00C380AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8073E2F321805D2A00C380AD /* CALayer+Extensions.swift */,
+				8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8073E2FC218060CF00C380AD /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				8073E2F82180608C00C380AD /* Animations.swift */,
+				8073E2FA2180609E00C380AD /* CAAnimation+Block.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		8073E2FF2180ABAD00C380AD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */,
+				804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		807D95F12159147C00ABB0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -180,12 +259,12 @@
 		807D95FC2159147C00ABB0D2 /* CardGuru */ = {
 			isa = PBXGroup;
 			children = (
+				8073E3062183054D00C380AD /* CardGuru.entitlements */,
 				809706392163BA3100185E82 /* Storyboard */,
 				803DDCFC21636E3500BD91BC /* Model */,
 				803DDCFD21636E5200BD91BC /* View */,
 				803DDCFE21636E6400BD91BC /* Controller */,
 				803DDCFF21636E9E00BD91BC /* Services */,
-				CE5462E4217A6A98005FA82A /* Graphics */,
 				807D96042159147E00ABB0D2 /* Assets.xcassets */,
 				807D96092159147E00ABB0D2 /* Info.plist */,
 				80053E37215929AD001426C4 /* GoogleService-Info.plist */,
@@ -203,16 +282,6 @@
 				806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */,
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		CE5462E4217A6A98005FA82A /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				804239F621764EDA004AC960 /* Animations.swift */,
-				804B8AB02178E1E200E8FBC0 /* Layers.swift */,
-				804B8AB22178F39E00E8FBC0 /* Layers+Extensions.swift */,
-			);
-			path = Graphics;
 			sourceTree = "<group>";
 		};
 		F689632D5D7CCD1B0755A983 /* Pods */ = {
@@ -268,6 +337,11 @@
 					807D95F92159147C00ABB0D2 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -299,6 +373,7 @@
 				807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */,
 				8093336C21593E8C00C02D11 /* Login.storyboard in Resources */,
 				807D96032159147C00ABB0D2 /* Main.storyboard in Resources */,
+				8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,23 +469,31 @@
 				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
 				804239FD217764A8004AC960 /* ScannerService.swift in Sources */,
 				8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */,
-				804B8AB12178E1E200E8FBC0 /* Layers.swift in Sources */,
+				8073E2EF21805CB300C380AD /* CheckLayer.swift in Sources */,
+				8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */,
+				8073E2FE2180694800C380AD /* SquareLayer.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
+				8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */,
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
+				8073E2FB2180609E00C380AD /* CAAnimation+Block.swift in Sources */,
 				807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */,
 				807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */,
+				8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */,
 				809706362163B91500185E82 /* NavigationControllerService.swift in Sources */,
-				804B8AB32178F39E00E8FBC0 /* Layers+Extensions.swift in Sources */,
+				8073E2F92180608C00C380AD /* Animations.swift in Sources */,
+				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
 				804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */,
 				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
 				809333682159379900C02D11 /* GoogleLoginService.swift in Sources */,
 				806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */,
 				804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */,
+				8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */,
 				804239EF21764106004AC960 /* UITableViewCell+Identifier.swift in Sources */,
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
-				806EEF052170D57D00A6EFE6 /* LoginMethod.swift in Sources */,
-				804239F721764EDA004AC960 /* Animations.swift in Sources */,
+				8073E3052181CD1B00C380AD /* UIViewController+Extensions.swift in Sources */,
+				806EEF052170D57D00A6EFE6 /* LoginMethods.swift in Sources */,
+				8073E2F421805D2A00C380AD /* CALayer+Extensions.swift in Sources */,
 				804239FB21773669004AC960 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,8 +639,9 @@
 			baseConfigurationReference = C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_ENTITLEMENTS = CardGuru/CardGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z4LCCQ9WEN;
+				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
 				INFOPLIST_FILE = CardGuru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -575,8 +659,9 @@
 			baseConfigurationReference = 9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_ENTITLEMENTS = CardGuru/CardGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z4LCCQ9WEN;
+				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
 				INFOPLIST_FILE = CardGuru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

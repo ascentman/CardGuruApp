@@ -21,17 +21,35 @@ final class LoginViewController: UIViewController {
         animateBackground()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(resumeAnimation),
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     @IBAction private func loginWithGoogle(_ sender: Any) {
         GoogleLoginService.sharedInstance.signIn(self, onRequestStart: {
             SVProgressHUD.show(withStatus: "Signing in")
         }) { [weak self] (user, error) in
-            self?.performSegue(withIdentifier: "GoToHome", sender: user)
-            self?.saveLoginData(user)
+            if let user = user {
+                self?.saveLoginData(user)
+                self?.performSegue(withIdentifier: "GoToHome", sender: user)
+            }
         }
     }
     
@@ -39,8 +57,10 @@ final class LoginViewController: UIViewController {
         FbLoginService.sharedInstance.signIn(self, onRequestStart: {
             SVProgressHUD.show(withStatus: "Signing in")
         }) { [weak self] (user, error) in
-            self?.performSegue(withIdentifier: "GoToHome", sender: user)
-            self?.saveLoginData(user)
+            if let user = user {
+                self?.saveLoginData(user)
+                self?.performSegue(withIdentifier: "GoToHome", sender: user)
+            }
         }
     }
     
@@ -51,13 +71,17 @@ final class LoginViewController: UIViewController {
             view.layer.removeFromSuperlayer()
         }
         backGroundLayer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.frame.width * 1.5, height: view.frame.height * 3))
-        backGroundLayer.opacity = 0.2
+        backGroundLayer.opacity = 0.25
         backGroundLayer.contents = UIImage(named: "cards")?.cgImage
         backGroundLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-        
-        let animation = Animations()
-        backGroundLayer.add(animation.setStarPathAnimation(on: backGroundLayer), forKey: nil)
-        self.view.layer.insertSublayer(backGroundLayer, at: 0)
+        Animations.shared.starAnimation(on: backGroundLayer) { [weak self] (animation) in
+            self?.backGroundLayer.add(animation, forKey: nil)
+        }
+        view.layer.insertSublayer(backGroundLayer, at: 0)
+    }
+    
+    @objc private func resumeAnimation() {
+        animateBackground()
     }
 
     private func saveLoginData(_ user: User) {

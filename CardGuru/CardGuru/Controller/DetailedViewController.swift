@@ -19,11 +19,21 @@ final class DetailedViewController: UIViewController {
     
     // MARK: - Lifecycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.nameLabel.text = name
         self.barcodeLabel.text = barcode
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     func setDetailedCard(name: String, barcode: String) {

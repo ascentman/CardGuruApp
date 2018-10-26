@@ -14,6 +14,13 @@ final class AccountViewController: UIViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
     
+    // MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +32,11 @@ final class AccountViewController: UIViewController {
             self.emailLabel.text = userEmail
             self.accountImageView.image = UIImage(data: userLogo)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     // MARK: - IBActions

@@ -1,8 +1,8 @@
 //
-//  Layers+Extensions.swift
+//  UIImage+Extensions.swift
 //  CardGuru
 //
-//  Created by Vova on 10/18/18.
+//  Created by Vova on 10/24/18.
 //  Copyright © 2018 Vova. All rights reserved.
 //
 

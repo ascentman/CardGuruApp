@@ -11,7 +11,6 @@ import AVFoundation
 
 protocol ScannerServiceDelegate: class {
     func get(barcode: String)
-    func changeSquareColor()
 }
 
 final class ScannerService: NSObject {
@@ -32,13 +31,19 @@ final class ScannerService: NSObject {
                                    AVMetadataObject.ObjectType.ean13
     ]
     
-    func setupSession() {
+    func setupSession(with completion: ((Bool) -> ())) {
+        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        switch status {
+        case .authorized:
+            completion(true)
+        default:
+            completion(false)
+        }
         session = AVCaptureSession()
         if let captureDevice = AVCaptureDevice.default(for: .video) {
             do {
                 let input = try AVCaptureDeviceInput(device: captureDevice)
                 session?.addInput(input)
-                
                 let captureMetadataOutput = AVCaptureMetadataOutput()
                 session?.addOutput(captureMetadataOutput)
                 captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
@@ -76,7 +81,6 @@ extension ScannerService: AVCaptureMetadataOutputObjectsDelegate {
             
             if let barcode = metadataObject.stringValue {
                 self.delegate?.get(barcode: barcode)
-                self.delegate?.changeSquareColor()
                 session?.stopRunning()
             }
         } else {

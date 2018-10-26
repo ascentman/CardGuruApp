@@ -30,17 +30,16 @@ final class AddingNewCard: UIViewController {
         self.barcodeField.text = barcode
         setupCustomBackItem()
         nameField.delegate = self
-
     }
     
     @IBAction private func saveClicked(_ sender: Any) {
         
         let userEmail = UserDefaults().email
         if let userEmail = userEmail {
-            let userRef = userEmail.replacingOccurrences(of: ".", with: "_")
+            let userRef = userEmail.withReplacedDots()
             let name = self.nameField.text
             let barcode = self.barcodeField.text
-            self.delegate?.userDidEnterData(card: Card(name!, barcode: barcode!))
+            delegate?.userDidEnterData(card: Card(name!, barcode: barcode!))
             
             let parameters = [ "name" : name,
                                "barcode" : barcode]
@@ -49,7 +48,6 @@ final class AddingNewCard: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    // needed to hide keyboard when clicked anywhere on a view
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -80,3 +78,13 @@ extension AddingNewCard: UITextFieldDelegate {
         return true
     }
 }
+
+extension String {
+    
+    // MARK: - Replace dots on underscores
+    
+    func withReplacedDots() -> String {
+        return replacingOccurrences(of: ".", with: "_")
+    }
+}
+

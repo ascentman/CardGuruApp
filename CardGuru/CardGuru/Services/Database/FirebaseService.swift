@@ -36,9 +36,12 @@ final class FirebaseService {
                     let email = authResult?.user.email,
                     let imageURL = authResult?.user.photoURL {
                     let newUser = User(name: name, email: email, imageURL: imageURL)
+                    print("!!!!!!!!!!!!", newUser.name, newUser.email)
                     completion(newUser, error)
                 }
             }
         }
     }
+    
+    
 }

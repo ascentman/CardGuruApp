@@ -9,6 +9,11 @@
 import UIKit
 import Firebase
 
+private enum Constants {
+    static let name = "name"
+    static let barcode = "barcode"
+}
+
 final class Card {
     let name: String
     let barcode: String
@@ -20,8 +25,8 @@ final class Card {
     
     init?(snapshot: DataSnapshot) {
         guard let value = snapshot.value as? [String : AnyObject],
-        let name = value["name"] as? String,
-        let barcode = value["barcode"] as? String else {
+        let name = value[Constants.name] as? String,
+        let barcode = value[Constants.barcode] as? String else {
             return nil
         }
         self.name = name

@@ -11,7 +11,7 @@ import GoogleSignIn
 
 final class GoogleLoginService: NSObject {
     
-    typealias SignInResponse = (_ user: User, _ error: Error?) -> ()
+    typealias SignInResponse = (_ user: User?, _ error: Error?) -> ()
     typealias DisconnectResponse = (_ success: Bool, _ error:Error?) -> ()
     typealias Status = () -> ()
     
@@ -34,7 +34,7 @@ final class GoogleLoginService: NSObject {
         return true
     }
     
-    func handleURLIn(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+    @discardableResult func handleURLIn(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
     }
     
@@ -72,12 +72,13 @@ final class GoogleLoginService: NSObject {
 
 extension GoogleLoginService: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let _ = error {
-            return //  self.singInCompletion?(user, error) ніколи не повернеться користувачу і буде вічний лоадер
+        if let error = error {
+            self.singInCompletion?(nil, error)
+            return
         }
         guard let authentication = user.authentication else {
-            return // тут self.singInCompletion?(user, error) ніколи не повернеться користувачу і буде вічний лоадер
-            // думай про рідкісні випадки
+            self.singInCompletion?(nil, error)
+            return
         }
         self.status?()
         FirebaseService.shared.retrieveData(from: LoginMethod.google, with: authentication.accessToken, completion: {(user, error) -> () in
