@@ -15,7 +15,7 @@ private enum SequeName {
 
 final class LoginViewController: UIViewController {
     
-    private var backGroundLayer = CALayer()
+    private var backGroundLayer: LoginBackgroundLayer?
     
     // MARK: - Lifecycle
     
@@ -26,6 +26,7 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        backGroundLayer = LoginBackgroundLayer(inFrame: view.frame)
         NotificationCenter.default.addObserver(self, selector: #selector(resumeAnimation),
                                                name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
@@ -73,14 +74,11 @@ final class LoginViewController: UIViewController {
         if view.layer.superlayer == backGroundLayer {
             view.layer.removeFromSuperlayer()
         }
-        backGroundLayer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: view.frame.width * 1.5, height: view.frame.height * 3))
-        backGroundLayer.opacity = 0.25
-        backGroundLayer.contents = UIImage(named: "cards")?.cgImage
-        backGroundLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
-        Animations.shared.starAnimation(on: backGroundLayer) { [weak self] (animation) in
-            self?.backGroundLayer.add(animation, forKey: nil)
-        }
-        view.layer.insertSublayer(backGroundLayer, at: 0)
+        backGroundLayer?.animateLayer(with: { (_) in
+            if let backgroundLayer = self.backGroundLayer {
+                self.view.layer.insertSublayer(backgroundLayer, at: 0)
+            }
+        })
     }
     
     @objc private func resumeAnimation() {
