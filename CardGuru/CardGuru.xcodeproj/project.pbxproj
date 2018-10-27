@@ -46,6 +46,7 @@
 		8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063E2164BEF800185E82 /* FbLoginService.swift */; };
 		809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseLoginService.swift */; };
 		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
+		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
+		CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				8073E2EC21805C6500C380AD /* CardLayer.swift */,
 				8073E2EE21805CB300C380AD /* CheckLayer.swift */,
 				8073E2F021805CDE00C380AD /* PhoneLayer.swift */,
+				CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */,
 				804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */,
 				8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */,
+				CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */,
 				804239EF21764106004AC960 /* UITableViewCell+Identifier.swift in Sources */,
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
 				8073E3052181CD1B00C380AD /* UIViewController+Extensions.swift in Sources */,
