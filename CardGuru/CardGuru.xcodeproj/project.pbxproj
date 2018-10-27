@@ -132,10 +132,10 @@
 				803DDCF22162662300BD91BC /* AddingNewCard.swift */,
 				8093336D2159488F00C02D11 /* HomeViewController.swift */,
 				804239FA21773669004AC960 /* ScannerViewController.swift */,
-				8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */,
 				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
 				803DDCFA21635B5A00BD91BC /* AccountViewController.swift */,
 				803DDCF82162934500BD91BC /* DetailedViewController.swift */,
+				CE5462F8218372C7005FA82A /* Extensions */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,8 +193,6 @@
 			children = (
 				8073E2E721805B0000C380AD /* AnimatedView.swift */,
 				8073E2E52180597E00C380AD /* AnimatedView.xib */,
-				8073E2F221805CF400C380AD /* Layers */,
-				8073E2FC218060CF00C380AD /* Animation */,
 			);
 			path = "Animated View";
 			sourceTree = "<group>";
@@ -264,6 +262,7 @@
 				803DDCFC21636E3500BD91BC /* Model */,
 				803DDCFD21636E5200BD91BC /* View */,
 				803DDCFE21636E6400BD91BC /* Controller */,
+				CE5462F9218373DC005FA82A /* Graphics */,
 				803DDCFF21636E9E00BD91BC /* Services */,
 				807D96042159147E00ABB0D2 /* Assets.xcassets */,
 				807D96092159147E00ABB0D2 /* Info.plist */,
@@ -282,6 +281,23 @@
 				806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CE5462F8218372C7005FA82A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE5462F9218373DC005FA82A /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				8073E2F221805CF400C380AD /* Layers */,
+				8073E2FC218060CF00C380AD /* Animation */,
+			);
+			path = Graphics;
 			sourceTree = "<group>";
 		};
 		F689632D5D7CCD1B0755A983 /* Pods */ = {

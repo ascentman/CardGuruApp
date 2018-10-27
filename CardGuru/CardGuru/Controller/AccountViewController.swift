@@ -23,11 +23,9 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let userEmail = UserDefaults().email,
-        let userName = UserDefaults().name,
+            let userName = UserDefaults().name,
             let userLogo = UserDefaults().logo {
-            
             self.nameLabel.text = userName
             self.emailLabel.text = userEmail
             self.accountImageView.image = UIImage(data: userLogo)

@@ -39,4 +39,7 @@ extension UserDefaults {
         UserDefaults.standard.set(name, forKey: "logo")
     }
     
+    func saveLoggedState(current: Bool) {
+        UserDefaults.standard.set(current, forKey: "isLoggedIn")
+    }
 }

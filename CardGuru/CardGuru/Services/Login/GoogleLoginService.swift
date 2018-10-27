@@ -14,7 +14,6 @@ final class GoogleLoginService: NSObject {
     typealias SignInResponse = (_ user: User?, _ error: Error?) -> ()
     typealias DisconnectResponse = (_ success: Bool, _ error:Error?) -> ()
     typealias Status = () -> ()
-    
     static let sharedInstance = GoogleLoginService()
     private var presenter: UIViewController?
     private var singInCompletion: SignInResponse?
@@ -45,7 +44,7 @@ final class GoogleLoginService: NSObject {
         singInCompletion = completion
         presenter = controller
         GIDSignIn.sharedInstance().signIn()
-        saveLoggedState(current: true)
+        UserDefaults().saveLoggedState(current: true)
     }
     
     func disconnectUser(completion: DisconnectResponse? = nil) {
@@ -55,16 +54,11 @@ final class GoogleLoginService: NSObject {
     
     func signOut() {
         GIDSignIn.sharedInstance().signOut()
-        saveLoggedState(current: false)
+        UserDefaults().saveLoggedState(current: false)
     }
     
     func isLoggedIn() -> Bool {
         return GIDSignIn.sharedInstance().hasAuthInKeychain()
-    }
-
-    // цей метод не тільки до гугла ж відноситься - те ж саме в тебе і до fb - а якшо буде 40 соціалок - буде 40 методів? шо буде якшо в цих 40 методів назву ключа змінити - будеш всі методи міняти - це хіба ок? думай про розширення відразу
-    func saveLoggedState(current: Bool) {
-        UserDefaults.standard.set(current, forKey: "isLoggedIn")
     }
 }
 
@@ -91,9 +85,12 @@ extension GoogleLoginService: GIDSignInDelegate {
     }
 }
 
-// MARK: - GIDSignInUIDelegate
+// Extensions
 
 extension GoogleLoginService: GIDSignInUIDelegate {
+    
+    // MARK: - GIDSignInUIDelegate
+    
     func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
         presenter?.present(viewController, animated: true, completion: nil)
     }

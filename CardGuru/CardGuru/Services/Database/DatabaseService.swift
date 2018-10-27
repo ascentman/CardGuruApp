@@ -13,6 +13,5 @@ final class DatabaseService {
     
     static let shared = DatabaseService()
     private init() {}
-    
     let usersRef = Database.database().reference(withPath: "Users")
 }

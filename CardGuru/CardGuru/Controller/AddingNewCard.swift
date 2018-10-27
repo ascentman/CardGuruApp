@@ -16,13 +16,16 @@ final class AddingNewCard: UIViewController {
 
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var barcodeField: UITextField!
-    
-     private var name: String = ""
-     private var barcode: String = ""
-    
+    private var name = String()
+    private var barcode = String()
     weak var delegate: AddingNewCardDelagate?
     
     // MARK: - LifeCycle
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        nameField.becomeFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,26 +33,22 @@ final class AddingNewCard: UIViewController {
         self.barcodeField.text = barcode
         setupCustomBackItem()
         nameField.delegate = self
+        barcodeField.delegate = self
     }
     
     @IBAction private func saveClicked(_ sender: Any) {
-        
         let userEmail = UserDefaults().email
         if let userEmail = userEmail {
             let userRef = userEmail.withReplacedDots()
             let name = self.nameField.text
             let barcode = self.barcodeField.text
             delegate?.userDidEnterData(card: Card(name!, barcode: barcode!))
-            
             let parameters = [ "name" : name,
                                "barcode" : barcode]
+            
             DatabaseService.shared.usersRef.child(userRef).child("Cards").childByAutoId().setValue(parameters)
         }
         navigationController?.popToRootViewController(animated: true)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     func setBarcode(from: String) {
@@ -74,7 +73,8 @@ extension AddingNewCard: UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        nameField.resignFirstResponder()
+        barcodeField.resignFirstResponder()
         return true
     }
 }

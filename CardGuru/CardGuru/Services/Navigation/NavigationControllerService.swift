@@ -12,7 +12,6 @@ final class NavigationControllerService {
     
     static let shared = NavigationControllerService()
     private init() {}
-    
     private weak var window: UIWindow? {
         get {
             return UIApplication.shared.delegate?.window ?? nil

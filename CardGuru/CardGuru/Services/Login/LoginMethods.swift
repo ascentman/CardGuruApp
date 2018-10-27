@@ -9,7 +9,6 @@
 import Foundation
 
 enum LoginMethod {
-    static let facebook = "Facebook"
     static let google = "Google"
 }
 

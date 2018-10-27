@@ -14,8 +14,8 @@ final class DetailedViewController: UIViewController {
     @IBOutlet private weak var nameView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
     
-    private var name: String = ""
-    private var barcode: String = ""
+    private var name = String()
+    private var barcode = String()
     
     // MARK: - Lifecycle
     
@@ -26,7 +26,6 @@ final class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.nameLabel.text = name
         self.barcodeLabel.text = barcode
     }

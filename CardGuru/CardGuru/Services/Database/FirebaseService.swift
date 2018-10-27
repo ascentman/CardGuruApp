@@ -10,20 +10,19 @@ import Foundation
 import Firebase
 
 final class FirebaseService {
-
-    // сервіс є але все розкидано з firebase по проекту - дуже погано!
     
     typealias SignInResponse = (_ user: User, _ error: Error?) -> ()
-    
     static let shared = FirebaseService()
     private init() {}
     
+    func setupFirebase() {
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+    }
+    
     func retrieveData(from: String, with token: String, completion: @escaping SignInResponse) {
         var credentials: AuthCredential? = nil
-        
         switch from {
-        case LoginMethod.facebook:
-            credentials = FacebookAuthProvider.credential(withAccessToken: token)
         case LoginMethod.google:
             credentials = GoogleAuthProvider.credential(withIDToken: "", accessToken: token)
         default:
@@ -36,12 +35,9 @@ final class FirebaseService {
                     let email = authResult?.user.email,
                     let imageURL = authResult?.user.photoURL {
                     let newUser = User(name: name, email: email, imageURL: imageURL)
-                    print("!!!!!!!!!!!!", newUser.name, newUser.email)
                     completion(newUser, error)
                 }
             }
         }
     }
-    
-    
 }

@@ -13,7 +13,6 @@ import FacebookLogin
 final class FbLoginService: NSObject {
     
     typealias SignInResponse = (_ user: User?, _ error: Error?) -> ()
-    
     static let sharedInstance = FbLoginService()
     private var presenter: UIViewController?
     private var singInCompletion: SignInResponse?
@@ -32,7 +31,7 @@ final class FbLoginService: NSObject {
     
     func signOut() {
         fbSignOutCall()
-        saveLoggedState(current: false)
+        UserDefaults().saveLoggedState(current: false)
     }
     
     func signIn(_ controller: UIViewController, onRequestStart: (() -> ())? = nil, completion: SignInResponse?) {
@@ -40,21 +39,19 @@ final class FbLoginService: NSObject {
         status = onRequestStart
         presenter = controller
         fbSignInCall()
-        saveLoggedState(current: true)
+        UserDefaults().saveLoggedState(current: true)
     }
     
     func isLoggedIn() -> Bool {
         return FBSDKAccessToken.current() != nil
     }
     
-    func saveLoggedState(current: Bool) {
-        UserDefaults.standard.set(current, forKey: "isLoggedIn")
-    }
-    
     // MARK: - Facebook Login
     
     private func fbSignOutCall() {
         FBSDKLoginManager().logOut()
+        FBSDKAccessToken.setCurrent(nil)
+        FBSDKProfile.setCurrent(nil)
     }
     
     private func fbSignInCall() {
@@ -65,9 +62,7 @@ final class FbLoginService: NSObject {
                 self.singInCompletion?(nil, error)
                 return
             }
-            let fbLoginResult = result
-            
-            if fbLoginResult?.grantedPermissions != nil {
+            if result?.grantedPermissions != nil {
                 let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: Permissions.data)
                 graphRequest?.start(completionHandler: { (_, user, error) in
                     if let error = error {

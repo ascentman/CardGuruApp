@@ -9,7 +9,6 @@
 import UIKit
 
 protocol ScannerViewControllerDelegate: class {
-
     func userDidEnterCard(_ card: Card)
 }
 
@@ -28,7 +27,6 @@ final class ScannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ScannerService.shared.setupSession { (cameraGranted) in
             if !cameraGranted {
                 animatedView.backgroundColor = UIColor.black

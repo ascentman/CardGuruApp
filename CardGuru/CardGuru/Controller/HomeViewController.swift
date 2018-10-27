@@ -46,7 +46,6 @@ final class HomeViewController: UIViewController {
         
         if let userEmail = UserDefaults().email {
             let userRef = userEmail.replacingOccurrences(of: ".", with: "_")
-            
             DatabaseService.shared.usersRef.child(userRef).child("Cards").observeSingleEvent(of: .value) { (snapshot) in
                 var cards: [Card] = []
                 for child in snapshot.children {
