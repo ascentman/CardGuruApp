@@ -49,7 +49,6 @@ final class ScannerService: NSObject {
                 captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
                 captureMetadataOutput.metadataObjectTypes = supportedTypes
             } catch {
-                print("error")
                 return
             }
         }

@@ -15,6 +15,7 @@ import UIKit
 
 final class DetailedViewController: UIViewController {
 
+    @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var barcodeImageView: UIImageView!
     @IBOutlet private weak var nameView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -33,6 +34,7 @@ final class DetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.nameLabel.text = name
+        self.barcodeLabel.text = barcode
         self.barcodeImageView.image = barcodeGenerated
     }
     
@@ -43,6 +45,7 @@ final class DetailedViewController: UIViewController {
     
     func setDetailedCard(name: String, barcode: String) {
         self.name = name
+        self.barcode = barcode
         self.barcodeGenerated = generateBarcode(from: barcode)
     }
     

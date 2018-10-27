@@ -265,17 +265,25 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eIA-zj-eqa">
-                                <rect key="frame" x="16" y="336" width="343" height="197"/>
+                                <rect key="frame" x="16" y="336" width="343" height="221"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-6P-cJb">
+                                <rect key="frame" x="146.5" y="567" width="82" height="29"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pqH-DK-z3U" firstAttribute="bottom" secondItem="eIA-zj-eqa" secondAttribute="bottom" constant="85" id="2pJ-l3-Uci"/>
                             <constraint firstItem="eIA-zj-eqa" firstAttribute="centerX" secondItem="4je-Vu-chL" secondAttribute="centerX" id="9Cv-kp-BLN"/>
                             <constraint firstItem="PoK-zM-uUu" firstAttribute="leading" secondItem="pqH-DK-z3U" secondAttribute="leading" id="Dq6-fW-zA0"/>
+                            <constraint firstItem="e9P-6P-cJb" firstAttribute="centerX" secondItem="4je-Vu-chL" secondAttribute="centerX" id="I9n-Tv-Fb3"/>
                             <constraint firstItem="pqH-DK-z3U" firstAttribute="trailing" secondItem="eIA-zj-eqa" secondAttribute="trailing" constant="16" id="M0g-sj-PQh"/>
+                            <constraint firstItem="e9P-6P-cJb" firstAttribute="top" secondItem="eIA-zj-eqa" secondAttribute="bottom" constant="10" id="Rg2-nW-Ans"/>
                             <constraint firstItem="eIA-zj-eqa" firstAttribute="leading" secondItem="pqH-DK-z3U" secondAttribute="leading" constant="16" id="acr-T4-oq7"/>
                             <constraint firstItem="PoK-zM-uUu" firstAttribute="trailing" secondItem="pqH-DK-z3U" secondAttribute="trailing" id="g8C-OK-G7k"/>
+                            <constraint firstItem="pqH-DK-z3U" firstAttribute="bottom" secondItem="e9P-6P-cJb" secondAttribute="bottom" constant="22" id="npc-UE-LUG"/>
                             <constraint firstItem="PoK-zM-uUu" firstAttribute="top" secondItem="pqH-DK-z3U" secondAttribute="top" id="pOk-2k-SDf"/>
                             <constraint firstItem="eIA-zj-eqa" firstAttribute="top" secondItem="PoK-zM-uUu" secondAttribute="bottom" constant="72" id="wNR-X6-pRS"/>
                         </constraints>
@@ -286,6 +294,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barcodeImageView" destination="eIA-zj-eqa" id="OwL-bP-vys"/>
+                        <outlet property="barcodeLabel" destination="e9P-6P-cJb" id="8Hn-iQ-Tuj"/>
                         <outlet property="nameLabel" destination="E3d-Hs-Lgo" id="6Xl-rh-35f"/>
                         <outlet property="nameView" destination="PoK-zM-uUu" id="ffi-p9-kRw"/>
                     </connections>

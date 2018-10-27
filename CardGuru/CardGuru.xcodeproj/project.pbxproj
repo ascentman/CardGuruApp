@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80053E37215929AD001426C4 /* GoogleService-Info.plist */; };
-		803DDCEF2162361800BD91BC /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCEE2162361800BD91BC /* DatabaseService.swift */; };
+		803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */; };
 		803DDCF1216255BE00BD91BC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF0216255BE00BD91BC /* Card.swift */; };
 		803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF22162662300BD91BC /* AddingNewCard.swift */; };
 		803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */; };
@@ -44,13 +44,13 @@
 		80933370215A37B900C02D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336F215A37B900C02D11 /* User.swift */; };
 		809706362163B91500185E82 /* NavigationControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706352163B91500185E82 /* NavigationControllerService.swift */; };
 		8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063E2164BEF800185E82 /* FbLoginService.swift */; };
-		809706432164D64700185E82 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseService.swift */; };
+		809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseLoginService.swift */; };
 		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80053E37215929AD001426C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		803DDCEE2162361800BD91BC /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseService.swift; sourceTree = "<group>"; };
 		803DDCF0216255BE00BD91BC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		803DDCF22162662300BD91BC /* AddingNewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCard.swift; sourceTree = "<group>"; };
 		803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		8093336F215A37B900C02D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		809706352163B91500185E82 /* NavigationControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerService.swift; sourceTree = "<group>"; };
 		8097063E2164BEF800185E82 /* FbLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbLoginService.swift; sourceTree = "<group>"; };
-		809706422164D64700185E82 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		809706422164D64700185E82 /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 		806EEF0B2170D68D00A6EFE6 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				809706422164D64700185E82 /* FirebaseService.swift */,
-				803DDCEE2162361800BD91BC /* DatabaseService.swift */,
+				809706422164D64700185E82 /* FirebaseLoginService.swift */,
+				803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -479,8 +479,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803DDCEF2162361800BD91BC /* DatabaseService.swift in Sources */,
-				809706432164D64700185E82 /* FirebaseService.swift in Sources */,
+				803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */,
+				809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */,
 				803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */,
 				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
 				804239FD217764A8004AC960 /* ScannerService.swift in Sources */,

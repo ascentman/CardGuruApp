@@ -1,5 +1,5 @@
 //
-//  FirebaseService.swift
+//  FirebaseLoginService.swift
 //  CardGuru
 //
 //  Created by Vova on 10/3/18.

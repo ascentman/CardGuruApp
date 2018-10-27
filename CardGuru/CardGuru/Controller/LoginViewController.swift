@@ -9,6 +9,10 @@
 import UIKit
 import SVProgressHUD
 
+private enum SequeName {
+    static let goToHome = "GoToHome"
+}
+
 final class LoginViewController: UIViewController {
     
     private var backGroundLayer = CALayer()
@@ -47,7 +51,7 @@ final class LoginViewController: UIViewController {
         }) { [weak self] (user, error) in
             if let user = user {
                 self?.saveLoginData(user)
-                self?.performSegue(withIdentifier: "GoToHome", sender: user)
+                self?.performSegue(withIdentifier: SequeName.goToHome, sender: user)
             }
         }
     }
@@ -58,7 +62,7 @@ final class LoginViewController: UIViewController {
         }) { [weak self] (user, error) in
             if let user = user {
                 self?.saveLoginData(user)
-                self?.performSegue(withIdentifier: "GoToHome", sender: user)
+                self?.performSegue(withIdentifier: SequeName.goToHome, sender: user)
             }
         }
     }

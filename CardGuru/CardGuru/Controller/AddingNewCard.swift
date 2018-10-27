@@ -8,6 +8,11 @@
 
 import UIKit
 
+private enum Parameters {
+    static let name = "name"
+    static let barcode = "barcode"
+}
+
 protocol AddingNewCardDelagate: class {
     func userDidEnterData(card: Card)
 }
@@ -37,16 +42,16 @@ final class AddingNewCard: UIViewController {
     }
     
     @IBAction private func saveClicked(_ sender: Any) {
-        let userEmail = UserDefaults().email
-        if let userEmail = userEmail {
-            let userRef = userEmail.withReplacedDots()
-            let name = self.nameField.text
-            let barcode = self.barcodeField.text
-            delegate?.userDidEnterData(card: Card(name!, barcode: barcode!))
-            let parameters = [ "name" : name,
-                               "barcode" : barcode]
-            DatabaseService.shared.saveCard(for: userRef, with: parameters as [String : Any])
+        let name = self.nameField.text
+        let barcode = self.barcodeField.text
+        guard let nameCard = name,
+            let barcodeCard = barcode else {
+            return
         }
+        delegate?.userDidEnterData(card: Card(nameCard, barcode: barcodeCard))
+        let parameters = [ Parameters.name : name,
+                           Parameters.barcode : barcode]
+        DatabaseService.shared.saveCard(with: parameters as [String : Any])
         navigationController?.popToRootViewController(animated: true)
     }
     

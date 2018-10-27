@@ -8,6 +8,10 @@
 
 import UIKit
 
+private enum SequeName {
+    static let addNewCard = "AddNewCard"
+}
+
 protocol ScannerViewControllerDelegate: class {
     func userDidEnterCard(_ card: Card)
 }
@@ -54,7 +58,7 @@ final class ScannerViewController: UIViewController {
     }
 
     @IBAction func enterClicked(_ sender: Any) {
-        performSegue(withIdentifier: "AddNewCard", sender: nil)
+        performSegue(withIdentifier: SequeName.addNewCard, sender: nil)
     }
     
     // MARK: - Segues
@@ -82,7 +86,7 @@ extension ScannerViewController: ScannerServiceDelegate {
     // MARK: - ScannerServiceDelegate
 
     func get(barcode: String) {
-        performSegue(withIdentifier: "AddNewCard", sender: barcode)
+        performSegue(withIdentifier: SequeName.addNewCard, sender: barcode)
     }
 }
 
