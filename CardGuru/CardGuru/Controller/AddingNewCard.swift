@@ -45,8 +45,7 @@ final class AddingNewCard: UIViewController {
             delegate?.userDidEnterData(card: Card(name!, barcode: barcode!))
             let parameters = [ "name" : name,
                                "barcode" : barcode]
-            
-            DatabaseService.shared.usersRef.child(userRef).child("Cards").childByAutoId().setValue(parameters)
+            DatabaseService.shared.saveCard(for: userRef, with: parameters as [String : Any])
         }
         navigationController?.popToRootViewController(animated: true)
     }

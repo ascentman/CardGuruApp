@@ -6,16 +6,22 @@
 //  Copyright © 2018 Vova. All rights reserved.
 //
 
+private enum Filter {
+    static let name = "CICode128BarcodeGenerator"
+    static let forKey = "inputMessage"
+}
+
 import UIKit
 
 final class DetailedViewController: UIViewController {
 
-    @IBOutlet private weak var barcodeLabel: UILabel!
+    @IBOutlet weak var barcodeImageView: UIImageView!
     @IBOutlet private weak var nameView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
     
     private var name = String()
     private var barcode = String()
+    private var barcodeGenerated: UIImage?
     
     // MARK: - Lifecycle
     
@@ -27,7 +33,7 @@ final class DetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.nameLabel.text = name
-        self.barcodeLabel.text = barcode
+        self.barcodeImageView.image = barcodeGenerated
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,6 +43,18 @@ final class DetailedViewController: UIViewController {
     
     func setDetailedCard(name: String, barcode: String) {
         self.name = name
-        self.barcode = barcode
+        self.barcodeGenerated = generateBarcode(from: barcode)
+    }
+    
+    private func generateBarcode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        if let filter = CIFilter(name: Filter.name) {
+            filter.setValue(data, forKey: Filter.forKey)
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+        return nil
     }
 }

@@ -10,21 +10,7 @@ import UIKit
 
 /*
 
- UX:
-
-після зчитування інформації відкривається скрін з результатом - має бути активним курсор для введення імені - так зручніше
-
- Proj:
-
 Firebase - тиждень пройшов - змін не спостерігається - все ще розкидано по всьому додатку
-
- Code:
- // needed to hide keyboard when clicked anywhere on a view - оце дивно - які є альтернативи? чому використаний метод поганий?
-
- код типу
- DatabaseService.shared.usersRef.child(userRef).child("Cards").childByAutoId().setValue(parameters)
-інкапсулювати в метод сервісу для firebase
-
  */
 
 @UIApplicationMain
