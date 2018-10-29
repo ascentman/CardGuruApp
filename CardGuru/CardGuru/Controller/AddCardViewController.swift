@@ -1,5 +1,5 @@
 //
-//  AddingNewCard.swift
+//  AddCardViewController.swift
 //  CardGuru
 //
 //  Created by Vova on 10/1/18.
@@ -13,17 +13,17 @@ private enum Parameters {
     static let barcode = "barcode"
 }
 
-protocol AddingNewCardDelagate: class {
+protocol AddCardViewControllerDelegate: class {
     func userDidEnterData(card: Card)
 }
 
-final class AddingNewCard: UIViewController {
+final class AddCardViewController: UIViewController {
 
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var barcodeField: UITextField!
     private var name = String()
     private var barcode = String()
-    weak var delegate: AddingNewCardDelagate?
+    weak var delegate: AddCardViewControllerDelegate?
     
     // MARK: - LifeCycle
     
@@ -72,7 +72,7 @@ final class AddingNewCard: UIViewController {
 
 // MARK: - Extensions
 
-extension AddingNewCard: UITextFieldDelegate {
+extension AddCardViewController: UITextFieldDelegate {
     
     // MARK: - UITextFieldDelegate
     

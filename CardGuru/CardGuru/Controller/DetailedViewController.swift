@@ -33,14 +33,23 @@ final class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.nameLabel.text = name
-        self.barcodeLabel.text = barcode
-        self.barcodeImageView.image = barcodeGenerated
+        nameLabel.text = name
+        barcodeLabel.text = barcode
+        barcodeImageView.image = barcodeGenerated
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? EditCardTableViewController {
+            destination.getCardBeforeChangeWith(name: name, barcode: barcode)
+        }
     }
     
     func setDetailedCard(name: String, barcode: String) {

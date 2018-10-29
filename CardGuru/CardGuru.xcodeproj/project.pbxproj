@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80053E37215929AD001426C4 /* GoogleService-Info.plist */; };
+		8023AD74218728480041A04C /* EditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023AD73218728480041A04C /* EditCardViewController.swift */; };
 		803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */; };
 		803DDCF1216255BE00BD91BC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF0216255BE00BD91BC /* Card.swift */; };
-		803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF22162662300BD91BC /* AddingNewCard.swift */; };
+		803DDCF32162662300BD91BC /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF22162662300BD91BC /* AddCardViewController.swift */; };
 		803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */; };
 		803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF82162934500BD91BC /* DetailedViewController.swift */; };
 		803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCFA21635B5A00BD91BC /* AccountViewController.swift */; };
@@ -51,9 +52,10 @@
 
 /* Begin PBXFileReference section */
 		80053E37215929AD001426C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8023AD73218728480041A04C /* EditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardViewController.swift; sourceTree = "<group>"; };
 		803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseService.swift; sourceTree = "<group>"; };
 		803DDCF0216255BE00BD91BC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		803DDCF22162662300BD91BC /* AddingNewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCard.swift; sourceTree = "<group>"; };
+		803DDCF22162662300BD91BC /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
 		803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		803DDCF82162934500BD91BC /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		803DDCFA21635B5A00BD91BC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
@@ -131,12 +133,13 @@
 		803DDCFE21636E6400BD91BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				803DDCF22162662300BD91BC /* AddingNewCard.swift */,
+				803DDCF22162662300BD91BC /* AddCardViewController.swift */,
 				8093336D2159488F00C02D11 /* HomeViewController.swift */,
 				804239FA21773669004AC960 /* ScannerViewController.swift */,
 				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
 				803DDCFA21635B5A00BD91BC /* AccountViewController.swift */,
 				803DDCF82162934500BD91BC /* DetailedViewController.swift */,
+				8023AD73218728480041A04C /* EditCardViewController.swift */,
 				CE5462F8218372C7005FA82A /* Extensions */,
 			);
 			path = Controller;
@@ -484,7 +487,7 @@
 			files = (
 				803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */,
 				809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */,
-				803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */,
+				803DDCF32162662300BD91BC /* AddCardViewController.swift in Sources */,
 				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
 				804239FD217764A8004AC960 /* ScannerService.swift in Sources */,
 				8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */,
@@ -502,6 +505,7 @@
 				8073E2F92180608C00C380AD /* Animations.swift in Sources */,
 				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
+				8023AD74218728480041A04C /* EditCardViewController.swift in Sources */,
 				804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */,
 				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
 				809333682159379900C02D11 /* GoogleLoginService.swift in Sources */,
