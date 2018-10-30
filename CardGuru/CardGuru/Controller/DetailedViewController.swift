@@ -6,12 +6,20 @@
 //  Copyright © 2018 Vova. All rights reserved.
 //
 
+import UIKit
+
 private enum Filter {
     static let name = "CICode128BarcodeGenerator"
     static let forKey = "inputMessage"
 }
 
-import UIKit
+protocol DetailedViewControllerDeletionDelegate: class {
+    func userDidRemoveData()
+}
+
+protocol DetailedViewControllerUpdatingDelegate: class {
+    func userDidUpdateData(with: Card)
+}
 
 final class DetailedViewController: UIViewController {
 
@@ -20,6 +28,9 @@ final class DetailedViewController: UIViewController {
     @IBOutlet private weak var nameView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
     
+    weak var deleteDelegate: DetailedViewControllerDeletionDelegate?
+    weak var updateDelegate: DetailedViewControllerUpdatingDelegate?
+    private var uid = String()
     private var name = String()
     private var barcode = String()
     private var barcodeGenerated: UIImage?
@@ -43,16 +54,24 @@ final class DetailedViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    @IBAction func shareClicked(_ sender: Any) {
+        let shareViewController = UIActivityViewController(activityItems: ["I would like to share my card with you: \(name), \(barcode)"], applicationActivities: nil)
+        self.present(shareViewController, animated: true, completion: nil)
+    }
+    
+    
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let destination = segue.destination as? EditCardTableViewController {
-            destination.getCardBeforeChangeWith(name: name, barcode: barcode)
+            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode)
+            destination.updateDelegate = self
+            destination.deleteDelegate = self
         }
     }
     
-    func setDetailedCard(name: String, barcode: String) {
+    func setDetailedCard(uid: String, name: String, barcode: String) {
+        self.uid = uid
         self.name = name
         self.barcode = barcode
         self.barcodeGenerated = generateBarcode(from: barcode)
@@ -68,5 +87,25 @@ final class DetailedViewController: UIViewController {
             }
         }
         return nil
+    }
+}
+
+extension DetailedViewController: EditCardTableViewControllerUpdatingDelegate {
+    
+    // MARK: - EditCardTableViewControllerDelegate
+    
+    func userDidUpdateData(with: Card) {
+        nameLabel.text = with.name
+        barcodeLabel.text = with.barcode
+        updateDelegate?.userDidUpdateData(with: Card(uid: uid, name: with.name, barcode: with.barcode))
+    }
+}
+
+extension DetailedViewController: EditCardTableViewControllerDeletionDelegate {
+
+     // MARK: - EditCardTableViewControllerDelegate
+
+    func userDidRemoveData() {
+        deleteDelegate?.userDidRemoveData()
     }
 }

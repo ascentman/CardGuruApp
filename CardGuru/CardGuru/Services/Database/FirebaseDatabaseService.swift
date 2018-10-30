@@ -20,9 +20,12 @@ final class DatabaseService {
     private init() {}
     let usersRef = Database.database().reference(withPath: Paths.users)
     
-    func saveCard(with parameters: [String : Any]) {
+    func saveCard(with parameters: [String : Any]) -> String {
         let userRef = getCurrentUserRef()
-        usersRef.child(userRef).child(Paths.cards).childByAutoId().setValue(parameters)
+        let cardRef = usersRef.child(userRef).child(Paths.cards).childByAutoId()
+        cardRef.setValue(parameters)
+        let cardUID = URL(fileURLWithPath: cardRef.url).lastPathComponent
+        return cardUID
     }
     
     func getCurrentUserRef() -> String {
@@ -44,5 +47,16 @@ final class DatabaseService {
             }
             completion(cards)
         }
+    }
+    
+    func removeDataFromDb(withUID: String) {
+        let userRef = getCurrentUserRef()
+        usersRef.child(userRef).child(Paths.cards).child(withUID).removeValue()
+    }
+    
+    func updateDataInDb(forCard: Card) {
+        let userRef = getCurrentUserRef()
+        usersRef.child(userRef).child(Paths.cards).child(forCard.uid).updateChildValues(["name" : forCard.name,
+                                                                                        "barcode" : forCard.barcode])
     }
 }

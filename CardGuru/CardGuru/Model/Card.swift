@@ -15,20 +15,23 @@ private enum Constants {
 }
 
 final class Card {
-    let name: String
-    let barcode: String
+    let uid: String
+    var name: String
+    var barcode: String
     
-    init(_ name: String, barcode: String) {
+    init(uid: String, name: String, barcode: String) {
+        self.uid = uid
         self.name = name
         self.barcode = barcode
     }
     
     init?(snapshot: DataSnapshot) {
         guard let value = snapshot.value as? [String : AnyObject],
-        let name = value[Constants.name] as? String,
-        let barcode = value[Constants.barcode] as? String else {
+            let name = value[Constants.name] as? String,
+            let barcode = value[Constants.barcode] as? String else {
             return nil
         }
+        self.uid = snapshot.key
         self.name = name
         self.barcode = barcode
     }

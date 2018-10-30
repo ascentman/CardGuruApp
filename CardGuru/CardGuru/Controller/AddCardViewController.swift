@@ -48,10 +48,11 @@ final class AddCardViewController: UIViewController {
             let barcodeCard = barcode else {
             return
         }
-        delegate?.userDidEnterData(card: Card(nameCard, barcode: barcodeCard))
         let parameters = [ Parameters.name : name,
                            Parameters.barcode : barcode]
-        DatabaseService.shared.saveCard(with: parameters as [String : Any])
+        let cardId = DatabaseService.shared.saveCard(with: parameters as [String : Any])
+        print("UID saveClicked", cardId)
+        delegate?.userDidEnterData(card: Card(uid: cardId, name: nameCard, barcode: barcodeCard))
         navigationController?.popToRootViewController(animated: true)
     }
     

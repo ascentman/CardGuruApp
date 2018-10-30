@@ -34,8 +34,11 @@ final class HomeViewController: UIViewController {
         if let cell = sender as? CardCollectionViewCell,
             let index = cardsCollectionView.indexPath(for: cell) {
             if let destination = segue.destination as? DetailedViewController {
-                destination.setDetailedCard(name: cards[index.row].name,
+                destination.setDetailedCard(uid: cards[index.row].uid,
+                                            name: cards[index.row].name,
                                             barcode: cards[index.row].barcode)
+                destination.updateDelegate = self
+                destination.deleteDelegate = self
             }
         }
     }
@@ -80,3 +83,31 @@ extension HomeViewController: ScannerViewControllerDelegate {
         self.cardsCollectionView.reloadData()
     }
 }
+
+extension HomeViewController: DetailedViewControllerDeletionDelegate {
+    
+    // MARK: - DetailedViewControllerDeletionDelegate
+
+    func userDidRemoveData() {
+        DatabaseService.shared.loadDataFromDb { (cards) in
+            self.cards = cards
+            self.cardsCollectionView.reloadData()
+        }
+    }
+}
+
+extension HomeViewController: DetailedViewControllerUpdatingDelegate {
+    
+    // MARK: - DetailedViewControllerUpdatingDelegate
+
+    func userDidUpdateData(with: Card) {
+        for el in cards {
+            if el.uid == with.uid {
+                el.name = with.name
+                el.barcode = with.barcode
+            }
+        }
+        self.cardsCollectionView.reloadData()
+    }
+}
+
