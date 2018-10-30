@@ -62,6 +62,7 @@ final class FbLoginService: NSObject {
                 self.singInCompletion?(nil, error)
                 return
             }
+            self.status?()
             if result?.grantedPermissions != nil {
                 let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: Permissions.data)
                 graphRequest?.start(completionHandler: { (_, user, error) in
@@ -69,7 +70,6 @@ final class FbLoginService: NSObject {
                         self.singInCompletion?(nil, error)
                         return
                     }
-                    self.status?()
                     if let dict = user as? [String : Any],
                         let name = dict["name"] as? String,
                         let email = dict["email"] as? String,
