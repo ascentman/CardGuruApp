@@ -47,9 +47,9 @@
 		8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063E2164BEF800185E82 /* FbLoginService.swift */; };
 		809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseLoginService.swift */; };
 		80CAB9F72189DE86003E9183 /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CAB9F62189DE86003E9183 /* ImageGenerator.swift */; };
-		80CAB9FB2189E01E003E9183 /* 482.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80CAB9FA2189DF4D003E9183 /* 482.ttf */; };
 		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
 		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
+		CE4DD4E2218B569E009C3FE2 /* Mauryssel_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE4DD4E0218B5469009C3FE2 /* Mauryssel_Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,11 +96,11 @@
 		8097063E2164BEF800185E82 /* FbLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbLoginService.swift; sourceTree = "<group>"; };
 		809706422164D64700185E82 /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
 		80CAB9F62189DE86003E9183 /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
-		80CAB9FA2189DF4D003E9183 /* 482.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = 482.ttf; path = ../../../../Downloads/482.ttf; sourceTree = "<group>"; };
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
 		CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundLayer.swift; sourceTree = "<group>"; };
+		CE4DD4E0218B5469009C3FE2 /* Mauryssel_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mauryssel_Bold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +306,7 @@
 		80CAB9F92189DF3E003E9183 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				80CAB9FA2189DF4D003E9183 /* 482.ttf */,
+				CE4DD4E0218B5469009C3FE2 /* Mauryssel_Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80CAB9FB2189E01E003E9183 /* 482.ttf in Resources */,
+				CE4DD4E2218B569E009C3FE2 /* Mauryssel_Bold.ttf in Resources */,
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
 				80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */,
 				807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */,

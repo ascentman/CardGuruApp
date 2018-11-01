@@ -55,6 +55,11 @@ final class DatabaseService {
         usersRef.child(userRef).child(Paths.cards).child(withUID).removeValue()
     }
     
+    func removeImageFromStorage(withURL: String) {
+        let imageRef = Storage.storage().reference(forURL: withURL)
+        imageRef.delete()
+    }
+    
     func updateDataInDb(forCard: Card) {
         let userRef = getCurrentUserRef()
         usersRef.child(userRef).child(Paths.cards).child(forCard.uid).updateChildValues(["name" : forCard.name,

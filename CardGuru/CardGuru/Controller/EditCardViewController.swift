@@ -30,7 +30,8 @@ final class EditCardTableViewController: UITableViewController {
     private var name = String()
     private var uid = String()
     private var barcode = String()
-    private let tableHeaderHeight: CGFloat = 70.0
+    private var imageURL = String()
+    private let tableHeaderHeight: CGFloat = 160.0
     
     // MARK: - Lifecycle
     
@@ -72,11 +73,13 @@ final class EditCardTableViewController: UITableViewController {
         if let name = nameTextField.text,
             let barcode = barcodeTextField.text,
             let newImage = ImageGenerator.shared.textToImage(drawText: name, inImage: UIImage(named: "shopping") ?? UIImage()) {
-            let updatedCard = Card(uid: uid, name: name, barcode: barcode, image: newImage, imageURL: String())
+            let updatedCard = Card(uid: uid, name: name, barcode: barcode, image: newImage, imageURL: "http://")
             updateDelegate?.userDidUpdateData(with: updatedCard)
             DatabaseService.shared.saveCardImage(image: newImage) { (url, error) in
                 if let url = url {
-                    let updatedCard = Card(uid: self.uid, name: name, barcode: barcode, imageURL: url)
+                    DatabaseService.shared.removeImageFromStorage(withURL: self.imageURL)
+                    self.imageURL = url
+                    let updatedCard = Card(uid: self.uid, name: name, barcode: barcode, imageURL: self.imageURL)
                     DatabaseService.shared.updateDataInDb(forCard: updatedCard)
                 }
             }
@@ -85,16 +88,18 @@ final class EditCardTableViewController: UITableViewController {
     }
     
     @IBAction func deleteCard(_ sender: Any) {
+        DatabaseService.shared.removeImageFromStorage(withURL: imageURL)
         DatabaseService.shared.removeDataFromDb(withUID: uid)
         deleteDelegate?.userDidRemoveData()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func getCardBeforeChangeWith(uid: String, name: String, barcode: String, image: UIImage) {
+    func getCardBeforeChangeWith(uid: String, name: String, barcode: String, image: UIImage, imageURL: String) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
         self.image = image
+        self.imageURL = imageURL
     }
     
     // MARK: - Private

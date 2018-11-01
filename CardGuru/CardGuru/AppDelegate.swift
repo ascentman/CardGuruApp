@@ -8,11 +8,6 @@
 
 import UIKit
 
-/**
- питання, що залишилися:
- - анімація картки, коли повертаюся з сетінгів - ніяк не вдається зробити рух картки "нормальним"
- */
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

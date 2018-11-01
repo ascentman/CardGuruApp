@@ -32,6 +32,7 @@ final class DetailedViewController: UIViewController {
     private var uid = String()
     private var name = String()
     private var image = UIImage()
+    private var imageURL = String()
     private var barcode = String()
     private var barcodeGenerated: UIImage?
     
@@ -64,18 +65,19 @@ final class DetailedViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EditCardTableViewController {
-            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode, image: image)
+            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode, image: image, imageURL: imageURL)
             destination.updateDelegate = self
             destination.deleteDelegate = self
         }
     }
     
-    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage) {
+    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage, imageURL: String) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
         self.barcodeGenerated = generateBarcode(from: barcode)
         self.image = image
+        self.imageURL = imageURL
     }
     
     private func generateBarcode(from string: String) -> UIImage? {

@@ -39,7 +39,8 @@ final class HomeViewController: UIViewController {
                 destination.setDetailedCard(uid: cards[index.row].uid,
                                             name: cards[index.row].name,
                                             barcode: cards[index.row].barcode,
-                                            image: cards[index.row].image!)
+                                            image: cards[index.row].image!,
+                                            imageURL: cards[index.row].imageURL)
                 destination.updateDelegate = self
                 destination.deleteDelegate = self
             }
@@ -119,10 +120,8 @@ extension HomeViewController: DetailedViewControllerUpdatingDelegate {
                 el.name = with.name
                 el.barcode = with.barcode
                 el.image = with.image
-                el.imageURL = with.imageURL
             }
         }
         self.cardsCollectionView.reloadData()
     }
 }
-

@@ -17,7 +17,7 @@ final class FirebaseService {
     
     func setupFirebase() {
         FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+//        Database.database().isPersistenceEnabled = true
     }
     
     func retrieveData(from: String, with token: String, completion: @escaping SignInResponse) {

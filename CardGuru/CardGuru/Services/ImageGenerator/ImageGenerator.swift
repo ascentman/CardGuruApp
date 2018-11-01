@@ -15,27 +15,27 @@ final class ImageGenerator {
     
     func textToImage(drawText text: String, inImage image: UIImage) -> UIImage? {
         UIGraphicsBeginImageContext(image.size)
-        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height), blendMode: .normal, alpha: 0.5)
-        var fontSize: CGFloat = 150
+        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height), blendMode: .normal, alpha: 0.4)
+        var fontSize: CGFloat = 140
         switch text.count {
         case 1...3:
-            fontSize = 300
+            fontSize = 220
         case 4...5:
-            fontSize = 250
+            fontSize = 160
         case 6...7:
-            fontSize = 180
+            fontSize = 120
         case 8...9:
-            fontSize = 140
-        case 10...11:
             fontSize = 100
+        case 10...11:
+            fontSize = 80
         default:
-            fontSize = 60
+            fontSize = 40
         }
         
-        let font = UIFont(name: "AMachinaOrtoSht", size: fontSize)!
+        let font = UIFont(name: "Mauryssel-Bold", size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)
         let textStyle = NSMutableParagraphStyle()
         textStyle.alignment=NSTextAlignment.center
-        let textColor = UIColor.blue
+        let textColor = UIColor.purple
         let attributes = [NSAttributedString.Key.font : font,
                           NSAttributedString.Key.paragraphStyle : textStyle,
                           NSAttributedString.Key.foregroundColor:textColor]
