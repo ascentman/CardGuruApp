@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import Alamofire
+import AlamofireImage
 
 final class HomeViewController: UIViewController {
     
@@ -36,7 +38,8 @@ final class HomeViewController: UIViewController {
             if let destination = segue.destination as? DetailedViewController {
                 destination.setDetailedCard(uid: cards[index.row].uid,
                                             name: cards[index.row].name,
-                                            barcode: cards[index.row].barcode)
+                                            barcode: cards[index.row].barcode,
+                                            image: cards[index.row].image!)
                 destination.updateDelegate = self
                 destination.deleteDelegate = self
             }
@@ -56,8 +59,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
-            let card = cards[indexPath.row].name
-            cell.setCellName(from: card)
+            
+            if let image = cards[indexPath.row].image {
+                cell.setCellImage(from: image)
+            } else {
+                let imageURL = cards[indexPath.row].imageURL
+                Alamofire.request(imageURL).responseImage { response in
+                    if let image = response.result.value {
+                        cell.setCellImage(from: image)
+                        self.cards[indexPath.row].image = image
+                    }
+                }
+            }
             return cell
         }
         return UICollectionViewCell()
@@ -105,6 +118,8 @@ extension HomeViewController: DetailedViewControllerUpdatingDelegate {
             if el.uid == with.uid {
                 el.name = with.name
                 el.barcode = with.barcode
+                el.image = with.image
+                el.imageURL = with.imageURL
             }
         }
         self.cardsCollectionView.reloadData()

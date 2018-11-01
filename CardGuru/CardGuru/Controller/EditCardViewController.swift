@@ -19,14 +19,16 @@ protocol EditCardTableViewControllerUpdatingDelegate: class {
 final class EditCardTableViewController: UITableViewController {
 
     @IBOutlet weak var nameView: UIView!
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var changeImageView: UIImageView!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var barcodeTextField: UITextField!
     
     weak var deleteDelegate: EditCardTableViewControllerDeletionDelegate?
     weak var updateDelegate: EditCardTableViewControllerUpdatingDelegate?
-    private var uid = String()
+    private var image = UIImage()
     private var name = String()
+    private var uid = String()
     private var barcode = String()
     private let tableHeaderHeight: CGFloat = 70.0
     
@@ -44,13 +46,13 @@ final class EditCardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = name
+        headerImageView.image = image
+        changeImageView.image = image
         nameTextField.text = name
         barcodeTextField.text = barcode
         nameTextField.delegate = self
         barcodeTextField.delegate = self
         createStickyView()
-        
         tableView.tableFooterView = UIView()
     }
     
@@ -68,10 +70,16 @@ final class EditCardTableViewController: UITableViewController {
     }
     @IBAction func saveCard(_ sender: Any) {
         if let name = nameTextField.text,
-            let barcode = barcodeTextField.text {
-            let updatedCard = Card(uid: uid, name: name, barcode: barcode)
+            let barcode = barcodeTextField.text,
+            let newImage = ImageGenerator.shared.textToImage(drawText: name, inImage: UIImage(named: "shopping") ?? UIImage()) {
+            let updatedCard = Card(uid: uid, name: name, barcode: barcode, image: newImage, imageURL: String())
             updateDelegate?.userDidUpdateData(with: updatedCard)
-            DatabaseService.shared.updateDataInDb(forCard: updatedCard)
+            DatabaseService.shared.saveCardImage(image: newImage) { (url, error) in
+                if let url = url {
+                    let updatedCard = Card(uid: self.uid, name: name, barcode: barcode, imageURL: url)
+                    DatabaseService.shared.updateDataInDb(forCard: updatedCard)
+                }
+            }
         }
         navigationController?.popViewController(animated: true)
     }
@@ -82,10 +90,11 @@ final class EditCardTableViewController: UITableViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func getCardBeforeChangeWith(uid: String, name: String, barcode: String) {
+    func getCardBeforeChangeWith(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
+        self.image = image
     }
     
     // MARK: - Private

@@ -25,13 +25,13 @@ final class DetailedViewController: UIViewController {
 
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var barcodeImageView: UIImageView!
-    @IBOutlet private weak var nameView: UIView!
-    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet weak var nameImageView: UIImageView!
     
     weak var deleteDelegate: DetailedViewControllerDeletionDelegate?
     weak var updateDelegate: DetailedViewControllerUpdatingDelegate?
     private var uid = String()
     private var name = String()
+    private var image = UIImage()
     private var barcode = String()
     private var barcodeGenerated: UIImage?
     
@@ -44,7 +44,7 @@ final class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = name
+        nameImageView.image = image
         barcodeLabel.text = barcode
         barcodeImageView.image = barcodeGenerated
     }
@@ -64,17 +64,18 @@ final class DetailedViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EditCardTableViewController {
-            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode)
+            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode, image: image)
             destination.updateDelegate = self
             destination.deleteDelegate = self
         }
     }
     
-    func setDetailedCard(uid: String, name: String, barcode: String) {
+    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
         self.barcodeGenerated = generateBarcode(from: barcode)
+        self.image = image
     }
     
     private func generateBarcode(from string: String) -> UIImage? {
@@ -95,9 +96,9 @@ extension DetailedViewController: EditCardTableViewControllerUpdatingDelegate {
     // MARK: - EditCardTableViewControllerDelegate
     
     func userDidUpdateData(with: Card) {
-        nameLabel.text = with.name
+        nameImageView.image = with.image
         barcodeLabel.text = with.barcode
-        updateDelegate?.userDidUpdateData(with: Card(uid: uid, name: with.name, barcode: with.barcode))
+        updateDelegate?.userDidUpdateData(with: Card(uid: with.uid, name: with.name, barcode: with.barcode, image: with.image!, imageURL: with.imageURL))
     }
 }
 

@@ -29,3 +29,28 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
+// MARK - move to separate file
+
+extension UIImageView {
+    public func imageFromURL(urlString: String) {
+        
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        activityIndicator.frame = CGRect.init(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
+        activityIndicator.startAnimating()
+        if self.image == nil{
+            self.addSubview(activityIndicator)
+        }
+        
+        URLSession.shared.dataTask(with: URL(string: urlString)!, completionHandler: { (data, response, error) -> Void in
+            if error != nil {
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                activityIndicator.removeFromSuperview()
+                self.image = image
+            })
+        }).resume()
+    }
+}

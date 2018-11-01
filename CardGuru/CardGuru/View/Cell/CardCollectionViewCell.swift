@@ -10,14 +10,14 @@ import UIKit
 
 final class CardCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var cellName: UILabel!
+    @IBOutlet weak var cardImageName: UIImageView!
     
-    func setCellName(from: String) {
-        cellName.text = from
+    func setCellImage(from: UIImage) {
+        cardImageName.image = from
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        cellName.text = nil
+        cardImageName.image = nil
     }
 }

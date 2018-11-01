@@ -11,6 +11,7 @@ import UIKit
 private enum Parameters {
     static let name = "name"
     static let barcode = "barcode"
+    static let imageURL = "imageURL"
 }
 
 protocol AddCardViewControllerDelegate: class {
@@ -23,6 +24,8 @@ final class AddCardViewController: UIViewController {
     @IBOutlet private weak var barcodeField: UITextField!
     private var name = String()
     private var barcode = String()
+    private var imageURL = String()
+    private var cardImage = UIImage()
     weak var delegate: AddCardViewControllerDelegate?
     
     // MARK: - LifeCycle
@@ -48,12 +51,21 @@ final class AddCardViewController: UIViewController {
             let barcodeCard = barcode else {
             return
         }
-        let parameters = [ Parameters.name : name,
-                           Parameters.barcode : barcode]
-        let cardId = DatabaseService.shared.saveCard(with: parameters as [String : Any])
-        print("UID saveClicked", cardId)
-        delegate?.userDidEnterData(card: Card(uid: cardId, name: nameCard, barcode: barcodeCard))
-        navigationController?.popToRootViewController(animated: true)
+        
+        if let newImage = ImageGenerator.shared.textToImage(drawText: name ?? "", inImage: UIImage(named: "shopping") ?? UIImage()) {
+            cardImage = newImage
+            DatabaseService.shared.saveCardImage(image: newImage) { (url, error) in
+                if let url = url {
+                    self.imageURL = url
+                    let parameters = [ Parameters.name : name,
+                                       Parameters.barcode : barcode,
+                                       Parameters.imageURL : self.imageURL]
+                    let _ = DatabaseService.shared.saveCard(with: parameters as [String : Any])
+                }
+            }
+            delegate?.userDidEnterData(card: Card(name: nameCard, barcode: barcodeCard, image: cardImage))
+            navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     func setBarcode(from: String) {
