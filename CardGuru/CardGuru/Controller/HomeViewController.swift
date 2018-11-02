@@ -18,6 +18,7 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        LottieView.setupBackgroundGradient(on: view)
         DatabaseService.shared.loadDataFromDb { (cards) in
             self.cards = cards
             self.cardsCollectionView.reloadData()
