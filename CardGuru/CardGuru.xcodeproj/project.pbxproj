@@ -50,6 +50,7 @@
 		CE1D5D10218CED8D00E5A960 /* backGround.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1D5D0F218CED8D00E5A960 /* backGround.json */; };
 		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
 		CE75A707218CF65C0014984C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75A706218CF65C0014984C /* LottieView.swift */; };
+		CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		CE1D5D0F218CED8D00E5A960 /* backGround.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = backGround.json; sourceTree = "<group>"; };
 		CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundLayer.swift; sourceTree = "<group>"; };
 		CE75A706218CF65C0014984C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mauryssel_Bold.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +278,7 @@
 				803DDCFE21636E6400BD91BC /* Controller */,
 				CE5462F9218373DC005FA82A /* Graphics */,
 				803DDCFF21636E9E00BD91BC /* Services */,
+				CE75A708218D016E0014984C /* Fonts */,
 				807D96042159147E00ABB0D2 /* Assets.xcassets */,
 				807D96092159147E00ABB0D2 /* Info.plist */,
 				80053E37215929AD001426C4 /* GoogleService-Info.plist */,
@@ -310,6 +313,14 @@
 				8073E2FC218060CF00C380AD /* Animation */,
 			);
 			path = Graphics;
+			sourceTree = "<group>";
+		};
+		CE75A708218D016E0014984C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F689632D5D7CCD1B0755A983 /* Pods */ = {
@@ -396,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */,
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
 				CE1D5D10218CED8D00E5A960 /* backGround.json in Resources */,
 				80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */,
