@@ -18,11 +18,14 @@ final class Card {
     let uid: String
     var name: String
     var barcode: String
+    var image: UIImage?
+    var imageURL: String?
     
-    init(uid: String, name: String, barcode: String) {
+    init(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
+        self.image = image
     }
     
     init?(snapshot: DataSnapshot) {

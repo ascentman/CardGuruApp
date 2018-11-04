@@ -18,7 +18,9 @@ protocol EditCardTableViewControllerUpdatingDelegate: class {
 
 final class EditCardTableViewController: UITableViewController {
 
-    @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var labelView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var changeImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var barcodeTextField: UITextField!
@@ -28,7 +30,10 @@ final class EditCardTableViewController: UITableViewController {
     private var uid = String()
     private var name = String()
     private var barcode = String()
-    private let tableHeaderHeight: CGFloat = 70.0
+    private var image = UIImage()
+    private var imageURL = String()
+    private let pickImage = ImagePickerClass()
+    private let tableHeaderHeight: CGFloat = 150.0
     
     // MARK: - Lifecycle
     
@@ -47,6 +52,8 @@ final class EditCardTableViewController: UITableViewController {
         nameLabel.text = name
         nameTextField.text = name
         barcodeTextField.text = barcode
+        imageView.image = image
+        changeImageView.image = image
         nameTextField.delegate = self
         barcodeTextField.delegate = self
         createStickyView()
@@ -68,24 +75,33 @@ final class EditCardTableViewController: UITableViewController {
     }
     @IBAction func saveCard(_ sender: Any) {
         if let name = nameTextField.text,
-            let barcode = barcodeTextField.text {
-            let updatedCard = Card(uid: uid, name: name, barcode: barcode)
+            let barcode = barcodeTextField.text,
+            let image = changeImageView.image {
+            let updatedCard = Card(uid: uid, name: name, barcode: barcode, image: image)
             updateDelegate?.userDidUpdateData(with: updatedCard)
-            DatabaseService.shared.updateDataInDb(forCard: updatedCard)
+            updateCardInDbWith(image: image, for: updatedCard)
         }
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func deleteCard(_ sender: Any) {
+        DatabaseService.shared.removeImageFromStorage(withURL: imageURL)
         DatabaseService.shared.removeDataFromDb(withUID: uid)
         deleteDelegate?.userDidRemoveData()
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-    func getCardBeforeChangeWith(uid: String, name: String, barcode: String) {
+    @IBAction func changeImageClicked(_ sender: Any) {
+        ImagePickerClass().pickImage(self) { (image) in
+            self.changeImageView.image = image
+            self.imageView.image = image
+        }
+    }
+    func getCardBeforeChangeWith(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
+        self.image = image
     }
     
     // MARK: - Private
@@ -96,17 +112,27 @@ final class EditCardTableViewController: UITableViewController {
             headerRect.origin.y = tableView.contentOffset.y
             headerRect.size.height = -tableView.contentOffset.y
         }
-        nameView.frame = headerRect
+        labelView.frame = headerRect
     }
     
     private func createStickyView() {
-        nameView = tableView.tableHeaderView
+        labelView = tableView.tableHeaderView
         tableView.tableHeaderView = nil
-        tableView.addSubview(nameView)
+        tableView.addSubview(labelView)
         tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
     }
     
+    private func updateCardInDbWith(image: UIImage, for card: Card) {
+        let updatedCard = card
+        DatabaseService.shared.saveCardImage(image: image) { (url, error) in
+            if let url = url {
+//                DatabaseService.shared.removeImageFromStorage(withURL: url)
+                updatedCard.imageURL = url
+                DatabaseService.shared.updateDataInDb(forCard: updatedCard)
+            }
+        }
+    }
 }
 
 // MARK: - Extensions

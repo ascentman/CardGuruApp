@@ -51,6 +51,7 @@
 		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
 		CE75A707218CF65C0014984C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75A706218CF65C0014984C /* LottieView.swift */; };
 		CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */; };
+		CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundLayer.swift; sourceTree = "<group>"; };
 		CE75A706218CF65C0014984C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mauryssel_Bold.ttf; sourceTree = "<group>"; };
+		CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		803DDCFD21636E5200BD91BC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE75A70B218F646A0014984C /* BackGroundCellView */,
 				8073E2E921805BCA00C380AD /* Animated View */,
 				8073E2FF2180ABAD00C380AD /* Cell */,
 				8073E2F721805DBB00C380AD /* Extensions */,
@@ -154,6 +157,7 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CECE4B09218F8F5D000D52E9 /* Images */,
 				8073E2B0217DB76200C380AD /* Scanner */,
 				806EEF062170D60500A6EFE6 /* Login */,
 				806EEF0B2170D68D00A6EFE6 /* Database */,
@@ -204,8 +208,6 @@
 			children = (
 				8073E2E721805B0000C380AD /* AnimatedView.swift */,
 				8073E2E52180597E00C380AD /* AnimatedView.xib */,
-				CE75A706218CF65C0014984C /* LottieView.swift */,
-				CE1D5D0F218CED8D00E5A960 /* backGround.json */,
 			);
 			path = "Animated View";
 			sourceTree = "<group>";
@@ -321,6 +323,23 @@
 				CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE75A70B218F646A0014984C /* BackGroundCellView */ = {
+			isa = PBXGroup;
+			children = (
+				CE75A706218CF65C0014984C /* LottieView.swift */,
+				CE1D5D0F218CED8D00E5A960 /* backGround.json */,
+			);
+			path = BackGroundCellView;
+			sourceTree = "<group>";
+		};
+		CECE4B09218F8F5D000D52E9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		F689632D5D7CCD1B0755A983 /* Pods */ = {
@@ -526,6 +545,7 @@
 				807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */,
 				807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */,
 				8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */,
+				CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */,
 				809706362163B91500185E82 /* NavigationControllerService.swift in Sources */,
 				8073E2F92180608C00C380AD /* Animations.swift in Sources */,
 				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,

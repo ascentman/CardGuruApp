@@ -19,6 +19,7 @@ final class DatabaseService {
     static let shared = DatabaseService()
     private init() {}
     let usersRef = Database.database().reference(withPath: Paths.users)
+    let imagesRef = Storage.storage().reference()
     
     func saveCard(with parameters: [String : Any]) -> String {
         let userRef = getCurrentUserRef()
@@ -57,6 +58,28 @@ final class DatabaseService {
     func updateDataInDb(forCard: Card) {
         let userRef = getCurrentUserRef()
         usersRef.child(userRef).child(Paths.cards).child(forCard.uid).updateChildValues(["name" : forCard.name,
-                                                                                        "barcode" : forCard.barcode])
+                                                                                        "barcode" : forCard.barcode,
+                                                                                        "imageURL" : forCard.imageURL as Any])
     }
+    
+    func saveCardImage(image: UIImage, completion: @escaping (_ url: String?, _ error: Error?)->()){
+        let userRef = getCurrentUserRef()
+        let imageRef = imagesRef.child(userRef).child("\(UUID().uuidString).png")
+        imageRef.putData(image.pngData() ?? Data(), metadata: nil) { (_, error) in
+            imageRef.downloadURL(completion: { (url, error) in
+                guard let downloadURL = url else {
+                    completion(nil, error)
+                    return
+                }
+                completion(downloadURL.absoluteString, nil)
+            })
+        }
+    }
+    
+    func removeImageFromStorage(withURL: String) {
+        let imageRef = Storage.storage().reference(forURL: withURL)
+        imageRef.delete()
+    }
+    
+    
 }

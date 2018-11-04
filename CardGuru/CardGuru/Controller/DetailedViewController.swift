@@ -25,7 +25,7 @@ final class DetailedViewController: UIViewController {
 
     @IBOutlet weak var barcodeLabel: UILabel!
     @IBOutlet weak var barcodeImageView: UIImageView!
-    @IBOutlet private weak var nameView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     
     weak var deleteDelegate: DetailedViewControllerDeletionDelegate?
@@ -33,6 +33,7 @@ final class DetailedViewController: UIViewController {
     private var uid = String()
     private var name = String()
     private var barcode = String()
+    private var image = UIImage()
     private var barcodeGenerated: UIImage?
     
     // MARK: - Lifecycle
@@ -47,6 +48,7 @@ final class DetailedViewController: UIViewController {
         nameLabel.text = name
         barcodeLabel.text = barcode
         barcodeImageView.image = barcodeGenerated
+        imageView.image = image
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -64,16 +66,17 @@ final class DetailedViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EditCardTableViewController {
-            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode)
+            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode, image: image)
             destination.updateDelegate = self
             destination.deleteDelegate = self
         }
     }
     
-    func setDetailedCard(uid: String, name: String, barcode: String) {
+    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
+        self.image = image
         self.barcodeGenerated = generateBarcode(from: barcode)
     }
     
@@ -97,7 +100,8 @@ extension DetailedViewController: EditCardTableViewControllerUpdatingDelegate {
     func userDidUpdateData(with: Card) {
         nameLabel.text = with.name
         barcodeLabel.text = with.barcode
-        updateDelegate?.userDidUpdateData(with: Card(uid: uid, name: with.name, barcode: with.barcode))
+        imageView.image = with.image
+        updateDelegate?.userDidUpdateData(with: Card(uid: uid, name: with.name, barcode: with.barcode, image: with.image ?? UIImage()))
     }
 }
 

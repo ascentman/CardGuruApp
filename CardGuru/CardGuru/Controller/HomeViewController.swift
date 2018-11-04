@@ -37,7 +37,8 @@ final class HomeViewController: UIViewController {
             if let destination = segue.destination as? DetailedViewController {
                 destination.setDetailedCard(uid: cards[index.row].uid,
                                             name: cards[index.row].name,
-                                            barcode: cards[index.row].barcode)
+                                            barcode: cards[index.row].barcode,
+                                            image: cards[index.row].image ?? UIImage(named: "shop") ?? UIImage())
                 destination.updateDelegate = self
                 destination.deleteDelegate = self
             }
@@ -57,8 +58,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
-            let card = cards[indexPath.row].name
-            cell.setCellName(from: card)
+            let card = cards[indexPath.row]
+            cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
             return cell
         }
         return UICollectionViewCell()
@@ -102,10 +103,11 @@ extension HomeViewController: DetailedViewControllerUpdatingDelegate {
     // MARK: - DetailedViewControllerUpdatingDelegate
 
     func userDidUpdateData(with: Card) {
-        for el in cards {
-            if el.uid == with.uid {
-                el.name = with.name
-                el.barcode = with.barcode
+        for card in cards {
+            if card.uid == with.uid {
+                card.name = with.name
+                card.barcode = with.barcode
+                card.image = with.image
             }
         }
         self.cardsCollectionView.reloadData()
