@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+//import Alamofire
+//import AlamofireImage
 
 final class HomeViewController: UIViewController {
     
@@ -60,6 +62,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
             let card = cards[indexPath.row]
             cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
+//            if let imageURL = card.imageURL {
+//                Alamofire.request(imageURL).responseImage { (response) in
+//                    if let image = response.result.value {
+//                        cell.setCell(name: card.name, image: image)
+//                    }
+//                }
+//            }
             return cell
         }
         return UICollectionViewCell()

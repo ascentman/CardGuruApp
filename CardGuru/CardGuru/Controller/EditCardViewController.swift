@@ -127,7 +127,6 @@ final class EditCardTableViewController: UITableViewController {
         let updatedCard = card
         DatabaseService.shared.saveCardImage(image: image) { (url, error) in
             if let url = url {
-//                DatabaseService.shared.removeImageFromStorage(withURL: url)
                 updatedCard.imageURL = url
                 DatabaseService.shared.updateDataInDb(forCard: updatedCard)
             }
