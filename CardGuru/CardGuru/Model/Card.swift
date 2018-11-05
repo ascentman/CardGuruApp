@@ -12,6 +12,7 @@ import Firebase
 private enum Constants {
     static let name = "name"
     static let barcode = "barcode"
+    static let absoluteURL = "absoluteURL"
 }
 
 final class Card {
@@ -19,7 +20,7 @@ final class Card {
     var name: String
     var barcode: String
     var image: UIImage?
-    var imageURL: String?
+    var absoluteURL: String?
     
     init(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
@@ -37,5 +38,8 @@ final class Card {
         self.uid = snapshot.key
         self.name = name
         self.barcode = barcode
+        if let absoluteURL = value[Constants.absoluteURL] as? String {
+            self.absoluteURL = absoluteURL
+        }
     }
 }

@@ -31,7 +31,7 @@ final class EditCardTableViewController: UITableViewController {
     private var name = String()
     private var barcode = String()
     private var image = UIImage()
-    private var imageURL = String()
+    private var absoluteURL = String()
     private let pickImage = ImagePickerClass()
     private let tableHeaderHeight: CGFloat = 150.0
     
@@ -85,7 +85,9 @@ final class EditCardTableViewController: UITableViewController {
     }
     
     @IBAction func deleteCard(_ sender: Any) {
-        DatabaseService.shared.removeImageFromStorage(withURL: imageURL)
+        if !absoluteURL.isEmpty {
+            DatabaseService.shared.removeImageFromStorage(withURL: absoluteURL)
+        }
         DatabaseService.shared.removeDataFromDb(withUID: uid)
         deleteDelegate?.userDidRemoveData()
         self.navigationController?.popToRootViewController(animated: true)
@@ -97,11 +99,12 @@ final class EditCardTableViewController: UITableViewController {
             self.imageView.image = image
         }
     }
-    func getCardBeforeChangeWith(uid: String, name: String, barcode: String, image: UIImage) {
+    func getCardBeforeChangeWith(uid: String, name: String, barcode: String, image: UIImage, absoluteURL: String) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
         self.image = image
+        self.absoluteURL = absoluteURL
     }
     
     // MARK: - Private
@@ -127,7 +130,7 @@ final class EditCardTableViewController: UITableViewController {
         let updatedCard = card
         DatabaseService.shared.saveCardImage(image: image) { (url, error) in
             if let url = url {
-                updatedCard.imageURL = url
+                updatedCard.absoluteURL = url
                 DatabaseService.shared.updateDataInDb(forCard: updatedCard)
             }
         }

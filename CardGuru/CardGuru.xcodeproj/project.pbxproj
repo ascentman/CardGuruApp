@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80053E37215929AD001426C4 /* GoogleService-Info.plist */; };
 		8023AD74218728480041A04C /* EditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023AD73218728480041A04C /* EditCardViewController.swift */; };
 		803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */; };
 		803DDCF1216255BE00BD91BC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF0216255BE00BD91BC /* Card.swift */; };
@@ -46,6 +45,8 @@
 		809706362163B91500185E82 /* NavigationControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706352163B91500185E82 /* NavigationControllerService.swift */; };
 		8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063E2164BEF800185E82 /* FbLoginService.swift */; };
 		809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseLoginService.swift */; };
+		80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D01E912190771E00CA1AE6 /* Downloader.swift */; };
+		80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */; };
 		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
 		CE1D5D10218CED8D00E5A960 /* backGround.json in Resources */ = {isa = PBXBuildFile; fileRef = CE1D5D0F218CED8D00E5A960 /* backGround.json */; };
 		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
@@ -55,7 +56,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80053E37215929AD001426C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8023AD73218728480041A04C /* EditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardViewController.swift; sourceTree = "<group>"; };
 		803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseService.swift; sourceTree = "<group>"; };
 		803DDCF0216255BE00BD91BC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -97,6 +97,8 @@
 		809706352163B91500185E82 /* NavigationControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerService.swift; sourceTree = "<group>"; };
 		8097063E2164BEF800185E82 /* FbLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbLoginService.swift; sourceTree = "<group>"; };
 		809706422164D64700185E82 /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
+		80D01E912190771E00CA1AE6 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				80D01E90219076E300CA1AE6 /* Networking */,
 				CECE4B09218F8F5D000D52E9 /* Images */,
 				8073E2B0217DB76200C380AD /* Scanner */,
 				806EEF062170D60500A6EFE6 /* Login */,
@@ -283,7 +286,7 @@
 				CE75A708218D016E0014984C /* Fonts */,
 				807D96042159147E00ABB0D2 /* Assets.xcassets */,
 				807D96092159147E00ABB0D2 /* Info.plist */,
-				80053E37215929AD001426C4 /* GoogleService-Info.plist */,
+				80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */,
 				807D95FD2159147C00ABB0D2 /* AppDelegate.swift */,
 			);
 			path = CardGuru;
@@ -298,6 +301,14 @@
 				806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		80D01E90219076E300CA1AE6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				80D01E912190771E00CA1AE6 /* Downloader.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		CE5462F8218372C7005FA82A /* Extensions */ = {
@@ -428,8 +439,8 @@
 			files = (
 				CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */,
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
+				80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */,
 				CE1D5D10218CED8D00E5A960 /* backGround.json in Resources */,
-				80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */,
 				807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */,
 				8093336C21593E8C00C02D11 /* Login.storyboard in Resources */,
 				807D96032159147C00ABB0D2 /* Main.storyboard in Resources */,
@@ -458,6 +469,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
@@ -476,6 +488,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
@@ -538,6 +551,7 @@
 				8073E2EF21805CB300C380AD /* CheckLayer.swift in Sources */,
 				8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */,
 				8073E2FE2180694800C380AD /* SquareLayer.swift in Sources */,
+				80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
 				8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */,
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,

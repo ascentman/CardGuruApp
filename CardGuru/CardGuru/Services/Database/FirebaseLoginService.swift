@@ -33,8 +33,8 @@ final class FirebaseService {
             Auth.auth().signInAndRetrieveData(with: credentials) { authResult, error in
                 if let name = authResult?.user.displayName,
                     let email = authResult?.user.email,
-                    let imageURL = authResult?.user.photoURL {
-                    let newUser = User(name: name, email: email, imageURL: imageURL)
+                    let absoluteURL = authResult?.user.photoURL {
+                    let newUser = User(name: name, email: email, absoluteURL: absoluteURL)
                     completion(newUser, error)
                 }
             }

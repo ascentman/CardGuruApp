@@ -34,6 +34,7 @@ final class DetailedViewController: UIViewController {
     private var name = String()
     private var barcode = String()
     private var image = UIImage()
+    private var absoluteURL = String()
     private var barcodeGenerated: UIImage?
     
     // MARK: - Lifecycle
@@ -66,17 +67,18 @@ final class DetailedViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EditCardTableViewController {
-            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode, image: image)
+            destination.getCardBeforeChangeWith(uid: uid, name: name, barcode: barcode, image: image, absoluteURL: absoluteURL)
             destination.updateDelegate = self
             destination.deleteDelegate = self
         }
     }
     
-    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage) {
+    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage, absoluteURL: String) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
         self.image = image
+        self.absoluteURL = absoluteURL
         self.barcodeGenerated = generateBarcode(from: barcode)
     }
     
@@ -101,6 +103,9 @@ extension DetailedViewController: EditCardTableViewControllerUpdatingDelegate {
         nameLabel.text = with.name
         barcodeLabel.text = with.barcode
         imageView.image = with.image
+        self.name = with.name
+        self.barcode = with.barcode
+        self.image =  with.image ?? UIImage(named: "shop") ?? UIImage()
         updateDelegate?.userDidUpdateData(with: Card(uid: uid, name: with.name, barcode: with.barcode, image: with.image ?? UIImage()))
     }
 }

@@ -49,12 +49,16 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX3-qE-OTT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX3-qE-OTT">
                                                     <rect key="frame" x="8" y="28" width="154" height="75"/>
                                                     <fontDescription key="fontDescription" name="Mauryssel-Bold" family="Mauryssel" pointSize="24"/>
                                                     <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xEr-b8-Qwy">
+                                                    <rect key="frame" x="75" y="82" width="20" height="20"/>
+                                                    <color key="color" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,6 +68,8 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="vX3-qE-OTT" secondAttribute="bottom" id="7q8-RY-QC5"/>
                                             <constraint firstItem="vX3-qE-OTT" firstAttribute="top" secondItem="htF-Qn-evh" secondAttribute="topMargin" id="Iqu-tq-rMN"/>
                                             <constraint firstItem="h38-dR-8aF" firstAttribute="top" secondItem="htF-Qn-evh" secondAttribute="top" id="JMg-Wb-XfM"/>
+                                            <constraint firstItem="xEr-b8-Qwy" firstAttribute="centerX" secondItem="htF-Qn-evh" secondAttribute="centerX" id="X77-Yk-FVI"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="xEr-b8-Qwy" secondAttribute="bottom" constant="1" id="XsJ-pI-9FD"/>
                                             <constraint firstAttribute="bottom" secondItem="h38-dR-8aF" secondAttribute="bottom" id="eCi-pR-wSW"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="vX3-qE-OTT" secondAttribute="trailing" id="hAD-a9-M9c"/>
                                             <constraint firstItem="vX3-qE-OTT" firstAttribute="leading" secondItem="htF-Qn-evh" secondAttribute="leadingMargin" id="iLU-go-bqL"/>
@@ -76,6 +82,7 @@
                                         <connections>
                                             <outlet property="cellImage" destination="h38-dR-8aF" id="7FH-7x-8L9"/>
                                             <outlet property="cellName" destination="vX3-qE-OTT" id="Ru2-kp-fYU"/>
+                                            <outlet property="loadingIndicator" destination="xEr-b8-Qwy" id="Kh2-dJ-Cys"/>
                                             <segue destination="OiM-p9-iFR" kind="show" identifier="CardDetails" id="dsc-Ih-2X7"/>
                                         </connections>
                                     </collectionViewCell>
@@ -382,7 +389,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9I5-tj-ZRv" userLabel="name label">
-                                    <rect key="frame" x="155.5" y="20" width="64" height="30.5"/>
+                                    <rect key="frame" x="134" y="16.5" width="107.5" height="37.5"/>
                                     <fontDescription key="fontDescription" name="Mauryssel-Bold" family="Mauryssel" pointSize="26"/>
                                     <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -680,13 +687,6 @@
                                     <action selector="logoutPressed:" destination="Tut-wG-w5b" eventType="touchUpInside" id="nd2-Qb-nK7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Labelefefefefe" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DP-of-Gym">
-                                <rect key="frame" x="99" y="538" width="58" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

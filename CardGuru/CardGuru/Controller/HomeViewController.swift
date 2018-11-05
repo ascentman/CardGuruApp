@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
-//import Alamofire
-//import AlamofireImage
 
 final class HomeViewController: UIViewController {
     
@@ -26,6 +23,17 @@ final class HomeViewController: UIViewController {
             self.cardsCollectionView.reloadData()
         }
     }
+
+    private func loadCardImages() {
+        for (index, card) in cards.enumerated() where card.absoluteURL != nil {
+            Downloader.shared.loadImage(card.absoluteURL) { image in
+                let indexPath = IndexPath(row: index, section: 0)
+                let cell = self.cardsCollectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
+                cell?.setCell(name: card.name, image: image ?? UIImage(named: "shop") ?? UIImage())
+                self.cards[index].image = image
+            }
+        }
+    }
     
     // MARK: - Segues
     
@@ -40,7 +48,8 @@ final class HomeViewController: UIViewController {
                 destination.setDetailedCard(uid: cards[index.row].uid,
                                             name: cards[index.row].name,
                                             barcode: cards[index.row].barcode,
-                                            image: cards[index.row].image ?? UIImage(named: "shop") ?? UIImage())
+                                            image: cards[index.row].image ?? UIImage(named: "shop") ?? UIImage(),
+                                            absoluteURL: cards[index.row].absoluteURL ?? String())
                 destination.updateDelegate = self
                 destination.deleteDelegate = self
             }
@@ -62,13 +71,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
             let card = cards[indexPath.row]
             cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
-//            if let imageURL = card.imageURL {
-//                Alamofire.request(imageURL).responseImage { (response) in
-//                    if let image = response.result.value {
-//                        cell.setCell(name: card.name, image: image)
-//                    }
-//                }
-//            }
+            loadCardImages()
             return cell
         }
         return UICollectionViewCell()

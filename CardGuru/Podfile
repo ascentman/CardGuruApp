@@ -15,4 +15,5 @@ target 'CardGuru' do
     pod 'lottie-ios'
     pod 'Alamofire'
     pod 'AlamofireImage'
+    pod 'Kingfisher', '~> 4.0'
 end

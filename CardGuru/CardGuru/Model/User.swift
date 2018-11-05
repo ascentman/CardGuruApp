@@ -11,11 +11,11 @@ import Foundation
 final class User {
     var name: String
     var email: String
-    var imageURL: URL?
+    var absoluteURL: URL?
     
-    init(name: String, email: String, imageURL: URL?) {
+    init(name: String, email: String, absoluteURL: URL?) {
         self.name = name
         self.email = email
-        self.imageURL = imageURL
+        self.absoluteURL = absoluteURL
     }
 }

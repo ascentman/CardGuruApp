@@ -51,7 +51,6 @@ final class AddCardViewController: UIViewController {
         let parameters = [ Parameters.name : name,
                            Parameters.barcode : barcode]
         let cardId = DatabaseService.shared.saveCard(with: parameters as [String : Any])
-        print("UID saveClicked", cardId)
         delegate?.userDidEnterData(card: Card(uid: cardId, name: nameCard, barcode: barcodeCard, image: UIImage(named: "shop") ?? UIImage()))
         navigationController?.popToRootViewController(animated: true)
     }
