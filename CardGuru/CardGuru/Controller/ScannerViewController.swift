@@ -64,12 +64,12 @@ final class ScannerViewController: UIViewController {
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? AddingNewCard,
+        if let destination = segue.destination as? AddCardViewController,
             let barcode = sender as? String {
             destination.setBarcode(from: barcode)
             destination.delegate = self
         }
-        if let destination = segue.destination as? AddingNewCard {
+        if let destination = segue.destination as? AddCardViewController {
             destination.delegate = self
         }
     }
@@ -90,7 +90,7 @@ extension ScannerViewController: ScannerServiceDelegate {
     }
 }
 
-extension ScannerViewController: AddingNewCardDelagate {
+extension ScannerViewController: AddCardViewControllerDelegate {
 
      // MARK: - AddingNewCardDelagate
     

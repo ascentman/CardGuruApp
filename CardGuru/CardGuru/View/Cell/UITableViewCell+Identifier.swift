@@ -15,6 +15,6 @@ extension UITableViewCell {
     }
     
     class func nib() -> UINib {
-        return UINib.init(nibName: self.identifier(), bundle:nil)
+        return UINib.init(nibName: self.identifier(), bundle: nil)
     }
 }

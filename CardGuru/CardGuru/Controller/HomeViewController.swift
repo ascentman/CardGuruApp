@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 final class HomeViewController: UIViewController {
     
@@ -18,9 +17,21 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        LottieView.setupBackgroundGradient(on: view)
         DatabaseService.shared.loadDataFromDb { (cards) in
             self.cards = cards
             self.cardsCollectionView.reloadData()
+        }
+    }
+
+    private func loadCardImages() {
+        for (index, card) in cards.enumerated() where card.absoluteURL != nil {
+            Downloader.shared.loadImage(card.absoluteURL) { image in
+                let indexPath = IndexPath(row: index, section: 0)
+                let cell = self.cardsCollectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
+                cell?.setCell(name: card.name, image: image ?? UIImage(named: "shop") ?? UIImage())
+                self.cards[index].image = image
+            }
         }
     }
     
@@ -34,8 +45,13 @@ final class HomeViewController: UIViewController {
         if let cell = sender as? CardCollectionViewCell,
             let index = cardsCollectionView.indexPath(for: cell) {
             if let destination = segue.destination as? DetailedViewController {
-                destination.setDetailedCard(name: cards[index.row].name,
-                                            barcode: cards[index.row].barcode)
+                destination.setDetailedCard(uid: cards[index.row].uid,
+                                            name: cards[index.row].name,
+                                            barcode: cards[index.row].barcode,
+                                            image: cards[index.row].image ?? UIImage(named: "shop") ?? UIImage(),
+                                            absoluteURL: cards[index.row].absoluteURL ?? String())
+                destination.updateDelegate = self
+                destination.deleteDelegate = self
             }
         }
     }
@@ -53,8 +69,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
-            let card = cards[indexPath.row].name
-            cell.setCellName(from: card)
+            let card = cards[indexPath.row]
+            cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
+            loadCardImages()
             return cell
         }
         return UICollectionViewCell()
@@ -80,3 +97,32 @@ extension HomeViewController: ScannerViewControllerDelegate {
         self.cardsCollectionView.reloadData()
     }
 }
+
+extension HomeViewController: DetailedViewControllerDeletionDelegate {
+    
+    // MARK: - DetailedViewControllerDeletionDelegate
+
+    func userDidRemoveData() {
+        DatabaseService.shared.loadDataFromDb { (cards) in
+            self.cards = cards
+            self.cardsCollectionView.reloadData()
+        }
+    }
+}
+
+extension HomeViewController: DetailedViewControllerUpdatingDelegate {
+    
+    // MARK: - DetailedViewControllerUpdatingDelegate
+
+    func userDidUpdateData(with: Card) {
+        for card in cards {
+            if card.uid == with.uid {
+                card.name = with.name
+                card.barcode = with.barcode
+                card.image = with.image
+            }
+        }
+        self.cardsCollectionView.reloadData()
+    }
+}
+

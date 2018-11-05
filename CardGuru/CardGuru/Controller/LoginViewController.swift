@@ -86,9 +86,9 @@ final class LoginViewController: UIViewController {
     }
 
     private func saveLoginData(_ user: User) {
-        guard let imageURL = user.imageURL else { return }
+        guard let absoluteURL = user.absoluteURL else { return }
         
-        let logoImage = try? Data(contentsOf: imageURL)
+        let logoImage = try? Data(contentsOf: absoluteURL)
         if let logoImage = logoImage {
              UserDefaults().setLogo(name: logoImage)
         }

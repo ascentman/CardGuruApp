@@ -11,13 +11,23 @@ import UIKit
 final class CardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var cellName: UILabel!
+    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+        
+    func setCell(name: String, image: UIImage) {
+        cellName.text = name
+        cellImage.image = image
+        loadingIndicator.stopAnimating()
+    }
     
-    func setCellName(from: String) {
-        cellName.text = from
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        loadingIndicator.startAnimating()
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
         cellName.text = nil
+        cellImage.image = nil
     }
 }

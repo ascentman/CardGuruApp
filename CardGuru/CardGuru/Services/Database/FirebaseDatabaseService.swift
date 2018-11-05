@@ -19,10 +19,14 @@ final class DatabaseService {
     static let shared = DatabaseService()
     private init() {}
     let usersRef = Database.database().reference(withPath: Paths.users)
+    let imagesRef = Storage.storage().reference()
     
-    func saveCard(with parameters: [String : Any]) {
+    func saveCard(with parameters: [String : Any]) -> String {
         let userRef = getCurrentUserRef()
-        usersRef.child(userRef).child(Paths.cards).childByAutoId().setValue(parameters)
+        let cardRef = usersRef.child(userRef).child(Paths.cards).childByAutoId()
+        cardRef.setValue(parameters)
+        let cardUID = URL(fileURLWithPath: cardRef.url).lastPathComponent
+        return cardUID
     }
     
     func getCurrentUserRef() -> String {
@@ -45,4 +49,38 @@ final class DatabaseService {
             completion(cards)
         }
     }
+    
+    func removeDataFromDb(withUID: String) {
+        let userRef = getCurrentUserRef()
+        usersRef.child(userRef).child(Paths.cards).child(withUID).removeValue()
+    }
+    
+    func updateDataInDb(forCard: Card) {
+        let userRef = getCurrentUserRef()
+        usersRef.child(userRef).child(Paths.cards).child(forCard.uid).updateChildValues(["name"       : forCard.name,
+                                                                                        "barcode"     : forCard.barcode,
+                                                                                        "absoluteURL" : forCard.absoluteURL as Any])
+    }
+    
+    func saveCardImage(image: UIImage, completion: @escaping (_ url: String?, _ error: Error?)->()){
+        let resizedImage = image.af_imageScaled(to: CGSize(width: 100, height: 100))
+        let userRef = getCurrentUserRef()
+        let imageRef = imagesRef.child(userRef).child("\(UUID().uuidString).png")
+        imageRef.putData(resizedImage.pngData() ?? Data(), metadata: nil) { (_, error) in
+            imageRef.downloadURL(completion: { (url, error) in
+                guard let downloadURL = url else {
+                    completion(nil, error)
+                    return
+                }
+                completion(downloadURL.absoluteString, nil)
+            })
+        }
+    }
+    
+    func removeImageFromStorage(withURL: String) {
+        let imageRef = Storage.storage().reference(forURL: withURL)
+        imageRef.delete()
+    }
+    
+    
 }
