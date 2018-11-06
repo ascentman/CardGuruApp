@@ -18,8 +18,8 @@ protocol ScannerViewControllerDelegate: class {
 
 final class ScannerViewController: UIViewController {
     
-    @IBOutlet weak var animatedView: AnimatedView!
-    @IBOutlet weak var userView: UIView!
+    @IBOutlet private weak var animatedView: AnimatedView!
+    @IBOutlet private weak var userView: UIView!
     weak var delegate: ScannerViewControllerDelegate?
     
     // MARK: - Lifecycle
@@ -31,8 +31,8 @@ final class ScannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ScannerService.shared.setupSession { (cameraGranted) in
-            if !cameraGranted {
+        ScannerService.shared.setupSession { success in
+            if !success {
                 animatedView.backgroundColor = UIColor.black
                 requestCameraAccess()
             }
@@ -75,7 +75,13 @@ final class ScannerViewController: UIViewController {
     }
     
     private func requestCameraAccess() {
-        presentAlert(withTitle: "Camera access", message: "The CardGuru needs camera access. Enable it in Settings to continue")
+        presentAlert("Camera access", message: "The CardGuru needs camera access. Enable it in Settings to continue", acceptTitle: "Settings", declineTitle: "Cancel", okActionHandler: {
+            if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+            }
+        }, cancelActionHandler: {
+             self.performSegue(withIdentifier: "AddNewCard", sender: nil)
+        })
     }
 }
 

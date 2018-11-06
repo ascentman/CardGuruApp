@@ -49,16 +49,9 @@ final class EditCardTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = name
-        nameTextField.text = name
-        barcodeTextField.text = barcode
-        imageView.image = image
-        changeImageView.image = image
+        setupOutlets()
         nameTextField.delegate = self
         barcodeTextField.delegate = self
-        createStickyView()
-        
-        tableView.tableFooterView = UIView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,14 +67,21 @@ final class EditCardTableViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func saveCard(_ sender: Any) {
-        if let name = nameTextField.text,
-            let barcode = barcodeTextField.text,
-            let image = changeImageView.image {
-            let updatedCard = Card(uid: uid, name: name, barcode: barcode, image: image)
-            updateDelegate?.userDidUpdateData(with: updatedCard)
-            updateCardInDbWith(image: image, for: updatedCard)
+        let updatedName = nameTextField.text
+        let updatedBarcode = barcodeTextField.text
+        let updatedImage = changeImageView.image
+        
+        if isEnteredDataValid() {
+            if let name = updatedName,
+                let barcode = updatedBarcode,
+                let image = updatedImage {
+                let updatedCard = Card(uid: uid, name: name, barcode: barcode, image: image)
+                updateCardInDbAndNotify(image: image, for: updatedCard)
+                navigateBack()
+            }
+        } else {
+            presentAlert("Error", message: "Fill empty fields", acceptTitle: "Ok", declineTitle: nil)
         }
-        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func deleteCard(_ sender: Any) {
@@ -99,6 +99,7 @@ final class EditCardTableViewController: UITableViewController {
             self.imageView.image = image
         }
     }
+    
     func getCardBeforeChangeWith(uid: String, name: String, barcode: String, image: UIImage, absoluteURL: String) {
         self.uid = uid
         self.name = name
@@ -108,6 +109,27 @@ final class EditCardTableViewController: UITableViewController {
     }
     
     // MARK: - Private
+    
+    private func setupOutlets() {
+        nameLabel.text = name
+        nameTextField.text = name
+        barcodeTextField.text = barcode
+        imageView.image = image
+        changeImageView.image = image
+        createStickyView()
+        tableView.tableFooterView = UIView()
+    }
+    
+    private func isEnteredDataValid() -> Bool {
+        if nameTextField.text?.isEmpty ?? true || barcodeTextField.text?.isEmpty ?? true {
+            return false
+        }
+        return true
+    }
+    
+    private func navigateBack() {
+        navigationController?.popViewController(animated: true)
+    }
     
     private func updateHeaderView() {
         var headerRect = CGRect(x: 0, y: -tableHeaderHeight, width: tableView.bounds.width, height: tableHeaderHeight)
@@ -126,7 +148,7 @@ final class EditCardTableViewController: UITableViewController {
         tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
     }
     
-    private func updateCardInDbWith(image: UIImage, for card: Card) {
+    private func updateCardInDbAndNotify(image: UIImage, for card: Card) {
         let updatedCard = card
         DatabaseService.shared.saveCardImage(image: image) { (url, error) in
             if let url = url {
@@ -134,6 +156,7 @@ final class EditCardTableViewController: UITableViewController {
                 DatabaseService.shared.updateDataInDb(forCard: updatedCard)
             }
         }
+        updateDelegate?.userDidUpdateData(with: updatedCard)
     }
 }
 

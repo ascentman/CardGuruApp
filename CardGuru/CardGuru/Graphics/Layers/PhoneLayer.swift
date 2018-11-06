@@ -9,34 +9,17 @@
 import UIKit
 
 private enum Constants {
-    static let iphone = "iphone"
-}
-
-private enum Frame {
-    case x
-    case y
-    case topMargin
-    
-    func get() -> CGFloat {
-        switch self {
-        case .x:
-            return 120
-        case .y:
-            return 120
-        case .topMargin:
-            return 150
-        }
-    }
+    static let imageName = "iphone"
 }
 
 class PhoneLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()
-        contents = CALayer().setImage(named: Constants.iphone)?.cgImage
+        contents = UIImage(named: Constants.imageName)?.maskWithColor(color: UIColor.orange).cgImage
         contentsGravity = CALayerContentsGravity.resizeAspect
-        frame = CGRect(x: 0, y: 0, width: Frame.x.get(), height: Frame.y.get())
-        position = CGPoint(x: inFrame.midX, y: Frame.topMargin.get())
+        frame = CGRect(x: 0, y: 0, width: 120, height: 120)
+        position = CGPoint(x: inFrame.midX, y: 150)
     }
     
     required init?(coder aDecoder: NSCoder) {

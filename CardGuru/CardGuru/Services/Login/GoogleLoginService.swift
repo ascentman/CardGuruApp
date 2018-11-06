@@ -9,6 +9,10 @@
 import UIKit
 import GoogleSignIn
 
+enum LoginMethod {
+    static let google = "Google"
+}
+
 final class GoogleLoginService: NSObject {
     
     typealias SignInResponse = (_ user: User?, _ error: Error?) -> ()

@@ -9,33 +9,19 @@
 import UIKit
 
 private enum Constants {
-    static let barcode = "barcode"
-}
-
-private enum Frame {
-    case x
-    case y
-    
-    func get() -> CGFloat {
-        switch self {
-        case .x:
-            return 300
-        case .y:
-            return 180
-        }
-    }
+    static let imageName = "barcode"
 }
 
 class SquareLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()
-        contents = CALayer().setImage(named: Constants.barcode)?.cgImage
+        contents = UIImage(named: Constants.imageName)?.maskWithColor(color: UIColor.orange).cgImage
         contentsGravity = CALayerContentsGravity.resizeAspectFill
         borderColor = UIColor.orange.cgColor
         opacity = 0.2
         borderWidth = 4
-        frame = CGRect(x: 0, y: 0, width: Frame.x.get(), height: Frame.y.get())
+        frame = CGRect(x: 0, y: 0, width: 300, height: 180)
         position = CGPoint(x: inFrame.midX, y: inFrame.midY)
     }
     

@@ -23,19 +23,19 @@ protocol DetailedViewControllerUpdatingDelegate: class {
 
 final class DetailedViewController: UIViewController {
 
-    @IBOutlet weak var barcodeLabel: UILabel!
-    @IBOutlet weak var barcodeImageView: UIImageView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var barcodeLabel: UILabel!
+    @IBOutlet private weak var barcodeImageView: UIImageView!
+    @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     
-    weak var deleteDelegate: DetailedViewControllerDeletionDelegate?
-    weak var updateDelegate: DetailedViewControllerUpdatingDelegate?
     private var uid = String()
     private var name = String()
     private var barcode = String()
     private var image = UIImage()
     private var absoluteURL = String()
     private var barcodeGenerated: UIImage?
+    weak var deleteDelegate: DetailedViewControllerDeletionDelegate?
+    weak var updateDelegate: DetailedViewControllerUpdatingDelegate?
     
     // MARK: - Lifecycle
     
@@ -61,7 +61,6 @@ final class DetailedViewController: UIViewController {
         let shareViewController = UIActivityViewController(activityItems: ["I would like to share my card with you: \(name), \(barcode)"], applicationActivities: nil)
         self.present(shareViewController, animated: true, completion: nil)
     }
-    
     
     // MARK: - Segues
     

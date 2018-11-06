@@ -10,6 +10,11 @@ import UIKit
 import FBSDKLoginKit
 import FacebookLogin
 
+private enum Permissions {
+    static let login = ["public_profile", "email"]
+    static let data = ["fields": "email, name, picture.width(480).height(480)"]
+}
+
 final class FbLoginService: NSObject {
     
     typealias SignInResponse = (_ user: User?, _ error: Error?) -> ()

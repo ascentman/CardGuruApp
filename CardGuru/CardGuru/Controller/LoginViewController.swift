@@ -74,7 +74,7 @@ final class LoginViewController: UIViewController {
         if view.layer.superlayer == backGroundLayer {
             view.layer.removeFromSuperlayer()
         }
-        backGroundLayer?.animateLayer(with: { (_) in
+        backGroundLayer?.animateLayer(with: { _ in
             if let backgroundLayer = self.backGroundLayer {
                 self.view.layer.insertSublayer(backgroundLayer, at: 0)
             }
@@ -86,8 +86,9 @@ final class LoginViewController: UIViewController {
     }
 
     private func saveLoginData(_ user: User) {
-        guard let absoluteURL = user.absoluteURL else { return }
-        
+        guard let absoluteURL = user.absoluteURL else {
+            return
+        }
         let logoImage = try? Data(contentsOf: absoluteURL)
         if let logoImage = logoImage {
              UserDefaults().setLogo(name: logoImage)

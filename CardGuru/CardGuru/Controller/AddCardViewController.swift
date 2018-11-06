@@ -54,19 +54,36 @@ final class AddCardViewController: UIViewController {
     @IBAction private func saveClicked(_ sender: Any) {
         let name = self.nameField.text
         let barcode = self.barcodeField.text
-        guard let nameCard = name,
-            let barcodeCard = barcode else {
-            return
+        if isEnteredDataValid() {
+            saveToDbAndNotify(name: name!, barcode: barcode!)
+            navigateToRoot()
+        } else {
+            presentAlert("Error", message: "Fill empty fields", acceptTitle: "Ok", declineTitle: nil)
         }
-        let parameters = [ Parameters.name : name,
-                           Parameters.barcode : barcode]
-        let cardId = DatabaseService.shared.saveCard(with: parameters as [String : Any])
-        delegate?.userDidEnterData(card: Card(uid: cardId, name: nameCard, barcode: barcodeCard, image: UIImage(named: "shop") ?? UIImage()))
-        navigationController?.popToRootViewController(animated: true)
     }
     
     func setBarcode(from: String) {
         barcode = from
+    }
+    
+    // MARK: - Private
+    
+    private func isEnteredDataValid() -> Bool {
+        if nameField.text?.isEmpty ?? true || barcodeField.text?.isEmpty ?? true {
+            return false
+        }
+        return true
+    }
+    
+    private func saveToDbAndNotify(name: String, barcode: String) {
+        let parameters = [ Parameters.name : name,
+                           Parameters.barcode : barcode]
+        let cardId = DatabaseService.shared.saveCard(with: parameters)
+        delegate?.userDidEnterData(card: Card(uid: cardId, name: name, barcode: barcode, image: UIImage(named: "shop") ?? UIImage()))
+    }
+    
+    private func navigateToRoot() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     private func setupCustomBackItem() {
@@ -76,6 +93,7 @@ final class AddCardViewController: UIViewController {
     }
     
     @objc private func back() {
+        self.tabBarController?.tabBar.isHidden = false
         navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -9,12 +9,10 @@
 import UIKit
 
 class Animations {
-    static let shared = Animations()
-    private init() {}
     
     typealias animationClosure = (_ animation: CAAnimation) -> ()
     
-    func horizontalMovement(on layer: CALayer, from: CGPoint, to: CGPoint, completion: animationClosure) {
+    class func horizontalMovement(on layer: CALayer, from: CGPoint, to: CGPoint, completion: animationClosure) {
         let cardAnimation = CABasicAnimation()
         cardAnimation.fromValue = from
         cardAnimation.toValue = to
@@ -22,7 +20,7 @@ class Animations {
         completion(cardAnimation)
     }
     
-    func appearence(on layer: CALayer, from: CGFloat, to: CGFloat, completion: animationClosure) {
+    class func appearence(on layer: CALayer, from: CGFloat, to: CGFloat, completion: animationClosure) {
         let checkAnimation = CABasicAnimation()
         checkAnimation.fromValue = from
         checkAnimation.toValue = to
@@ -30,7 +28,7 @@ class Animations {
         completion(checkAnimation)
     }
     
-    func starAnimation(on layer: CALayer, completion: animationClosure) {
+    class func starAnimation(on layer: CALayer, completion: animationClosure) {
         let starPath = UIBezierPath()
         starPath.move(to: CGPoint(x: 0, y: layer.bounds.height / 2))
         starPath.addLine(to: CGPoint(x: -layer.bounds.height / 2, y: -layer.bounds.width / 2))
