@@ -22,23 +22,28 @@ final class DatabaseService {
     let imagesRef = Storage.storage().reference()
     
     func saveCard(with parameters: [String : Any]) -> String {
-        let userRef = getCurrentUserRef()
+        guard let userRef = getCurrentUserRef() else {
+            return String()
+        }
         let cardRef = usersRef.child(userRef).child(Paths.cards).childByAutoId()
         cardRef.setValue(parameters)
         let cardUID = URL(fileURLWithPath: cardRef.url).lastPathComponent
         return cardUID
     }
     
-    func getCurrentUserRef() -> String {
-        if let userEmail = UserDefaults().email {
-            return userEmail.replacingOccurrences(of: ".", with: "_")
+    func getCurrentUserRef() -> String? {
+        let user = UserDefaults().fetchUser()
+        if let email = user?.email {
+            return email.replacingOccurrences(of: ".", with: "_")
         }
-        return String()
+        return nil
     }
     
     func loadDataFromDb(completion: @escaping ([Card])->()) {
         var cards: [Card] = []
-        let userRef = getCurrentUserRef()
+        guard let userRef = getCurrentUserRef() else {
+            return
+        }
         usersRef.child(userRef).child(Paths.cards).observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
@@ -51,12 +56,16 @@ final class DatabaseService {
     }
     
     func removeDataFromDb(withUID: String) {
-        let userRef = getCurrentUserRef()
+        guard let userRef = getCurrentUserRef() else {
+            return
+        }
         usersRef.child(userRef).child(Paths.cards).child(withUID).removeValue()
     }
     
     func updateDataInDb(forCard: Card) {
-        let userRef = getCurrentUserRef()
+        guard let userRef = getCurrentUserRef() else {
+            return
+        }
         usersRef.child(userRef).child(Paths.cards).child(forCard.uid).updateChildValues(["name"       : forCard.name,
                                                                                         "barcode"     : forCard.barcode,
                                                                                         "absoluteURL" : forCard.absoluteURL as Any])
@@ -64,7 +73,9 @@ final class DatabaseService {
     
     func saveCardImage(image: UIImage, completion: @escaping (_ url: String?, _ error: Error?)->()){
         let resizedImage = image.af_imageScaled(to: CGSize(width: 100, height: 100))
-        let userRef = getCurrentUserRef()
+        guard let userRef = getCurrentUserRef() else {
+            return
+        }
         let imageRef = imagesRef.child(userRef).child("\(UUID().uuidString).png")
         imageRef.putData(resizedImage.pngData() ?? Data(), metadata: nil) { (_, error) in
             imageRef.downloadURL(completion: { (url, error) in

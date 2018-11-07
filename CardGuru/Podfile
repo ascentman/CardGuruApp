@@ -12,8 +12,6 @@ target 'CardGuru' do
     pod 'FBSDKLoginKit'
     pod 'FacebookLogin'
     pod 'SVProgressHUD'
-    pod 'lottie-ios'
     pod 'Alamofire'
     pod 'AlamofireImage'
-    pod 'Kingfisher', '~> 4.0'
 end

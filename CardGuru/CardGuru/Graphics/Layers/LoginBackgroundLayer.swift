@@ -16,7 +16,6 @@ private enum Constants {
     }
 }
 
-
 class LoginBackgroundLayer: CALayer {
     
     init(inFrame: CGRect) {
@@ -33,7 +32,7 @@ class LoginBackgroundLayer: CALayer {
     }
     
     func animateLayer(with completion: ((Bool) -> ())?) {
-        Animations.shared.starAnimation(on: self, completion: { [weak self] (animation) in
+        Animations.starAnimation(on: self, completion: { [weak self] (animation) in
             animation.isRemovedOnCompletion = true
             animation.onComplete = completion
             self?.add(animation, forKey: Constants.AnimationKeys.position)

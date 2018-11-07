@@ -10,6 +10,11 @@ import UIKit
 import FBSDKLoginKit
 import FacebookLogin
 
+private enum Permissions {
+    static let login = ["public_profile", "email"]
+    static let data = ["fields": "email, name, picture.width(480).height(480)"]
+}
+
 final class FbLoginService: NSObject {
     
     typealias SignInResponse = (_ user: User?, _ error: Error?) -> ()
@@ -74,7 +79,7 @@ final class FbLoginService: NSObject {
                         let name = dict["name"] as? String,
                         let email = dict["email"] as? String,
                         let absoluteURL = ((dict["picture"] as? [String: Any])?["data"] as? [String: Any])?["url"] as? String {
-                        let newUser = User(name: name, email: email, absoluteURL: URL(string: absoluteURL))
+                        let newUser = User(name: name, email: email, absoluteURL: absoluteURL)
                         self.singInCompletion?(newUser, error)
                     }
                 })

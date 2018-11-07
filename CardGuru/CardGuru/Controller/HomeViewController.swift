@@ -17,7 +17,6 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LottieView.setupBackgroundGradient(on: view)
         DatabaseService.shared.loadDataFromDb { (cards) in
             self.cards = cards
             self.cardsCollectionView.reloadData()
@@ -38,7 +37,6 @@ final class HomeViewController: UIViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let destination = segue.destination as? ScannerViewController {
             destination.delegate = self
         }
@@ -69,6 +67,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
+            cell.layer.borderColor = UIColor.purple.cgColor
             let card = cards[indexPath.row]
             cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
             loadCardImages()

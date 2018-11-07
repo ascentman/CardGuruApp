@@ -20,7 +20,7 @@ final class ScannerService: NSObject {
     
     var session: AVCaptureSession?
     weak var delegate: ScannerServiceDelegate?
-    
+    let queue = DispatchQueue(label: "com.CardGuru.camera.queue")
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     private let supportedTypes = [ AVMetadataObject.ObjectType.upce,
                                    AVMetadataObject.ObjectType.code39,
@@ -32,25 +32,19 @@ final class ScannerService: NSObject {
     ]
     
     func setupSession(with completion: ((Bool) -> ())) {
-        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
-        switch status {
-        case .authorized:
-            completion(true)
-        default:
-            completion(false)
-        }
-        session = AVCaptureSession()
-        if let captureDevice = AVCaptureDevice.default(for: .video) {
-            do {
-                let input = try AVCaptureDeviceInput(device: captureDevice)
+        if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
+            session = AVCaptureSession()
+            if let captureDevice = AVCaptureDevice.default(for: .video),
+                let input = try? AVCaptureDeviceInput(device: captureDevice) {
                 session?.addInput(input)
                 let captureMetadataOutput = AVCaptureMetadataOutput()
                 session?.addOutput(captureMetadataOutput)
-                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: queue)
                 captureMetadataOutput.metadataObjectTypes = supportedTypes
-            } catch {
-                return
+                completion(true)
             }
+        } else {
+            completion(false)
         }
     }
     
@@ -60,7 +54,7 @@ final class ScannerService: NSObject {
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             return videoPreviewLayer
         }
-        return CALayer()
+        return nil
     }
 }
 
@@ -77,7 +71,6 @@ extension ScannerService: AVCaptureMetadataOutputObjectsDelegate {
                 supportedTypes.contains(metadataObject.type) else {
                     return
             }
-            
             if let barcode = metadataObject.stringValue {
                 self.delegate?.get(barcode: barcode)
                 session?.stopRunning()

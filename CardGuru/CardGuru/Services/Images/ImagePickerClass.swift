@@ -22,7 +22,7 @@ final class ImagePickerClass: NSObject {
             UIAlertAction in
             self.openCamera()
         }
-        let gallaryAction = UIAlertAction(title: "Gallary", style: .default){
+        let gallaryAction = UIAlertAction(title: "Photo Library", style: .default){
             UIAlertAction in
             self.openPhotoGallery()
         }
@@ -42,7 +42,7 @@ final class ImagePickerClass: NSObject {
             picker.sourceType = .camera
             self.viewController?.present(picker, animated: true, completion: nil)
         } else {
-            print("error")
+            print("no camera")
         }
     }
     

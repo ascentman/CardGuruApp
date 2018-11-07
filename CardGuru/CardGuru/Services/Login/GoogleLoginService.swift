@@ -9,6 +9,10 @@
 import UIKit
 import GoogleSignIn
 
+enum LoginMethod {
+    static let google = "Google"
+}
+
 final class GoogleLoginService: NSObject {
     
     typealias SignInResponse = (_ user: User?, _ error: Error?) -> ()
@@ -76,7 +80,7 @@ extension GoogleLoginService: GIDSignInDelegate {
         }
         self.status?()
         FirebaseService.shared.retrieveData(from: LoginMethod.google, with: authentication.accessToken, completion: {(user, error) -> () in
-            self.singInCompletion?(user, error)
+            self.singInCompletion?(user, nil)
         })
     }
     
