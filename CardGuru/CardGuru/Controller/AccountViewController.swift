@@ -23,13 +23,7 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let userEmail = UserDefaults().email,
-            let userName = UserDefaults().name,
-            let userLogo = UserDefaults().logo {
-            self.nameLabel.text = userName
-            self.emailLabel.text = userEmail
-            self.accountImageView.image = UIImage(data: userLogo)
-        }
+        fillOutlets()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,5 +37,18 @@ final class AccountViewController: UIViewController {
         FbLoginService.sharedInstance.signOut()
         GoogleLoginService.sharedInstance.signOut()
         NavigationControllerService.shared.presentCurrentUserUI()
+    }
+    
+    // MARK: - Private
+    
+    func fillOutlets() {
+        let user = UserDefaults().fetchUser()
+        self.nameLabel.text = user?.name
+        self.emailLabel.text = user?.email
+        if let url = user?.absoluteURL {
+            Downloader.shared.loadImage(url) { image in
+                self.accountImageView.image = image
+            }
+        }
     }
 }

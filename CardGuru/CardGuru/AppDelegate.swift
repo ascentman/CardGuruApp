@@ -33,15 +33,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if GoogleLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
-            return true
-        }
-        else if FbLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
-            return true
-        }
-        else {
-            return false
-        }
+//        if GoogleLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
+//            return true
+//        }
+//        else if FbLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
+//            return true
+//        }
+//        else {
+//            return false
+//        }
+        GoogleLoginService.sharedInstance.handleURLIn(app, open: url, options: options)
+        FbLoginService.sharedInstance.handleURLIn(app, open: url, options: options)
+        return true
     }
     
     // MARK: Private

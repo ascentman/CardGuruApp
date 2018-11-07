@@ -79,7 +79,7 @@ final class FbLoginService: NSObject {
                         let name = dict["name"] as? String,
                         let email = dict["email"] as? String,
                         let absoluteURL = ((dict["picture"] as? [String: Any])?["data"] as? [String: Any])?["url"] as? String {
-                        let newUser = User(name: name, email: email, absoluteURL: URL(string: absoluteURL))
+                        let newUser = User(name: name, email: email, absoluteURL: absoluteURL)
                         self.singInCompletion?(newUser, error)
                     }
                 })

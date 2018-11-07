@@ -31,11 +31,16 @@ final class FirebaseService {
         
         if let credentials = credentials {
             Auth.auth().signInAndRetrieveData(with: credentials) { authResult, error in
-                if let name = authResult?.user.displayName,
-                    let email = authResult?.user.email,
-                    let absoluteURL = authResult?.user.photoURL {
+                guard let name = authResult?.user.displayName,
+                    let email = authResult?.user.email else {
+                        return
+                }
+                if let absoluteURL = authResult?.user.photoURL?.absoluteString {
                     let newUser = User(name: name, email: email, absoluteURL: absoluteURL)
-                    completion(newUser, error)
+                    completion(newUser, nil)
+                } else {
+                    let newUser = User(name: name, email: email, absoluteURL: "")
+                    completion(newUser, nil)
                 }
             }
         }
