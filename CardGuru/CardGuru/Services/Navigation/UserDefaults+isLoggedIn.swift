@@ -9,6 +9,7 @@
 import Foundation
 
 extension UserDefaults {
+    
     var isLoggedIn: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "isLoggedIn")
