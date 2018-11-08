@@ -49,7 +49,7 @@ final class ImagePickerClass: NSObject {
     private func openPhotoGallery(){
         alert.dismiss(animated: true, completion: nil)
         picker.sourceType = .photoLibrary
-        self.viewController!.present(picker, animated: true, completion: nil)
+        self.viewController?.present(picker, animated: true, completion: nil)
     }
 }
 

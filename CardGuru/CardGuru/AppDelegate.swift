@@ -8,14 +8,6 @@
 
 import UIKit
 
-/*
---------------------------------------------------------------------------------------------------------------------------------------------
-
-- UserDefaults використовується для зберегігання обєкту користувача (його деталей) - краще тоді серіалізувати модель і зберегти її на диск і потім зчитати - використиай Codable протокол
- 
- --------------------------------------------------------------------------------------------------------------------------------------------
- */
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var navigationService: NavigationControllerService?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         FirebaseService.shared.setupFirebase()
         GoogleLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
         FbLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
@@ -33,18 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-//        if GoogleLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
-//            return true
-//        }
-//        else if FbLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
-//            return true
-//        }
-//        else {
-//            return false
-//        }
-        GoogleLoginService.sharedInstance.handleURLIn(app, open: url, options: options)
-        FbLoginService.sharedInstance.handleURLIn(app, open: url, options: options)
-        return true
+        if GoogleLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
+            return true
+        }
+        else if FbLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
+            return true
+        }
+        else {
+            return false
+        }
     }
     
     // MARK: Private
