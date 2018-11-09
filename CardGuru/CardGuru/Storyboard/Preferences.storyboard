@@ -74,22 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnn-eB-xJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="1357"/>
-        </scene>
-        <!--Terms View Controller-->
-        <scene sceneID="7VE-Jl-PI4">
-            <objects>
-                <viewController id="2BE-Gs-uPW" customClass="TermsViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uvE-IH-fPt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="K8a-12-HBg"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="co2-12-VsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1304.8" y="1356.9715142428786"/>
+            <point key="canvasLocation" x="666" y="1371"/>
         </scene>
         <!--Licence View Controller-->
         <scene sceneID="2WJ-h0-Uqm">
@@ -191,7 +176,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5I-Rj-jVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141.5999999999999" y="1356.9715142428786"/>
+            <point key="canvasLocation" x="1492" y="1372"/>
         </scene>
         <!--Preferences Table View Controller-->
         <scene sceneID="Jky-n6-0VG">
@@ -241,21 +226,24 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                             </tableViewSection>
                             <tableViewSection headerTitle="General" id="Da4-kC-tLZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="13H-61-MUd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="13H-61-MUd">
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="13H-61-MUd" id="UcU-6e-LmJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock with Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8d-m7-RSQ">
-                                                    <rect key="frame" x="16" y="11.5" width="145" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock with Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8d-m7-RSQ">
+                                                    <rect key="frame" x="16" y="11.5" width="161.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rq1-N9-a64">
                                                     <rect key="frame" x="306" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="touchIdSwitched:" destination="qmc-CS-77W" eventType="valueChanged" id="Ey6-2t-bWv"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -343,6 +331,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0dK-0Q-MMT"/>
+                    <connections>
+                        <outlet property="touchIdSwitch" destination="Rq1-N9-a64" id="NaM-ve-5aX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOK-tb-U68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

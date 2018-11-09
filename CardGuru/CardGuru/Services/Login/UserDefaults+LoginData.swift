@@ -10,13 +10,30 @@ import Foundation
 
 private enum Constants {
     static let userKey = "User"
-    static let loggedInKey = "isLoggedIn"
+    static let isLoggedIn = "isLoggedIn"
+    static let touchIDKey = "isTouchIDEnabled"
 }
 
 extension UserDefaults {
 
+    var isLoggedIn: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Constants.isLoggedIn)
+        }
+    }
+    
+    var isTouchIDEnabled: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Constants.touchIDKey)
+        }
+    }
+    
     func saveLoggedState(current: Bool) {
-        UserDefaults.standard.set(current, forKey: Constants.userKey)
+        UserDefaults.standard.set(current, forKey: Constants.isLoggedIn)
+    }
+    
+    func saveTouchIdStatus(current: Bool) {
+        UserDefaults.standard.set(current, forKey: Constants.touchIDKey)
     }
     
     func save(user: User) {
