@@ -16,7 +16,7 @@ private enum Constants {
     }
 }
 
-class LoginBackgroundLayer: CALayer {
+final class LoginBackgroundLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()

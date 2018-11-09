@@ -12,7 +12,7 @@ private enum Constants {
     static let imageName = "barcode"
 }
 
-class SquareLayer: CALayer {
+final class SquareLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()

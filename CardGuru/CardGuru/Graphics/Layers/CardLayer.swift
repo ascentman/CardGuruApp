@@ -16,7 +16,7 @@ private enum Constants {
     }
 }
 
-class CardLayer: CALayer {
+final class CardLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()
