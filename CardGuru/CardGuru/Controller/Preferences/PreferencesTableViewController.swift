@@ -10,6 +10,13 @@ import UIKit
 
 final class PreferencesTableViewController: UITableViewController {
     
+    @IBOutlet private weak var touchIdSwitch: UISwitch!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        touchIdSwitch.isOn = UserDefaults().isTouchIDEnabled
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (2,0):
@@ -19,6 +26,13 @@ final class PreferencesTableViewController: UITableViewController {
             }
         default:
             break
+        }
+    }
+    @IBAction private func touchIdSwitched(_ sender: Any) {
+        if touchIdSwitch.isOn {
+            UserDefaults().saveTouchIdStatus(current: true)
+        } else {
+            UserDefaults().saveTouchIdStatus(current: false)
         }
     }
 }

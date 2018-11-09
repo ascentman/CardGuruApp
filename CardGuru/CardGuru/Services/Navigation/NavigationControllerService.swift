@@ -19,9 +19,15 @@ final class NavigationControllerService {
     }
     
     func presentCurrentUserUI() {
+        
         if UserDefaults().isLoggedIn {
-            let homeViewController = UIStoryboard(name: StoryboardName.main, bundle: nil).instantiateInitialViewController()
-            self.window?.rootViewController = homeViewController
+            if UserDefaults().isTouchIDEnabled {
+                let touchViewController = UIStoryboard(name: StoryboardName.touch, bundle: nil).instantiateInitialViewController()
+                self.window?.rootViewController = touchViewController
+            } else {
+                let homeViewController = UIStoryboard(name: StoryboardName.main, bundle: nil).instantiateInitialViewController()
+                self.window?.rootViewController = homeViewController
+            }
         } else {
             let loginViewController = UIStoryboard(name: StoryboardName.login, bundle: nil).instantiateInitialViewController()
             self.window?.rootViewController = loginViewController

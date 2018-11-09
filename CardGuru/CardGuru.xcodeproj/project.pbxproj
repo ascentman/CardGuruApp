@@ -14,7 +14,6 @@
 		803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */; };
 		803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF82162934500BD91BC /* DetailedViewController.swift */; };
 		803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCFA21635B5A00BD91BC /* AccountViewController.swift */; };
-		804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */; };
 		804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F42176479D004AC960 /* UserDefaults+LoginData.swift */; };
 		804239FB21773669004AC960 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FA21773669004AC960 /* ScannerViewController.swift */; };
 		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
@@ -48,6 +47,9 @@
 		80CB6D6921933EDD00FBD0BD /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CB6D6821933EDD00FBD0BD /* Preferences.storyboard */; };
 		80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D01E912190771E00CA1AE6 /* Downloader.swift */; };
 		80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */; };
+		80E51EFF2195A0F300F43624 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E51EFE2195A0F300F43624 /* Authenticator.swift */; };
+		80E51F012195A6F500F43624 /* TouchIDLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E51F002195A6F500F43624 /* TouchIDLogin.storyboard */; };
+		80E51F032195AA2600F43624 /* TouchLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E51F022195AA2600F43624 /* TouchLoginViewController.swift */; };
 		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
 		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
 		CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */; };
@@ -62,7 +64,6 @@
 		803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		803DDCF82162934500BD91BC /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		803DDCFA21635B5A00BD91BC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+isLoggedIn.swift"; sourceTree = "<group>"; };
 		804239F42176479D004AC960 /* UserDefaults+LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+LoginData.swift"; sourceTree = "<group>"; };
 		804239FA21773669004AC960 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		804239FC217764A8004AC960 /* ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerService.swift; sourceTree = "<group>"; };
@@ -99,6 +100,9 @@
 		80CB6D6821933EDD00FBD0BD /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		80D01E912190771E00CA1AE6 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80E51EFE2195A0F300F43624 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		80E51F002195A6F500F43624 /* TouchIDLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TouchIDLogin.storyboard; sourceTree = "<group>"; };
+		80E51F022195AA2600F43624 /* TouchLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchLoginViewController.swift; sourceTree = "<group>"; };
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				80E51EFD2195A0C800F43624 /* Authentication */,
 				80D01E90219076E300CA1AE6 /* Networking */,
 				CECE4B09218F8F5D000D52E9 /* Images */,
 				8073E2B0217DB76200C380AD /* Scanner */,
@@ -174,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				809706352163B91500185E82 /* NavigationControllerService.swift */,
-				804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -280,6 +284,7 @@
 				80CB6D6821933EDD00FBD0BD /* Preferences.storyboard */,
 				8093336B21593E8C00C02D11 /* Login.storyboard */,
 				807D96062159147E00ABB0D2 /* LaunchScreen.storyboard */,
+				80E51F002195A6F500F43624 /* TouchIDLogin.storyboard */,
 				806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */,
 			);
 			path = Storyboard;
@@ -300,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
+				80E51F022195AA2600F43624 /* TouchLoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -322,6 +328,14 @@
 				80D01E912190771E00CA1AE6 /* Downloader.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		80E51EFD2195A0C800F43624 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				80E51EFE2195A0F300F43624 /* Authenticator.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		CE5462F8218372C7005FA82A /* Extensions */ = {
@@ -447,6 +461,7 @@
 				80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */,
 				807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */,
 				8093336C21593E8C00C02D11 /* Login.storyboard in Resources */,
+				80E51F012195A6F500F43624 /* TouchIDLogin.storyboard in Resources */,
 				807D96032159147C00ABB0D2 /* Main.storyboard in Resources */,
 				8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */,
 				80CB6D6921933EDD00FBD0BD /* Preferences.storyboard in Resources */,
@@ -543,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E51F032195AA2600F43624 /* TouchLoginViewController.swift in Sources */,
 				803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */,
 				809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */,
 				803DDCF32162662300BD91BC /* AddCardViewController.swift in Sources */,
@@ -572,10 +588,10 @@
 				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
 				809333682159379900C02D11 /* GoogleLoginService.swift in Sources */,
 				806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */,
-				804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */,
 				8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */,
 				CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */,
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
+				80E51EFF2195A0F300F43624 /* Authenticator.swift in Sources */,
 				8073E3052181CD1B00C380AD /* UIViewController+Extensions.swift in Sources */,
 				804239FB21773669004AC960 /* ScannerViewController.swift in Sources */,
 				809AA5E82194847A00AD1690 /* SafariView.swift in Sources */,
