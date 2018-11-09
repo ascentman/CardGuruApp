@@ -16,7 +16,7 @@ private enum Constants {
     }
 }
 
-class CheckLayer: CALayer {
+final class CheckLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LicenceViewController: UIViewController {
+final class LicenceViewController: UIViewController {
 
     // MARK: - Lifecycle
     

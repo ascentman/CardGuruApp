@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Animations {
+final class Animations {
     
     typealias animationClosure = (_ animation: CAAnimation) -> ()
     

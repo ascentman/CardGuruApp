@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CAAnimationClassDelegate: NSObject, CAAnimationDelegate {
+final class CAAnimationClassDelegate: NSObject, CAAnimationDelegate {
     
     // MARK: - CAAnimation+Block
     

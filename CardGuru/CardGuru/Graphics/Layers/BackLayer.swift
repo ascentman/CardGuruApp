@@ -13,7 +13,7 @@ private enum InnerRectangle {
     static let height = 180.0
 }
 
-class BackLayer: CAShapeLayer {
+final class BackLayer: CAShapeLayer {
     
     init(inFrame: CGRect) {
         super.init()

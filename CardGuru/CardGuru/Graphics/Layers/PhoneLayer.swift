@@ -12,7 +12,7 @@ private enum Constants {
     static let imageName = "iphone"
 }
 
-class PhoneLayer: CALayer {
+final class PhoneLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()
