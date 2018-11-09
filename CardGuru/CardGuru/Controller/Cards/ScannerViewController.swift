@@ -80,7 +80,9 @@ final class ScannerViewController: UIViewController {
                 UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
             }
         }, cancelActionHandler: {
-             self.performSegue(withIdentifier: "AddNewCard", sender: nil)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "AddNewCard", sender: nil)
+            }
         })
     }
 }
@@ -92,7 +94,9 @@ extension ScannerViewController: ScannerServiceDelegate {
     // MARK: - ScannerServiceDelegate
 
     func get(barcode: String) {
-        performSegue(withIdentifier: SequeName.addNewCard, sender: barcode)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: SequeName.addNewCard, sender: barcode)
+        }
     }
 }
 
