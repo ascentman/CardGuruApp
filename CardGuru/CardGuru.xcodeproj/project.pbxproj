@@ -44,7 +44,6 @@
 		809AA5E62194746100AD1690 /* LicenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5E52194746100AD1690 /* LicenceViewController.swift */; };
 		809AA5E82194847A00AD1690 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5E72194847A00AD1690 /* SafariView.swift */; };
 		809AA5ED2194902000AD1690 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5EC2194902000AD1690 /* PreferencesTableViewController.swift */; };
-		80AD245F2195D91700415644 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80AD245E2195D91700415644 /* Default-568h@2x.png */; };
 		80CB6D6921933EDD00FBD0BD /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CB6D6821933EDD00FBD0BD /* Preferences.storyboard */; };
 		80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D01E912190771E00CA1AE6 /* Downloader.swift */; };
 		80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */; };
@@ -98,7 +97,6 @@
 		809AA5E52194746100AD1690 /* LicenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceViewController.swift; sourceTree = "<group>"; };
 		809AA5E72194847A00AD1690 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		809AA5EC2194902000AD1690 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
-		80AD245E2195D91700415644 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		80CB6D6821933EDD00FBD0BD /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		80D01E912190771E00CA1AE6 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 		807D95F12159147C00ABB0D2 = {
 			isa = PBXGroup;
 			children = (
-				80AD245E2195D91700415644 /* Default-568h@2x.png */,
 				807D95FC2159147C00ABB0D2 /* CardGuru */,
 				807D95FB2159147C00ABB0D2 /* Products */,
 				F689632D5D7CCD1B0755A983 /* Pods */,
@@ -470,7 +467,6 @@
 				CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */,
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
 				80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */,
-				80AD245F2195D91700415644 /* Default-568h@2x.png in Resources */,
 				807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */,
 				8093336C21593E8C00C02D11 /* Login.storyboard in Resources */,
 				80E51F012195A6F500F43624 /* TouchIDLogin.storyboard in Resources */,
