@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TouchLoginViewController: UIViewController {
+final class TouchLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
