@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qmc-CS-77W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0VA-Rn-cjp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGJ-oZ-QE0" userLabel="Terms of use view">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyb-Z2-Rit">
                                         <rect key="frame" x="8" y="8" width="105" height="20.5"/>
@@ -123,7 +123,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QTJ-7L-0Ra">
-                                <rect key="frame" x="8" y="178" width="359" height="435"/>
+                                <rect key="frame" x="8" y="222" width="359" height="342"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="8" maxX="0.0" maxY="2"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla tortor metus, et imperdiet ligula placerat at. Pellentesque ut efficitur libero. Morbi sed augue sed orci rhoncus fermentum. Nullam commodo purus non leo bibendum molestie. Phasellus dignissim diam vel quam dapibus, nec pulvinar ante luctus. Curabitur dapibus urna non mauris faucibus, vel tincidunt turpis maximus. Sed placerat felis vel cursus aliquet. Quisque fringilla sapien ut lacus viverra, ut mattis justo accumsan. Sed porttitor imperdiet nisi, a tempor lectus facilisis ut. Proin posuere nulla augue, id bibendum turpis lobortis ac. Fusce consectetur nisi vel ipsum eleifend ornare. Sed eget risus fringilla, accumsan enim vitae, laoreet velit.
@@ -138,7 +138,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djh-9J-aVD">
-                                <rect key="frame" x="8" y="613" width="359" height="50"/>
+                                <rect key="frame" x="8" y="564" width="359" height="50"/>
                                 <color key="backgroundColor" red="0.80803854695431476" green="0.80803854695431476" blue="0.80803854695431476" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ECo-sD-DA9"/>
@@ -173,6 +173,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p5K-Ds-ySn"/>
                     </view>
+                    <connections>
+                        <outlet property="acceptLicenceButton" destination="Djh-9J-aVD" id="QXX-wI-ff1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5I-Rj-jVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +184,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
         <!--Preferences Table View Controller-->
         <scene sceneID="Jky-n6-0VG">
             <objects>
-                <tableViewController storyboardIdentifier="SettingsVC" id="qmc-CS-77W" customClass="PreferencesTableViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qmc-CS-77W" customClass="PreferencesTableViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="49j-gO-0ud">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,11 +192,11 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                         <sections>
                             <tableViewSection headerTitle="Account" id="Hku-ow-qt9">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ggC-qW-5KE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ggC-qW-5KE">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ggC-qW-5KE" id="Fgf-QG-4ZT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQe-yJ-CFy">
@@ -202,19 +205,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="aMy-uD-QWj">
-                                                    <rect key="frame" x="335" y="15" width="20" height="14"/>
-                                                    <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="14" id="NV3-IR-Egv"/>
-                                                        <constraint firstAttribute="width" constant="20" id="paY-2m-048"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="aMy-uD-QWj" firstAttribute="centerY" secondItem="Fgf-QG-4ZT" secondAttribute="centerY" id="U4j-RC-bd5"/>
                                                 <constraint firstItem="QQe-yJ-CFy" firstAttribute="leading" secondItem="Fgf-QG-4ZT" secondAttribute="leading" constant="16" id="XdZ-1C-I8L"/>
-                                                <constraint firstAttribute="trailing" secondItem="aMy-uD-QWj" secondAttribute="trailing" constant="20" id="ohX-Iw-zLf"/>
                                                 <constraint firstItem="QQe-yJ-CFy" firstAttribute="centerY" secondItem="Fgf-QG-4ZT" secondAttribute="centerY" id="pdI-yq-qfX"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -258,11 +251,11 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                             </tableViewSection>
                             <tableViewSection headerTitle="Legal" id="Yc3-b2-8jh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e0D-at-xGq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e0D-at-xGq">
                                         <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e0D-at-xGq" id="o5e-CD-IxF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q70-z4-UqC">
@@ -271,29 +264,19 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="0eJ-oK-3Hs">
-                                                    <rect key="frame" x="335" y="15" width="20" height="14"/>
-                                                    <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="gD9-1a-DsQ"/>
-                                                        <constraint firstAttribute="height" constant="14" id="quo-Ma-o2D"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="q70-z4-UqC" firstAttribute="centerY" secondItem="o5e-CD-IxF" secondAttribute="centerY" id="Yd2-CA-U3d"/>
-                                                <constraint firstItem="0eJ-oK-3Hs" firstAttribute="centerY" secondItem="o5e-CD-IxF" secondAttribute="centerY" id="j7s-4j-X61"/>
-                                                <constraint firstAttribute="trailing" secondItem="0eJ-oK-3Hs" secondAttribute="trailing" constant="20" id="yRh-xX-XDD"/>
                                                 <constraint firstItem="q70-z4-UqC" firstAttribute="leading" secondItem="o5e-CD-IxF" secondAttribute="leading" constant="16" id="znn-X4-f0M"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="E0W-5J-Kls">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="E0W-5J-Kls">
                                         <rect key="frame" x="0.0" y="299.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E0W-5J-Kls" id="H3U-YW-MGb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOw-Md-Br5">
@@ -302,19 +285,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ljd-AG-fMQ">
-                                                    <rect key="frame" x="335" y="15" width="20" height="14"/>
-                                                    <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="14" id="Tn6-Ym-8GR"/>
-                                                        <constraint firstAttribute="width" constant="20" id="qat-gL-VLw"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ljd-AG-fMQ" firstAttribute="centerY" secondItem="H3U-YW-MGb" secondAttribute="centerY" id="7dT-HY-Q1V"/>
                                                 <constraint firstItem="FOw-Md-Br5" firstAttribute="centerY" secondItem="H3U-YW-MGb" secondAttribute="centerY" id="p2G-wk-s54"/>
-                                                <constraint firstAttribute="trailing" secondItem="ljd-AG-fMQ" secondAttribute="trailing" constant="20" id="qV8-pd-cxT"/>
                                                 <constraint firstItem="FOw-Md-Br5" firstAttribute="leading" secondItem="H3U-YW-MGb" secondAttribute="leading" constant="16" id="wuE-qr-gXF"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -337,10 +310,38 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOK-tb-U68" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="588"/>
+            <point key="canvasLocation" x="1236" y="599.55022488755628"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="tcK-cL-nDH">
+            <objects>
+                <navigationController storyboardIdentifier="SettingsVC" automaticallyAdjustsScrollViewInsets="NO" id="0VA-Rn-cjp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="HcJ-dM-hbd"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NHQ-cd-pAT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.83211849910000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lqu-83-Lty">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.83211849910000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.83211849910000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="qmc-CS-77W" kind="relationship" relationship="rootViewController" id="xQ5-kD-YnS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6a-Yf-z7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289" y="600"/>
         </scene>
     </scenes>
     <resources>
-        <image name="right-arrow" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="settingsIcon" width="37.5" height="37.5"/>
     </resources>
 </document>

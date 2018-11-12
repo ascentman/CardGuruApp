@@ -20,7 +20,7 @@ final class CheckLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()
-        contents = UIImage(named: Constants.imageName)?.maskWithColor(color: UIColor.orange).cgImage
+        contents = UIImage(named: Constants.imageName)?.maskWithColor(color: UIColor.purple).cgImage
         contentsGravity = CALayerContentsGravity.resizeAspect
         frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         position = CGPoint(x: inFrame.midX, y: 150)

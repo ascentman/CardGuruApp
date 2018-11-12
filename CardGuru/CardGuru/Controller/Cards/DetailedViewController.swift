@@ -8,11 +8,6 @@
 
 import UIKit
 
-private enum Filter {
-    static let name = "CICode128BarcodeGenerator"
-    static let forKey = "inputMessage"
-}
-
 protocol DetailedViewControllerDeletionDelegate: class {
     func userDidRemoveData()
 }
@@ -78,19 +73,7 @@ final class DetailedViewController: UIViewController {
         self.barcode = barcode
         self.image = image
         self.absoluteURL = absoluteURL
-        self.barcodeGenerated = generateBarcode(from: barcode)
-    }
-    
-    private func generateBarcode(from string: String) -> UIImage? {
-        let data = string.data(using: String.Encoding.ascii)
-        if let filter = CIFilter(name: Filter.name) {
-            filter.setValue(data, forKey: Filter.forKey)
-            let transform = CGAffineTransform(scaleX: 3, y: 3)
-            if let output = filter.outputImage?.transformed(by: transform) {
-                return UIImage(ciImage: output)
-            }
-        }
-        return nil
+        self.barcodeGenerated = BarcodeGenerator.generateBarcode(from: barcode)
     }
 }
 

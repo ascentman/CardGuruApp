@@ -20,7 +20,7 @@ final class ScannerService: NSObject {
     
     var session: AVCaptureSession?
     weak var delegate: ScannerServiceDelegate?
-    let queue = DispatchQueue(label: "com.CardGuru.camera.queue")
+    private let queue = DispatchQueue(label: "com.CardGuru.cameraLayer.queue")
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     private let supportedTypes = [ AVMetadataObject.ObjectType.upce,
                                    AVMetadataObject.ObjectType.code39,
@@ -66,7 +66,6 @@ extension ScannerService: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count != 0 {
-            
             guard let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
                 supportedTypes.contains(metadataObject.type) else {
                     return
@@ -75,8 +74,6 @@ extension ScannerService: AVCaptureMetadataOutputObjectsDelegate {
                 self.delegate?.get(barcode: barcode)
                 session?.stopRunning()
             }
-        } else {
-            print("scanning...")
         }
     }
 }

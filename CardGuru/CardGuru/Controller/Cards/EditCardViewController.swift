@@ -8,6 +8,10 @@
 
 import UIKit
 
+private enum Constants {
+    static let headerHeight: CGFloat = 150.0
+}
+
 protocol EditCardTableViewControllerDeletionDelegate: class {
     func userDidRemoveData()
 }
@@ -33,7 +37,7 @@ final class EditCardTableViewController: UITableViewController {
     private var image = UIImage()
     private var absoluteURL = String()
     private let pickImage = ImagePickerClass()
-    private let tableHeaderHeight: CGFloat = 150.0
+    private let tableHeaderHeight: CGFloat = Constants.headerHeight
     
     // MARK: - Lifecycle
     
@@ -90,6 +94,7 @@ final class EditCardTableViewController: UITableViewController {
         }
         DatabaseService.shared.removeDataFromDb(withUID: uid)
         deleteDelegate?.userDidRemoveData()
+        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -149,6 +154,11 @@ final class EditCardTableViewController: UITableViewController {
     }
     
     private func updateCardInDbAndNotify(image: UIImage, for card: Card) {
+        if let url = card.absoluteURL {
+            if !url.isEmpty {
+            DatabaseService.shared.removeImageFromStorage(withURL: absoluteURL)
+            }
+        }
         let updatedCard = card
         DatabaseService.shared.saveCardImage(image: image) { (url, error) in
             if let url = url {

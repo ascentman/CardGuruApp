@@ -44,6 +44,7 @@
 		809AA5E62194746100AD1690 /* LicenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5E52194746100AD1690 /* LicenceViewController.swift */; };
 		809AA5E82194847A00AD1690 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5E72194847A00AD1690 /* SafariView.swift */; };
 		809AA5ED2194902000AD1690 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5EC2194902000AD1690 /* PreferencesTableViewController.swift */; };
+		80AD24622199A3AE00415644 /* BarcodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD24612199A3AE00415644 /* BarcodeGenerator.swift */; };
 		80CB6D6921933EDD00FBD0BD /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80CB6D6821933EDD00FBD0BD /* Preferences.storyboard */; };
 		80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D01E912190771E00CA1AE6 /* Downloader.swift */; };
 		80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */; };
@@ -97,6 +98,7 @@
 		809AA5E52194746100AD1690 /* LicenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceViewController.swift; sourceTree = "<group>"; };
 		809AA5E72194847A00AD1690 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		809AA5EC2194902000AD1690 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
+		80AD24612199A3AE00415644 /* BarcodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeGenerator.swift; sourceTree = "<group>"; };
 		80CB6D6821933EDD00FBD0BD /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		80D01E912190771E00CA1AE6 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -330,6 +332,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		80AD24602199A38500415644 /* ImageEdit */ = {
+			isa = PBXGroup;
+			children = (
+				80AD24612199A3AE00415644 /* BarcodeGenerator.swift */,
+			);
+			path = ImageEdit;
+			sourceTree = "<group>";
+		};
 		80D01E90219076E300CA1AE6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +368,7 @@
 		CE5462F9218373DC005FA82A /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				80AD24602199A38500415644 /* ImageEdit */,
 				8073E2F221805CF400C380AD /* Layers */,
 				8073E2FC218060CF00C380AD /* Animation */,
 			);
@@ -586,6 +597,7 @@
 				807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */,
 				8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */,
 				CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */,
+				80AD24622199A3AE00415644 /* BarcodeGenerator.swift in Sources */,
 				809706362163B91500185E82 /* NavigationControllerService.swift in Sources */,
 				8073E2F92180608C00C380AD /* Animations.swift in Sources */,
 				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,

@@ -92,6 +92,4 @@ final class DatabaseService {
         let imageRef = Storage.storage().reference(forURL: withURL)
         imageRef.delete()
     }
-    
-    
 }

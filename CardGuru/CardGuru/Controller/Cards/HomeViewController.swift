@@ -69,8 +69,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
             cell.layer.borderColor = UIColor.purple.cgColor
             let card = cards[indexPath.row]
-            cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
-            loadCardImages()
+            if card.absoluteURL != nil {
+                loadCardImages()
+            } else {
+                cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
+            }
             return cell
         }
         return UICollectionViewCell()
@@ -119,6 +122,7 @@ extension HomeViewController: DetailedViewControllerUpdatingDelegate {
                 card.name = with.name
                 card.barcode = with.barcode
                 card.image = with.image
+                card.absoluteURL = nil
             }
         }
         self.cardsCollectionView.reloadData()

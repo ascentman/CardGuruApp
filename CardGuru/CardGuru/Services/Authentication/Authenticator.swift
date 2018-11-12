@@ -19,8 +19,8 @@ final class Authenticator {
     func loggingWithTouchId(completion: @escaping (Bool, Error?)->()) {
         context = LAContext()
         if let context = context {
-            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
-                context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Logging with Touch ID") { (success, error) in
+            if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
+                context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: "Logging with Touch ID") { (success, error) in
                     completion(success, error)
                 }
             }
