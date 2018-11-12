@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimatedView: UIView {
+final class AnimatedView: UIView {
     
     @IBOutlet private weak var contentContainerView: UIView!
     
@@ -30,8 +30,8 @@ class AnimatedView: UIView {
         
         backLayer = BackLayer(inFrame: frame)
         squareLayer = SquareLayer(inFrame: frame)
-        cardLayer = CardLayer(inFrame: frame)
         phoneLayer = PhoneLayer(inFrame: frame)
+        cardLayer = CardLayer(inFrame: frame)
         checkLayer = CheckLayer(inFrame: frame)
         
         guard let backLayer = backLayer,
@@ -45,8 +45,8 @@ class AnimatedView: UIView {
         
         layer.addSublayer(backLayer)
         layer.addSublayer(squareLayer)
-        layer.addSublayer(cardLayer)
         layer.addSublayer(phoneLayer)
+        layer.addSublayer(cardLayer)
         layer.addSublayer(checkLayer)
     }
     

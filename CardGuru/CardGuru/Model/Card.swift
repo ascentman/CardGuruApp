@@ -27,6 +27,7 @@ final class Card {
         self.name = name
         self.barcode = barcode
         self.image = image
+        self.absoluteURL = nil
     }
     
     init?(snapshot: DataSnapshot) {

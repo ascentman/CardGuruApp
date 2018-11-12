@@ -85,7 +85,6 @@ final class FbLoginService: NSObject {
                 })
             } else {
                 self.singInCompletion?(nil, error)
-                return
             }
         }
     }

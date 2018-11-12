@@ -11,14 +11,8 @@ import UIKit
 final class CardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var cellName: UILabel!
-    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet private weak var cellImage: UIImageView!
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
-        
-    func setCell(name: String, image: UIImage) {
-        cellName.text = name
-        cellImage.image = image
-        loadingIndicator.stopAnimating()
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,4 +24,11 @@ final class CardCollectionViewCell: UICollectionViewCell {
         cellName.text = nil
         cellImage.image = nil
     }
+    
+    func setCell(name: String, image: UIImage) {
+        cellName.text = name
+        cellImage.image = image
+        loadingIndicator.stopAnimating()
+    }
+    
 }
