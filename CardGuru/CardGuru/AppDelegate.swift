@@ -11,7 +11,6 @@ import UIKit
 /**
 ???  - func setupSession(with completion: ((Bool) -> ())) { - як робив кілька функцій так і робить - треба зробити так як я говорив - ScannerService все ще потребує роботи
 ??? private var uid = String() - default параметр може бути підступним в такому використанні - якшо це обовязково - то не дозволяй створити обєкт без цих даних
-??? can't reproduce: - touch id не заробило шось в мене - не дебажив - скріншот 2 - чому взагалі інший UI? - за умовою такого не передбачалося
 ??? can't reproduce: - малюнки не зберегіються після перелогінювання
  */
 
@@ -25,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GoogleLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
         FbLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
         setupInitialViewController()
+        LocalNotificationsService.shared.registerLocalNotifications(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
     

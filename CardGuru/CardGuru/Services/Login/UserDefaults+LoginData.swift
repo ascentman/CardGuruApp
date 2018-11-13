@@ -13,6 +13,7 @@ private enum Constants {
     static let isLoggedIn = "isLoggedIn"
     static let touchIDKey = "isTouchIDEnabled"
     static let isLicenceAccepted = "isLicenceAccepted"
+    static let isNotificationsTurnedOn = "isNotificationsTurnedOn"
 }
 
 extension UserDefaults {
@@ -35,6 +36,12 @@ extension UserDefaults {
         }
     }
     
+    var isNotificationsTurnedOn: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Constants.isNotificationsTurnedOn)
+        }
+    }
+    
     func saveLoggedState(current: Bool) {
         UserDefaults.standard.set(current, forKey: Constants.isLoggedIn)
     }
@@ -45,6 +52,10 @@ extension UserDefaults {
     
     func saveLicenceStatus(current: Bool) {
         UserDefaults.standard.set(current, forKey: Constants.isLicenceAccepted)
+    }
+    
+    func saveNotificationStatus(current: Bool) {
+        UserDefaults.standard.set(current, forKey: Constants.isNotificationsTurnedOn)
     }
     
     func save(user: User) {

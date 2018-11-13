@@ -11,10 +11,12 @@ import UIKit
 final class PreferencesTableViewController: UITableViewController {
     
     @IBOutlet private weak var touchIdSwitch: UISwitch!
+    @IBOutlet weak var notificationsSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         touchIdSwitch.isOn = UserDefaults().isTouchIDEnabled
+        notificationsSwitch.isOn = UserDefaults().isNotificationsTurnedOn
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -33,6 +35,14 @@ final class PreferencesTableViewController: UITableViewController {
             UserDefaults().saveTouchIdStatus(current: true)
         } else {
             UserDefaults().saveTouchIdStatus(current: false)
+        }
+    }
+    @IBAction func notificationSwitched(_ sender: Any) {
+        if notificationsSwitch.isOn {
+            UserDefaults().saveNotificationStatus(current: true)
+            LocalNotificationsService.shared.sendNotification()
+        } else {
+             UserDefaults().saveNotificationStatus(current: false)
         }
     }
 }

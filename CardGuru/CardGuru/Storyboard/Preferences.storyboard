@@ -247,12 +247,41 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Ul0-Dv-Djs">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ul0-Dv-Djs" id="5mz-ZD-R7i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send local notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-PR-vlN">
+                                                    <rect key="frame" x="16" y="11.5" width="177.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOZ-Iq-z9G">
+                                                    <rect key="frame" x="306" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="notificationSwitched:" destination="qmc-CS-77W" eventType="valueChanged" id="iBB-9q-3Gq"/>
+                                                        <action selector="touchIdSwitched:" destination="qmc-CS-77W" eventType="valueChanged" id="6DE-fS-nur"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U74-PR-vlN" firstAttribute="leading" secondItem="5mz-ZD-R7i" secondAttribute="leading" constant="16" id="5lf-wB-EPs"/>
+                                                <constraint firstItem="aOZ-Iq-z9G" firstAttribute="centerY" secondItem="5mz-ZD-R7i" secondAttribute="centerY" id="FOH-y8-Fnz"/>
+                                                <constraint firstAttribute="trailing" secondItem="aOZ-Iq-z9G" secondAttribute="trailing" constant="20" id="G96-rC-DnF"/>
+                                                <constraint firstItem="U74-PR-vlN" firstAttribute="centerY" secondItem="5mz-ZD-R7i" secondAttribute="centerY" id="ZWY-o1-qvB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Legal" id="Yc3-b2-8jh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e0D-at-xGq">
-                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="299.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e0D-at-xGq" id="o5e-CD-IxF">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -273,7 +302,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="E0W-5J-Kls">
-                                        <rect key="frame" x="0.0" y="299.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="343.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E0W-5J-Kls" id="H3U-YW-MGb">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -305,6 +334,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                     </tableView>
                     <navigationItem key="navigationItem" id="0dK-0Q-MMT"/>
                     <connections>
+                        <outlet property="notificationsSwitch" destination="aOZ-Iq-z9G" id="zNU-dB-dfv"/>
                         <outlet property="touchIdSwitch" destination="Rq1-N9-a64" id="NaM-ve-5aX"/>
                     </connections>
                 </tableViewController>
