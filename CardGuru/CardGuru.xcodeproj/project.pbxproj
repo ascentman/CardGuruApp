@@ -38,6 +38,8 @@
 		8093336C21593E8C00C02D11 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8093336B21593E8C00C02D11 /* Login.storyboard */; };
 		8093336E2159489000C02D11 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336D2159488F00C02D11 /* HomeViewController.swift */; };
 		80933370215A37B900C02D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336F215A37B900C02D11 /* User.swift */; };
+		8095AC62219AE6370025DD4C /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095AC61219AE6370025DD4C /* LocalNotifications.swift */; };
+		8095AC64219B4AF60025DD4C /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095AC63219B4AF60025DD4C /* Connectivity.swift */; };
 		809706362163B91500185E82 /* NavigationControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706352163B91500185E82 /* NavigationControllerService.swift */; };
 		8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063E2164BEF800185E82 /* FbLoginService.swift */; };
 		809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseLoginService.swift */; };
@@ -92,6 +94,8 @@
 		8093336B21593E8C00C02D11 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8093336D2159488F00C02D11 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8093336F215A37B900C02D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8095AC61219AE6370025DD4C /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		8095AC63219B4AF60025DD4C /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		809706352163B91500185E82 /* NavigationControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerService.swift; sourceTree = "<group>"; };
 		8097063E2164BEF800185E82 /* FbLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbLoginService.swift; sourceTree = "<group>"; };
 		809706422164D64700185E82 /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				80AD2463219AE5FD00415644 /* LocalNotifications */,
 				80E51EFD2195A0C800F43624 /* Authentication */,
 				80D01E90219076E300CA1AE6 /* Networking */,
 				CECE4B09218F8F5D000D52E9 /* Images */,
@@ -340,10 +345,19 @@
 			path = ImageEdit;
 			sourceTree = "<group>";
 		};
+		80AD2463219AE5FD00415644 /* LocalNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				8095AC61219AE6370025DD4C /* LocalNotifications.swift */,
+			);
+			path = LocalNotifications;
+			sourceTree = "<group>";
+		};
 		80D01E90219076E300CA1AE6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				80D01E912190771E00CA1AE6 /* Downloader.swift */,
+				8095AC63219B4AF60025DD4C /* Connectivity.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -589,6 +603,7 @@
 				8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */,
 				8073E2FE2180694800C380AD /* SquareLayer.swift in Sources */,
 				80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */,
+				8095AC64219B4AF60025DD4C /* Connectivity.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
 				8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */,
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
@@ -610,6 +625,7 @@
 				806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */,
 				8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */,
 				CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */,
+				8095AC62219AE6370025DD4C /* LocalNotifications.swift in Sources */,
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
 				80E51EFF2195A0F300F43624 /* Authenticator.swift in Sources */,
 				8073E3052181CD1B00C380AD /* UIViewController+Extensions.swift in Sources */,

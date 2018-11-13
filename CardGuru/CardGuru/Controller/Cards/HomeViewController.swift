@@ -34,6 +34,12 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    private func loadCardsIfOffline(_ cell: CardCollectionViewCell, _ card: Card) {
+        if !Connectivity.isConnectedToInternet {
+            cell.setCell(name: card.name, image: UIImage(named: "shop") ?? UIImage())
+        }
+    }
+    
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,6 +77,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let card = cards[indexPath.row]
             if card.absoluteURL != nil {
                 loadCardImages()
+                loadCardsIfOffline(cell, card)
             } else {
                 cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
             }
