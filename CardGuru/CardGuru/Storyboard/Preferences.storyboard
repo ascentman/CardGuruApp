@@ -9,8 +9,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Mauryssel_Bold.ttf">
+            <string>Mauryssel-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Account View Controller-->
+        <!--Profile-->
         <scene sceneID="rdU-uU-daP">
             <objects>
                 <viewController id="zRc-vO-Fo4" customClass="AccountViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,32 +23,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aGM-Sx-2GL">
-                                <rect key="frame" x="137.5" y="172.5" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aGM-Sx-2GL">
+                                <rect key="frame" x="87.5" y="122.5" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="KCv-hk-eJX"/>
-                                    <constraint firstAttribute="width" constant="100" id="grj-Tg-D0A"/>
+                                    <constraint firstAttribute="height" constant="200" id="KCv-hk-eJX"/>
+                                    <constraint firstAttribute="width" constant="200" id="grj-Tg-D0A"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="50"/>
+                                        <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4P-dh-Bc8">
-                                <rect key="frame" x="10" y="323" width="355" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="10" y="373" width="355" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-35-4U4">
-                                <rect key="frame" x="10" y="358" width="355" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="10" y="408" width="355" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2w-j9-CW6">
-                                <rect key="frame" x="161.5" y="469" width="52" height="30"/>
+                                <rect key="frame" x="142.5" y="519" width="90" height="37"/>
+                                <fontDescription key="fontDescription" name="Mauryssel-Bold" family="Mauryssel" pointSize="17"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="logoutPressed:" destination="zRc-vO-Fo4" eventType="touchUpInside" id="bjL-7m-7Tw"/>
@@ -66,6 +72,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KRr-Po-5ib"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Profile" id="oid-3d-RI4"/>
                     <connections>
                         <outlet property="accountImageView" destination="aGM-Sx-2GL" id="Lh3-Pn-ftq"/>
                         <outlet property="emailLabel" destination="3z9-35-4U4" id="N2S-3U-3Z2"/>
@@ -123,7 +130,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QTJ-7L-0Ra">
-                                <rect key="frame" x="8" y="222" width="359" height="342"/>
+                                <rect key="frame" x="8" y="222" width="359" height="341"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="8" maxX="0.0" maxY="2"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla tortor metus, et imperdiet ligula placerat at. Pellentesque ut efficitur libero. Morbi sed augue sed orci rhoncus fermentum. Nullam commodo purus non leo bibendum molestie. Phasellus dignissim diam vel quam dapibus, nec pulvinar ante luctus. Curabitur dapibus urna non mauris faucibus, vel tincidunt turpis maximus. Sed placerat felis vel cursus aliquet. Quisque fringilla sapien ut lacus viverra, ut mattis justo accumsan. Sed porttitor imperdiet nisi, a tempor lectus facilisis ut. Proin posuere nulla augue, id bibendum turpis lobortis ac. Fusce consectetur nisi vel ipsum eleifend ornare. Sed eget risus fringilla, accumsan enim vitae, laoreet velit.
@@ -138,7 +145,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djh-9J-aVD">
-                                <rect key="frame" x="8" y="564" width="359" height="50"/>
+                                <rect key="frame" x="8" y="563" width="359" height="50"/>
                                 <color key="backgroundColor" red="0.80803854695431476" green="0.80803854695431476" blue="0.80803854695431476" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ECo-sD-DA9"/>
@@ -164,7 +171,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                             <constraint firstItem="QTJ-7L-0Ra" firstAttribute="leading" secondItem="p5K-Ds-ySn" secondAttribute="leading" constant="8" id="5uO-wl-wGJ"/>
                             <constraint firstItem="p5K-Ds-ySn" firstAttribute="trailing" secondItem="Djh-9J-aVD" secondAttribute="trailing" constant="8" id="FAP-wW-Dea"/>
                             <constraint firstItem="Djh-9J-aVD" firstAttribute="leading" secondItem="p5K-Ds-ySn" secondAttribute="leading" constant="8" id="GbJ-Lp-9JP"/>
-                            <constraint firstItem="p5K-Ds-ySn" firstAttribute="bottom" secondItem="Djh-9J-aVD" secondAttribute="bottom" constant="4" id="NJL-3X-YgY"/>
+                            <constraint firstItem="p5K-Ds-ySn" firstAttribute="bottom" secondItem="Djh-9J-aVD" secondAttribute="bottom" constant="5" id="NJL-3X-YgY"/>
                             <constraint firstItem="p5K-Ds-ySn" firstAttribute="trailing" secondItem="QTJ-7L-0Ra" secondAttribute="trailing" constant="8" id="Qww-v3-hda"/>
                             <constraint firstItem="OGJ-oZ-QE0" firstAttribute="leading" secondItem="p5K-Ds-ySn" secondAttribute="leading" id="b2b-aX-Eap"/>
                             <constraint firstItem="QTJ-7L-0Ra" firstAttribute="top" secondItem="OGJ-oZ-QE0" secondAttribute="bottom" id="hhc-3r-1pe"/>
