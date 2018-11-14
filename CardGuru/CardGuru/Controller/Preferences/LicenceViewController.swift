@@ -25,9 +25,9 @@ final class LicenceViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.groupTableViewBackground
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.title = "Licence Agreement"
-        if UserDefaults().isLicenceAccepted {
-            acceptLicenceButton.isHidden = true
-        }
+//        if UserDefaults().isLicenceAccepted {
+//            acceptLicenceButton.isHidden = true
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
