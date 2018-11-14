@@ -11,12 +11,15 @@ import UIKit
 final class HomeViewController: UIViewController {
     
     @IBOutlet private weak var cardsCollectionView: UICollectionView!
+    private let searchController = UISearchController(searchResultsController: nil)
     private var cards: [Card] = []
+    private var filteredCards: [Card] = []
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchBar()
         DatabaseService.shared.loadDataFromDb { (cards) in
             self.cards = cards
             self.cardsCollectionView.reloadData()
@@ -40,6 +43,22 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    private func setupSearchBar() {
+        searchController.searchBar.tintColor = UIColor.purple
+        searchController.searchBar.placeholder = "Search card"
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
+    }
+    
+    private func filterCardsForSearchedText(_ searchText: String) {
+        filteredCards = cards.filter( {(card: Card) -> Bool in
+            return card.name.lowercased().starts(with: searchText.lowercased())
+        })
+        cardsCollectionView.reloadData()
+    }
+    
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,11 +68,19 @@ final class HomeViewController: UIViewController {
         if let cell = sender as? CardCollectionViewCell,
             let index = cardsCollectionView.indexPath(for: cell) {
             if let destination = segue.destination as? DetailedViewController {
-                destination.setDetailedCard(uid: cards[index.row].uid,
-                                            name: cards[index.row].name,
-                                            barcode: cards[index.row].barcode,
-                                            image: cards[index.row].image ?? UIImage(named: "shop") ?? UIImage(),
-                                            absoluteURL: cards[index.row].absoluteURL ?? String())
+                if searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true) {
+                    destination.setDetailedCard(uid: filteredCards[index.row].uid,
+                                                name: filteredCards[index.row].name,
+                                                barcode: filteredCards[index.row].barcode,
+                                                image: filteredCards[index.row].image ?? UIImage(named: "shop") ?? UIImage(),
+                                                absoluteURL: filteredCards[index.row].absoluteURL ?? String())
+                } else {
+                    destination.setDetailedCard(uid: cards[index.row].uid,
+                                                name: cards[index.row].name,
+                                                barcode: cards[index.row].barcode,
+                                                image: cards[index.row].image ?? UIImage(named: "shop") ?? UIImage(),
+                                                absoluteURL: cards[index.row].absoluteURL ?? String())
+                }
                 destination.updateDelegate = self
                 destination.deleteDelegate = self
             }
@@ -68,13 +95,21 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     // MARK: - dataSource & delegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true) {
+            return filteredCards.count
+        }
         return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
             cell.layer.borderColor = UIColor.purple.cgColor
-            let card = cards[indexPath.row]
+            let card: Card
+            if searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true) {
+                card = filteredCards[indexPath.row]
+            } else {
+                card = cards[indexPath.row]
+            }
             if card.absoluteURL != nil {
                 loadCardImages()
                 loadCardsIfOffline(cell, card)
@@ -133,6 +168,17 @@ extension HomeViewController: DetailedViewControllerUpdatingDelegate {
             }
         }
         self.cardsCollectionView.reloadData()
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    
+    // MARK: - UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let term = searchController.searchBar.text {
+            filterCardsForSearchedText(term)
+        }
     }
 }
 
