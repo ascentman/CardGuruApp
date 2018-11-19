@@ -86,7 +86,10 @@
                                             <outlet property="cellImage" destination="h38-dR-8aF" id="7FH-7x-8L9"/>
                                             <outlet property="cellName" destination="vX3-qE-OTT" id="Ru2-kp-fYU"/>
                                             <outlet property="loadingIndicator" destination="xEr-b8-Qwy" id="Kh2-dJ-Cys"/>
-                                            <segue destination="OiM-p9-iFR" kind="show" identifier="CardDetails" id="dsc-Ih-2X7"/>
+                                            <segue destination="OiM-p9-iFR" kind="show" identifier="CardDetails" id="dsc-Ih-2X7">
+                                                <segue key="commit" inheritsFrom="parent" id="4gr-gQ-hSW"/>
+                                                <segue key="preview" inheritsFrom="commit" id="SSd-ul-yAm"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -722,4 +725,7 @@
         <image name="settingsIcon" width="37.5" height="37.5"/>
         <image name="share" width="600" height="181"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dsc-Ih-2X7"/>
+    </inferredMetricsTieBreakers>
 </document>
