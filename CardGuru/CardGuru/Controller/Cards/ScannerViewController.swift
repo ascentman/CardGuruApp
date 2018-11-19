@@ -8,8 +8,12 @@
 
 import UIKit
 
-private enum SequeName {
+private enum Constants {
     static let addNewCard = "AddNewCard"
+    static let alertTitle = NSLocalizedString("Camera access", comment: "")
+    static let alertMessage = NSLocalizedString("The CardGuru needs camera access. Enable it in Settings to continue", comment: "")
+    static let acceptTitle = NSLocalizedString("Settings", comment: "")
+    static let cancelTitle = NSLocalizedString("Cancel", comment: "")
 }
 
 protocol ScannerViewControllerDelegate: class {
@@ -58,7 +62,7 @@ final class ScannerViewController: UIViewController {
     }
 
     @IBAction func enterClicked(_ sender: Any) {
-        performSegue(withIdentifier: SequeName.addNewCard, sender: nil)
+        performSegue(withIdentifier: Constants.addNewCard, sender: nil)
     }
     
     // MARK: - Segues
@@ -75,13 +79,13 @@ final class ScannerViewController: UIViewController {
     }
     
     private func requestCameraAccess() {
-        presentAlert("Camera access", message: "The CardGuru needs camera access. Enable it in Settings to continue", acceptTitle: "Settings", declineTitle: "Cancel", okActionHandler: {
+        presentAlert(Constants.alertTitle, message: Constants.alertMessage, acceptTitle: Constants.acceptTitle, declineTitle: Constants.cancelTitle, okActionHandler: {
             if let appSettings = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
             }
         }, cancelActionHandler: {
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "AddNewCard", sender: nil)
+                self.performSegue(withIdentifier: Constants.addNewCard, sender: nil)
             }
         })
     }
@@ -95,7 +99,7 @@ extension ScannerViewController: ScannerServiceDelegate {
 
     func get(barcode: String) {
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: SequeName.addNewCard, sender: barcode)
+            self.performSegue(withIdentifier: Constants.addNewCard, sender: barcode)
         }
     }
 }

@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol AddCardViewControllerDelegate: class {
+    func userDidEnterData(card: Card)
+}
+
 private enum Parameters {
     static let name = "name"
     static let barcode = "barcode"
 }
 
-protocol AddCardViewControllerDelegate: class {
-    func userDidEnterData(card: Card)
+private enum Constants {
+    static let alertTitle = NSLocalizedString("Error", comment: "")
+    static let alertMessage = NSLocalizedString("Fill empty fields", comment: "")
+    static let acceptTitle = NSLocalizedString("Ok", comment: "")
+    static let cards = NSLocalizedString("Cards", comment: "")
 }
 
 final class AddCardViewController: UIViewController {
@@ -58,7 +65,7 @@ final class AddCardViewController: UIViewController {
             saveToDbAndNotify(name: name!, barcode: barcode!)
             navigateToRoot()
         } else {
-            presentAlert("Error", message: "Fill empty fields", acceptTitle: "Ok", declineTitle: nil)
+            presentAlert(Constants.alertTitle, message: Constants.alertMessage, acceptTitle: Constants.acceptTitle, declineTitle: nil)
         }
     }
     
@@ -88,7 +95,7 @@ final class AddCardViewController: UIViewController {
     
     private func setupCustomBackItem() {
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Cards", style: UIBarButtonItem.Style.plain, target: self, action: #selector(back))
+        let newBackButton = UIBarButtonItem(title: Constants.cards, style: UIBarButtonItem.Style.plain, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem = newBackButton
     }
     

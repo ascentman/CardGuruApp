@@ -9,8 +9,9 @@
 import UIKit
 import SVProgressHUD
 
-private enum SequeName {
+private enum Constants {
     static let goToHome = "GoToHome"
+    static let statusTitle = NSLocalizedString("Signing in", comment: "")
 }
 
 final class LoginViewController: UIViewController {
@@ -48,22 +49,28 @@ final class LoginViewController: UIViewController {
     
     @IBAction private func loginWithGoogle(_ sender: Any) {
         GoogleLoginService.sharedInstance.signIn(self, onRequestStart: {
-            SVProgressHUD.show(withStatus: "Signing in")
+            SVProgressHUD.show(withStatus: Constants.statusTitle)
         }) { [weak self] (user, error) in
             if let user = user {
                 self?.saveLoginData(user)
-                self?.performSegue(withIdentifier: SequeName.goToHome, sender: user)
+                self?.performSegue(withIdentifier: Constants.goToHome, sender: user)
+            } else {
+                SVProgressHUD.dismiss()
+                UserDefaults().saveLoggedState(current: false)
             }
         }
     }
     
     @IBAction private func loginWithFacebook(_ sender: Any) {
         FbLoginService.sharedInstance.signIn(self, onRequestStart: {
-            SVProgressHUD.show(withStatus: "Signing in")
+            SVProgressHUD.show(withStatus: Constants.statusTitle)
         }) { [weak self] (user, error) in
             if let user = user {
                 self?.saveLoginData(user)
-                self?.performSegue(withIdentifier: SequeName.goToHome, sender: user)
+                self?.performSegue(withIdentifier: Constants.goToHome, sender: user)
+            } else {
+                SVProgressHUD.dismiss()
+                UserDefaults().saveLoggedState(current: false)
             }
         }
     }

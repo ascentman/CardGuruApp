@@ -8,6 +8,12 @@
 
 import UIKit
 
+private enum Constants {
+    static let alertTitle = NSLocalizedString("Error", comment: "")
+    static let alertMessage = NSLocalizedString("Authentication failed", comment: "")
+    static let acceptTitle = NSLocalizedString("Ok", comment: "")
+}
+
 final class TouchLoginViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -22,7 +28,7 @@ final class TouchLoginViewController: UIViewController {
                     self.performSegue(withIdentifier: "GoToMain", sender: nil)
                 }
             } else {
-                self.presentAlert("Error", message: "Authentication failed", acceptTitle: "Ok", declineTitle: nil, okActionHandler: {
+                self.presentAlert(Constants.alertTitle, message: Constants.alertMessage, acceptTitle: Constants.acceptTitle, declineTitle: nil, okActionHandler: {
                     self.performLogging()
                 }, cancelActionHandler: nil)
             }

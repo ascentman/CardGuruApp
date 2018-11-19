@@ -10,6 +10,9 @@ import UIKit
 
 private enum Constants {
     static let headerHeight: CGFloat = 150.0
+    static let alertTitle = NSLocalizedString("Error", comment: "")
+    static let alertMessage = NSLocalizedString("Fill empty fields", comment: "")
+    static let acceptTitle = NSLocalizedString("Ok", comment: "")
 }
 
 protocol EditCardTableViewControllerDeletionDelegate: class {
@@ -84,7 +87,7 @@ final class EditCardTableViewController: UITableViewController {
                 navigateBack()
             }
         } else {
-            presentAlert("Error", message: "Fill empty fields", acceptTitle: "Ok", declineTitle: nil)
+            presentAlert(Constants.alertTitle, message: Constants.alertMessage, acceptTitle: Constants.acceptTitle, declineTitle: nil)
         }
     }
     

@@ -1,0 +1,57 @@
+
+/* Class = "UITabBarItem"; title = "Cards"; ObjectID = "5a6-TE-ded"; */
+"5a6-TE-ded.title" = "Картки";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "6dC-BZ-jXi"; */
+"6dC-BZ-jXi.title" = "Редагувати";
+
+/* Class = "UINavigationItem"; title = "Cards"; ObjectID = "71n-Ru-S3W"; */
+"71n-Ru-S3W.title" = "Картки";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9I5-tj-ZRv"; */
+"9I5-tj-ZRv.text" = "Назва";
+
+/* Class = "UILabel"; text = "Change image"; ObjectID = "DjN-UH-HdP"; */
+"DjN-UH-HdP.text" = "Змінити картинку";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "E3d-Hs-Lgo"; */
+"E3d-Hs-Lgo.text" = "Назва";
+
+/* Class = "UILabel"; text = "Enter the store name and the customer number for your card:"; ObjectID = "LaU-c0-FO5"; */
+"LaU-c0-FO5.text" = "Введіть назву магазину і номер дисконтної картки";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "MLi-LK-ZWf"; */
+"MLi-LK-ZWf.text" = "Назва";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ypx-R8-vgV"; */
+"Ypx-R8-vgV.normalTitle" = "Кнопка";
+
+/* Class = "UINavigationItem"; title = "Details"; ObjectID = "bco-Oq-YoE"; */
+"bco-Oq-YoE.title" = "Деталі";
+
+/* Class = "UILabel"; text = "Enter manually"; ObjectID = "dki-VC-kMr"; */
+"dki-VC-kMr.text" = "Ввести вручну";
+
+/* Class = "UILabel"; text = "barcode"; ObjectID = "e9P-6P-cJb"; */
+"e9P-6P-cJb.text" = "Код";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "fba-VD-qbJ"; */
+"fba-VD-qbJ.title" = "Налаштування";
+
+/* Class = "UILabel"; text = "barcode"; ObjectID = "gQJ-00-1Gk"; */
+"gQJ-00-1Gk.text" = "Код";
+
+/* Class = "UINavigationItem"; title = "Edit"; ObjectID = "gVR-sQ-56M"; */
+"gVR-sQ-56M.title" = "Редагувати";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "hnX-JV-28S"; */
+"hnX-JV-28S.title" = "Зберегти";
+
+/* Class = "UILabel"; text = "Customer number"; ObjectID = "ked-lH-QD4"; */
+"ked-lH-QD4.text" = "Номер дисконта";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "myC-Zj-tHf"; */
+"myC-Zj-tHf.title" = "Відмінити";
+
+/* Class = "UILabel"; text = "Store name"; ObjectID = "u8H-pw-do6"; */
+"u8H-pw-do6.text" = "Назва магазину";
