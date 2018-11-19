@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "email"; ObjectID = "3z9-35-4U4"; */
+"3z9-35-4U4.text" = "імейл";
+
+/* Class = "UITableViewSection"; headerTitle = "General"; ObjectID = "Da4-kC-tLZ"; */
+"Da4-kC-tLZ.headerTitle" = "Загальні";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "Djh-9J-aVD"; */
+"Djh-9J-aVD.normalTitle" = "Прийняти";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "FOw-Md-Br5"; */
+"FOw-Md-Br5.text" = "Ліцензія";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "HcJ-dM-hbd"; */
+"HcJ-dM-hbd.title" = "Налаштування";
+
+/* Class = "UITableViewSection"; headerTitle = "Account"; ObjectID = "Hku-ow-qt9"; */
+"Hku-ow-qt9.headerTitle" = "Аккаунт";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "QQe-yJ-CFy"; */
+"QQe-yJ-CFy.text" = "Профіль";
+
+/* Class = "UILabel"; text = "Send local notifications"; ObjectID = "U74-PR-vlN"; */
+"U74-PR-vlN.text" = "Відправляти нотифікації";
+
+/* Class = "UILabel"; text = "Terms of use"; ObjectID = "Xyb-Z2-Rit"; */
+"Xyb-Z2-Rit.text" = "Умови використання";
+
+/* Class = "UILabel"; text = "Unlock with Touch ID"; ObjectID = "Y8d-m7-RSQ"; */
+"Y8d-m7-RSQ.text" = "Відкривати з Touch ID";
+
+/* Class = "UITableViewSection"; headerTitle = "Legal"; ObjectID = "Yc3-b2-8jh"; */
+"Yc3-b2-8jh.headerTitle" = "Ліцензія";
+
+/* Class = "UIButton"; normalTitle = "Log out"; ObjectID = "g2w-j9-CW6"; */
+"g2w-j9-CW6.normalTitle" = "Вихід";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "oid-3d-RI4"; */
+"oid-3d-RI4.title" = "Профіль";
+
+/* Class = "UILabel"; text = "Terms of Service"; ObjectID = "q70-z4-UqC"; */
+"q70-z4-UqC.text" = "Умови використання сервісу";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "s4P-dh-Bc8"; */
+"s4P-dh-Bc8.text" = "назва";

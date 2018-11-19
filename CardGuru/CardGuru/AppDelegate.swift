@@ -8,12 +8,6 @@
 
 import UIKit
 
-/**
-???  - func setupSession(with completion: ((Bool) -> ())) { - як робив кілька функцій так і робить - треба зробити так як я говорив - ScannerService все ще потребує роботи
-??? private var uid = String() - default параметр може бути підступним в такому використанні - якшо це обовязково - то не дозволяй створити обєкт без цих даних
-??? can't reproduce: - малюнки не зберегіються після перелогінювання
- */
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

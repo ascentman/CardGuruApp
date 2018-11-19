@@ -16,6 +16,10 @@ protocol DetailedViewControllerUpdatingDelegate: class {
     func userDidUpdateData(with: Card)
 }
 
+private enum Constants {
+    static let activityText = NSLocalizedString("I would like to share my card with you:", comment: "")
+}
+
 final class DetailedViewController: UIViewController {
 
     @IBOutlet private weak var barcodeLabel: UILabel!
@@ -53,7 +57,7 @@ final class DetailedViewController: UIViewController {
     }
     
     @IBAction func shareClicked(_ sender: Any) {
-        let shareViewController = UIActivityViewController(activityItems: ["I would like to share my card with you: \(name), \(barcode)"], applicationActivities: nil)
+        let shareViewController = UIActivityViewController(activityItems: ["\(Constants.activityText) \(name), \(barcode)"], applicationActivities: nil)
         self.present(shareViewController, animated: true, completion: nil)
     }
     

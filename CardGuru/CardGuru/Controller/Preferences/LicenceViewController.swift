@@ -8,12 +8,18 @@
 
 import UIKit
 
+private enum Constants {
+    static let licenceTitle = NSLocalizedString("Licence Agreement", comment: "")
+    static let alertTitle = NSLocalizedString("Info", comment: "")
+    static let alertMessage = NSLocalizedString("License Agreement has been accepted!", comment: "")
+    static let acceptTitle = NSLocalizedString("Ok", comment: "")
+}
+
 final class LicenceViewController: UIViewController {
 
     @IBOutlet weak var acceptLicenceButton: UIButton!
     
     // MARK: - Lifecycle
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -24,7 +30,7 @@ final class LicenceViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor.groupTableViewBackground
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        self.title = "Licence Agreement"
+        self.title = Constants.licenceTitle
 //        if UserDefaults().isLicenceAccepted {
 //            acceptLicenceButton.isHidden = true
 //        }
@@ -37,7 +43,7 @@ final class LicenceViewController: UIViewController {
     }
     
     @IBAction func acceptedClicked(_ sender: Any) {
-        presentAlert("Info", message: "License Agreement has been accepted!", acceptTitle: "Ok", declineTitle: nil, okActionHandler: {
+        presentAlert(Constants.alertTitle, message: Constants.alertMessage, acceptTitle: Constants.acceptTitle, declineTitle: nil, okActionHandler: {
             self.navigationController?.popToRootViewController(animated: true)
             UserDefaults().saveLicenceStatus(current: true)
         }, cancelActionHandler: nil)

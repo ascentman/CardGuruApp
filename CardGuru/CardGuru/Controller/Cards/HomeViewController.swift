@@ -8,6 +8,10 @@
 
 import UIKit
 
+private enum Constants {
+    static let searchTitle = NSLocalizedString("Search card", comment: "")
+}
+
 final class HomeViewController: UIViewController {
     
     @IBOutlet private weak var cardsCollectionView: UICollectionView!
@@ -45,7 +49,7 @@ final class HomeViewController: UIViewController {
     
     private func setupSearchBar() {
         searchController.searchBar.tintColor = UIColor.purple
-        searchController.searchBar.placeholder = "Search card"
+        searchController.searchBar.placeholder = Constants.searchTitle
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
