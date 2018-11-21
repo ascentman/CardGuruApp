@@ -208,7 +208,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLi-LK-ZWf">
-                                <rect key="frame" x="16" y="240" width="85" height="30"/>
+                                <rect key="frame" x="16" y="240" width="43" height="30"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -226,7 +226,7 @@
                                     <constraint firstAttribute="height" constant="100" id="fAc-fa-KRY"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQJ-00-1Gk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="barcode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQJ-00-1Gk">
                                 <rect key="frame" x="14" y="314" width="109" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="fJk-v0-PfO"/>
@@ -253,7 +253,7 @@
                             <constraint firstItem="gQJ-00-1Gk" firstAttribute="leading" secondItem="Dcu-H7-ALg" secondAttribute="leading" constant="14" id="3N3-kd-79Y"/>
                             <constraint firstItem="Juz-hB-SQ2" firstAttribute="top" secondItem="MDw-LT-QTf" secondAttribute="bottom" constant="40" id="51j-2e-yNI"/>
                             <constraint firstItem="MLi-LK-ZWf" firstAttribute="bottom" secondItem="MDw-LT-QTf" secondAttribute="bottom" id="5QH-eW-Fdi"/>
-                            <constraint firstItem="MDw-LT-QTf" firstAttribute="leading" secondItem="MLi-LK-ZWf" secondAttribute="trailing" constant="62" id="B3d-sh-Jlq"/>
+                            <constraint firstItem="MDw-LT-QTf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MLi-LK-ZWf" secondAttribute="trailing" constant="62" id="B3d-sh-Jlq"/>
                             <constraint firstItem="gQJ-00-1Gk" firstAttribute="centerY" secondItem="Juz-hB-SQ2" secondAttribute="centerY" id="Cs1-na-Enf"/>
                             <constraint firstItem="GE7-6Y-liw" firstAttribute="top" secondItem="Dcu-H7-ALg" secondAttribute="top" id="FLe-RZ-2qJ"/>
                             <constraint firstItem="1cp-vl-YJS" firstAttribute="top" secondItem="Juz-hB-SQ2" secondAttribute="bottom" constant="66" id="Ge7-Nr-ith"/>
@@ -283,7 +283,7 @@
         <!--Details-->
         <scene sceneID="rVy-Dv-040">
             <objects>
-                <viewController id="OiM-p9-iFR" customClass="DetailedViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsVC" id="OiM-p9-iFR" customClass="DetailedViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4je-Vu-chL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,7 +463,7 @@
                                                         <outletCollection property="gestureRecognizers" destination="B7v-cU-EqO" appends="YES" id="xGn-0g-xsL"/>
                                                     </connections>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjN-UH-HdP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjN-UH-HdP">
                                                     <rect key="frame" x="16" y="11" width="89" height="18"/>
                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -474,7 +474,7 @@
                                                 <constraint firstItem="DjN-UH-HdP" firstAttribute="leading" secondItem="VUt-9L-t9c" secondAttribute="leading" constant="16" id="FxD-Q2-S3q"/>
                                                 <constraint firstItem="6gk-Sa-8t0" firstAttribute="top" secondItem="DjN-UH-HdP" secondAttribute="bottom" constant="16" id="K2u-ca-5OT"/>
                                                 <constraint firstItem="DjN-UH-HdP" firstAttribute="top" secondItem="VUt-9L-t9c" secondAttribute="top" constant="11" id="b6H-AL-99J"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DjN-UH-HdP" secondAttribute="trailing" constant="270" id="rY1-NX-FMq"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DjN-UH-HdP" secondAttribute="trailing" constant="16" id="rY1-NX-FMq"/>
                                                 <constraint firstItem="6gk-Sa-8t0" firstAttribute="leading" secondItem="VUt-9L-t9c" secondAttribute="leading" constant="10" id="tDB-fq-OVT"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -503,7 +503,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="je9-og-ITN"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8H-pw-do6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8H-pw-do6">
                                                     <rect key="frame" x="16" y="11" width="72.5" height="18"/>
                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -517,7 +517,7 @@
                                                 <constraint firstItem="u8H-pw-do6" firstAttribute="leading" secondItem="gyW-3a-sK1" secondAttribute="leadingMargin" id="Fpj-Rk-InO"/>
                                                 <constraint firstItem="00H-Ym-2As" firstAttribute="leading" secondItem="gyW-3a-sK1" secondAttribute="leading" constant="16" id="J3U-vk-EbF"/>
                                                 <constraint firstAttribute="trailing" secondItem="3lz-HS-qeh" secondAttribute="trailing" constant="16" id="aVt-st-gH9"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="u8H-pw-do6" secondAttribute="trailing" constant="270.5" id="c84-cF-G4K"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="u8H-pw-do6" secondAttribute="trailing" constant="16" id="c84-cF-G4K"/>
                                                 <constraint firstAttribute="trailing" secondItem="00H-Ym-2As" secondAttribute="trailing" constant="16" id="dRr-6j-2JW"/>
                                                 <constraint firstItem="3lz-HS-qeh" firstAttribute="top" secondItem="u8H-pw-do6" secondAttribute="bottom" constant="10" id="xse-h2-ehv"/>
                                             </constraints>
@@ -531,7 +531,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ked-lH-QD4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ked-lH-QD4">
                                                     <rect key="frame" x="16" y="11" width="114" height="18"/>
                                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -562,7 +562,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="rou-MD-FyC" secondAttribute="trailing" constant="16" id="Sfq-JC-IAL"/>
                                                 <constraint firstItem="ked-lH-QD4" firstAttribute="leading" secondItem="5X7-G9-poh" secondAttribute="leadingMargin" id="Xmx-RX-A6t"/>
                                                 <constraint firstItem="rou-MD-FyC" firstAttribute="leading" secondItem="5X7-G9-poh" secondAttribute="leading" constant="16" id="axT-CK-jyW"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ked-lH-QD4" secondAttribute="trailing" constant="20" symbolic="YES" id="dUd-eM-62Q"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ked-lH-QD4" secondAttribute="trailing" constant="16" id="dUd-eM-62Q"/>
                                                 <constraint firstAttribute="bottom" secondItem="LdZ-Z8-RXY" secondAttribute="bottom" id="v1y-oe-PHS"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -686,7 +686,7 @@
         <!--Cards-->
         <scene sceneID="axy-S8-Uxi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hYh-Hf-b1z" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="hYh-Hf-b1z" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cards" image="cardsIcon" id="5a6-TE-ded"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6Cl-OJ-y2N">

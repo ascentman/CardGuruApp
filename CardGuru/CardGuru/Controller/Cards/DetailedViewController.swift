@@ -33,6 +33,7 @@ final class DetailedViewController: UIViewController {
     private var image = UIImage()
     private var absoluteURL = String()
     private var barcodeGenerated: UIImage?
+    private let manager = FileHandler()
     weak var deleteDelegate: DetailedViewControllerDeletionDelegate?
     weak var updateDelegate: DetailedViewControllerUpdatingDelegate?
     
@@ -45,10 +46,8 @@ final class DetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = name
-        barcodeLabel.text = barcode
-        barcodeImageView.image = barcodeGenerated
-        imageView.image = image
+        setupOutlets()
+        setupShortcutItem(name: name, barcode: barcode, image: image)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,6 +77,27 @@ final class DetailedViewController: UIViewController {
         self.image = image
         self.absoluteURL = absoluteURL
         self.barcodeGenerated = BarcodeGenerator.generateBarcode(from: barcode)
+    }
+    
+    // MARK: - Private
+    
+    private func setupOutlets() {
+        nameLabel.text = name
+        barcodeLabel.text = barcode
+        barcodeImageView.image = barcodeGenerated
+        imageView.image = image
+    }
+    
+    private func setupShortcutItem(name: String, barcode: String, image: UIImage) {
+        let shortcutType = "work.CardGuru.openLast"
+        let shortcutTitle = name.capitalized
+        let shortcutItem = UIApplicationShortcutItem(type: shortcutType, localizedTitle: shortcutTitle, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .taskCompleted), userInfo: nil)
+        UIApplication.shared.shortcutItems = [shortcutItem]
+        saveLastCardToFile()
+    }
+    
+    private func saveLastCardToFile() {
+        try? manager.writeDataToPlist(lastCard: LastCard(name: name.capitalized, barcode: barcode, imageData: image.pngData()))
     }
 }
 

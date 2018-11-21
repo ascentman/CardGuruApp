@@ -32,10 +32,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        switch shortcutItem.type {
+        case "work.CardGuru.openSearch":
+            setupSearchViewController()
+        case "work.CardGuru.addCard":
+            setupAddCardViewController()
+        case "work.CardGuru.openLast":
+            setupOpenLastViewController()
+        default:
+            break
+        }
+    }
+    
     // MARK: Private
     
     private func setupInitialViewController() {
         window = UIWindow(frame: UIScreen.main.bounds)
         NavigationControllerService.shared.presentCurrentUserUI()
+    }
+    
+    private func setupAddCardViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        NavigationControllerService.shared.presentAddViewController()
+    }
+    
+    private func setupSearchViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        UserDefaults().saveForceTouchActive(current: true)
+        NavigationControllerService.shared.presentCurrentUserUI()
+    }
+    
+    private func setupOpenLastViewController() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let lastCard = loadShortcutItemFromFile()
+        NavigationControllerService.shared.presentDetailsViewController(with: lastCard ?? LastCard())
+    }
+    
+    private func loadShortcutItemFromFile() -> LastCard? {
+        let manager = FileHandler()
+        let lastCard = try? manager.readDataFromPlist()
+        return lastCard
     }
 }

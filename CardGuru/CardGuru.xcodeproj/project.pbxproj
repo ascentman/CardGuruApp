@@ -18,6 +18,10 @@
 		804239FB21773669004AC960 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FA21773669004AC960 /* ScannerViewController.swift */; };
 		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
+		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
+		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
+		806FE3FC21A573B30009745A /* LastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FB21A573B30009745A /* LastCard.swift */; };
+		806FE3FE21A5749D0009745A /* ErrorToThrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FD21A5749D0009745A /* ErrorToThrow.swift */; };
 		8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2E52180597E00C380AD /* AnimatedView.xib */; };
 		8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2E721805B0000C380AD /* AnimatedView.swift */; };
 		8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2EA21805C4100C380AD /* BackLayer.swift */; };
@@ -72,6 +76,10 @@
 		804239FA21773669004AC960 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		804239FC217764A8004AC960 /* ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerService.swift; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
+		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
+		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
+		806FE3FB21A573B30009745A /* LastCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCard.swift; sourceTree = "<group>"; };
+		806FE3FD21A5749D0009745A /* ErrorToThrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorToThrow.swift; sourceTree = "<group>"; };
 		8073E2E52180597E00C380AD /* AnimatedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedView.xib; sourceTree = "<group>"; };
 		8073E2E721805B0000C380AD /* AnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedView.swift; sourceTree = "<group>"; };
 		8073E2EA21805C4100C380AD /* BackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLayer.swift; sourceTree = "<group>"; };
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				8093336F215A37B900C02D11 /* User.swift */,
+				806FE3FB21A573B30009745A /* LastCard.swift */,
 				803DDCF0216255BE00BD91BC /* Card.swift */,
 			);
 			path = Model;
@@ -164,6 +173,7 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				806FE3F821A571880009745A /* FileHandler */,
 				80AD2463219AE5FD00415644 /* LocalNotifications */,
 				80E51EFD2195A0C800F43624 /* Authentication */,
 				80D01E90219076E300CA1AE6 /* Networking */,
@@ -201,6 +211,15 @@
 				803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		806FE3F821A571880009745A /* FileHandler */ = {
+			isa = PBXGroup;
+			children = (
+				806FE3F921A571A50009745A /* FileHandler.swift */,
+				806FE3FD21A5749D0009745A /* ErrorToThrow.swift */,
+			);
+			path = FileHandler;
 			sourceTree = "<group>";
 		};
 		8073E2B0217DB76200C380AD /* Scanner */ = {
@@ -274,6 +293,7 @@
 				8073E3062183054D00C380AD /* CardGuru.entitlements */,
 				807D95FD2159147C00ABB0D2 /* AppDelegate.swift */,
 				807D96092159147E00ABB0D2 /* Info.plist */,
+				806FE3F621A562F00009745A /* ShortcutItem.plist */,
 				80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */,
 				809706392163BA3100185E82 /* Storyboard */,
 				803DDCFC21636E3500BD91BC /* Model */,
@@ -499,6 +519,7 @@
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
 				80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */,
 				807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */,
+				806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */,
 				80D51D4A21A2CB9200DD048B /* Login.storyboard in Resources */,
 				80D51D4121A2CA5C00DD048B /* Localizable.strings in Resources */,
 				80D51D5121A2CF2700DD048B /* TouchIDLogin.storyboard in Resources */,
@@ -599,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80E51F032195AA2600F43624 /* TouchLoginViewController.swift in Sources */,
+				806FE3FC21A573B30009745A /* LastCard.swift in Sources */,
 				803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */,
 				809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */,
 				803DDCF32162662300BD91BC /* AddCardViewController.swift in Sources */,
@@ -610,6 +632,7 @@
 				8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */,
 				8073E2FE2180694800C380AD /* SquareLayer.swift in Sources */,
 				80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */,
+				806FE3FE21A5749D0009745A /* ErrorToThrow.swift in Sources */,
 				8095AC64219B4AF60025DD4C /* Connectivity.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
 				8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */,
@@ -629,6 +652,7 @@
 				809AA5E62194746100AD1690 /* LicenceViewController.swift in Sources */,
 				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
 				809333682159379900C02D11 /* GoogleLoginService.swift in Sources */,
+				806FE3FA21A571A50009745A /* FileHandler.swift in Sources */,
 				806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */,
 				8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */,
 				CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */,
