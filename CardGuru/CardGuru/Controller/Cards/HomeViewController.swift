@@ -40,13 +40,13 @@ final class HomeViewController: UIViewController {
         }
     }
 
-    private func loadCardImages() {
+    private func loadCardImages(to cards: [Card]) {
         for (index, card) in cards.enumerated() where card.absoluteURL != nil {
             Downloader.shared.loadImage(card.absoluteURL) { image in
                 let indexPath = IndexPath(row: index, section: 0)
                 let cell = self.cardsCollectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
                 cell?.setCell(name: card.name, image: image ?? UIImage(named: "shop") ?? UIImage())
-                self.cards[index].image = image
+                cards[index].image = image
             }
         }
     }
@@ -118,16 +118,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
             cell.layer.borderColor = UIColor.purple.cgColor
-            let card: Card
             if searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true) {
-                card = filteredCards[indexPath.row]
-            } else {
-                card = cards[indexPath.row]
-            }
-            if card.absoluteURL != nil {
-                loadCardImages()
+                let card = filteredCards[indexPath.row]
+                loadCardImages(to: filteredCards)
                 loadCardsIfOffline(cell, card)
+                cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
             } else {
+                let card = cards[indexPath.row]
+                loadCardImages(to: cards)
+                loadCardsIfOffline(cell, card)
                 cell.setCell(name: card.name, image: card.image ?? UIImage(named: "shop") ?? UIImage())
             }
             return cell
