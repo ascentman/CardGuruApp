@@ -21,6 +21,16 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Lifecycle
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDefaults().isForceTouchActive {
+            DispatchQueue.main.async {
+                self.searchController.searchBar.becomeFirstResponder()
+            }
+        }
+        UserDefaults().saveForceTouchActive(current: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()

@@ -118,7 +118,7 @@ extension AddCardViewController: UITextFieldDelegate {
     }
 }
 
-extension String {
+private extension String {
     
     // MARK: - Replace dots on underscores
     
