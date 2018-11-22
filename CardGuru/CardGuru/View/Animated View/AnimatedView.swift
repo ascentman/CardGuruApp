@@ -41,13 +41,14 @@ final class AnimatedView: UIView {
             let checkLayer = checkLayer else {
                 return
         }
-        startAnimation()
         
         layer.addSublayer(backLayer)
         layer.addSublayer(squareLayer)
         layer.addSublayer(phoneLayer)
         layer.addSublayer(cardLayer)
         layer.addSublayer(checkLayer)
+        squareLayer.animateLayer()
+        startAnimation()
     }
     
     private func animateCardLayer(_ completion: ((Bool) -> ())?) {
