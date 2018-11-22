@@ -44,4 +44,24 @@ final class Animations {
         layer.add(animation, forKey: nil)
         completion(animation)
     }
+    
+    class func shimmerEffect(on layer: CALayer) {
+        let light = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        let dark = UIColor.black.cgColor
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.colors = [dark, light, dark]
+        gradient.frame = CGRect(x: -layer.bounds.size.width / 2, y: 0, width: layer.bounds.size.width * 1.5, height: layer.bounds.size.height)
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        gradient.locations = [0.2, 0.4, 0.6]
+        layer.mask = gradient
+        
+        let animation: CABasicAnimation = CABasicAnimation(keyPath: "locations")
+        animation.fromValue = [0.0, 0.2, 0.4]
+        animation.toValue = [1.0, 1.2, 1.4]
+        animation.duration = 4.0
+        animation.autoreverses = true
+        animation.repeatCount = .infinity
+        gradient.add(animation, forKey: "shimmer")
+    }
 }
