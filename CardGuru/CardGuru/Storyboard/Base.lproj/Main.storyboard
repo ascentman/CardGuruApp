@@ -665,7 +665,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="RTb-6c-QNt">
             <objects>
-                <tabBarController storyboardIdentifier="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="bN6-Un-KpH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="bN6-Un-KpH" customClass="TabBarController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qtZ-ko-3gJ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

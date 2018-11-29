@@ -17,6 +17,7 @@
 		804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F42176479D004AC960 /* UserDefaults+LoginData.swift */; };
 		804239FB21773669004AC960 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FA21773669004AC960 /* ScannerViewController.swift */; };
 		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
+		8051661121B030F5005275B1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051661021B030F5005275B1 /* TabBarController.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
 		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
@@ -75,6 +76,8 @@
 		804239F42176479D004AC960 /* UserDefaults+LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+LoginData.swift"; sourceTree = "<group>"; };
 		804239FA21773669004AC960 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		804239FC217764A8004AC960 /* ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerService.swift; sourceTree = "<group>"; };
+		8051661021B030F5005275B1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8051661321B03705005275B1 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Preferences.strings; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
 		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -116,7 +119,6 @@
 		80D51D3D21A2C98A00DD048B /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		80D51D4421A2CA5E00DD048B /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		80D51D4621A2CB6D00DD048B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
-		80D51D4921A2CB7900DD048B /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Preferences.strings; sourceTree = "<group>"; };
 		80D51D4B21A2CB9200DD048B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		80D51D5221A2CF2700DD048B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TouchIDLogin.storyboard; sourceTree = "<group>"; };
 		80E51EFE2195A0F300F43624 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				809AA5EB219484E000AD1690 /* Cards */,
 				809AA5EA219484CD00AD1690 /* Login */,
 				809AA5E9219484A600AD1690 /* Preferences */,
+				8051661421B0390C005275B1 /* TabBar */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +187,14 @@
 				806EEF092170D66100A6EFE6 /* Navigation */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8051661421B0390C005275B1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8051661021B030F5005275B1 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		806EEF062170D60500A6EFE6 /* Login */ = {
@@ -643,6 +654,7 @@
 				8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */,
 				CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */,
 				80AD24622199A3AE00415644 /* BarcodeGenerator.swift in Sources */,
+				8051661121B030F5005275B1 /* TabBarController.swift in Sources */,
 				809706362163B91500185E82 /* NavigationControllerService.swift in Sources */,
 				8073E2F92180608C00C380AD /* Animations.swift in Sources */,
 				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,
@@ -697,7 +709,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				80D51D4621A2CB6D00DD048B /* Base */,
-				80D51D4921A2CB7900DD048B /* uk */,
+				8051661321B03705005275B1 /* uk */,
 			);
 			name = Preferences.storyboard;
 			sourceTree = "<group>";
