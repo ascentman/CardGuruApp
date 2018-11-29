@@ -188,7 +188,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
             </objects>
             <point key="canvasLocation" x="1492" y="1372"/>
         </scene>
-        <!--Preferences Table View Controller-->
+        <!--Preferences-->
         <scene sceneID="Jky-n6-0VG">
             <objects>
                 <tableViewController id="qmc-CS-77W" customClass="PreferencesTableViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,7 +339,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                             <outlet property="delegate" destination="qmc-CS-77W" id="rsj-as-eJF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0dK-0Q-MMT"/>
+                    <navigationItem key="navigationItem" title="Preferences" id="0dK-0Q-MMT"/>
                     <connections>
                         <outlet property="notificationsSwitch" destination="aOZ-Iq-z9G" id="zNU-dB-dfv"/>
                         <outlet property="touchIdSwitch" destination="Rq1-N9-a64" id="NaM-ve-5aX"/>
