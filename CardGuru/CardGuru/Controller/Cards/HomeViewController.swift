@@ -58,7 +58,11 @@ final class HomeViewController: UIViewController {
     }
     
     private func setupSearchBar() {
-        searchController.searchBar.tintColor = UIColor.purple
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        navigationController?.navigationBar.shadowImage = UIImage()
+        searchController.searchBar.layer.backgroundColor = UIColor.white.cgColor
+        searchController.searchBar.tintColor = UIColor(displayP3Red: 239/255, green: 56/255, blue: 82/255, alpha: 1.0)
+        searchController.searchBar.backgroundImage = UIImage.imageWithColor(tintColor: .white)
         searchController.searchBar.placeholder = Constants.searchTitle
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

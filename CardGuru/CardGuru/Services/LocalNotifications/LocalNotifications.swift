@@ -15,7 +15,7 @@ final class LocalNotificationsService: NSObject {
     private let center = UNUserNotificationCenter.current()
     private override init() {}
     
-    @discardableResult func registerLocalNotifications(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func registerLocalNotifications() {
         center.delegate = self
         UIApplication.shared.applicationIconBadgeNumber = 0
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -26,7 +26,6 @@ final class LocalNotificationsService: NSObject {
                 }
             }
         }
-        return true
     }
     
     func sendNotification() {

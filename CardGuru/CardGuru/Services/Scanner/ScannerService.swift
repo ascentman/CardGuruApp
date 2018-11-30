@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vova. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import AVFoundation
 
 protocol ScannerServiceDelegate: class {
@@ -31,19 +31,20 @@ final class ScannerService: NSObject {
                                    AVMetadataObject.ObjectType.ean13
     ]
     
-    func setupSession(with completion: ((Bool) -> ())) {
-        if AVCaptureDevice.authorizationStatus(for: .video) ==  .authorized {
-            session = AVCaptureSession()
-            if let captureDevice = AVCaptureDevice.default(for: .video),
-                let input = try? AVCaptureDeviceInput(device: captureDevice) {
-                session?.addInput(input)
-                let captureMetadataOutput = AVCaptureMetadataOutput()
-                session?.addOutput(captureMetadataOutput)
-                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: queue)
-                captureMetadataOutput.metadataObjectTypes = supportedTypes
-                completion(true)
+    func setupSession(with completion: @escaping ((Bool) -> ())) {
+        self.setupCaptureSession()
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            completion(true)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
             }
-        } else {
+        default:
             completion(false)
         }
     }
@@ -55,6 +56,18 @@ final class ScannerService: NSObject {
             return videoPreviewLayer
         }
         return nil
+    }
+    
+    private func setupCaptureSession() {
+        session = AVCaptureSession()
+        if let captureDevice = AVCaptureDevice.default(for: .video),
+            let input = try? AVCaptureDeviceInput(device: captureDevice) {
+            session?.addInput(input)
+            let captureMetadataOutput = AVCaptureMetadataOutput()
+            session?.addOutput(captureMetadataOutput)
+            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: queue)
+            captureMetadataOutput.metadataObjectTypes = supportedTypes
+        }
     }
 }
 
