@@ -39,6 +39,7 @@ final class PreferencesTableViewController: UITableViewController {
     }
     @IBAction func notificationSwitched(_ sender: Any) {
         if notificationsSwitch.isOn {
+            LocalNotificationsService.shared.registerLocalNotifications()
             UserDefaults().saveNotificationStatus(current: true)
             LocalNotificationsService.shared.sendNotification()
         } else {

@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GoogleLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
         FbLoginService.sharedInstance.registerInApplication(application, didFinishLaunchingWithOptions: launchOptions)
         setupInitialViewController()
-        LocalNotificationsService.shared.registerLocalNotifications(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
     

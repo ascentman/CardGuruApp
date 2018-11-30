@@ -37,8 +37,8 @@ final class ScannerViewController: UIViewController {
         super.viewDidLoad()
         ScannerService.shared.setupSession { success in
             if !success {
-                animatedView.backgroundColor = UIColor.black
-                requestCameraAccess()
+                self.animatedView.backgroundColor = UIColor.black
+                self.requestCameraAccess()
             }
         }
         if let videoLayer = ScannerService.shared.setupVideoLayer() {
