@@ -1,4 +1,3 @@
-
 /* Class = "UITabBarItem"; title = "Cards"; ObjectID = "5a6-TE-ded"; */
 "5a6-TE-ded.title" = "Картки";
 
@@ -9,22 +8,25 @@
 "71n-Ru-S3W.title" = "Картки";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "9I5-tj-ZRv"; */
-"9I5-tj-ZRv.text" = "Назва";
+"9I5-tj-ZRv.text" = "Label";
 
 /* Class = "UILabel"; text = "Change image"; ObjectID = "DjN-UH-HdP"; */
-"DjN-UH-HdP.text" = "Змінити картинку";
+"DjN-UH-HdP.text" = "Змінити зображення";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "E3d-Hs-Lgo"; */
-"E3d-Hs-Lgo.text" = "Назва";
+"E3d-Hs-Lgo.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Add new card"; ObjectID = "Fnf-lO-Iua"; */
+"Fnf-lO-Iua.title" = "Додати нову картку";
 
 /* Class = "UILabel"; text = "Enter the store name and the customer number for your card:"; ObjectID = "LaU-c0-FO5"; */
-"LaU-c0-FO5.text" = "Введіть назву магазину і номер дисконтної картки";
+"LaU-c0-FO5.text" = "Введіть назву магазину і номер картки";
 
 /* Class = "UILabel"; text = "name"; ObjectID = "MLi-LK-ZWf"; */
 "MLi-LK-ZWf.text" = "Назва";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ypx-R8-vgV"; */
-"Ypx-R8-vgV.normalTitle" = "Кнопка";
+"Ypx-R8-vgV.normalTitle" = "Button";
 
 /* Class = "UINavigationItem"; title = "Details"; ObjectID = "bco-Oq-YoE"; */
 "bco-Oq-YoE.title" = "Деталі";
@@ -39,7 +41,7 @@
 "fba-VD-qbJ.title" = "Налаштування";
 
 /* Class = "UILabel"; text = "barcode"; ObjectID = "gQJ-00-1Gk"; */
-"gQJ-00-1Gk.text" = "Код";
+"gQJ-00-1Gk.text" = "код";
 
 /* Class = "UINavigationItem"; title = "Edit"; ObjectID = "gVR-sQ-56M"; */
 "gVR-sQ-56M.title" = "Редагувати";
@@ -48,10 +50,13 @@
 "hnX-JV-28S.title" = "Зберегти";
 
 /* Class = "UILabel"; text = "Customer number"; ObjectID = "ked-lH-QD4"; */
-"ked-lH-QD4.text" = "Номер дисконта";
+"ked-lH-QD4.text" = "Номер";
 
 /* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "myC-Zj-tHf"; */
 "myC-Zj-tHf.title" = "Відмінити";
 
+/* Class = "UINavigationItem"; title = "Add new card"; ObjectID = "pgi-0s-tdl"; */
+"pgi-0s-tdl.title" = "Додати нову картку";
+
 /* Class = "UILabel"; text = "Store name"; ObjectID = "u8H-pw-do6"; */
-"u8H-pw-do6.text" = "Назва магазину";
+"u8H-pw-do6.text" = "назва магазину";
