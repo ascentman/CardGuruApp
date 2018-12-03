@@ -8,20 +8,6 @@
 
 import UIKit
 
-/**
-
- + кнопка залипає - gif1.gif
- bug with navBarColor - gif2.gif
- замінити скрізь кнопку (< ttitle) на просто < - кнопка виділена на 1.png
-
- forceUnwrap - remove
-    example
- return NetworkReachabilityManager()!.isReachable  ===         return NetworkReachabilityManager()?.isReachable == true
-
- 
-
- */
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
