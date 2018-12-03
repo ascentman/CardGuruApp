@@ -59,10 +59,7 @@ final class HomeViewController: UIViewController {
     
     private func setupSearchBar() {
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        navigationController?.navigationBar.shadowImage = UIImage()
-        searchController.searchBar.layer.backgroundColor = UIColor.white.cgColor
         searchController.searchBar.tintColor = UIColor(displayP3Red: 239/255, green: 56/255, blue: 82/255, alpha: 1.0)
-        searchController.searchBar.backgroundImage = UIImage.imageWithColor(tintColor: .white)
         searchController.searchBar.placeholder = Constants.searchTitle
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -121,7 +118,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CardCollectionViewCell {
-            cell.layer.borderColor = UIColor.purple.cgColor
             if searchController.isActive && !(searchController.searchBar.text?.isEmpty ?? true) {
                 let card = filteredCards[indexPath.row]
                 loadCardImages(to: filteredCards)

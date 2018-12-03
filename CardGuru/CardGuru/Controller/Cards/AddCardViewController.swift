@@ -21,7 +21,7 @@ private enum Constants {
     static let alertTitle = NSLocalizedString("Error", comment: "")
     static let alertMessage = NSLocalizedString("Fill empty fields", comment: "")
     static let acceptTitle = NSLocalizedString("Ok", comment: "")
-    static let cards = NSLocalizedString("Cards", comment: "")
+    static let backItemTitle = NSLocalizedString("Cards", comment: "")
 }
 
 final class AddCardViewController: UIViewController {
@@ -48,7 +48,7 @@ final class AddCardViewController: UIViewController {
         super.viewDidLoad()
         nameField.text = name
         barcodeField.text = barcode
-        setupCustomBackItem()
+        setupBackItemToRoot(with: Constants.backItemTitle)
         nameField.delegate = self
         barcodeField.delegate = self
     }
@@ -90,17 +90,6 @@ final class AddCardViewController: UIViewController {
     }
     
     private func navigateToRoot() {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    private func setupCustomBackItem() {
-        self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: Constants.cards, style: UIBarButtonItem.Style.plain, target: self, action: #selector(back))
-        self.navigationItem.leftBarButtonItem = newBackButton
-    }
-    
-    @objc private func back() {
-        self.tabBarController?.tabBar.isHidden = false
         navigationController?.popToRootViewController(animated: true)
     }
 }

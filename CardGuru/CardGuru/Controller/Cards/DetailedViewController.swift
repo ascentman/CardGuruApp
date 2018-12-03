@@ -47,6 +47,7 @@ final class DetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupOutlets()
+        setupBackItem(with: "")
         setupShortcutItem(name: name, barcode: barcode, image: image)
     }
     

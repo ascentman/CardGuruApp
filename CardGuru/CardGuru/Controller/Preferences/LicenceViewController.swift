@@ -28,6 +28,7 @@ final class LicenceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackItem(with: "")
         navigationController?.navigationBar.barTintColor = UIColor.groupTableViewBackground
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.title = Constants.licenceTitle
@@ -38,7 +39,6 @@ final class LicenceViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.barTintColor = UIColor(red: 255/255.0, green: 212/255.0, blue: 0, alpha: 1.0)
         self.tabBarController?.tabBar.isHidden = false
     }
     

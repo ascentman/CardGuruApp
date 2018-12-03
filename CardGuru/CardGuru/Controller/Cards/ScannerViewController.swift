@@ -35,6 +35,7 @@ final class ScannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackItem(with: "")
         ScannerService.shared.setupSession { success in
             if !success {
                 self.animatedView.backgroundColor = UIColor.black
@@ -45,8 +46,10 @@ final class ScannerViewController: UIViewController {
             videoLayer.frame = view.layer.bounds
             view.layer.insertSublayer(videoLayer, at: 0)
         }
-        ScannerService.shared.session?.startRunning()
         ScannerService.shared.delegate = self
+        DispatchQueue.global().async {
+            ScannerService.shared.session?.startRunning()
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             UIView.transition(with: self.userView, duration: 2.0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {

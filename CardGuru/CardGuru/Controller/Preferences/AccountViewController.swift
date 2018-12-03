@@ -23,6 +23,7 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackItem(with: "Pref")
         fillOutlets()
     }
     

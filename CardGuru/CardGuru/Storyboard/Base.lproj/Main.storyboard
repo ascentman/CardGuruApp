@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Mauryssel_Bold.ttf">
-            <string>Mauryssel-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Cards-->
         <scene sceneID="tne-QT-ifu">
@@ -43,43 +38,48 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h38-dR-8aF" userLabel="shop">
                                                     <rect key="frame" x="0.0" y="0.0" width="170" height="111"/>
+                                                    <color key="tintColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.opacity">
-                                                            <real key="value" value="0.40000000000000002"/>
+                                                            <real key="value" value="0.80000000000000004"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX3-qE-OTT">
-                                                    <rect key="frame" x="8" y="28" width="154" height="75"/>
-                                                    <fontDescription key="fontDescription" name="Mauryssel-Bold" family="Mauryssel" pointSize="24"/>
-                                                    <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xEr-b8-Qwy">
-                                                    <rect key="frame" x="75" y="82" width="20" height="20"/>
+                                                    <rect key="frame" x="75" y="45.5" width="20" height="20"/>
+                                                    <color key="tintColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="color" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vX3-qE-OTT">
+                                                    <rect key="frame" x="8" y="87" width="154" height="24"/>
+                                                    <color key="tintColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="OnM-5k-9zj"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="-0.5" height="-0.5"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="h38-dR-8aF" firstAttribute="leading" secondItem="htF-Qn-evh" secondAttribute="leading" id="0Go-ge-xHm"/>
                                             <constraint firstAttribute="trailing" secondItem="h38-dR-8aF" secondAttribute="trailing" id="4jB-Ny-ttF"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="vX3-qE-OTT" secondAttribute="bottom" id="7q8-RY-QC5"/>
-                                            <constraint firstItem="vX3-qE-OTT" firstAttribute="top" secondItem="htF-Qn-evh" secondAttribute="topMargin" id="Iqu-tq-rMN"/>
+                                            <constraint firstAttribute="trailing" secondItem="vX3-qE-OTT" secondAttribute="trailing" constant="8" id="4kM-8I-gny"/>
+                                            <constraint firstItem="xEr-b8-Qwy" firstAttribute="centerX" secondItem="htF-Qn-evh" secondAttribute="centerX" id="5WQ-bK-nUv"/>
                                             <constraint firstItem="h38-dR-8aF" firstAttribute="top" secondItem="htF-Qn-evh" secondAttribute="top" id="JMg-Wb-XfM"/>
-                                            <constraint firstItem="xEr-b8-Qwy" firstAttribute="centerX" secondItem="htF-Qn-evh" secondAttribute="centerX" id="X77-Yk-FVI"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="xEr-b8-Qwy" secondAttribute="bottom" constant="1" id="XsJ-pI-9FD"/>
+                                            <constraint firstItem="vX3-qE-OTT" firstAttribute="leading" secondItem="htF-Qn-evh" secondAttribute="leading" constant="8" id="QVc-7D-ZvL"/>
+                                            <constraint firstItem="xEr-b8-Qwy" firstAttribute="centerY" secondItem="htF-Qn-evh" secondAttribute="centerY" id="Vzi-lo-GcX"/>
                                             <constraint firstAttribute="bottom" secondItem="h38-dR-8aF" secondAttribute="bottom" id="eCi-pR-wSW"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="vX3-qE-OTT" secondAttribute="trailing" id="hAD-a9-M9c"/>
-                                            <constraint firstItem="vX3-qE-OTT" firstAttribute="leading" secondItem="htF-Qn-evh" secondAttribute="leadingMargin" id="iLU-go-bqL"/>
+                                            <constraint firstAttribute="bottom" secondItem="vX3-qE-OTT" secondAttribute="bottom" id="qQC-9b-K2T"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
+                                                <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -129,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="1840.8" y="29.23538230884558"/>
         </scene>
-        <!--Scanner View Controller-->
+        <!--Add new card-->
         <scene sceneID="41P-BR-bdJ">
             <objects>
                 <viewController id="bT4-O8-MaT" customClass="ScannerViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
@@ -149,15 +149,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="efH-Cd-w0u"/>
                                         </constraints>
+                                        <color key="tintColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="buton"/>
                                         <connections>
                                             <action selector="enterClicked:" destination="bT4-O8-MaT" eventType="touchUpInside" id="hiu-DH-xRV"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter manually" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dki-VC-kMr">
-                                        <rect key="frame" x="92.5" y="43.5" width="190" height="33"/>
-                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
-                                        <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="88.5" y="42.5" width="198.5" height="35"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -176,7 +177,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tJ6-k3-V2L" firstAttribute="trailing" secondItem="CP8-gY-GSV" secondAttribute="trailing" id="1tI-I4-RL6"/>
                             <constraint firstItem="zwN-GX-EBN" firstAttribute="top" secondItem="CP8-gY-GSV" secondAttribute="top" id="3sj-or-4eu"/>
@@ -188,6 +189,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CP8-gY-GSV"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add new card" id="pgi-0s-tdl"/>
                     <connections>
                         <outlet property="animatedView" destination="zwN-GX-EBN" id="VVN-Nr-3Cj"/>
                         <outlet property="userView" destination="tJ6-k3-V2L" id="9Uj-1Y-DNI"/>
@@ -198,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="2652" y="28.335832083958024"/>
         </scene>
-        <!--Add Card View Controller-->
+        <!--Add new card-->
         <scene sceneID="kmv-dM-c2Z">
             <objects>
                 <viewController storyboardIdentifier="AddCardViewController" id="Hmg-35-5Rl" customClass="AddCardViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
@@ -276,6 +278,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dcu-H7-ALg"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add new card" id="Fnf-lO-Iua"/>
                     <connections>
                         <outlet property="barcodeField" destination="Juz-hB-SQ2" id="7yO-lM-Zuy"/>
                         <outlet property="nameField" destination="MDw-LT-QTf" id="XTe-Fs-BTL"/>
@@ -307,24 +310,27 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3d-Hs-Lgo" userLabel="name">
-                                        <rect key="frame" x="60" y="10" width="255" height="180"/>
-                                        <fontDescription key="fontDescription" name="Mauryssel-Bold" family="Mauryssel" pointSize="26"/>
-                                        <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3d-Hs-Lgo" userLabel="name">
+                                        <rect key="frame" x="60" y="170" width="255" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="vSt-Qa-J2h"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="-0.5" height="-0.5"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="E3d-Hs-Lgo" secondAttribute="bottom" constant="10" id="6Ob-tB-Tbs"/>
+                                    <constraint firstItem="E3d-Hs-Lgo" firstAttribute="leading" secondItem="PoK-zM-uUu" secondAttribute="leading" constant="60" id="2ol-gL-73s"/>
                                     <constraint firstAttribute="bottom" secondItem="9kK-PK-obD" secondAttribute="bottom" id="J7B-4I-tOb"/>
                                     <constraint firstItem="9kK-PK-obD" firstAttribute="leading" secondItem="PoK-zM-uUu" secondAttribute="leading" constant="50" id="NQk-UN-j3b"/>
                                     <constraint firstAttribute="trailing" secondItem="9kK-PK-obD" secondAttribute="trailing" constant="50" id="b1G-cz-pmF"/>
-                                    <constraint firstItem="E3d-Hs-Lgo" firstAttribute="top" secondItem="PoK-zM-uUu" secondAttribute="top" constant="10" id="i1V-xP-4Av"/>
+                                    <constraint firstAttribute="bottom" secondItem="E3d-Hs-Lgo" secondAttribute="bottom" id="euQ-jI-yn9"/>
                                     <constraint firstItem="9kK-PK-obD" firstAttribute="top" secondItem="PoK-zM-uUu" secondAttribute="top" id="ky6-dY-qKU"/>
                                     <constraint firstAttribute="height" constant="200" id="q1I-Dr-Ull"/>
-                                    <constraint firstAttribute="trailing" secondItem="E3d-Hs-Lgo" secondAttribute="trailing" constant="60" id="uyv-Gd-5sF"/>
-                                    <constraint firstItem="E3d-Hs-Lgo" firstAttribute="leading" secondItem="PoK-zM-uUu" secondAttribute="leading" constant="60" id="vHZ-aN-aDR"/>
+                                    <constraint firstAttribute="trailing" secondItem="E3d-Hs-Lgo" secondAttribute="trailing" constant="60" id="uch-eg-2gE"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eIA-zj-eqa">
@@ -405,11 +411,12 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9I5-tj-ZRv" userLabel="name label">
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9I5-tj-ZRv" userLabel="name label">
                                     <rect key="frame" x="60" y="0.0" width="255" height="70"/>
-                                    <fontDescription key="fontDescription" name="Mauryssel-Bold" family="Mauryssel" pointSize="26"/>
-                                    <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                     <nil key="highlightedColor"/>
+                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="-0.5" height="-0.5"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -731,6 +738,6 @@
         <image name="share" width="600" height="181"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4gr-gQ-hSW"/>
+        <segue reference="dsc-Ih-2X7"/>
     </inferredMetricsTieBreakers>
 </document>
