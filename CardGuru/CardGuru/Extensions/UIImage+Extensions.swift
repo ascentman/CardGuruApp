@@ -10,6 +10,12 @@ import UIKit
 
 extension UIImage {
     
+    var isDark: Bool {
+        get {
+            return self.cgImage?.isDark ?? false
+        }
+    }
+    
     func maskWithColor(color: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         let context = UIGraphicsGetCurrentContext()!

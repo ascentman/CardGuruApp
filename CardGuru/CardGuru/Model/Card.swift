@@ -21,6 +21,7 @@ final class Card {
     var barcode: String
     var image: UIImage?
     var absoluteURL: String?
+    var nameColor: UIColor?
     
     init(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
