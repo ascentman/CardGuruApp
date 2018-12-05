@@ -13,12 +13,14 @@ final class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var cellName: UILabel!
     @IBOutlet private weak var cellImage: UIImageView!
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var backgroundTextView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         loadingIndicator.startAnimating()
+        setupGradientBackground()
     }
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         cellName.text = nil
@@ -31,4 +33,10 @@ final class CardCollectionViewCell: UICollectionViewCell {
         loadingIndicator.stopAnimating()
     }
     
+    // MARK: - Private
+    
+    private func setupGradientBackground() {
+        let backLayer = GradientLayer(inFrame: backgroundTextView.frame)
+        backgroundTextView.layer.insertSublayer(backLayer, below: cellName.layer)
+    }
 }

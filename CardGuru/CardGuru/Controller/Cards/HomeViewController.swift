@@ -45,8 +45,8 @@ final class HomeViewController: UIViewController {
             Downloader.shared.loadImage(card.absoluteURL) { image in
                 let indexPath = IndexPath(row: index, section: 0)
                 let cell = self.cardsCollectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
-                cell?.setCell(name: card.name, image: image ?? UIImage(named: "shop") ?? UIImage())
                 cards[index].image = image
+                cell?.setCell(name: card.name, image: image ?? UIImage(named: "shop") ?? UIImage())
             }
         }
     }

@@ -19,6 +19,8 @@
 		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
 		8051661121B030F5005275B1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051661021B030F5005275B1 /* TabBarController.swift */; };
 		8051661821B5585E005275B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051661721B5585E005275B1 /* Assets.xcassets */; };
+		8051664C21B69E70005275B1 /* CGImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664B21B69E70005275B1 /* CGImage+Extensions.swift */; };
+		8051664E21B6BA26005275B1 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664D21B6BA26005275B1 /* GradientLayer.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
 		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
@@ -80,6 +82,8 @@
 		8051661321B03705005275B1 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Preferences.strings; sourceTree = "<group>"; };
 		8051661721B5585E005275B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		8051661C21B55BC2005275B1 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		8051664B21B69E70005275B1 /* CGImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Extensions.swift"; sourceTree = "<group>"; };
+		8051664D21B6BA26005275B1 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
 		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				8073E2EE21805CB300C380AD /* CheckLayer.swift */,
 				8073E2F021805CDE00C380AD /* PhoneLayer.swift */,
 				CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */,
+				8051664D21B6BA26005275B1 /* GradientLayer.swift */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 			children = (
 				8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */,
 				8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */,
+				8051664B21B69E70005275B1 /* CGImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -659,6 +665,8 @@
 				8073E2F92180608C00C380AD /* Animations.swift in Sources */,
 				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
+				8051664E21B6BA26005275B1 /* GradientLayer.swift in Sources */,
+				8051664C21B69E70005275B1 /* CGImage+Extensions.swift in Sources */,
 				8023AD74218728480041A04C /* EditCardViewController.swift in Sources */,
 				804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */,
 				809AA5E62194746100AD1690 /* LicenceViewController.swift in Sources */,

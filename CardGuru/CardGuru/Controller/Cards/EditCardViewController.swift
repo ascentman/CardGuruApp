@@ -28,7 +28,6 @@ final class EditCardTableViewController: UITableViewController {
     @IBOutlet weak var labelView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var changeImageView: UIImageView!
-    @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var barcodeTextField: UITextField!
     
@@ -119,7 +118,6 @@ final class EditCardTableViewController: UITableViewController {
     // MARK: - Private
     
     private func setupOutlets() {
-        nameLabel.text = name
         nameTextField.text = name
         barcodeTextField.text = barcode
         imageView.image = image
