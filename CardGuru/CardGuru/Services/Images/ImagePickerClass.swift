@@ -26,17 +26,22 @@ final class ImagePickerClass: NSObject {
             UIAlertAction in
             self.openPhotoGallery()
         }
+        let defaultAction = UIAlertAction(title: "Default image", style: .default){
+            UIAlertAction in
+            self.setDefaultImage()
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){
             UIAlertAction in
         }
         picker.delegate = self
         alert.addAction(cameraAction)
         alert.addAction(gallaryAction)
+        alert.addAction(defaultAction)
         alert.addAction(cancelAction)
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    private func openCamera(){
+    private func openCamera() {
         alert.dismiss(animated: true, completion: nil)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
@@ -46,10 +51,14 @@ final class ImagePickerClass: NSObject {
         }
     }
     
-    private func openPhotoGallery(){
+    private func openPhotoGallery() {
         alert.dismiss(animated: true, completion: nil)
         picker.sourceType = .photoLibrary
         self.viewController?.present(picker, animated: true, completion: nil)
+    }
+    
+    private func setDefaultImage() {
+        pickImageCompletion?(UIImage(named: "shop") ?? UIImage())
     }
 }
 
