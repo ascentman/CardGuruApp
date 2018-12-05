@@ -20,7 +20,6 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var fbLoginButton: UIButton!
     @IBOutlet weak var backgroundCardsImageView: UIImageView!
     @IBOutlet weak var gogleLoginButton: UIButton!
-    private var backGroundLayer: LoginBackgroundLayer?
     
     // MARK: - Lifecycle
     
@@ -31,22 +30,15 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         animateLogo()
-        animateBackground()
+        Effects.addMotion(on: logoImageView, magnitude: -10.0)
+        Effects.addMotion(on: backgroundCardsImageView, magnitude: 20.0)
         addShadowOnUI()
-        backGroundLayer = LoginBackgroundLayer(inFrame: view.frame)
-        NotificationCenter.default.addObserver(self, selector: #selector(resumeAnimation),
-                                               name: UIApplication.didBecomeActiveNotification,
-                                               object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         SVProgressHUD.dismiss()
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -82,27 +74,6 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - Private
-
-    private func animateBackground(){
-        let magnitude = 10.0
-        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        xMotion.minimumRelativeValue = -magnitude
-        xMotion.maximumRelativeValue = magnitude
-        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        yMotion.minimumRelativeValue = -magnitude
-        yMotion.maximumRelativeValue = magnitude
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [xMotion, yMotion]
-        backgroundCardsImageView.addMotionEffect(group)
-//        if view.layer.superlayer == backGroundLayer {
-//            view.layer.removeFromSuperlayer()
-//        }
-//        backGroundLayer?.animateLayer(with: { _ in
-//            if let backgroundLayer = self.backGroundLayer {
-//                self.view.layer.insertSublayer(backgroundLayer, at: 0)
-//            }
-//        })
-    }
     
     private func animateLogo() {
         UIView.animate(withDuration: 0.5) {
@@ -111,10 +82,6 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    @objc private func resumeAnimation() {
-        animateBackground()
-    }
-
     private func saveLoginData(_ user: User) {
         UserDefaults().save(user: User(name: user.name, email: user.email, absoluteURL: user.absoluteURL))
     }

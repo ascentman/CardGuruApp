@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cards" translatesAutoresizingMaskIntoConstraints="NO" id="uLf-Qc-0VJ">
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsz_cards" translatesAutoresizingMaskIntoConstraints="NO" id="uLf-Qc-0VJ">
                                 <rect key="frame" x="-50" y="-50" width="514" height="836"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-84-gzP" userLabel="LoginView">
@@ -104,9 +104,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cards" width="1702" height="1300"/>
         <image name="fb" width="571" height="95"/>
         <image name="google" width="570" height="96"/>
         <image name="logoCardGuru" width="1024" height="316"/>
+        <image name="rsz_cards" width="851" height="650"/>
     </resources>
 </document>

@@ -32,10 +32,22 @@ final class Effects {
     }
     
     class func addShadow(for view: UIView) {
-        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 3)
-        view.layer.shadowOpacity = 2.0
-        view.layer.shadowRadius = 10.0
+        view.layer.shadowOpacity = 3.0
+        view.layer.shadowRadius = 12.0
         view.layer.masksToBounds = false
+    }
+    
+    class func addMotion(on view: UIView, magnitude: Float){
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = -magnitude
+        xMotion.maximumRelativeValue = magnitude
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = -magnitude
+        yMotion.maximumRelativeValue = magnitude
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [xMotion, yMotion]
+        view.addMotionEffect(group)
     }
 }

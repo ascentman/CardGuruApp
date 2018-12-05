@@ -18,10 +18,10 @@
 		804239FB21773669004AC960 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FA21773669004AC960 /* ScannerViewController.swift */; };
 		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
 		8051661121B030F5005275B1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051661021B030F5005275B1 /* TabBarController.swift */; };
-		8051661821B5585E005275B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051661721B5585E005275B1 /* Assets.xcassets */; };
 		8051664C21B69E70005275B1 /* CGImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664B21B69E70005275B1 /* CGImage+Extensions.swift */; };
 		8051664E21B6BA26005275B1 /* CardGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664D21B6BA26005275B1 /* CardGradientLayer.swift */; };
 		8051665021B7CB1A005275B1 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664F21B7CB1A005275B1 /* Effects.swift */; };
+		80565DB921B826A600A54088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80565DB821B826A600A54088 /* Assets.xcassets */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
 		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
@@ -81,11 +81,11 @@
 		804239FC217764A8004AC960 /* ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerService.swift; sourceTree = "<group>"; };
 		8051661021B030F5005275B1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8051661321B03705005275B1 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Preferences.strings; sourceTree = "<group>"; };
-		8051661721B5585E005275B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		8051661C21B55BC2005275B1 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		8051664B21B69E70005275B1 /* CGImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Extensions.swift"; sourceTree = "<group>"; };
 		8051664D21B6BA26005275B1 /* CardGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGradientLayer.swift; sourceTree = "<group>"; };
 		8051664F21B7CB1A005275B1 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
+		80565DB821B826A600A54088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
 		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -372,10 +372,10 @@
 		80AD245D2195D72200415644 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8051661721B5585E005275B1 /* Assets.xcassets */,
 				CE5462F9218373DC005FA82A /* Graphics */,
 				CE75A708218D016E0014984C /* Fonts */,
 				80D51D4321A2CA5C00DD048B /* Localizable.strings */,
+				80565DB821B826A600A54088 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -537,7 +537,6 @@
 			files = (
 				CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */,
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
-				8051661821B5585E005275B1 /* Assets.xcassets in Resources */,
 				80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */,
 				806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */,
 				80D51D4A21A2CB9200DD048B /* Login.storyboard in Resources */,
@@ -545,6 +544,7 @@
 				80D51D5121A2CF2700DD048B /* TouchIDLogin.storyboard in Resources */,
 				807D96032159147C00ABB0D2 /* Main.storyboard in Resources */,
 				8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */,
+				80565DB921B826A600A54088 /* Assets.xcassets in Resources */,
 				80D51D4521A2CB6D00DD048B /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
