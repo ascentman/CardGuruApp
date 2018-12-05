@@ -16,17 +16,23 @@ private enum Constants {
 
 final class LoginViewController: UIViewController {
     
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var fbLoginButton: UIButton!
+    @IBOutlet weak var backgroundCardsImageView: UIImageView!
+    @IBOutlet weak var gogleLoginButton: UIButton!
     private var backGroundLayer: LoginBackgroundLayer?
     
     // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        animateBackground()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animateLogo()
+        animateBackground()
+        addShadowOnUI()
         backGroundLayer = LoginBackgroundLayer(inFrame: view.frame)
         NotificationCenter.default.addObserver(self, selector: #selector(resumeAnimation),
                                                name: UIApplication.didBecomeActiveNotification,
@@ -78,14 +84,31 @@ final class LoginViewController: UIViewController {
     // MARK: - Private
 
     private func animateBackground(){
-        if view.layer.superlayer == backGroundLayer {
-            view.layer.removeFromSuperlayer()
+        let magnitude = 10.0
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = -magnitude
+        xMotion.maximumRelativeValue = magnitude
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = -magnitude
+        yMotion.maximumRelativeValue = magnitude
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [xMotion, yMotion]
+        backgroundCardsImageView.addMotionEffect(group)
+//        if view.layer.superlayer == backGroundLayer {
+//            view.layer.removeFromSuperlayer()
+//        }
+//        backGroundLayer?.animateLayer(with: { _ in
+//            if let backgroundLayer = self.backGroundLayer {
+//                self.view.layer.insertSublayer(backgroundLayer, at: 0)
+//            }
+//        })
+    }
+    
+    private func animateLogo() {
+        UIView.animate(withDuration: 0.5) {
+            self.logoImageView.center.y -= 150
+            self.logoImageView.transform = CGAffineTransform(scaleX: 4.0, y: 4.0)
         }
-        backGroundLayer?.animateLayer(with: { _ in
-            if let backgroundLayer = self.backGroundLayer {
-                self.view.layer.insertSublayer(backgroundLayer, at: 0)
-            }
-        })
     }
     
     @objc private func resumeAnimation() {
@@ -94,5 +117,10 @@ final class LoginViewController: UIViewController {
 
     private func saveLoginData(_ user: User) {
         UserDefaults().save(user: User(name: user.name, email: user.email, absoluteURL: user.absoluteURL))
+    }
+    
+    private func addShadowOnUI() {
+        Effects.addShadow(for: fbLoginButton)
+        Effects.addShadow(for: gogleLoginButton)
     }
 }

@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cards" translatesAutoresizingMaskIntoConstraints="NO" id="uLf-Qc-0VJ">
+                                <rect key="frame" x="-50" y="-50" width="514" height="836"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-84-gzP" userLabel="LoginView">
                                 <rect key="frame" x="10" y="536" width="394" height="170"/>
                                 <subviews>
@@ -56,21 +59,23 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoCardGuru" translatesAutoresizingMaskIntoConstraints="NO" id="MEz-Ki-4sj" userLabel="Logo">
-                                <rect key="frame" x="42" y="120" width="330" height="148"/>
+                                <rect key="frame" x="167" y="170" width="80" height="37"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="148" id="kWj-Ok-sbf"/>
-                                    <constraint firstAttribute="width" constant="330" id="srM-Ks-dGS"/>
+                                    <constraint firstAttribute="width" constant="80" id="FU0-Fh-Ppu"/>
+                                    <constraint firstAttribute="height" constant="37" id="dx8-Fc-cXt"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4bH-84-gzP" firstAttribute="leading" secondItem="fQD-Tp-OPi" secondAttribute="leading" constant="10" id="0I4-U3-Yd0"/>
-                            <constraint firstItem="MEz-Ki-4sj" firstAttribute="top" secondItem="fQD-Tp-OPi" secondAttribute="top" constant="100" id="D3X-ns-MnL">
-                                <variation key="heightClass=compact-widthClass=compact" constant="20"/>
-                            </constraint>
+                            <constraint firstItem="MEz-Ki-4sj" firstAttribute="top" secondItem="fQD-Tp-OPi" secondAttribute="top" constant="150" id="6P3-Xd-G6Z"/>
+                            <constraint firstItem="uLf-Qc-0VJ" firstAttribute="leading" secondItem="S86-Oi-5pn" secondAttribute="leading" constant="-50" id="JKf-xF-YD8"/>
+                            <constraint firstItem="MEz-Ki-4sj" firstAttribute="centerX" secondItem="S86-Oi-5pn" secondAttribute="centerX" id="RsT-BZ-d3c"/>
+                            <constraint firstItem="fQD-Tp-OPi" firstAttribute="bottom" secondItem="uLf-Qc-0VJ" secondAttribute="bottom" constant="-50" id="arh-Qx-lmu"/>
                             <constraint firstItem="fQD-Tp-OPi" firstAttribute="trailing" secondItem="4bH-84-gzP" secondAttribute="trailing" constant="10" id="gja-ae-pyO"/>
-                            <constraint firstItem="MEz-Ki-4sj" firstAttribute="centerX" secondItem="S86-Oi-5pn" secondAttribute="centerX" id="nyE-bX-yDD"/>
+                            <constraint firstItem="uLf-Qc-0VJ" firstAttribute="top" secondItem="S86-Oi-5pn" secondAttribute="top" constant="-50" id="mUr-mm-59t"/>
+                            <constraint firstItem="fQD-Tp-OPi" firstAttribute="trailing" secondItem="uLf-Qc-0VJ" secondAttribute="trailing" constant="-50" id="nbY-TD-7XF"/>
                             <constraint firstItem="fQD-Tp-OPi" firstAttribute="bottom" secondItem="4bH-84-gzP" secondAttribute="bottom" constant="30" id="yMZ-3s-PbG">
                                 <variation key="heightClass=compact-widthClass=compact" constant="5"/>
                             </constraint>
@@ -78,6 +83,10 @@
                         <viewLayoutGuide key="safeArea" id="fQD-Tp-OPi"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundCardsImageView" destination="uLf-Qc-0VJ" id="MK7-E1-7gS"/>
+                        <outlet property="fbLoginButton" destination="ARk-Mm-RgL" id="fLm-rL-aHa"/>
+                        <outlet property="gogleLoginButton" destination="mfE-ld-duk" id="zBV-BJ-kgX"/>
+                        <outlet property="logoImageView" destination="MEz-Ki-4sj" id="cJU-xy-TuL"/>
                         <segue destination="84h-nn-tsS" kind="presentation" identifier="GoToHome" id="mQ6-DO-GUG"/>
                     </connections>
                 </viewController>
@@ -95,6 +104,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cards" width="1702" height="1300"/>
         <image name="fb" width="571" height="95"/>
         <image name="google" width="570" height="96"/>
         <image name="logoCardGuru" width="1024" height="316"/>

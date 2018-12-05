@@ -36,7 +36,7 @@ final class CardCollectionViewCell: UICollectionViewCell {
     // MARK: - Private
     
     private func setupGradientBackground() {
-        let backLayer = GradientLayer(inFrame: backgroundTextView.frame)
+        let backLayer = CardGradientLayer(inFrame: backgroundTextView.frame)
         backgroundTextView.layer.insertSublayer(backLayer, below: cellName.layer)
     }
 }
