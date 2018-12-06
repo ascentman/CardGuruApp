@@ -25,25 +25,17 @@
                                 <rect key="frame" x="10" y="576" width="394" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-um-WEr" userLabel="Login buttons">
-                                        <rect key="frame" x="5" y="2" width="384" height="126"/>
+                                        <rect key="frame" x="5" y="-27" width="384" height="184"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-Mm-RgL">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="384" id="0DP-UJ-cPA"/>
-                                                    <constraint firstAttribute="height" constant="60" id="fab-5J-waf"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="92"/>
                                                 <state key="normal" image="fb"/>
                                                 <connections>
                                                     <action selector="loginWithFacebook:" destination="TbE-5M-a9h" eventType="touchUpInside" id="LZB-Y5-cs5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-ld-duk" userLabel="googleLogIn">
-                                                <rect key="frame" x="0.0" y="66" width="384" height="60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="7Bs-Gq-0mC"/>
-                                                    <constraint firstAttribute="width" constant="384" id="dXy-ys-fYk"/>
-                                                </constraints>
+                                                <rect key="frame" x="0.0" y="98" width="384" height="86"/>
                                                 <state key="normal" image="google"/>
                                                 <connections>
                                                     <action selector="loginWithGoogle:" destination="TbE-5M-a9h" eventType="touchUpInside" id="CrI-3u-f25"/>
