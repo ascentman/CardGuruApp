@@ -63,11 +63,11 @@ final class FbLoginService: NSObject {
         let loginManager = FBSDKLoginManager()
         loginManager.loginBehavior = .systemAccount
         loginManager.logIn(withReadPermissions: Permissions.login, from: nil) { (result, error) in
+            self.status?()
             if let _ = error {
                 self.singInCompletion?(nil, error)
                 return
             }
-            self.status?()
             if result?.grantedPermissions != nil {
                 let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: Permissions.data)
                 graphRequest?.start(completionHandler: { (_, user, error) in

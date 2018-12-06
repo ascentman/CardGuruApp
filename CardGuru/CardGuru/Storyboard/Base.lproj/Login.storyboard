@@ -22,20 +22,28 @@
                                 <rect key="frame" x="-50" y="-50" width="514" height="836"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-84-gzP" userLabel="LoginView">
-                                <rect key="frame" x="10" y="536" width="394" height="170"/>
+                                <rect key="frame" x="10" y="576" width="394" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-um-WEr" userLabel="Login buttons">
-                                        <rect key="frame" x="5" y="-13.333333333333371" width="384" height="197"/>
+                                        <rect key="frame" x="5" y="2" width="384" height="126"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-Mm-RgL">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="95"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-Mm-RgL">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="384" id="0DP-UJ-cPA"/>
+                                                    <constraint firstAttribute="height" constant="60" id="fab-5J-waf"/>
+                                                </constraints>
                                                 <state key="normal" image="fb"/>
                                                 <connections>
                                                     <action selector="loginWithFacebook:" destination="TbE-5M-a9h" eventType="touchUpInside" id="LZB-Y5-cs5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-ld-duk" userLabel="googleLogIn">
-                                                <rect key="frame" x="0.0" y="101" width="384" height="96"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-ld-duk" userLabel="googleLogIn">
+                                                <rect key="frame" x="0.0" y="66" width="384" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="7Bs-Gq-0mC"/>
+                                                    <constraint firstAttribute="width" constant="384" id="dXy-ys-fYk"/>
+                                                </constraints>
                                                 <state key="normal" image="google"/>
                                                 <connections>
                                                     <action selector="loginWithGoogle:" destination="TbE-5M-a9h" eventType="touchUpInside" id="CrI-3u-f25"/>
@@ -47,7 +55,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="A0i-F8-88V"/>
+                                    <constraint firstAttribute="height" constant="130" id="A0i-F8-88V"/>
                                     <constraint firstItem="veZ-um-WEr" firstAttribute="leading" secondItem="4bH-84-gzP" secondAttribute="leading" constant="5" id="NJq-EU-qIe"/>
                                     <constraint firstAttribute="trailing" secondItem="veZ-um-WEr" secondAttribute="trailing" constant="5" id="T4u-al-Y0F"/>
                                     <constraint firstItem="veZ-um-WEr" firstAttribute="centerY" secondItem="4bH-84-gzP" secondAttribute="centerY" id="mpU-5p-zZm"/>
@@ -59,10 +67,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoCardGuru" translatesAutoresizingMaskIntoConstraints="NO" id="MEz-Ki-4sj" userLabel="Logo">
-                                <rect key="frame" x="167" y="170" width="80" height="37"/>
+                                <rect key="frame" x="127" y="170" width="160" height="74"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="FU0-Fh-Ppu"/>
-                                    <constraint firstAttribute="height" constant="37" id="dx8-Fc-cXt"/>
+                                    <constraint firstAttribute="width" constant="160" id="FU0-Fh-Ppu"/>
+                                    <constraint firstAttribute="height" constant="74" id="dx8-Fc-cXt"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -104,8 +112,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fb" width="571" height="95"/>
-        <image name="google" width="570" height="96"/>
+        <image name="fb" width="564" height="92"/>
+        <image name="google" width="559" height="86"/>
         <image name="logoCardGuru" width="1024" height="316"/>
         <image name="rsz_cards" width="851" height="650"/>
     </resources>

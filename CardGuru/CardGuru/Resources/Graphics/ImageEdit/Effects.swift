@@ -32,10 +32,10 @@ final class Effects {
     }
     
     class func addShadow(for view: UIView) {
-        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: 3)
         view.layer.shadowOpacity = 3.0
-        view.layer.shadowRadius = 12.0
+        view.layer.shadowRadius = 8.0
         view.layer.masksToBounds = false
     }
     

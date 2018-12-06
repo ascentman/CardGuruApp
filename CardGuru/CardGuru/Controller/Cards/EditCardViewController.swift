@@ -25,9 +25,9 @@ protocol EditCardTableViewControllerUpdatingDelegate: class {
 
 final class EditCardTableViewController: UITableViewController {
 
-    @IBOutlet weak var labelView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var changeImageView: UIImageView!
+    @IBOutlet private weak var labelView: UIView!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var changeImageView: UIImageView!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var barcodeTextField: UITextField!
     
@@ -91,9 +91,7 @@ final class EditCardTableViewController: UITableViewController {
     }
     
     @IBAction func deleteCard(_ sender: Any) {
-        if !absoluteURL.isEmpty {
-            DatabaseService.shared.removeImageFromStorage(withURL: absoluteURL)
-        }
+        removeOldCard()
         DatabaseService.shared.removeDataFromDb(withUID: uid)
         deleteDelegate?.userDidRemoveData()
         self.tabBarController?.tabBar.isHidden = false
@@ -155,11 +153,7 @@ final class EditCardTableViewController: UITableViewController {
     }
     
     private func updateCardInDbAndNotify(image: UIImage, for card: Card) {
-        if let url = card.absoluteURL {
-            if !url.isEmpty {
-            DatabaseService.shared.removeImageFromStorage(withURL: absoluteURL)
-            }
-        }
+        removeOldCard()
         let updatedCard = card
         DatabaseService.shared.saveCardImage(image: image) { (url, error) in
             if let url = url {
@@ -168,6 +162,12 @@ final class EditCardTableViewController: UITableViewController {
             }
         }
         updateDelegate?.userDidUpdateData(with: updatedCard)
+    }
+    
+    private func removeOldCard() {
+        if !absoluteURL.isEmpty {
+            DatabaseService.shared.removeImageFromStorage(withURL: absoluteURL)
+        }
     }
 }
 

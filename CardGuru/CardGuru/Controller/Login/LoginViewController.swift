@@ -16,10 +16,10 @@ private enum Constants {
 
 final class LoginViewController: UIViewController {
     
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var fbLoginButton: UIButton!
-    @IBOutlet weak var backgroundCardsImageView: UIImageView!
-    @IBOutlet weak var gogleLoginButton: UIButton!
+    @IBOutlet private weak var logoImageView: UIImageView!
+    @IBOutlet private weak var fbLoginButton: UIButton!
+    @IBOutlet private weak var backgroundCardsImageView: UIImageView!
+    @IBOutlet private weak var gogleLoginButton: UIButton!
     
     // MARK: - Lifecycle
     
@@ -55,6 +55,7 @@ final class LoginViewController: UIViewController {
             } else {
                 SVProgressHUD.dismiss()
                 UserDefaults().saveLoggedState(current: false)
+                self?.presentAlert("Error", message: "Failed to log in", acceptTitle: "Ok", declineTitle: nil)
             }
         }
     }
@@ -69,6 +70,7 @@ final class LoginViewController: UIViewController {
             } else {
                 SVProgressHUD.dismiss()
                 UserDefaults().saveLoggedState(current: false)
+                self?.presentAlert("Error", message: "Failed to log in", acceptTitle: "Ok", declineTitle: nil)
             }
         }
     }
@@ -78,7 +80,7 @@ final class LoginViewController: UIViewController {
     private func animateLogo() {
         UIView.animate(withDuration: 0.5) {
             self.logoImageView.center.y -= 150
-            self.logoImageView.transform = CGAffineTransform(scaleX: 4.0, y: 4.0)
+            self.logoImageView.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
         }
     }
     
