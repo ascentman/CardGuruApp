@@ -29,7 +29,7 @@ final class CardCollectionViewCell: UICollectionViewCell {
     
     func setCell(name: String, image: UIImage) {
         cellName.text = name
-        cellImage.image = image
+        cellImage.imageWithFade = image
         loadingIndicator.stopAnimating()
     }
     

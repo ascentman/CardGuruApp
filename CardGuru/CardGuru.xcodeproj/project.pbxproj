@@ -22,6 +22,7 @@
 		8051664E21B6BA26005275B1 /* CardGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664D21B6BA26005275B1 /* CardGradientLayer.swift */; };
 		8051665021B7CB1A005275B1 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664F21B7CB1A005275B1 /* Effects.swift */; };
 		80565DB921B826A600A54088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80565DB821B826A600A54088 /* Assets.xcassets */; };
+		80565DC821B9830800A54088 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80565DC721B9830800A54088 /* UIImageView+Extensions.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
 		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
@@ -86,6 +87,7 @@
 		8051664D21B6BA26005275B1 /* CardGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGradientLayer.swift; sourceTree = "<group>"; };
 		8051664F21B7CB1A005275B1 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
 		80565DB821B826A600A54088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80565DC721B9830800A54088 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
 		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */,
 				8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */,
 				8051664B21B69E70005275B1 /* CGImage+Extensions.swift */,
+				80565DC721B9830800A54088 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
 				8051664E21B6BA26005275B1 /* CardGradientLayer.swift in Sources */,
+				80565DC821B9830800A54088 /* UIImageView+Extensions.swift in Sources */,
 				8051664C21B69E70005275B1 /* CGImage+Extensions.swift in Sources */,
 				8023AD74218728480041A04C /* EditCardViewController.swift in Sources */,
 				804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */,
