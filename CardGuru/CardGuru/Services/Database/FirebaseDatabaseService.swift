@@ -71,8 +71,8 @@ final class DatabaseService {
                                                                                         "absoluteURL" : forCard.absoluteURL as Any])
     }
     
-    func saveCardImage(image: UIImage, completion: @escaping (_ url: String?, _ error: Error?)->()){
-        let resizedImage = image.af_imageScaled(to: CGSize(width: 100, height: 100))
+    func saveCardImage(image: UIImage, completion: @escaping (_ url: String?, _ error: Error?)->()) {
+        let resizedImage = image != UIImage(named: "shop") ? image.af_imageScaled(to: CGSize(width: 100, height: 100)) : UIImage(named: "shop") ?? UIImage()
         guard let userRef = getCurrentUserRef() else {
             return
         }
