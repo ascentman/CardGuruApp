@@ -17,7 +17,7 @@ final class SafariView {
         if let url = URL(string: withAbsoluteURL) {
             safariController = SFSafariViewController(url: url)
             safariController?.preferredBarTintColor = UIColor.groupTableViewBackground
-            safariController?.preferredControlTintColor = UIColor(red: 239/255, green: 56/255, blue: 82/255, alpha: 1.0)
+            safariController?.preferredControlTintColor = UIColor(red: 249/255, green: 169/255, blue: 0, alpha: 1.0)
             if let safariController = safariController {
                 completion(safariController)
             }
