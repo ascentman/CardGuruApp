@@ -72,6 +72,8 @@
 		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
 		CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */; };
 		CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */; };
+		CEF63EF121BC5E6400BD0C2E /* AnimatedStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF63EF021BC5E6400BD0C2E /* AnimatedStartViewController.swift */; };
+		CEF63EF321BC674200BD0C2E /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF63EF221BC674200BD0C2E /* Start.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -164,6 +166,8 @@
 		CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundLayer.swift; sourceTree = "<group>"; };
 		CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mauryssel_Bold.ttf; sourceTree = "<group>"; };
 		CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerClass.swift; sourceTree = "<group>"; };
+		CEF63EF021BC5E6400BD0C2E /* AnimatedStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedStartViewController.swift; sourceTree = "<group>"; };
+		CEF63EF221BC674200BD0C2E /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +369,7 @@
 				80D51D4C21A2CB9200DD048B /* Login.storyboard */,
 				807D96062159147E00ABB0D2 /* LaunchScreen.storyboard */,
 				80D51D5321A2CF2700DD048B /* TouchIDLogin.storyboard */,
+				CEF63EF221BC674200BD0C2E /* Start.storyboard */,
 				806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */,
 			);
 			path = Storyboard;
@@ -386,6 +391,7 @@
 			children = (
 				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
 				80E51F022195AA2600F43624 /* TouchLoginViewController.swift */,
+				CEF63EF021BC5E6400BD0C2E /* AnimatedStartViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 				CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */,
 				80FCB06E21BA6C0300526E69 /* ProposeAddCardView.xib in Resources */,
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
+				CEF63EF321BC674200BD0C2E /* Start.storyboard in Resources */,
 				80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */,
 				806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */,
 				80D51D4A21A2CB9200DD048B /* Login.storyboard in Resources */,
@@ -694,6 +701,7 @@
 				8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */,
 				8073E2FE2180694800C380AD /* SquareLayer.swift in Sources */,
 				80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */,
+				CEF63EF121BC5E6400BD0C2E /* AnimatedStartViewController.swift in Sources */,
 				806FE3FE21A5749D0009745A /* ErrorToThrow.swift in Sources */,
 				8095AC64219B4AF60025DD4C /* Connectivity.swift in Sources */,
 				80FCB07021BA6DD800526E69 /* ProposeAddCardView.swift in Sources */,

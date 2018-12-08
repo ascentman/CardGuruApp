@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="NMJ-c8-yTa"/>
                     </view>
                     <connections>
-                        <segue destination="IvV-Ik-SDZ" kind="show" identifier="GoToMain" id="CzV-xI-8VJ"/>
+                        <segue destination="IvV-Ik-SDZ" kind="modal" identifier="GoToMain" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="CzV-xI-8VJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAk-Sj-g3a" userLabel="First Responder" sceneMemberID="firstResponder"/>

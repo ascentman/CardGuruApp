@@ -28,11 +28,6 @@ final class ScannerViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackItem(with: "")
@@ -56,6 +51,11 @@ final class ScannerViewController: UIViewController {
                 self.userView.isHidden = false
             }, completion: nil)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

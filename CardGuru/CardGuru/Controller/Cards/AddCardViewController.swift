@@ -34,6 +34,15 @@ final class AddCardViewController: UIViewController {
     
     // MARK: - LifeCycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nameField.text = name
+        barcodeField.text = barcode
+        setupBackItemToRoot(with: Constants.backItemTitle)
+        nameField.delegate = self
+        barcodeField.delegate = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
@@ -42,15 +51,6 @@ final class AddCardViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         nameField.becomeFirstResponder()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        nameField.text = name
-        barcodeField.text = barcode
-        setupBackItemToRoot(with: Constants.backItemTitle)
-        nameField.delegate = self
-        barcodeField.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
