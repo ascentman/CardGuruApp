@@ -78,7 +78,7 @@ final class HomeViewController: UIViewController {
     
     private func setupSearchBar() {
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        searchController.searchBar.tintColor = UIColor(red: 249/255, green: 169/255, blue: 0, alpha: 1.0)
+        searchController.searchBar.tintColor = UIColor.orange
         searchController.searchBar.placeholder = Constants.searchTitle
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -107,10 +107,18 @@ final class HomeViewController: UIViewController {
     
     private func checkIfPlaceholderViewNeeded() {
         if cards?.count == 0 {
-            addCardPlaceholderView(on: view)
+            if let cardPlaceholderView = cardPlaceholderView {
+                if !view.subviews.contains(cardPlaceholderView) {
+                    addCardPlaceholderView(on: view)
+                }
+            } else {
+                addCardPlaceholderView(on: view)
+            }
         } else {
-            if cardPlaceholderView != nil {
-                cardPlaceholderView?.removeFromSuperview()
+            if let cardPlaceholderView = cardPlaceholderView {
+                if view.subviews.contains(cardPlaceholderView) {
+                    cardPlaceholderView.removeFromSuperview()
+                }
             }
         }
     }

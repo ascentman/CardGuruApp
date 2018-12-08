@@ -16,9 +16,9 @@ final class SquareLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()
-        contents = UIImage(named: Constants.imageName)?.maskWithColor(color: UIColor(red: 249/255, green: 169/255, blue: 0, alpha: 1.0)).cgImage
+        contents = UIImage(named: Constants.imageName)?.maskWithColor(color: UIColor.orange).cgImage
         contentsGravity = CALayerContentsGravity.resizeAspectFill
-        borderColor = UIColor(red: 249/255, green: 169/255, blue: 0, alpha: 1.0).cgColor
+        borderColor = UIColor.orange.cgColor
         opacity = 0.6
         borderWidth = 2
         frame = CGRect(x: 0, y: 0, width: 300, height: 180)
