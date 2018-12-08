@@ -36,7 +36,7 @@ extension UIViewController {
     func setupBackItemToRoot(with title: String) {
         navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: title, style: UIBarButtonItem.Style.plain, target: self, action: #selector(backToRoot))
-        newBackButton.image = UIImage(named: "back")?.maskWithColor(color: UIColor(red: 249/255, green: 169/255, blue: 0, alpha: 1.0))
+        newBackButton.image = UIImage(named: "back")?.maskWithColor(color: UIColor.orange)
         navigationItem.leftBarButtonItem = newBackButton
     }
     
@@ -48,7 +48,7 @@ extension UIViewController {
     func setupBackItem(with title: String) {
         navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: title, style: UIBarButtonItem.Style.plain, target: self, action: #selector(back))
-        newBackButton.image = UIImage(named: "back")?.maskWithColor(color: UIColor(red: 249/255, green: 169/255, blue: 0, alpha: 1.0))
+        newBackButton.image = UIImage(named: "back")?.maskWithColor(color: UIColor.orange)
         navigationItem.leftBarButtonItem = newBackButton
     }
     
