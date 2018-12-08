@@ -43,6 +43,13 @@ final class EditCardTableViewController: UITableViewController {
     
     // MARK: - Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupOutlets()
+        nameTextField.delegate = self
+        barcodeTextField.delegate = self
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
@@ -51,13 +58,6 @@ final class EditCardTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         nameTextField.becomeFirstResponder()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupOutlets()
-        nameTextField.delegate = self
-        barcodeTextField.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {

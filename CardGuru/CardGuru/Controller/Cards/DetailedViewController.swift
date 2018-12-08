@@ -39,16 +39,16 @@ final class DetailedViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupOutlets()
         setupBackItem(with: "")
         setupShortcutItem(name: name, barcode: barcode, image: image)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {

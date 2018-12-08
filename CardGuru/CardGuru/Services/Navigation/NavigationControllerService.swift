@@ -24,8 +24,8 @@ final class NavigationControllerService {
                 let touchViewController = UIStoryboard(name: StoryboardName.touch, bundle: nil).instantiateInitialViewController()
                 self.window?.rootViewController = touchViewController
             } else {
-                let homeViewController = UIStoryboard(name: StoryboardName.main, bundle: nil).instantiateInitialViewController()
-                self.window?.rootViewController = homeViewController
+                let startViewController = UIStoryboard(name: StoryboardName.start, bundle: nil).instantiateInitialViewController()
+                self.window?.rootViewController = startViewController
             }
         } else {
             let loginViewController = UIStoryboard(name: StoryboardName.login, bundle: nil).instantiateInitialViewController()

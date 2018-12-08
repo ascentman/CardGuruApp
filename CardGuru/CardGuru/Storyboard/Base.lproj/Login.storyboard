@@ -87,7 +87,7 @@
                         <outlet property="fbLoginButton" destination="ARk-Mm-RgL" id="fLm-rL-aHa"/>
                         <outlet property="gogleLoginButton" destination="mfE-ld-duk" id="zBV-BJ-kgX"/>
                         <outlet property="logoImageView" destination="MEz-Ki-4sj" id="cJU-xy-TuL"/>
-                        <segue destination="84h-nn-tsS" kind="presentation" identifier="GoToHome" id="mQ6-DO-GUG"/>
+                        <segue destination="84h-nn-tsS" kind="presentation" identifier="GoToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mQ6-DO-GUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDG-Us-UaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
