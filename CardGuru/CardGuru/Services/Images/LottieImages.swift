@@ -14,8 +14,9 @@ final class LottieImages {
     class func setupCardsAnimation(on view: UIView) {
         let lottieView = LOTAnimationView(name: "LottieCards")
         lottieView.loopAnimation = true
-        view.addSubview(lottieView)
+        lottieView.frame = view.bounds
         lottieView.play()
+        view.addSubview(lottieView)
     }
 }
 

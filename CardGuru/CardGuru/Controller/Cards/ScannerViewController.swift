@@ -37,10 +37,7 @@ final class ScannerViewController: UIViewController {
                 self.requestCameraAccess()
             }
         }
-        if let videoLayer = ScannerService.shared.setupVideoLayer() {
-            videoLayer.frame = view.layer.bounds
-            view.layer.insertSublayer(videoLayer, at: 0)
-        }
+        ScannerService.shared.setupVideoLayer(on: view)
         ScannerService.shared.delegate = self
         DispatchQueue.global().async {
             ScannerService.shared.session?.startRunning()
@@ -80,6 +77,8 @@ final class ScannerViewController: UIViewController {
             destination.delegate = self
         }
     }
+    
+    // MARK: - Private
     
     private func requestCameraAccess() {
         presentAlert(Constants.alertTitle, message: Constants.alertMessage, acceptTitle: Constants.acceptTitle, declineTitle: Constants.cancelTitle, okActionHandler: {

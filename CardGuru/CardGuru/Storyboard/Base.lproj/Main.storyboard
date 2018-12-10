@@ -148,6 +148,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwN-GX-EBN" customClass="AnimatedView" customModule="CardGuru" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </containerView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJ6-k3-V2L">
                                 <rect key="frame" x="0.0" y="498" width="375" height="120"/>
@@ -187,7 +188,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.93725490199999995" green="0.21960784310000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tJ6-k3-V2L" firstAttribute="trailing" secondItem="CP8-gY-GSV" secondAttribute="trailing" id="1tI-I4-RL6"/>
                             <constraint firstItem="zwN-GX-EBN" firstAttribute="top" secondItem="CP8-gY-GSV" secondAttribute="top" id="3sj-or-4eu"/>

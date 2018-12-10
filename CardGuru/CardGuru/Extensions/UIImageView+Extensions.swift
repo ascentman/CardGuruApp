@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImageView {
     
-    var imageWithFade:UIImage?{
+    var imageWithFade: UIImage? {
         get{
             return self.image
         }

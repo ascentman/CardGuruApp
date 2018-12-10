@@ -32,13 +32,14 @@ final class ScannerService: NSObject {
     ]
     
     func setupSession(with completion: @escaping ((Bool) -> ())) {
-        self.setupCaptureSession()
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
-            completion(true)
+            self.setupCaptureSession()
+            session?.startRunning()
         case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { granted in
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
                 if granted {
+                    self?.setupCaptureSession()
                     completion(true)
                 } else {
                     completion(false)
@@ -49,13 +50,13 @@ final class ScannerService: NSObject {
         }
     }
     
-    func setupVideoLayer() -> CALayer? {
+    func setupVideoLayer(on view: UIView) {
         if let session = self.session {
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            return videoPreviewLayer
+            videoPreviewLayer?.frame = view.layer.frame
+            view.layer.insertSublayer(videoPreviewLayer ?? CALayer(), at: 0)
         }
-        return nil
     }
     
     private func setupCaptureSession() {

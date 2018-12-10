@@ -42,7 +42,7 @@
                     </view>
                     <connections>
                         <outlet property="logo" destination="TCX-MV-muP" id="Rjl-xl-W2W"/>
-                        <segue destination="djD-Wy-GHJ" kind="modal" identifier="GoNext" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="iPB-XA-3Q5"/>
+                        <segue destination="djD-Wy-GHJ" kind="presentation" identifier="GoNext" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="iPB-XA-3Q5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDW-ND-NC6" userLabel="First Responder" sceneMemberID="firstResponder"/>

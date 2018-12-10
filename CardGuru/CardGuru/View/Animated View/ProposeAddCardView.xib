@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXg-Qp-6ha">
-                    <rect key="frame" x="77.5" y="491" width="220" height="50"/>
+                    <rect key="frame" x="77.5" y="393.5" width="220" height="44"/>
                     <color key="backgroundColor" red="0.97632747890000005" green="0.66390734910000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="ANt-yv-4hZ"/>
+                        <constraint firstAttribute="height" constant="44" id="ANt-yv-4hZ"/>
                         <constraint firstAttribute="width" constant="220" id="qRi-QH-sM4"/>
                     </constraints>
                     <state key="normal" title="Add">
@@ -42,32 +42,31 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your first card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-A8-bv2">
-                    <rect key="frame" x="113" y="120" width="149.5" height="21"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <rect key="frame" x="104.5" y="120" width="166" height="23.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-Du-zGP">
-                    <rect key="frame" x="16" y="141" width="250" height="250"/>
+                    <rect key="frame" x="87.5" y="143.5" width="200" height="200"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="250" id="jWo-pi-hAz"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="lHT-vp-qF1"/>
+                        <constraint firstAttribute="height" constant="200" id="7Pi-Ag-4Hc"/>
+                        <constraint firstAttribute="width" constant="200" id="bot-PV-Y5R"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="WdD-Du-zGP" firstAttribute="top" secondItem="Kpf-A8-bv2" secondAttribute="bottom" id="Hlb-Er-5dc"/>
+                <constraint firstItem="WdD-Du-zGP" firstAttribute="top" secondItem="Kpf-A8-bv2" secondAttribute="bottom" id="44h-0S-NaU"/>
+                <constraint firstItem="PXg-Qp-6ha" firstAttribute="top" secondItem="WdD-Du-zGP" secondAttribute="bottom" constant="50" id="5VA-Po-ofx"/>
                 <constraint firstItem="PXg-Qp-6ha" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UXU-vh-drj"/>
-                <constraint firstItem="WdD-Du-zGP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="eKC-JU-VHX"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WdD-Du-zGP" secondAttribute="trailing" constant="109" id="hqK-zv-lFB"/>
-                <constraint firstItem="PXg-Qp-6ha" firstAttribute="top" secondItem="WdD-Du-zGP" secondAttribute="bottom" constant="100" id="qYR-I5-oud"/>
                 <constraint firstItem="Kpf-A8-bv2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qz6-RV-t8r"/>
+                <constraint firstItem="WdD-Du-zGP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="t0b-nt-iGB"/>
                 <constraint firstItem="Kpf-A8-bv2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="xBY-df-Cea"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="252" y="45"/>
+            <point key="canvasLocation" x="252" y="44.527736131934034"/>
         </view>
     </objects>
 </document>

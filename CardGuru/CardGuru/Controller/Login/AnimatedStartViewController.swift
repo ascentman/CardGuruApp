@@ -14,7 +14,7 @@ class AnimatedStartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         animateLogo()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.performSegue(withIdentifier: "GoNext", sender: self)
         }
     }
