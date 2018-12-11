@@ -44,6 +44,7 @@
 		807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FF2159147C00ABB0D2 /* LoginViewController.swift */; };
 		807D96032159147C00ABB0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96012159147C00ABB0D2 /* Main.storyboard */; };
 		807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96062159147E00ABB0D2 /* LaunchScreen.storyboard */; };
+		8092D7D221BFB0A400C92031 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8092D7D121BFB0A400C92031 /* Camera.swift */; };
 		809333682159379900C02D11 /* GoogleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809333672159379900C02D11 /* GoogleLoginService.swift */; };
 		8093336E2159489000C02D11 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336D2159488F00C02D11 /* HomeViewController.swift */; };
 		80933370215A37B900C02D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336F215A37B900C02D11 /* User.swift */; };
@@ -134,6 +135,7 @@
 		807D96022159147C00ABB0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		807D96072159147E00ABB0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		807D96092159147E00ABB0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8092D7D121BFB0A400C92031 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		809333672159379900C02D11 /* GoogleLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLoginService.swift; sourceTree = "<group>"; };
 		8093336D2159488F00C02D11 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8093336F215A37B900C02D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 			children = (
 				80AD24612199A3AE00415644 /* BarcodeGenerator.swift */,
 				8051664F21B7CB1A005275B1 /* Effects.swift */,
+				8092D7D121BFB0A400C92031 /* Camera.swift */,
 			);
 			path = ImageEdit;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */,
 				803DDCF32162662300BD91BC /* AddCardViewController.swift in Sources */,
 				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
+				8092D7D221BFB0A400C92031 /* Camera.swift in Sources */,
 				809AA5ED2194902000AD1690 /* PreferencesTableViewController.swift in Sources */,
 				804239FD217764A8004AC960 /* ScannerService.swift in Sources */,
 				8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */,

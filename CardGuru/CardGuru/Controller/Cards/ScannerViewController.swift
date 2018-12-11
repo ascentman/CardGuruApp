@@ -23,14 +23,28 @@ protocol ScannerViewControllerDelegate: class {
 final class ScannerViewController: UIViewController {
     
     @IBOutlet private weak var animatedView: AnimatedView!
-    @IBOutlet private weak var userView: UIView!
+    @IBOutlet weak var scannerAnimatedView: UIView!
+    @IBOutlet weak var enterButton: UIButton!
     weak var delegate: ScannerViewControllerDelegate?
+    
+    private var camera = Camera()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupBackItem(with: "")
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        enterButton.backgroundColor = .clear
+        enterButton.layer.cornerRadius = 5
+        enterButton.layer.borderWidth = 2
+        enterButton.layer.borderColor = UIColor.white.cgColor
+        
+        LottieImages.setupScanerAnimation(on: scannerAnimatedView)
         ScannerService.shared.setupSession { success in
             if !success {
                 self.animatedView.backgroundColor = UIColor.black
@@ -44,8 +58,8 @@ final class ScannerViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            UIView.transition(with: self.userView, duration: 2.0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
-                self.userView.isHidden = false
+            UIView.transition(with: self.enterButton, duration: 2.0, options: UIView.AnimationOptions.transitionFlipFromBottom, animations: {
+                self.enterButton.isHidden = false
             }, completion: nil)
         }
     }
@@ -59,6 +73,7 @@ final class ScannerViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
         animatedView.removeFromSuperview()
+        ScannerService.shared.session?.stopRunning()
     }
 
     @IBAction func enterClicked(_ sender: Any) {
@@ -91,6 +106,15 @@ final class ScannerViewController: UIViewController {
             }
         })
     }
+    
+//    private func configureCamera() {
+//        camera.prepare { (error) in
+//            if let error = error {
+//                print(error)
+//            }
+//            try? self.camera.displayPreview(on: self.view)
+//        }
+//    }
 }
 
 // Extensions

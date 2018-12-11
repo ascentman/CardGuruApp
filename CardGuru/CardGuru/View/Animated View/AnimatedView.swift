@@ -29,25 +29,25 @@ final class AnimatedView: UIView {
         frame = UIScreen.main.bounds
         
         backLayer = BackLayer(inFrame: frame)
-        squareLayer = SquareLayer(inFrame: frame)
+//        squareLayer = SquareLayer(inFrame: frame)
         phoneLayer = PhoneLayer(inFrame: frame)
         cardLayer = CardLayer(inFrame: frame)
         checkLayer = CheckLayer(inFrame: frame)
         
         guard let backLayer = backLayer,
             let cardLayer = cardLayer,
-            let squareLayer = squareLayer,
+//            let squareLayer = squareLayer,
             let phoneLayer = phoneLayer,
             let checkLayer = checkLayer else {
                 return
         }
         
         layer.addSublayer(backLayer)
-        layer.addSublayer(squareLayer)
+//        layer.addSublayer(squareLayer)
         layer.addSublayer(phoneLayer)
         layer.addSublayer(cardLayer)
         layer.addSublayer(checkLayer)
-        squareLayer.animateLayer()
+//        squareLayer.animateLayer()
         startAnimation()
     }
     

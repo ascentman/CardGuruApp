@@ -18,5 +18,13 @@ final class LottieImages {
         lottieView.play()
         view.addSubview(lottieView)
     }
+    
+    class func setupScanerAnimation(on view: UIView) {
+        let lottieView = LOTAnimationView(name: "barcodeScanner")
+        lottieView.loopAnimation = true
+        lottieView.frame = view.bounds
+        lottieView.play()
+        view.addSubview(lottieView)
+    }
 }
 

@@ -19,8 +19,7 @@ final class BackLayer: CAShapeLayer {
         super.init()
         path = drawPath(width: Double(inFrame.maxX), heigth: Double(inFrame.maxY)).cgPath
         fillRule = CAShapeLayerFillRule.evenOdd
-        fillColor = UIColor.lightGray.cgColor
-        opacity = 0.6
+        fillColor = UIColor.clear.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {
