@@ -35,7 +35,6 @@ final class ScannerService: NSObject {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             self.setupCaptureSession()
-            session?.startRunning()
         case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
                 if granted {
