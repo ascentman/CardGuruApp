@@ -30,7 +30,12 @@ final class ScannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupBackItem(with: "")
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         ScannerService.shared.setupSession { success in
             if !success {
                 self.animatedView.backgroundColor = UIColor.black
@@ -39,6 +44,7 @@ final class ScannerViewController: UIViewController {
         }
         ScannerService.shared.setupVideoLayer(on: view)
         ScannerService.shared.delegate = self
+        
         DispatchQueue.global().async {
             ScannerService.shared.session?.startRunning()
         }
@@ -59,6 +65,8 @@ final class ScannerViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
         animatedView.removeFromSuperview()
+        ScannerService.shared.session?.stopRunning()
+        
     }
 
     @IBAction func enterClicked(_ sender: Any) {
