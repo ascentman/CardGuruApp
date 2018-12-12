@@ -30,15 +30,10 @@ final class ScannerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupBackItem(with: "")
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
+        setupNavigationBar()
         ScannerService.shared.setupSession { success in
             if !success {
-                self.animatedView.backgroundColor = UIColor.black
+                self.animatedView.backgroundColor = UIColor.lightGray
                 self.requestCameraAccess()
             }
         }
@@ -98,6 +93,13 @@ final class ScannerViewController: UIViewController {
                 self.performSegue(withIdentifier: Constants.addNewCard, sender: nil)
             }
         })
+    }
+    
+    private func setupNavigationBar() {
+        setupBackItem(with: "")
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
 }
 

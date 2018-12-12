@@ -124,11 +124,6 @@
                                 <segue destination="bT4-O8-MaT" kind="show" identifier="AddCard" id="Li7-Vh-1vQ"/>
                             </connections>
                         </barButtonItem>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                <integer key="value" value="1"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="cardsCollectionView" destination="kOB-tJ-A41" id="Qzd-Sp-79x"/>
@@ -187,7 +182,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tJ6-k3-V2L" firstAttribute="trailing" secondItem="CP8-gY-GSV" secondAttribute="trailing" id="1tI-I4-RL6"/>

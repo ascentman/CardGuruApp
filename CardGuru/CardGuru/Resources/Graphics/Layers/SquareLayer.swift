@@ -16,20 +16,32 @@ final class SquareLayer: CALayer {
     
     init(inFrame: CGRect) {
         super.init()
-        contents = UIImage(named: Constants.imageName)?.maskWithColor(color: UIColor.orange).cgImage
-        contentsGravity = CALayerContentsGravity.resizeAspectFill
-        borderColor = UIColor.orange.cgColor
-        opacity = 0.6
-        borderWidth = 2
+        opacity = 1.0
+        borderWidth = 3
+        borderColor = UIColor.clear.cgColor
         frame = CGRect(x: 0, y: 0, width: 300, height: 180)
         position = CGPoint(x: inFrame.midX, y: inFrame.midY)
+        addRoundedRect()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func animateLayer() {
-        Animations.shimmerEffect(on: self)
+    // MARK: - Private
+    
+    private func drawPath(width: Double, heigth: Double) -> UIBezierPath {
+        let rect = CGRect(x: 0, y: 0, width: width, height: heigth)
+        let rounderRect = UIBezierPath(roundedRect: rect, cornerRadius: 10)
+        return rounderRect
+    }
+    
+    private func addRoundedRect() {
+        let shape = CAShapeLayer()
+        shape.strokeColor = UIColor.white.cgColor
+        shape.lineWidth = 4.0
+        shape.path = drawPath(width: 300, heigth: 180).cgPath
+        shape.fillColor = UIColor.clear.cgColor
+        addSublayer(shape)
     }
 }

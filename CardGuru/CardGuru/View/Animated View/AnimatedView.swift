@@ -47,7 +47,6 @@ final class AnimatedView: UIView {
         layer.addSublayer(phoneLayer)
         layer.addSublayer(cardLayer)
         layer.addSublayer(checkLayer)
-        squareLayer.animateLayer()
         startAnimation()
     }
     
