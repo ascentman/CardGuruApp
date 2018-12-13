@@ -24,6 +24,8 @@
 		80565DB921B826A600A54088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80565DB821B826A600A54088 /* Assets.xcassets */; };
 		80565DC821B9830800A54088 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80565DC721B9830800A54088 /* UIImageView+Extensions.swift */; };
 		80565DCE21B9A73D00A54088 /* LottieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80565DCD21B9A73D00A54088 /* LottieImages.swift */; };
+		805C263B21C27C2E00F9A74D /* ManualCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805C263A21C27C2E00F9A74D /* ManualCard.xib */; };
+		805C263D21C27C4C00F9A74D /* ManualCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C263C21C27C4C00F9A74D /* ManualCard.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
 		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
@@ -111,6 +113,8 @@
 		80565DC721B9830800A54088 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		80565DCB21B9A69C00A54088 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80565DCD21B9A73D00A54088 /* LottieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImages.swift; sourceTree = "<group>"; };
+		805C263A21C27C2E00F9A74D /* ManualCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualCard.xib; sourceTree = "<group>"; };
+		805C263C21C27C4C00F9A74D /* ManualCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCard.swift; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
 		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -196,7 +200,7 @@
 		803DDCFD21636E5200BD91BC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8073E2E921805BCA00C380AD /* Animated View */,
+				8073E2E921805BCA00C380AD /* SubViews */,
 				8073E2FF2180ABAD00C380AD /* Cell */,
 			);
 			path = View;
@@ -281,15 +285,17 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
-		8073E2E921805BCA00C380AD /* Animated View */ = {
+		8073E2E921805BCA00C380AD /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				8073E2E721805B0000C380AD /* AnimatedView.swift */,
 				8073E2E52180597E00C380AD /* AnimatedView.xib */,
 				80FCB06D21BA6C0300526E69 /* ProposeAddCardView.xib */,
+				805C263A21C27C2E00F9A74D /* ManualCard.xib */,
+				8073E2E721805B0000C380AD /* AnimatedView.swift */,
 				80FCB06F21BA6DD800526E69 /* ProposeAddCardView.swift */,
+				805C263C21C27C4C00F9A74D /* ManualCard.swift */,
 			);
-			path = "Animated View";
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		8073E2F221805CF400C380AD /* Layers */ = {
@@ -590,6 +596,7 @@
 				80D51D4A21A2CB9200DD048B /* Login.storyboard in Resources */,
 				80D51D4121A2CA5C00DD048B /* Localizable.strings in Resources */,
 				80D51D5121A2CF2700DD048B /* TouchIDLogin.storyboard in Resources */,
+				805C263B21C27C2E00F9A74D /* ManualCard.xib in Resources */,
 				807D96032159147C00ABB0D2 /* Main.storyboard in Resources */,
 				8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */,
 				80565DB921B826A600A54088 /* Assets.xcassets in Resources */,
@@ -710,6 +717,7 @@
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
 				8073E2FB2180609E00C380AD /* CAAnimation+Block.swift in Sources */,
 				807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */,
+				805C263D21C27C4C00F9A74D /* ManualCard.swift in Sources */,
 				807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */,
 				8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */,
 				CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */,

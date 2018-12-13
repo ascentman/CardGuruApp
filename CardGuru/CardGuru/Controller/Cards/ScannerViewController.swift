@@ -20,11 +20,18 @@ protocol ScannerViewControllerDelegate: class {
     func userDidEnterCard(_ card: Card)
 }
 
+protocol AddCardManuallyDelegate: class {
+    func userDidEnterData(card: Card)
+}
+
 final class ScannerViewController: UIViewController {
     
     @IBOutlet private weak var animatedView: AnimatedView!
     @IBOutlet private weak var userView: UIView!
+    private var manualCardAddingView: ManualCard?
+    @IBOutlet private weak var sourceIndicatorControl: UISegmentedControl!
     weak var delegate: ScannerViewControllerDelegate?
+    weak var addManuallyDelegate: AddCardManuallyDelegate?
     
     // MARK: - Lifecycle
     
@@ -64,22 +71,29 @@ final class ScannerViewController: UIViewController {
         
     }
 
-    @IBAction func enterClicked(_ sender: Any) {
-        performSegue(withIdentifier: Constants.addNewCard, sender: nil)
+    @IBAction func indexChangeClicked(_ sender: Any) {
+        switch sourceIndicatorControl.selectedSegmentIndex {
+        case 0:
+            manualCardAddingView?.removeFromSuperview()
+        case 1:
+            addManualCardView(on: view)
+        default:
+            break
+        }
     }
     
     // MARK: - Segues
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? AddCardViewController,
-            let barcode = sender as? String {
-            destination.setBarcode(from: barcode)
-            destination.delegate = self
-        }
-        if let destination = segue.destination as? AddCardViewController {
-            destination.delegate = self
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? AddCardViewController,
+//            let barcode = sender as? String {
+//            destination.setBarcode(from: barcode)
+//            destination.delegate = self
+//        }
+//        if let destination = segue.destination as? AddCardViewController {
+//            destination.delegate = self
+//        }
+//    }
     
     // MARK: - Private
     
@@ -90,7 +104,9 @@ final class ScannerViewController: UIViewController {
             }
         }, cancelActionHandler: {
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: Constants.addNewCard, sender: nil)
+//                self.performSegue(withIdentifier: Constants.addNewCard, sender: nil)
+                self.sourceIndicatorControl.selectedSegmentIndex = 1
+                self.addManualCardView(on: self.view)
             }
         })
     }
@@ -100,6 +116,15 @@ final class ScannerViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    
+    private func addManualCardView(on view: UIView) {
+        manualCardAddingView = ManualCard()
+        guard let cardView = manualCardAddingView else {
+            return
+        }
+        cardView.frame = self.userView.frame
+        view.addSubview(cardView)
     }
 }
 
@@ -116,11 +141,11 @@ extension ScannerViewController: ScannerServiceDelegate {
     }
 }
 
-extension ScannerViewController: AddCardViewControllerDelegate {
-
-     // MARK: - AddingNewCardDelagate
-    
-    func userDidEnterData(card: Card) {
-        delegate?.userDidEnterCard(card)
-    }
-}
+//extension ScannerViewController: AddCardViewControllerDelegate {
+//
+//     // MARK: - AddingNewCardDelagate
+//
+//    func userDidEnterData(card: Card) {
+//        delegate?.userDidEnterCard(card)
+//    }
+//}

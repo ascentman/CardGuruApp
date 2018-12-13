@@ -141,63 +141,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwN-GX-EBN" customClass="AnimatedView" customModule="CardGuru" customModuleProvider="target">
+                            <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwN-GX-EBN" customClass="AnimatedView" customModule="CardGuru" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </containerView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJ6-k3-V2L">
-                                <rect key="frame" x="0.0" y="498" width="375" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypx-R8-vgV">
-                                        <rect key="frame" x="34.5" y="30" width="306" height="60"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="efH-Cd-w0u"/>
-                                        </constraints>
-                                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button" image="buton"/>
-                                        <connections>
-                                            <action selector="enterClicked:" destination="bT4-O8-MaT" eventType="touchUpInside" id="hiu-DH-xRV"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter manually" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dki-VC-kMr">
-                                        <rect key="frame" x="88.5" y="42.5" width="198.5" height="35"/>
-                                        <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                        <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Ey-Jr-9yl">
+                                <rect key="frame" x="47.5" y="100" width="280" height="31"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="dki-VC-kMr" firstAttribute="centerX" secondItem="tJ6-k3-V2L" secondAttribute="centerX" id="0j9-Bb-jw2"/>
-                                    <constraint firstItem="Ypx-R8-vgV" firstAttribute="centerY" secondItem="tJ6-k3-V2L" secondAttribute="centerY" id="8lc-bY-dbd"/>
-                                    <constraint firstItem="Ypx-R8-vgV" firstAttribute="centerX" secondItem="tJ6-k3-V2L" secondAttribute="centerX" id="K42-dP-dar"/>
-                                    <constraint firstItem="Ypx-R8-vgV" firstAttribute="leading" secondItem="tJ6-k3-V2L" secondAttribute="leading" priority="750" constant="34.5" id="X35-KX-pLp"/>
-                                    <constraint firstItem="dki-VC-kMr" firstAttribute="centerY" secondItem="tJ6-k3-V2L" secondAttribute="centerY" id="aPU-wP-bIH"/>
-                                    <constraint firstAttribute="height" constant="120" id="alm-3U-zwi"/>
-                                    <constraint firstItem="Ypx-R8-vgV" firstAttribute="centerX" secondItem="tJ6-k3-V2L" secondAttribute="centerX" id="fsU-l9-ZtI"/>
-                                    <constraint firstItem="Ypx-R8-vgV" firstAttribute="centerY" secondItem="tJ6-k3-V2L" secondAttribute="centerY" id="ktA-x6-AJX"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ypx-R8-vgV" secondAttribute="trailing" priority="999" constant="34.5" id="nhE-aD-405"/>
+                                    <constraint firstAttribute="height" constant="30" id="bKx-ma-iOo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="fXu-H9-zE5"/>
                                 </constraints>
+                                <segments>
+                                    <segment title="Scan code"/>
+                                    <segment title="Enter code"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="indexChangeClicked:" destination="bT4-O8-MaT" eventType="valueChanged" id="Bvy-1s-XhN"/>
+                                </connections>
+                            </segmentedControl>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJ6-k3-V2L" userLabel="Enter Manually View">
+                                <rect key="frame" x="1" y="160" width="373" height="420"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="420" id="alm-3U-zwi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tJ6-k3-V2L" firstAttribute="trailing" secondItem="CP8-gY-GSV" secondAttribute="trailing" id="1tI-I4-RL6"/>
+                            <constraint firstItem="tJ6-k3-V2L" firstAttribute="trailing" secondItem="CP8-gY-GSV" secondAttribute="trailing" constant="-1" id="1tI-I4-RL6"/>
                             <constraint firstItem="zwN-GX-EBN" firstAttribute="top" secondItem="Wkb-23-EwF" secondAttribute="top" id="3sj-or-4eu"/>
-                            <constraint firstItem="tJ6-k3-V2L" firstAttribute="bottom" secondItem="CP8-gY-GSV" secondAttribute="bottom" id="7mM-UY-2XS"/>
                             <constraint firstItem="CP8-gY-GSV" firstAttribute="bottom" secondItem="zwN-GX-EBN" secondAttribute="bottom" id="G9s-Wj-UuZ"/>
-                            <constraint firstItem="tJ6-k3-V2L" firstAttribute="leading" secondItem="CP8-gY-GSV" secondAttribute="leading" id="PPf-uS-lcm"/>
+                            <constraint firstItem="tJ6-k3-V2L" firstAttribute="leading" secondItem="CP8-gY-GSV" secondAttribute="leading" constant="1" id="PPf-uS-lcm"/>
+                            <constraint firstItem="tJ6-k3-V2L" firstAttribute="top" secondItem="7Ey-Jr-9yl" secondAttribute="bottom" constant="30" id="cfK-1s-kLa"/>
                             <constraint firstItem="zwN-GX-EBN" firstAttribute="leading" secondItem="CP8-gY-GSV" secondAttribute="leading" id="eur-B2-ZJk"/>
                             <constraint firstItem="CP8-gY-GSV" firstAttribute="trailing" secondItem="zwN-GX-EBN" secondAttribute="trailing" id="ghM-Ue-iMe"/>
+                            <constraint firstItem="zwN-GX-EBN" firstAttribute="top" secondItem="7Ey-Jr-9yl" secondAttribute="bottom" constant="-130" id="msN-am-Wxm"/>
+                            <constraint firstItem="7Ey-Jr-9yl" firstAttribute="centerX" secondItem="Wkb-23-EwF" secondAttribute="centerX" id="uvu-ON-LOv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CP8-gY-GSV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add new card" id="pgi-0s-tdl"/>
                     <connections>
                         <outlet property="animatedView" destination="zwN-GX-EBN" id="VVN-Nr-3Cj"/>
+                        <outlet property="sourceIndicatorControl" destination="7Ey-Jr-9yl" id="XyE-4A-00p"/>
                         <outlet property="userView" destination="tJ6-k3-V2L" id="9Uj-1Y-DNI"/>
                         <segue destination="Hmg-35-5Rl" kind="show" identifier="AddNewCard" id="JsP-zW-vFh"/>
                     </connections>
@@ -256,9 +251,6 @@
                                     <constraint firstAttribute="width" constant="140" id="uj7-vo-7bg"/>
                                 </constraints>
                                 <state key="normal" image="save"/>
-                                <connections>
-                                    <action selector="saveClicked:" destination="Hmg-35-5Rl" eventType="touchUpInside" id="a3l-44-ECd"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -285,10 +277,6 @@
                         <viewLayoutGuide key="safeArea" id="Dcu-H7-ALg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add new card" id="Fnf-lO-Iua"/>
-                    <connections>
-                        <outlet property="barcodeField" destination="Juz-hB-SQ2" id="7yO-lM-Zuy"/>
-                        <outlet property="nameField" destination="MDw-LT-QTf" id="XTe-Fs-BTL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Az-fR-j9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -718,7 +706,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="buton" width="980" height="368"/>
         <image name="cardsIcon" width="37.5" height="37.5"/>
         <image name="delete" width="600" height="181"/>
         <image name="logoCardGuru" width="1024" height="316"/>

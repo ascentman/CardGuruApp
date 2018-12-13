@@ -58,7 +58,7 @@ final class AddCardViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    @IBAction private func saveClicked(_ sender: Any) {
+    private func saveClicked() {
         let name = self.nameField.text
         let barcode = self.barcodeField.text
         if isEnteredDataValid() {
@@ -106,6 +106,8 @@ extension AddCardViewController: UITextFieldDelegate {
         return true
     }
 }
+
+
 
 private extension String {
     

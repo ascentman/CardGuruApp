@@ -51,8 +51,8 @@ final class AnimatedView: UIView {
     }
     
     private func animateCardLayer(_ completion: ((Bool) -> ())?) {
-        let toPoint = CGPoint(x: bounds.midX, y: 150)
-        let fromPoint = CGPoint(x: bounds.maxX, y: 150)
+        let toPoint = CGPoint(x: bounds.midX, y: 500)
+        let fromPoint = CGPoint(x: bounds.maxX, y: 500)
         cardLayer?.animateLayer(from: fromPoint, to: toPoint) { isFinished in
             completion?(isFinished)
         }
