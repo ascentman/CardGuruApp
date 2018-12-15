@@ -120,11 +120,15 @@ extension ScannerViewController: ScannerServiceDelegate {
 
     func get(barcode: String) {
         DispatchQueue.main.async {
-            self.presentAlert("Add card name", message: barcode, acceptTitle: "Ok", declineTitle: nil, okActionHandler: {
-                // MARK: TODO - textfield
-                let name = "name"
-                self.saveToDbAndNotify(name: name, barcode: barcode)
-                self.navigateToRoot()
+            self.presentAlertWithTextField("Add card name", message: barcode, acceptTitle: "Ok", declineTitle: nil, inputPlaceholder: "store name",
+                okActionHandler: { (name) -> (Void) in
+                    if var name = name {
+                        if name.isEmpty {
+                            name = "Unknown"
+                        }
+                        self.saveToDbAndNotify(name: name, barcode: barcode)
+                        self.navigateToRoot()
+                    }
             }, cancelActionHandler: nil)
         }
     }
