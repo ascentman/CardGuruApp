@@ -41,6 +41,7 @@
                         <viewLayoutGuide key="safeArea" id="vcs-Mo-bVx"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundCardsImageView" destination="XZC-4a-Vgl" id="tPN-DM-xS8"/>
                         <outlet property="logo" destination="TCX-MV-muP" id="Rjl-xl-W2W"/>
                         <segue destination="djD-Wy-GHJ" kind="presentation" identifier="GoNext" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="iPB-XA-3Q5"/>
                     </connections>

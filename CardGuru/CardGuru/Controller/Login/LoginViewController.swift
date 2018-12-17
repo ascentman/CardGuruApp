@@ -31,8 +31,8 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         animateLogo()
         Effects.addMotion(on: logoImageView, magnitude: -10.0)
-        Effects.addMotion(on: backgroundCardsImageView, magnitude: 20.0)
-        addShadowOnUI()
+        Effects.addMotion(on: backgroundCardsImageView, magnitude: 30.0)
+        addEffectsOnUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -88,8 +88,10 @@ final class LoginViewController: UIViewController {
         UserDefaults().save(user: User(name: user.name, email: user.email, absoluteURL: user.absoluteURL))
     }
     
-    private func addShadowOnUI() {
+    private func addEffectsOnUI() {
         Effects.addShadow(for: fbLoginButton)
         Effects.addShadow(for: gogleLoginButton)
+        let blurredImage = Effects.addBlur(for: backgroundCardsImageView.image ?? UIImage(), with: 1.0)
+        backgroundCardsImageView.image = blurredImage
     }
 }

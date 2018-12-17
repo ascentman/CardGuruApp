@@ -25,6 +25,7 @@
 		80565DCE21B9A73D00A54088 /* LottieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80565DCD21B9A73D00A54088 /* LottieImages.swift */; };
 		805C263B21C27C2E00F9A74D /* ManualCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805C263A21C27C2E00F9A74D /* ManualCard.xib */; };
 		805C263D21C27C4C00F9A74D /* ManualCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C263C21C27C4C00F9A74D /* ManualCardView.swift */; };
+		805C263F21C7CCC900F9A74D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
 		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
@@ -113,6 +114,7 @@
 		80565DCD21B9A73D00A54088 /* LottieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImages.swift; sourceTree = "<group>"; };
 		805C263A21C27C2E00F9A74D /* ManualCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualCard.xib; sourceTree = "<group>"; };
 		805C263C21C27C4C00F9A74D /* ManualCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCardView.swift; sourceTree = "<group>"; };
+		805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
 		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */,
 				8051664B21B69E70005275B1 /* CGImage+Extensions.swift */,
 				80565DC721B9830800A54088 /* UIImageView+Extensions.swift */,
+				805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				8095AC64219B4AF60025DD4C /* Connectivity.swift in Sources */,
 				80FCB07021BA6DD800526E69 /* ProposeAddCardView.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
+				805C263F21C7CCC900F9A74D /* UIView+Extensions.swift in Sources */,
 				8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */,
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
 				8073E2FB2180609E00C380AD /* CAAnimation+Block.swift in Sources */,
