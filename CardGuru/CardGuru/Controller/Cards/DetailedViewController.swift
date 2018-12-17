@@ -26,6 +26,7 @@ final class DetailedViewController: UIViewController {
     @IBOutlet private weak var barcodeImageView: UIImageView!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var shareButton: UIButton!
     
     private var uid = String()
     private var name = String()
@@ -44,6 +45,7 @@ final class DetailedViewController: UIViewController {
         setupOutlets()
         setupBackItem(with: "")
         setupShortcutItem(name: name, barcode: barcode, image: image)
+        Effects.addShadow(for: shareButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {

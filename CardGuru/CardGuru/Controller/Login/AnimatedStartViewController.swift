@@ -11,8 +11,10 @@ import UIKit
 class AnimatedStartViewController: UIViewController {
 
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var backgroundCardsImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBlur()
         animateLogo()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             self.performSegue(withIdentifier: "GoNext", sender: self)
@@ -28,5 +30,8 @@ class AnimatedStartViewController: UIViewController {
         }
     }
     
-    
+    private func addBlur() {
+        let blurredImage = Effects.addBlur(for: backgroundCardsImageView.image ?? UIImage(), with: 1.0)
+        backgroundCardsImageView.image = blurredImage
+    }
 }

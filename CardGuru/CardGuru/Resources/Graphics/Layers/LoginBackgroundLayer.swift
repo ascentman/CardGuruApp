@@ -21,7 +21,7 @@ final class LoginBackgroundLayer: CALayer {
     init(inFrame: CGRect) {
         super.init()
         let image = UIImage(named: "cards") ?? UIImage()
-        let blurredImage = Effects.addBlur(for: image, with: 4.0)
+        let blurredImage = Effects.addBlur(for: image, with: 7.0)
         contents = blurredImage?.cgImage
         contentsGravity = CALayerContentsGravity.resizeAspectFill
         opacity = 0.25

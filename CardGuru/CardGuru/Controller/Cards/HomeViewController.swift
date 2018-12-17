@@ -79,6 +79,7 @@ final class HomeViewController: UIViewController {
     
     private func setupSearchBar() {
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
         searchController.searchBar.tintColor = UIColor.orange
         searchController.searchBar.placeholder = Constants.searchTitle
         searchController.searchResultsUpdater = self

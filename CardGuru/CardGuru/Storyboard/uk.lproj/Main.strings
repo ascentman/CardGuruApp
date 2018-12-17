@@ -41,7 +41,7 @@
 "fba-VD-qbJ.title" = "Налаштування";
 
 /* Class = "UILabel"; text = "barcode"; ObjectID = "gQJ-00-1Gk"; */
-"gQJ-00-1Gk.text" = "код";
+"gQJ-00-1Gk.text" = "Код";
 
 /* Class = "UINavigationItem"; title = "Edit"; ObjectID = "gVR-sQ-56M"; */
 "gVR-sQ-56M.title" = "Редагувати";
@@ -59,4 +59,4 @@
 "pgi-0s-tdl.title" = "Додати нову картку";
 
 /* Class = "UILabel"; text = "Store name"; ObjectID = "u8H-pw-do6"; */
-"u8H-pw-do6.text" = "назва магазину";
+"u8H-pw-do6.text" = "Назва магазину";

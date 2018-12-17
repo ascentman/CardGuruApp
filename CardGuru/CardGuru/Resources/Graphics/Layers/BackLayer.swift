@@ -29,9 +29,10 @@ final class BackLayer: CAShapeLayer {
     
     private func drawPath(width: Double, heigth: Double) -> UIBezierPath {
         let viewPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: width, height: heigth))
-        let rectPath = UIBezierPath(rect: CGRect(x: width / 2 - InnerRectangle.width / 2,
-                                                 y: heigth / 2 - InnerRectangle.height / 2,
-                                                 width: InnerRectangle.width, height: InnerRectangle.height))
+        let rect = CGRect(x: width / 2 - InnerRectangle.width / 2,
+                          y: heigth / 2 - InnerRectangle.height / 2,
+                          width: InnerRectangle.width, height: InnerRectangle.height)
+        let rectPath = UIBezierPath(roundedRect: rect, cornerRadius: 10)
         viewPath.append(rectPath)
         viewPath.usesEvenOddFillRule = true
         return viewPath

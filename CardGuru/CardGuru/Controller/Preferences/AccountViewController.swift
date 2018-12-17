@@ -13,6 +13,7 @@ final class AccountViewController: UIViewController {
     @IBOutlet private weak var accountImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
+    @IBOutlet private weak var logoutButton: UIButton!
     
     // MARK: - Lifecycle
     
@@ -23,7 +24,7 @@ final class AccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackItem(with: "Pref")
+        setupBackItem(with: "")
         fillOutlets()
     }
     
@@ -37,6 +38,7 @@ final class AccountViewController: UIViewController {
     @IBAction private func logoutPressed(_ sender: Any) {
         FbLoginService.sharedInstance.signOut()
         GoogleLoginService.sharedInstance.signOut()
+        navigationController?.viewControllers.removeAll()
         NavigationControllerService.shared.presentCurrentUserUI()
     }
     
@@ -46,6 +48,7 @@ final class AccountViewController: UIViewController {
         let user = UserDefaults().fetchUser()
         self.nameLabel.text = user?.name
         self.emailLabel.text = user?.email
+        Effects.addShadow(for: logoutButton)
         if let url = user?.absoluteURL {
             Downloader.shared.loadImage(url) { image in
                 self.accountImageView.image = image

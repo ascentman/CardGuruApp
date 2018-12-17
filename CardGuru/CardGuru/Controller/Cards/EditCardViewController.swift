@@ -30,6 +30,8 @@ final class EditCardTableViewController: UITableViewController {
     @IBOutlet private weak var changeImageView: UIImageView!
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var barcodeTextField: UITextField!
+    @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var deleteButton: UIButton!
     
     weak var deleteDelegate: EditCardTableViewControllerDeletionDelegate?
     weak var updateDelegate: EditCardTableViewControllerUpdatingDelegate?
@@ -122,6 +124,8 @@ final class EditCardTableViewController: UITableViewController {
         changeImageView.image = image
         createStickyView()
         tableView.tableFooterView = UIView()
+        Effects.addShadow(for: saveButton)
+        Effects.addShadow(for: deleteButton)
     }
     
     private func isEnteredDataValid() -> Bool {
