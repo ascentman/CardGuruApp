@@ -45,6 +45,8 @@ final class ImagePickerClass: NSObject {
         alert.dismiss(animated: true, completion: nil)
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
+            picker.showsCameraControls = true
+            picker.allowsEditing = true
             self.viewController?.present(picker, animated: true, completion: nil)
         } else {
             print("no camera")

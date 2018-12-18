@@ -18,7 +18,7 @@ final class CardCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         loadingIndicator.startAnimating()
-        setupGradientBackground()
+//        setupGradientBackground()
     }
     
     override func prepareForReuse() {
