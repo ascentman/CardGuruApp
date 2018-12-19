@@ -45,6 +45,7 @@ final class DetailedViewController: UIViewController {
         setupOutlets()
         setupBackItem(with: "")
         setupShortcutItem(name: name, barcode: barcode, image: image)
+        setupWidget(name: name, image: image)
         Effects.addShadow(for: shareButton)
     }
     
@@ -97,6 +98,13 @@ final class DetailedViewController: UIViewController {
         let shortcutItem = UIApplicationShortcutItem(type: shortcutType, localizedTitle: shortcutTitle, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .taskCompleted), userInfo: nil)
         UIApplication.shared.shortcutItems = [shortcutItem]
         saveLastCardToFile()
+    }
+    
+    private func setupWidget(name: String, image: UIImage) {
+        UserDefaults.init(suiteName: "group.com.cardGuruApp")?.set(name, forKey: "name")
+        if let imageData = image.pngData() {
+            UserDefaults.init(suiteName: "group.com.cardGuruApp")?.set(imageData, forKey: "imageData")
+        }
     }
     
     private func saveLastCardToFile() {

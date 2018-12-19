@@ -26,6 +26,13 @@
 		805C263B21C27C2E00F9A74D /* ManualCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805C263A21C27C2E00F9A74D /* ManualCard.xib */; };
 		805C263D21C27C4C00F9A74D /* ManualCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C263C21C27C4C00F9A74D /* ManualCardView.swift */; };
 		805C263F21C7CCC900F9A74D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */; };
+		805C26B921CA460500F9A74D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805C26B821CA460500F9A74D /* NotificationCenter.framework */; };
+		805C26BC21CA460500F9A74D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C26BB21CA460500F9A74D /* TodayViewController.swift */; };
+		805C26BF21CA460500F9A74D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805C26BD21CA460500F9A74D /* MainInterface.storyboard */; };
+		805C26C321CA460500F9A74D /* CardGuruWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 805C26B721CA460500F9A74D /* CardGuruWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		805C26C821CA640400F9A74D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80565DB821B826A600A54088 /* Assets.xcassets */; };
+		805C26CA21CA75C500F9A74D /* LastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FB21A573B30009745A /* LastCard.swift */; };
+		805C26CC21CA75FE00F9A74D /* ErrorToThrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FD21A5749D0009745A /* ErrorToThrow.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
 		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
 		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
@@ -78,7 +85,28 @@
 		CEF63EF321BC674200BD0C2E /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF63EF221BC674200BD0C2E /* Start.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		805C26C121CA460500F9A74D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807D95F22159147C00ABB0D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 805C26B621CA460500F9A74D;
+			remoteInfo = CardGuruWidget;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		805C26C721CA460600F9A74D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				805C26C321CA460500F9A74D /* CardGuruWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80EC804A21BAC55000D75865 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +143,12 @@
 		805C263A21C27C2E00F9A74D /* ManualCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualCard.xib; sourceTree = "<group>"; };
 		805C263C21C27C4C00F9A74D /* ManualCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCardView.swift; sourceTree = "<group>"; };
 		805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		805C26B721CA460500F9A74D /* CardGuruWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CardGuruWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		805C26B821CA460500F9A74D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		805C26BB21CA460500F9A74D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		805C26BE21CA460500F9A74D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		805C26C021CA460500F9A74D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805C26D021CA8B8000F9A74D /* CardGuruWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CardGuruWidget.entitlements; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
 		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
 		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -175,6 +209,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		805C26B421CA460500F9A74D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805C26B921CA460500F9A74D /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		807D95F72159147C00ABB0D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +281,17 @@
 				8051661021B030F5005275B1 /* TabBarController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		805C26BA21CA460500F9A74D /* CardGuruWidget */ = {
+			isa = PBXGroup;
+			children = (
+				805C26D021CA8B8000F9A74D /* CardGuruWidget.entitlements */,
+				805C26BB21CA460500F9A74D /* TodayViewController.swift */,
+				805C26BD21CA460500F9A74D /* MainInterface.storyboard */,
+				805C26C021CA460500F9A74D /* Info.plist */,
+			);
+			path = CardGuruWidget;
 			sourceTree = "<group>";
 		};
 		806EEF062170D60500A6EFE6 /* Login */ = {
@@ -334,6 +387,7 @@
 			children = (
 				80EC804B21BACF8400D75865 /* Lottie.framework */,
 				807D95FC2159147C00ABB0D2 /* CardGuru */,
+				805C26BA21CA460500F9A74D /* CardGuruWidget */,
 				807D95FB2159147C00ABB0D2 /* Products */,
 				F689632D5D7CCD1B0755A983 /* Pods */,
 				FAD93D0BC776F1DB6FF91C10 /* Frameworks */,
@@ -344,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				807D95FA2159147C00ABB0D2 /* CardGuru.app */,
+				805C26B721CA460500F9A74D /* CardGuruWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -514,6 +569,7 @@
 				80FCB06121B9ABCD00526E69 /* libLottie.a */,
 				80565DCB21B9A69C00A54088 /* Lottie.framework */,
 				8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */,
+				805C26B821CA460500F9A74D /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -521,6 +577,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		805C26B621CA460500F9A74D /* CardGuruWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 805C26C621CA460600F9A74D /* Build configuration list for PBXNativeTarget "CardGuruWidget" */;
+			buildPhases = (
+				805C26B321CA460500F9A74D /* Sources */,
+				805C26B421CA460500F9A74D /* Frameworks */,
+				805C26B521CA460500F9A74D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardGuruWidget;
+			productName = CardGuruWidget;
+			productReference = 805C26B721CA460500F9A74D /* CardGuruWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		807D95F92159147C00ABB0D2 /* CardGuru */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 807D960C2159147E00ABB0D2 /* Build configuration list for PBXNativeTarget "CardGuru" */;
@@ -532,10 +605,12 @@
 				8D0C9FA0BB809D020D12601A /* [CP] Embed Pods Frameworks */,
 				B9170A430BBCE1F8CCF481FB /* [CP] Copy Pods Resources */,
 				80EC804A21BAC55000D75865 /* Embed Frameworks */,
+				805C26C721CA460600F9A74D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				805C26C221CA460500F9A74D /* PBXTargetDependency */,
 			);
 			name = CardGuru;
 			productName = CardGuru;
@@ -548,14 +623,25 @@
 		807D95F22159147C00ABB0D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Vova;
 				TargetAttributes = {
+					805C26B621CA460500F9A74D = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					807D95F92159147C00ABB0D2 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -578,11 +664,21 @@
 			projectRoot = "";
 			targets = (
 				807D95F92159147C00ABB0D2 /* CardGuru */,
+				805C26B621CA460500F9A74D /* CardGuruWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		805C26B521CA460500F9A74D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805C26C821CA640400F9A74D /* Assets.xcassets in Resources */,
+				805C26BF21CA460500F9A74D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		807D95F82159147C00ABB0D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -690,6 +786,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		805C26B321CA460500F9A74D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805C26CC21CA75FE00F9A74D /* ErrorToThrow.swift in Sources */,
+				805C26BC21CA460500F9A74D /* TodayViewController.swift in Sources */,
+				805C26CA21CA75C500F9A74D /* LastCard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		807D95F62159147C00ABB0D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -751,7 +857,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		805C26C221CA460500F9A74D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 805C26B621CA460500F9A74D /* CardGuruWidget */;
+			targetProxy = 805C26C121CA460500F9A74D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		805C26BD21CA460500F9A74D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805C26BE21CA460500F9A74D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		807D96012159147C00ABB0D2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -805,6 +927,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		805C26C421CA460600F9A74D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CardGuruWidget/CardGuruWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
+				INFOPLIST_FILE = CardGuruWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = work.CardGuru.CardGuruWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		805C26C521CA460600F9A74D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CardGuruWidget/CardGuruWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
+				INFOPLIST_FILE = CardGuruWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = work.CardGuru.CardGuruWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		807D960A2159147E00ABB0D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -925,6 +1092,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = CardGuru/CardGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -945,6 +1113,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = CardGuru/CardGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -964,6 +1133,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		805C26C621CA460600F9A74D /* Build configuration list for PBXNativeTarget "CardGuruWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805C26C421CA460600F9A74D /* Debug */,
+				805C26C521CA460600F9A74D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		807D95F52159147C00ABB0D2 /* Build configuration list for PBXProject "CardGuru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
