@@ -215,7 +215,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQe-yJ-CFy">
-                                                    <rect key="frame" x="16" y="11.5" width="49" height="21"/>
+                                                    <rect key="frame" x="16" y="11.5" width="317" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -226,6 +226,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                 <constraint firstItem="QQe-yJ-CFy" firstAttribute="centerY" secondItem="Fgf-QG-4ZT" secondAttribute="centerY" id="pdI-yq-qfX"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="QQe-yJ-CFy" secondAttribute="trailing" constant="42" id="wQi-31-hXQ"/>
+                                        </constraints>
                                         <connections>
                                             <segue destination="zRc-vO-Fo4" kind="show" id="kod-tZ-V6u"/>
                                         </connections>
@@ -242,7 +245,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock with Touch ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8d-m7-RSQ">
-                                                    <rect key="frame" x="16" y="11.5" width="161.5" height="21"/>
+                                                    <rect key="frame" x="16" y="11.5" width="272" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -255,6 +258,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Rq1-N9-a64" firstAttribute="leading" secondItem="Y8d-m7-RSQ" secondAttribute="trailing" constant="18" id="5a2-dg-F4F"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rq1-N9-a64" secondAttribute="trailing" constant="20" id="Dds-qZ-S3t"/>
                                                 <constraint firstItem="Rq1-N9-a64" firstAttribute="centerY" secondItem="UcU-6e-LmJ" secondAttribute="centerY" id="UYF-Wv-Cqs"/>
                                                 <constraint firstItem="Y8d-m7-RSQ" firstAttribute="centerY" secondItem="UcU-6e-LmJ" secondAttribute="centerY" id="a1R-pY-fu6"/>
@@ -270,7 +274,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send local notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-PR-vlN">
-                                                    <rect key="frame" x="16" y="11.5" width="177.5" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="272" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -284,6 +288,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="aOZ-Iq-z9G" firstAttribute="leading" secondItem="U74-PR-vlN" secondAttribute="trailing" constant="18" id="2Am-Ci-5SK"/>
                                                 <constraint firstItem="U74-PR-vlN" firstAttribute="leading" secondItem="5mz-ZD-R7i" secondAttribute="leading" constant="16" id="5lf-wB-EPs"/>
                                                 <constraint firstItem="aOZ-Iq-z9G" firstAttribute="centerY" secondItem="5mz-ZD-R7i" secondAttribute="centerY" id="FOH-y8-Fnz"/>
                                                 <constraint firstAttribute="trailing" secondItem="aOZ-Iq-z9G" secondAttribute="trailing" constant="20" id="G96-rC-DnF"/>
@@ -302,8 +307,8 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q70-z4-UqC">
-                                                    <rect key="frame" x="16" y="11.5" width="129" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q70-z4-UqC">
+                                                    <rect key="frame" x="16" y="11.5" width="317" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -314,6 +319,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                 <constraint firstItem="q70-z4-UqC" firstAttribute="leading" secondItem="o5e-CD-IxF" secondAttribute="leading" constant="16" id="znn-X4-f0M"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="q70-z4-UqC" secondAttribute="trailing" constant="42" id="ctd-Eo-0dS"/>
+                                        </constraints>
                                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="E0W-5J-Kls">
@@ -324,7 +332,7 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOw-Md-Br5">
-                                                    <rect key="frame" x="16" y="11.5" width="106" height="21"/>
+                                                    <rect key="frame" x="16" y="11.5" width="325" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -335,6 +343,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                                                 <constraint firstItem="FOw-Md-Br5" firstAttribute="leading" secondItem="H3U-YW-MGb" secondAttribute="leading" constant="16" id="wuE-qr-gXF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="FOw-Md-Br5" secondAttribute="trailing" constant="34" id="Il8-Py-tVp"/>
+                                        </constraints>
                                         <connections>
                                             <segue destination="cVG-92-OeR" kind="show" id="gXm-03-Opm"/>
                                         </connections>
@@ -369,6 +380,9 @@ In hac habitasse platea dictumst. Vestibulum scelerisque non ante ac suscipit. N
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lqu-83-Lty">

@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         } else if FbLoginService.sharedInstance.handleURLIn(app, open: url, options: options) {
             return true
+        } else if url.scheme == "cardguru" {
+            setupOpenLastViewController()
+            return true
         } else {
             return false
         }
