@@ -104,9 +104,12 @@ final class ScannerViewController: UIViewController {
         guard let cardView = manualCardAddingView else {
             return
         }
-        cardView.frame = self.userView.frame
-        view.addSubview(cardView)
         manualCardAddingView?.delegate = self
+        cardView.frame = self.userView.frame
+        UIView.transition(with: self.view,
+                          duration: 0.5, options: .transitionCrossDissolve, animations: {
+                            view.addSubview(cardView)
+        }, completion: nil)
     }
 }
 
