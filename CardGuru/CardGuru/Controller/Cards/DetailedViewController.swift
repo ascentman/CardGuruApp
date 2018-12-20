@@ -27,6 +27,11 @@ final class DetailedViewController: UIViewController {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var shareButton: UIButton!
+    @IBOutlet private weak var notesButton: UIButton!
+    @IBOutlet private weak var notesView: UIView!
+    @IBOutlet private weak var notesTextView: UITextView!
+    @IBOutlet weak var saveDetailsButton: UIButton!
+    @IBOutlet private weak var sliderPosition: NSLayoutConstraint!
     
     private var uid = String()
     private var name = String()
@@ -43,10 +48,8 @@ final class DetailedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupOutlets()
-        setupBackItem(with: "")
         setupShortcutItem(name: name, barcode: barcode, image: image)
         setupWidget(name: name, image: image)
-        Effects.addShadow(for: shareButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +66,23 @@ final class DetailedViewController: UIViewController {
         let shareViewController = UIActivityViewController(activityItems: ["\(Constants.activityText) \(name), \(barcode)"], applicationActivities: nil)
         self.present(shareViewController, animated: true, completion: nil)
     }
+    
+    @IBAction func cardClicked(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.sliderPosition.constant = 0
+            self.setView(view: self.notesView, hidden: true)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func notesClicked(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.sliderPosition.constant = self.notesButton.center.x - self.view.frame.width / 4
+            self.setView(view: self.notesView, hidden: false)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     
     // MARK: - Segues
     
@@ -86,10 +106,16 @@ final class DetailedViewController: UIViewController {
     // MARK: - Private
     
     private func setupOutlets() {
+        setupBackItem(with: "")
         nameLabel.text = name
         barcodeLabel.text = barcode
         barcodeImageView.image = barcodeGenerated
         imageView.image = image
+        Effects.addShadow(for: shareButton)
+        Effects.addShadow(for: saveDetailsButton)
+        notesTextView.layer.borderWidth = 1
+        notesTextView.layer.borderColor = UIColor.orange.cgColor
+        notesTextView.delegate = self
     }
     
     private func setupShortcutItem(name: String, barcode: String, image: UIImage) {
@@ -105,6 +131,12 @@ final class DetailedViewController: UIViewController {
         if let imageData = image.pngData() {
             UserDefaults.init(suiteName: "group.com.cardGuruApp")?.set(imageData, forKey: "imageData")
         }
+    }
+    
+    private func setView(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            view.isHidden = hidden
+        })
     }
     
     private func saveLastCardToFile() {
@@ -133,5 +165,18 @@ extension DetailedViewController: EditCardTableViewControllerDeletionDelegate {
 
     func userDidRemoveData() {
         deleteDelegate?.userDidRemoveData()
+    }
+}
+
+extension DetailedViewController: UITextViewDelegate {
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }
