@@ -63,9 +63,9 @@ final class ScannerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         animatedView.removeFromSuperview()
         ScannerService.shared.session?.stopRunning()
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
     }
 
     @IBAction func indexChangeClicked(_ sender: Any) {
@@ -97,8 +97,6 @@ final class ScannerViewController: UIViewController {
     private func setupNavigationBar() {
         setupBackItem(with: "")
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     private func addManualCardView(on view: UIView) {
