@@ -20,7 +20,7 @@ private enum Constants {
     static let activityText = NSLocalizedString("I would like to share my card with you:", comment: "")
 }
 
-final class DetailedViewController: UIViewController {
+final class DetailedViewController: UITableViewController {
 
     @IBOutlet private weak var barcodeLabel: UILabel!
     @IBOutlet private weak var barcodeImageView: UIImageView!
