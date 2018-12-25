@@ -71,6 +71,13 @@ final class DatabaseService {
                                                                                         "absoluteURL" : forCard.absoluteURL as Any])
     }
     
+    func addNotesToDb(forCard: Card) {
+        guard let userRef = getCurrentUserRef() else {
+            return
+        }
+        usersRef.child(userRef).child(Paths.cards).child(forCard.uid).updateChildValues([ "notes" : forCard.notesText as Any])
+    }
+    
     func saveCardImage(image: UIImage, completion: @escaping (_ url: String?, _ error: Error?)->()) {
         let resizedImage = image != UIImage(named: "shop") ? image.af_imageScaled(to: CGSize(width: 100, height: 100)) : UIImage(named: "shop") ?? UIImage()
         guard let userRef = getCurrentUserRef() else {

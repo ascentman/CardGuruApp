@@ -54,7 +54,7 @@ final class NavigationControllerService {
             guard let data = card.imageData else {
                 return
             }
-            detailsViewController?.setDetailedCard(uid: "", name:card.name, barcode: card.barcode, image: UIImage(data: data) ?? UIImage(), absoluteURL: "")
+            detailsViewController?.setDetailedCard(uid: "", name:card.name, barcode: card.barcode, image: UIImage(data: data) ?? UIImage(), absoluteURL: "", notes: nil)
             let tabBarViewController = UIStoryboard(name: StoryboardName.main, bundle: nil).instantiateViewController(withIdentifier: "TabBar") as? UITabBarController
             let navigationController = tabBarViewController?.viewControllers?.first as? UINavigationController
             navigationController?.viewControllers.append(detailsViewController!)
