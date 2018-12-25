@@ -79,7 +79,6 @@ final class HomeViewController: UIViewController {
     
     private func setupSearchBar() {
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.clear]
         searchController.searchBar.tintColor = UIColor.orange
         searchController.searchBar.placeholder = Constants.searchTitle
         searchController.searchResultsUpdater = self
@@ -142,16 +141,19 @@ final class HomeViewController: UIViewController {
                                                 name: filteredCards[index.row].name,
                                                 barcode: filteredCards[index.row].barcode,
                                                 image: filteredCards[index.row].image ?? UIImage(named: "shop") ?? UIImage(),
-                                                absoluteURL: filteredCards[index.row].absoluteURL ?? String())
+                                                absoluteURL: filteredCards[index.row].absoluteURL ?? String(),
+                                                notes: filteredCards[index.row].notesText)
                 } else {
                     destination.setDetailedCard(uid: cards[index.row].uid,
                                                 name: cards[index.row].name,
                                                 barcode: cards[index.row].barcode,
                                                 image: cards[index.row].image ?? UIImage(named: "shop") ?? UIImage(),
-                                                absoluteURL: cards[index.row].absoluteURL ?? String())
+                                                absoluteURL: cards[index.row].absoluteURL ?? String(),
+                                                notes: cards[index.row].notesText)
                 }
                 destination.updateDelegate = self
                 destination.deleteDelegate = self
+                destination.adddNotesDelegate = self
             }
         }
     }
@@ -265,5 +267,22 @@ extension HomeViewController: ProposeAddCardViewDelegate {
     
     func loadScannerViewController() {
         performSegue(withIdentifier: "AddCard", sender: nil)
+    }
+}
+
+extension HomeViewController: DetailedViewControllerAddNotesDelegate {
+    
+    // MARK: - DetailedViewControllerAddNotesDelegate
+
+    func userDidAddNotes(to: Card) {
+        guard let cards = cards else {
+            return
+        }
+        for card in cards {
+            if card.uid == to.uid {
+                card.notesText = to.notesText
+            }
+        }
+        self.cardsCollectionView.reloadData()
     }
 }

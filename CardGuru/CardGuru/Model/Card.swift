@@ -13,6 +13,7 @@ private enum Constants {
     static let name = "name"
     static let barcode = "barcode"
     static let absoluteURL = "absoluteURL"
+    static let notes = "notes"
 }
 
 final class Card {
@@ -21,7 +22,7 @@ final class Card {
     var barcode: String
     var image: UIImage?
     var absoluteURL: String?
-    var nameColor: UIColor?
+    var notesText: String?
     
     init(uid: String, name: String, barcode: String, image: UIImage) {
         self.uid = uid
@@ -42,6 +43,9 @@ final class Card {
         self.barcode = barcode
         if let absoluteURL = value[Constants.absoluteURL] as? String {
             self.absoluteURL = absoluteURL
+        }
+        if let notesText = value[Constants.notes] as? String {
+            self.notesText = notesText
         }
     }
 }

@@ -16,6 +16,10 @@ protocol DetailedViewControllerUpdatingDelegate: class {
     func userDidUpdateData(with: Card)
 }
 
+protocol DetailedViewControllerAddNotesDelegate: class {
+    func userDidAddNotes(to: Card)
+}
+
 private enum Constants {
     static let activityText = NSLocalizedString("I would like to share my card with you:", comment: "")
 }
@@ -28,9 +32,10 @@ final class DetailedViewController: UITableViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var shareButton: UIButton!
     @IBOutlet private weak var notesButton: UIButton!
+    @IBOutlet private weak var cardView: UIView!
     @IBOutlet private weak var notesView: UIView!
     @IBOutlet private weak var notesTextView: UITextView!
-    @IBOutlet weak var saveDetailsButton: UIButton!
+    @IBOutlet private weak var saveDetailsButton: UIButton!
     @IBOutlet private weak var sliderPosition: NSLayoutConstraint!
     
     private var uid = String()
@@ -38,10 +43,12 @@ final class DetailedViewController: UITableViewController {
     private var barcode = String()
     private var image = UIImage()
     private var absoluteURL = String()
+    private var notesText = String()
     private var barcodeGenerated: UIImage?
     private let manager = FileHandler()
     weak var deleteDelegate: DetailedViewControllerDeletionDelegate?
     weak var updateDelegate: DetailedViewControllerUpdatingDelegate?
+    weak var adddNotesDelegate: DetailedViewControllerAddNotesDelegate?
     
     // MARK: - Lifecycle
     
@@ -70,19 +77,29 @@ final class DetailedViewController: UITableViewController {
     @IBAction func cardClicked(_ sender: Any) {
         UIView.animate(withDuration: 0.5) {
             self.sliderPosition.constant = 0
-            self.setView(view: self.notesView, hidden: true)
-            self.view.layoutIfNeeded()
         }
+        self.setView(view: self.cardView, hidden: false)
+        self.setView(view: self.notesView, hidden: true)
+        self.view.layoutIfNeeded()
     }
     
     @IBAction func notesClicked(_ sender: Any) {
         UIView.animate(withDuration: 0.5) {
             self.sliderPosition.constant = self.notesButton.center.x - self.view.frame.width / 4
             self.setView(view: self.notesView, hidden: false)
+            self.setView(view: self.cardView, hidden: true)
             self.view.layoutIfNeeded()
         }
     }
     
+    @IBAction func saveNotesClicked(_ sender: Any) {
+        view.endEditing(true)
+        notesText = notesTextView.text
+        let updatedCard = Card(uid: uid, name: name, barcode: barcode, image: image)
+        updatedCard.notesText = notesText
+        adddNotesDelegate?.userDidAddNotes(to: updatedCard)
+        DatabaseService.shared.addNotesToDb(forCard: updatedCard)
+    }
     
     // MARK: - Segues
     
@@ -94,13 +111,16 @@ final class DetailedViewController: UITableViewController {
         }
     }
     
-    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage, absoluteURL: String) {
+    func setDetailedCard(uid: String, name: String, barcode: String, image: UIImage, absoluteURL: String, notes: String?) {
         self.uid = uid
         self.name = name
         self.barcode = barcode
         self.image = image
         self.absoluteURL = absoluteURL
         self.barcodeGenerated = BarcodeGenerator.generateBarcode(from: barcode)
+        if let notes = notes {
+            self.notesText = notes
+        }
     }
     
     // MARK: - Private
@@ -111,6 +131,7 @@ final class DetailedViewController: UITableViewController {
         barcodeLabel.text = barcode
         barcodeImageView.image = barcodeGenerated
         imageView.image = image
+        notesTextView.text = notesText
         Effects.addShadow(for: shareButton)
         Effects.addShadow(for: saveDetailsButton)
         notesTextView.layer.borderWidth = 1
@@ -134,7 +155,7 @@ final class DetailedViewController: UITableViewController {
     }
     
     private func setView(view: UIView, hidden: Bool) {
-        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: view, duration: 1.0, options: .transitionCrossDissolve, animations: {
             view.isHidden = hidden
         })
     }
