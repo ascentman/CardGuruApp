@@ -11,4 +11,6 @@ import Foundation
 enum StoryboardName {
     static let login = "Login"
     static let main = "Main"
+    static let touch = "TouchIDLogin"
+    static let start = "Start"
 }

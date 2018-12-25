@@ -7,27 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80053E37215929AD001426C4 /* GoogleService-Info.plist */; };
+		8023AD74218728480041A04C /* EditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023AD73218728480041A04C /* EditCardViewController.swift */; };
 		803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */; };
 		803DDCF1216255BE00BD91BC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF0216255BE00BD91BC /* Card.swift */; };
-		803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF22162662300BD91BC /* AddingNewCard.swift */; };
 		803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */; };
 		803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCF82162934500BD91BC /* DetailedViewController.swift */; };
 		803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803DDCFA21635B5A00BD91BC /* AccountViewController.swift */; };
-		804239EF21764106004AC960 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */; };
-		804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */; };
 		804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239F42176479D004AC960 /* UserDefaults+LoginData.swift */; };
 		804239FB21773669004AC960 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FA21773669004AC960 /* ScannerViewController.swift */; };
 		804239FD217764A8004AC960 /* ScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804239FC217764A8004AC960 /* ScannerService.swift */; };
+		8051661121B030F5005275B1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051661021B030F5005275B1 /* TabBarController.swift */; };
+		8051664C21B69E70005275B1 /* CGImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664B21B69E70005275B1 /* CGImage+Extensions.swift */; };
+		8051664E21B6BA26005275B1 /* CardGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664D21B6BA26005275B1 /* CardGradientLayer.swift */; };
+		8051665021B7CB1A005275B1 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8051664F21B7CB1A005275B1 /* Effects.swift */; };
+		80565DB921B826A600A54088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80565DB821B826A600A54088 /* Assets.xcassets */; };
+		80565DC821B9830800A54088 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80565DC721B9830800A54088 /* UIImageView+Extensions.swift */; };
+		80565DCE21B9A73D00A54088 /* LottieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80565DCD21B9A73D00A54088 /* LottieImages.swift */; };
+		805C263B21C27C2E00F9A74D /* ManualCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805C263A21C27C2E00F9A74D /* ManualCard.xib */; };
+		805C263D21C27C4C00F9A74D /* ManualCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C263C21C27C4C00F9A74D /* ManualCardView.swift */; };
+		805C263F21C7CCC900F9A74D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */; };
+		805C26B921CA460500F9A74D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805C26B821CA460500F9A74D /* NotificationCenter.framework */; };
+		805C26BC21CA460500F9A74D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C26BB21CA460500F9A74D /* TodayViewController.swift */; };
+		805C26BF21CA460500F9A74D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805C26BD21CA460500F9A74D /* MainInterface.storyboard */; };
+		805C26C321CA460500F9A74D /* CardGuruWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 805C26B721CA460500F9A74D /* CardGuruWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		805C26C821CA640400F9A74D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80565DB821B826A600A54088 /* Assets.xcassets */; };
+		805C26CA21CA75C500F9A74D /* LastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FB21A573B30009745A /* LastCard.swift */; };
+		805C26CC21CA75FE00F9A74D /* ErrorToThrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FD21A5749D0009745A /* ErrorToThrow.swift */; };
 		806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */; };
-		806EEF052170D57D00A6EFE6 /* LoginMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EEF042170D57D00A6EFE6 /* LoginMethods.swift */; };
+		806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806FE3F621A562F00009745A /* ShortcutItem.plist */; };
+		806FE3FA21A571A50009745A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3F921A571A50009745A /* FileHandler.swift */; };
+		806FE3FC21A573B30009745A /* LastCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FB21A573B30009745A /* LastCard.swift */; };
+		806FE3FE21A5749D0009745A /* ErrorToThrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FE3FD21A5749D0009745A /* ErrorToThrow.swift */; };
 		8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8073E2E52180597E00C380AD /* AnimatedView.xib */; };
 		8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2E721805B0000C380AD /* AnimatedView.swift */; };
 		8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2EA21805C4100C380AD /* BackLayer.swift */; };
 		8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2EC21805C6500C380AD /* CardLayer.swift */; };
 		8073E2EF21805CB300C380AD /* CheckLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2EE21805CB300C380AD /* CheckLayer.swift */; };
 		8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F021805CDE00C380AD /* PhoneLayer.swift */; };
-		8073E2F421805D2A00C380AD /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F321805D2A00C380AD /* CALayer+Extensions.swift */; };
 		8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */; };
 		8073E2F92180608C00C380AD /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2F82180608C00C380AD /* Animations.swift */; };
 		8073E2FB2180609E00C380AD /* CAAnimation+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E2FA2180609E00C380AD /* CAAnimation+Block.swift */; };
@@ -36,40 +52,114 @@
 		807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FD2159147C00ABB0D2 /* AppDelegate.swift */; };
 		807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D95FF2159147C00ABB0D2 /* LoginViewController.swift */; };
 		807D96032159147C00ABB0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96012159147C00ABB0D2 /* Main.storyboard */; };
-		807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 807D96042159147E00ABB0D2 /* Assets.xcassets */; };
 		807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807D96062159147E00ABB0D2 /* LaunchScreen.storyboard */; };
 		809333682159379900C02D11 /* GoogleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809333672159379900C02D11 /* GoogleLoginService.swift */; };
-		8093336C21593E8C00C02D11 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8093336B21593E8C00C02D11 /* Login.storyboard */; };
 		8093336E2159489000C02D11 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336D2159488F00C02D11 /* HomeViewController.swift */; };
 		80933370215A37B900C02D11 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093336F215A37B900C02D11 /* User.swift */; };
+		8095AC62219AE6370025DD4C /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095AC61219AE6370025DD4C /* LocalNotifications.swift */; };
+		8095AC64219B4AF60025DD4C /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095AC63219B4AF60025DD4C /* Connectivity.swift */; };
 		809706362163B91500185E82 /* NavigationControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706352163B91500185E82 /* NavigationControllerService.swift */; };
 		8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8097063E2164BEF800185E82 /* FbLoginService.swift */; };
 		809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809706422164D64700185E82 /* FirebaseLoginService.swift */; };
-		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; };
+		809AA5E62194746100AD1690 /* LicenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5E52194746100AD1690 /* LicenceViewController.swift */; };
+		809AA5E82194847A00AD1690 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5E72194847A00AD1690 /* SafariView.swift */; };
+		809AA5ED2194902000AD1690 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809AA5EC2194902000AD1690 /* PreferencesTableViewController.swift */; };
+		80AD24622199A3AE00415644 /* BarcodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AD24612199A3AE00415644 /* BarcodeGenerator.swift */; };
+		80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D01E912190771E00CA1AE6 /* Downloader.swift */; };
+		80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */; };
+		80D51D4121A2CA5C00DD048B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 80D51D4321A2CA5C00DD048B /* Localizable.strings */; };
+		80D51D4521A2CB6D00DD048B /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D51D4721A2CB6D00DD048B /* Preferences.storyboard */; };
+		80D51D4A21A2CB9200DD048B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D51D4C21A2CB9200DD048B /* Login.storyboard */; };
+		80D51D5121A2CF2700DD048B /* TouchIDLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D51D5321A2CF2700DD048B /* TouchIDLogin.storyboard */; };
+		80E51EFF2195A0F300F43624 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E51EFE2195A0F300F43624 /* Authenticator.swift */; };
+		80E51F032195AA2600F43624 /* TouchLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E51F022195AA2600F43624 /* TouchLoginViewController.swift */; };
+		80EC804C21BACF8400D75865 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EC804B21BACF8400D75865 /* Lottie.framework */; };
+		80EC804D21BACF8400D75865 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80EC804B21BACF8400D75865 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		80FCB06E21BA6C0300526E69 /* ProposeAddCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80FCB06D21BA6C0300526E69 /* ProposeAddCardView.xib */; };
+		80FCB07021BA6DD800526E69 /* ProposeAddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FCB06F21BA6DD800526E69 /* ProposeAddCardView.swift */; };
+		AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */; };
+		CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */; };
+		CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */; };
+		CEF63EF121BC5E6400BD0C2E /* AnimatedStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF63EF021BC5E6400BD0C2E /* AnimatedStartViewController.swift */; };
+		CEF63EF321BC674200BD0C2E /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF63EF221BC674200BD0C2E /* Start.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		805C26C121CA460500F9A74D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 807D95F22159147C00ABB0D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 805C26B621CA460500F9A74D;
+			remoteInfo = CardGuruWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		805C26C721CA460600F9A74D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				805C26C321CA460500F9A74D /* CardGuruWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80EC804A21BAC55000D75865 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				80EC804D21BACF8400D75865 /* Lottie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		80053E37215929AD001426C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8023AD73218728480041A04C /* EditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardViewController.swift; sourceTree = "<group>"; };
 		803DDCEE2162361800BD91BC /* FirebaseDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseService.swift; sourceTree = "<group>"; };
 		803DDCF0216255BE00BD91BC /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		803DDCF22162662300BD91BC /* AddingNewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewCard.swift; sourceTree = "<group>"; };
 		803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		803DDCF82162934500BD91BC /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		803DDCFA21635B5A00BD91BC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
-		804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+isLoggedIn.swift"; sourceTree = "<group>"; };
 		804239F42176479D004AC960 /* UserDefaults+LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+LoginData.swift"; sourceTree = "<group>"; };
 		804239FA21773669004AC960 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		804239FC217764A8004AC960 /* ScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerService.swift; sourceTree = "<group>"; };
+		8051661021B030F5005275B1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8051661321B03705005275B1 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Preferences.strings; sourceTree = "<group>"; };
+		8051661C21B55BC2005275B1 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		8051664B21B69E70005275B1 /* CGImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+Extensions.swift"; sourceTree = "<group>"; };
+		8051664D21B6BA26005275B1 /* CardGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGradientLayer.swift; sourceTree = "<group>"; };
+		8051664F21B7CB1A005275B1 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
+		80565DB821B826A600A54088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80565DC721B9830800A54088 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		80565DCB21B9A69C00A54088 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80565DCD21B9A73D00A54088 /* LottieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImages.swift; sourceTree = "<group>"; };
+		805C263A21C27C2E00F9A74D /* ManualCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualCard.xib; sourceTree = "<group>"; };
+		805C263C21C27C4C00F9A74D /* ManualCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualCardView.swift; sourceTree = "<group>"; };
+		805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		805C26B721CA460500F9A74D /* CardGuruWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CardGuruWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		805C26B821CA460500F9A74D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		805C26BB21CA460500F9A74D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		805C26BE21CA460500F9A74D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		805C26C021CA460500F9A74D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805C26D021CA8B8000F9A74D /* CardGuruWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CardGuruWidget.entitlements; sourceTree = "<group>"; };
 		806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardsName.swift; sourceTree = "<group>"; };
-		806EEF042170D57D00A6EFE6 /* LoginMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethods.swift; sourceTree = "<group>"; };
+		806FE3F621A562F00009745A /* ShortcutItem.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ShortcutItem.plist; sourceTree = "<group>"; };
+		806FE3F921A571A50009745A /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
+		806FE3FB21A573B30009745A /* LastCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastCard.swift; sourceTree = "<group>"; };
+		806FE3FD21A5749D0009745A /* ErrorToThrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorToThrow.swift; sourceTree = "<group>"; };
 		8073E2E52180597E00C380AD /* AnimatedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimatedView.xib; sourceTree = "<group>"; };
 		8073E2E721805B0000C380AD /* AnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedView.swift; sourceTree = "<group>"; };
 		8073E2EA21805C4100C380AD /* BackLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackLayer.swift; sourceTree = "<group>"; };
 		8073E2EC21805C6500C380AD /* CardLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLayer.swift; sourceTree = "<group>"; };
 		8073E2EE21805CB300C380AD /* CheckLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLayer.swift; sourceTree = "<group>"; };
 		8073E2F021805CDE00C380AD /* PhoneLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneLayer.swift; sourceTree = "<group>"; };
-		8073E2F321805D2A00C380AD /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		8073E2F82180608C00C380AD /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		8073E2FA2180609E00C380AD /* CAAnimation+Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAnimation+Block.swift"; sourceTree = "<group>"; };
@@ -80,27 +170,59 @@
 		807D95FD2159147C00ABB0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		807D95FF2159147C00ABB0D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		807D96022159147C00ABB0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		807D96042159147E00ABB0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		807D96072159147E00ABB0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		807D96092159147E00ABB0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		809333672159379900C02D11 /* GoogleLoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLoginService.swift; sourceTree = "<group>"; };
-		8093336B21593E8C00C02D11 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8093336D2159488F00C02D11 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8093336F215A37B900C02D11 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8095AC61219AE6370025DD4C /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		8095AC63219B4AF60025DD4C /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		809706352163B91500185E82 /* NavigationControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerService.swift; sourceTree = "<group>"; };
 		8097063E2164BEF800185E82 /* FbLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbLoginService.swift; sourceTree = "<group>"; };
 		809706422164D64700185E82 /* FirebaseLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginService.swift; sourceTree = "<group>"; };
+		809AA5E52194746100AD1690 /* LicenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceViewController.swift; sourceTree = "<group>"; };
+		809AA5E72194847A00AD1690 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		809AA5EC2194902000AD1690 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
+		80AD24612199A3AE00415644 /* BarcodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeGenerator.swift; sourceTree = "<group>"; };
+		80D01E912190771E00CA1AE6 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80D51D4421A2CA5E00DD048B /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		80D51D4621A2CB6D00DD048B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Preferences.storyboard; sourceTree = "<group>"; };
+		80D51D4B21A2CB9200DD048B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		80D51D5221A2CF2700DD048B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TouchIDLogin.storyboard; sourceTree = "<group>"; };
+		80E51EFE2195A0F300F43624 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		80E51F022195AA2600F43624 /* TouchLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchLoginViewController.swift; sourceTree = "<group>"; };
+		80EC804B21BACF8400D75865 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80EC804E21BAD7C500D75865 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/CardGuru-eawjxlwwtjioxwcfxobeqtuxbzne/Build/Products/Debug-iphoneos/Lottie.framework"; sourceTree = "<group>"; };
+		80FCB06121B9ABCD00526E69 /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLottie.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80FCB06621B9AE3400526E69 /* libLottie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libLottie.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		80FCB06D21BA6C0300526E69 /* ProposeAddCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProposeAddCardView.xib; sourceTree = "<group>"; };
+		80FCB06F21BA6DD800526E69 /* ProposeAddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposeAddCardView.swift; sourceTree = "<group>"; };
 		8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.release.xcconfig"; sourceTree = "<group>"; };
 		C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru.debug.xcconfig"; sourceTree = "<group>"; };
+		CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackgroundLayer.swift; sourceTree = "<group>"; };
+		CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mauryssel_Bold.ttf; sourceTree = "<group>"; };
+		CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerClass.swift; sourceTree = "<group>"; };
+		CEF63EF021BC5E6400BD0C2E /* AnimatedStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedStartViewController.swift; sourceTree = "<group>"; };
+		CEF63EF221BC674200BD0C2E /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		805C26B421CA460500F9A74D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805C26B921CA460500F9A74D /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		807D95F72159147C00ABB0D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AEC9877B32351447C491C39E /* Pods_CardGuru.framework in Frameworks */,
+				80EC804C21BACF8400D75865 /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				8093336F215A37B900C02D11 /* User.swift */,
+				806FE3FB21A573B30009745A /* LastCard.swift */,
 				803DDCF0216255BE00BD91BC /* Card.swift */,
 			);
 			path = Model;
@@ -119,9 +242,8 @@
 		803DDCFD21636E5200BD91BC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8073E2E921805BCA00C380AD /* Animated View */,
+				8073E2E921805BCA00C380AD /* SubViews */,
 				8073E2FF2180ABAD00C380AD /* Cell */,
-				8073E2F721805DBB00C380AD /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,13 +251,10 @@
 		803DDCFE21636E6400BD91BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				803DDCF22162662300BD91BC /* AddingNewCard.swift */,
-				8093336D2159488F00C02D11 /* HomeViewController.swift */,
-				804239FA21773669004AC960 /* ScannerViewController.swift */,
-				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
-				803DDCFA21635B5A00BD91BC /* AccountViewController.swift */,
-				803DDCF82162934500BD91BC /* DetailedViewController.swift */,
-				CE5462F8218372C7005FA82A /* Extensions */,
+				809AA5EB219484E000AD1690 /* Cards */,
+				809AA5EA219484CD00AD1690 /* Login */,
+				809AA5E9219484A600AD1690 /* Preferences */,
+				8051661421B0390C005275B1 /* TabBar */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +262,11 @@
 		803DDCFF21636E9E00BD91BC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				806FE3F821A571880009745A /* FileHandler */,
+				80AD2463219AE5FD00415644 /* LocalNotifications */,
+				80E51EFD2195A0C800F43624 /* Authentication */,
+				80D01E90219076E300CA1AE6 /* Networking */,
+				CECE4B09218F8F5D000D52E9 /* Images */,
 				8073E2B0217DB76200C380AD /* Scanner */,
 				806EEF062170D60500A6EFE6 /* Login */,
 				806EEF0B2170D68D00A6EFE6 /* Database */,
@@ -151,10 +275,28 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		8051661421B0390C005275B1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8051661021B030F5005275B1 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		805C26BA21CA460500F9A74D /* CardGuruWidget */ = {
+			isa = PBXGroup;
+			children = (
+				805C26D021CA8B8000F9A74D /* CardGuruWidget.entitlements */,
+				805C26BB21CA460500F9A74D /* TodayViewController.swift */,
+				805C26BD21CA460500F9A74D /* MainInterface.storyboard */,
+				805C26C021CA460500F9A74D /* Info.plist */,
+			);
+			path = CardGuruWidget;
+			sourceTree = "<group>";
+		};
 		806EEF062170D60500A6EFE6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				806EEF042170D57D00A6EFE6 /* LoginMethods.swift */,
 				809333672159379900C02D11 /* GoogleLoginService.swift */,
 				8097063E2164BEF800185E82 /* FbLoginService.swift */,
 				804239F42176479D004AC960 /* UserDefaults+LoginData.swift */,
@@ -166,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				809706352163B91500185E82 /* NavigationControllerService.swift */,
-				804239F221764760004AC960 /* UserDefaults+isLoggedIn.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -180,6 +321,15 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		806FE3F821A571880009745A /* FileHandler */ = {
+			isa = PBXGroup;
+			children = (
+				806FE3F921A571A50009745A /* FileHandler.swift */,
+				806FE3FD21A5749D0009745A /* ErrorToThrow.swift */,
+			);
+			path = FileHandler;
+			sourceTree = "<group>";
+		};
 		8073E2B0217DB76200C380AD /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,13 +338,17 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
-		8073E2E921805BCA00C380AD /* Animated View */ = {
+		8073E2E921805BCA00C380AD /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				8073E2E721805B0000C380AD /* AnimatedView.swift */,
 				8073E2E52180597E00C380AD /* AnimatedView.xib */,
+				80FCB06D21BA6C0300526E69 /* ProposeAddCardView.xib */,
+				805C263A21C27C2E00F9A74D /* ManualCard.xib */,
+				8073E2E721805B0000C380AD /* AnimatedView.swift */,
+				80FCB06F21BA6DD800526E69 /* ProposeAddCardView.swift */,
+				805C263C21C27C4C00F9A74D /* ManualCardView.swift */,
 			);
-			path = "Animated View";
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		8073E2F221805CF400C380AD /* Layers */ = {
@@ -205,17 +359,10 @@
 				8073E2EC21805C6500C380AD /* CardLayer.swift */,
 				8073E2EE21805CB300C380AD /* CheckLayer.swift */,
 				8073E2F021805CDE00C380AD /* PhoneLayer.swift */,
+				CE462E082185125C0091D8C4 /* LoginBackgroundLayer.swift */,
+				8051664D21B6BA26005275B1 /* CardGradientLayer.swift */,
 			);
 			path = Layers;
-			sourceTree = "<group>";
-		};
-		8073E2F721805DBB00C380AD /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8073E2F321805D2A00C380AD /* CALayer+Extensions.swift */,
-				8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8073E2FC218060CF00C380AD /* Animation */ = {
@@ -231,7 +378,6 @@
 			isa = PBXGroup;
 			children = (
 				803DDCF62162873300BD91BC /* CardCollectionViewCell.swift */,
-				804239EE21764106004AC960 /* UITableViewCell+Identifier.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -239,7 +385,9 @@
 		807D95F12159147C00ABB0D2 = {
 			isa = PBXGroup;
 			children = (
+				80EC804B21BACF8400D75865 /* Lottie.framework */,
 				807D95FC2159147C00ABB0D2 /* CardGuru */,
+				805C26BA21CA460500F9A74D /* CardGuruWidget */,
 				807D95FB2159147C00ABB0D2 /* Products */,
 				F689632D5D7CCD1B0755A983 /* Pods */,
 				FAD93D0BC776F1DB6FF91C10 /* Frameworks */,
@@ -250,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				807D95FA2159147C00ABB0D2 /* CardGuru.app */,
+				805C26B721CA460500F9A74D /* CardGuruWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,16 +407,17 @@
 			isa = PBXGroup;
 			children = (
 				8073E3062183054D00C380AD /* CardGuru.entitlements */,
+				807D95FD2159147C00ABB0D2 /* AppDelegate.swift */,
+				807D96092159147E00ABB0D2 /* Info.plist */,
+				806FE3F621A562F00009745A /* ShortcutItem.plist */,
+				80D01E9321909D4400CA1AE6 /* GoogleService-Info.plist */,
 				809706392163BA3100185E82 /* Storyboard */,
 				803DDCFC21636E3500BD91BC /* Model */,
 				803DDCFD21636E5200BD91BC /* View */,
 				803DDCFE21636E6400BD91BC /* Controller */,
-				CE5462F9218373DC005FA82A /* Graphics */,
+				CE5462F8218372C7005FA82A /* Extensions */,
 				803DDCFF21636E9E00BD91BC /* Services */,
-				807D96042159147E00ABB0D2 /* Assets.xcassets */,
-				807D96092159147E00ABB0D2 /* Info.plist */,
-				80053E37215929AD001426C4 /* GoogleService-Info.plist */,
-				807D95FD2159147C00ABB0D2 /* AppDelegate.swift */,
+				80AD245D2195D72200415644 /* Resources */,
 			);
 			path = CardGuru;
 			sourceTree = "<group>";
@@ -276,17 +426,101 @@
 			isa = PBXGroup;
 			children = (
 				807D96012159147C00ABB0D2 /* Main.storyboard */,
-				8093336B21593E8C00C02D11 /* Login.storyboard */,
+				80D51D4721A2CB6D00DD048B /* Preferences.storyboard */,
+				80D51D4C21A2CB9200DD048B /* Login.storyboard */,
 				807D96062159147E00ABB0D2 /* LaunchScreen.storyboard */,
+				80D51D5321A2CF2700DD048B /* TouchIDLogin.storyboard */,
+				CEF63EF221BC674200BD0C2E /* Start.storyboard */,
 				806EEF022170D55E00A6EFE6 /* StoryboardsName.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		809AA5E9219484A600AD1690 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				809AA5EC2194902000AD1690 /* PreferencesTableViewController.swift */,
+				803DDCFA21635B5A00BD91BC /* AccountViewController.swift */,
+				809AA5E52194746100AD1690 /* LicenceViewController.swift */,
+				809AA5E72194847A00AD1690 /* SafariView.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		809AA5EA219484CD00AD1690 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				807D95FF2159147C00ABB0D2 /* LoginViewController.swift */,
+				80E51F022195AA2600F43624 /* TouchLoginViewController.swift */,
+				CEF63EF021BC5E6400BD0C2E /* AnimatedStartViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		809AA5EB219484E000AD1690 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				8093336D2159488F00C02D11 /* HomeViewController.swift */,
+				804239FA21773669004AC960 /* ScannerViewController.swift */,
+				803DDCF82162934500BD91BC /* DetailedViewController.swift */,
+				8023AD73218728480041A04C /* EditCardViewController.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		80AD245D2195D72200415644 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE5462F9218373DC005FA82A /* Graphics */,
+				CE75A708218D016E0014984C /* Fonts */,
+				80D51D4321A2CA5C00DD048B /* Localizable.strings */,
+				80565DB821B826A600A54088 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		80AD24602199A38500415644 /* ImageEdit */ = {
+			isa = PBXGroup;
+			children = (
+				80AD24612199A3AE00415644 /* BarcodeGenerator.swift */,
+				8051664F21B7CB1A005275B1 /* Effects.swift */,
+			);
+			path = ImageEdit;
+			sourceTree = "<group>";
+		};
+		80AD2463219AE5FD00415644 /* LocalNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				8095AC61219AE6370025DD4C /* LocalNotifications.swift */,
+			);
+			path = LocalNotifications;
+			sourceTree = "<group>";
+		};
+		80D01E90219076E300CA1AE6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				80D01E912190771E00CA1AE6 /* Downloader.swift */,
+				8095AC63219B4AF60025DD4C /* Connectivity.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		80E51EFD2195A0C800F43624 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				80E51EFE2195A0F300F43624 /* Authenticator.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		CE5462F8218372C7005FA82A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8073E2F521805D3C00C380AD /* UIImage+Extensions.swift */,
 				8073E3042181CD1B00C380AD /* UIViewController+Extensions.swift */,
+				8051664B21B69E70005275B1 /* CGImage+Extensions.swift */,
+				80565DC721B9830800A54088 /* UIImageView+Extensions.swift */,
+				805C263E21C7CCC900F9A74D /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,10 +528,29 @@
 		CE5462F9218373DC005FA82A /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				80AD24602199A38500415644 /* ImageEdit */,
 				8073E2F221805CF400C380AD /* Layers */,
 				8073E2FC218060CF00C380AD /* Animation */,
 			);
 			path = Graphics;
+			sourceTree = "<group>";
+		};
+		CE75A708218D016E0014984C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE75A709218D01A60014984C /* Mauryssel_Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CECE4B09218F8F5D000D52E9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CECE4B07218F6C41000D52E9 /* ImagePickerClass.swift */,
+				80565DCD21B9A73D00A54088 /* LottieImages.swift */,
+				80EC804E21BAD7C500D75865 /* Lottie.framework */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		F689632D5D7CCD1B0755A983 /* Pods */ = {
@@ -312,7 +565,11 @@
 		FAD93D0BC776F1DB6FF91C10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80FCB06621B9AE3400526E69 /* libLottie.a */,
+				80FCB06121B9ABCD00526E69 /* libLottie.a */,
+				80565DCB21B9A69C00A54088 /* Lottie.framework */,
 				8EAB4655D597EACAF7D4C5B1 /* Pods_CardGuru.framework */,
+				805C26B821CA460500F9A74D /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -320,6 +577,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		805C26B621CA460500F9A74D /* CardGuruWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 805C26C621CA460600F9A74D /* Build configuration list for PBXNativeTarget "CardGuruWidget" */;
+			buildPhases = (
+				805C26B321CA460500F9A74D /* Sources */,
+				805C26B421CA460500F9A74D /* Frameworks */,
+				805C26B521CA460500F9A74D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CardGuruWidget;
+			productName = CardGuruWidget;
+			productReference = 805C26B721CA460500F9A74D /* CardGuruWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		807D95F92159147C00ABB0D2 /* CardGuru */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 807D960C2159147E00ABB0D2 /* Build configuration list for PBXNativeTarget "CardGuru" */;
@@ -330,10 +604,13 @@
 				807D95F82159147C00ABB0D2 /* Resources */,
 				8D0C9FA0BB809D020D12601A /* [CP] Embed Pods Frameworks */,
 				B9170A430BBCE1F8CCF481FB /* [CP] Copy Pods Resources */,
+				80EC804A21BAC55000D75865 /* Embed Frameworks */,
+				805C26C721CA460600F9A74D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				805C26C221CA460500F9A74D /* PBXTargetDependency */,
 			);
 			name = CardGuru;
 			productName = CardGuru;
@@ -346,14 +623,25 @@
 		807D95F22159147C00ABB0D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Vova;
 				TargetAttributes = {
+					805C26B621CA460500F9A74D = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					807D95F92159147C00ABB0D2 = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -368,6 +656,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 807D95F12159147C00ABB0D2;
 			productRefGroup = 807D95FB2159147C00ABB0D2 /* Products */;
@@ -375,21 +664,39 @@
 			projectRoot = "";
 			targets = (
 				807D95F92159147C00ABB0D2 /* CardGuru */,
+				805C26B621CA460500F9A74D /* CardGuruWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		805C26B521CA460500F9A74D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805C26C821CA640400F9A74D /* Assets.xcassets in Resources */,
+				805C26BF21CA460500F9A74D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		807D95F82159147C00ABB0D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE75A70A218D02070014984C /* Mauryssel_Bold.ttf in Resources */,
+				80FCB06E21BA6C0300526E69 /* ProposeAddCardView.xib in Resources */,
 				807D96082159147E00ABB0D2 /* LaunchScreen.storyboard in Resources */,
-				80053E38215929AD001426C4 /* GoogleService-Info.plist in Resources */,
-				807D96052159147E00ABB0D2 /* Assets.xcassets in Resources */,
-				8093336C21593E8C00C02D11 /* Login.storyboard in Resources */,
+				CEF63EF321BC674200BD0C2E /* Start.storyboard in Resources */,
+				80D01E9421909D4400CA1AE6 /* GoogleService-Info.plist in Resources */,
+				806FE3F721A562F00009745A /* ShortcutItem.plist in Resources */,
+				80D51D4A21A2CB9200DD048B /* Login.storyboard in Resources */,
+				80D51D4121A2CA5C00DD048B /* Localizable.strings in Resources */,
+				80D51D5121A2CF2700DD048B /* TouchIDLogin.storyboard in Resources */,
+				805C263B21C27C2E00F9A74D /* ManualCard.xib in Resources */,
 				807D96032159147C00ABB0D2 /* Main.storyboard in Resources */,
 				8073E2E62180597E00C380AD /* AnimatedView.xib in Resources */,
+				80565DB921B826A600A54088 /* Assets.xcassets in Resources */,
+				80D51D4521A2CB6D00DD048B /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +710,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CardGuru/Pods-CardGuru-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -418,6 +727,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -475,52 +786,99 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		805C26B321CA460500F9A74D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805C26CC21CA75FE00F9A74D /* ErrorToThrow.swift in Sources */,
+				805C26BC21CA460500F9A74D /* TodayViewController.swift in Sources */,
+				805C26CA21CA75C500F9A74D /* LastCard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		807D95F62159147C00ABB0D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E51F032195AA2600F43624 /* TouchLoginViewController.swift in Sources */,
+				806FE3FC21A573B30009745A /* LastCard.swift in Sources */,
 				803DDCEF2162361800BD91BC /* FirebaseDatabaseService.swift in Sources */,
 				809706432164D64700185E82 /* FirebaseLoginService.swift in Sources */,
-				803DDCF32162662300BD91BC /* AddingNewCard.swift in Sources */,
 				803DDCF92162934500BD91BC /* DetailedViewController.swift in Sources */,
+				809AA5ED2194902000AD1690 /* PreferencesTableViewController.swift in Sources */,
 				804239FD217764A8004AC960 /* ScannerService.swift in Sources */,
 				8097063F2164BEF800185E82 /* FbLoginService.swift in Sources */,
 				8073E2EF21805CB300C380AD /* CheckLayer.swift in Sources */,
+				80565DCE21B9A73D00A54088 /* LottieImages.swift in Sources */,
 				8073E2F121805CDE00C380AD /* PhoneLayer.swift in Sources */,
 				8073E2FE2180694800C380AD /* SquareLayer.swift in Sources */,
+				80D01E922190771E00CA1AE6 /* Downloader.swift in Sources */,
+				CEF63EF121BC5E6400BD0C2E /* AnimatedStartViewController.swift in Sources */,
+				806FE3FE21A5749D0009745A /* ErrorToThrow.swift in Sources */,
+				8095AC64219B4AF60025DD4C /* Connectivity.swift in Sources */,
+				80FCB07021BA6DD800526E69 /* ProposeAddCardView.swift in Sources */,
 				8093336E2159489000C02D11 /* HomeViewController.swift in Sources */,
+				805C263F21C7CCC900F9A74D /* UIView+Extensions.swift in Sources */,
 				8073E2EB21805C4100C380AD /* BackLayer.swift in Sources */,
 				803DDCF1216255BE00BD91BC /* Card.swift in Sources */,
 				8073E2FB2180609E00C380AD /* CAAnimation+Block.swift in Sources */,
 				807D96002159147C00ABB0D2 /* LoginViewController.swift in Sources */,
+				805C263D21C27C4C00F9A74D /* ManualCardView.swift in Sources */,
 				807D95FE2159147C00ABB0D2 /* AppDelegate.swift in Sources */,
 				8073E2ED21805C6500C380AD /* CardLayer.swift in Sources */,
+				CECE4B08218F6C41000D52E9 /* ImagePickerClass.swift in Sources */,
+				80AD24622199A3AE00415644 /* BarcodeGenerator.swift in Sources */,
+				8051661121B030F5005275B1 /* TabBarController.swift in Sources */,
 				809706362163B91500185E82 /* NavigationControllerService.swift in Sources */,
 				8073E2F92180608C00C380AD /* Animations.swift in Sources */,
 				8073E2E821805B0000C380AD /* AnimatedView.swift in Sources */,
 				80933370215A37B900C02D11 /* User.swift in Sources */,
+				8051664E21B6BA26005275B1 /* CardGradientLayer.swift in Sources */,
+				80565DC821B9830800A54088 /* UIImageView+Extensions.swift in Sources */,
+				8051664C21B69E70005275B1 /* CGImage+Extensions.swift in Sources */,
+				8023AD74218728480041A04C /* EditCardViewController.swift in Sources */,
 				804239F52176479D004AC960 /* UserDefaults+LoginData.swift in Sources */,
+				809AA5E62194746100AD1690 /* LicenceViewController.swift in Sources */,
 				803DDCF72162873300BD91BC /* CardCollectionViewCell.swift in Sources */,
 				809333682159379900C02D11 /* GoogleLoginService.swift in Sources */,
+				806FE3FA21A571A50009745A /* FileHandler.swift in Sources */,
 				806EEF032170D55E00A6EFE6 /* StoryboardsName.swift in Sources */,
-				804239F321764760004AC960 /* UserDefaults+isLoggedIn.swift in Sources */,
+				8051665021B7CB1A005275B1 /* Effects.swift in Sources */,
 				8073E2F621805D3C00C380AD /* UIImage+Extensions.swift in Sources */,
-				804239EF21764106004AC960 /* UITableViewCell+Identifier.swift in Sources */,
+				CE462E092185125C0091D8C4 /* LoginBackgroundLayer.swift in Sources */,
+				8095AC62219AE6370025DD4C /* LocalNotifications.swift in Sources */,
 				803DDCFB21635B5A00BD91BC /* AccountViewController.swift in Sources */,
+				80E51EFF2195A0F300F43624 /* Authenticator.swift in Sources */,
 				8073E3052181CD1B00C380AD /* UIViewController+Extensions.swift in Sources */,
-				806EEF052170D57D00A6EFE6 /* LoginMethods.swift in Sources */,
-				8073E2F421805D2A00C380AD /* CALayer+Extensions.swift in Sources */,
 				804239FB21773669004AC960 /* ScannerViewController.swift in Sources */,
+				809AA5E82194847A00AD1690 /* SafariView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		805C26C221CA460500F9A74D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 805C26B621CA460500F9A74D /* CardGuruWidget */;
+			targetProxy = 805C26C121CA460500F9A74D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		805C26BD21CA460500F9A74D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805C26BE21CA460500F9A74D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		807D96012159147C00ABB0D2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				807D96022159147C00ABB0D2 /* Base */,
+				8051661C21B55BC2005275B1 /* uk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -533,13 +891,92 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		80D51D4321A2CA5C00DD048B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80D51D4421A2CA5E00DD048B /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		80D51D4721A2CB6D00DD048B /* Preferences.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80D51D4621A2CB6D00DD048B /* Base */,
+				8051661321B03705005275B1 /* uk */,
+			);
+			name = Preferences.storyboard;
+			sourceTree = "<group>";
+		};
+		80D51D4C21A2CB9200DD048B /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80D51D4B21A2CB9200DD048B /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
+		80D51D5321A2CF2700DD048B /* TouchIDLogin.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80D51D5221A2CF2700DD048B /* Base */,
+			);
+			name = TouchIDLogin.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		805C26C421CA460600F9A74D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CardGuruWidget/CardGuruWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
+				INFOPLIST_FILE = CardGuruWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = work.CardGuru.CardGuruWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		805C26C521CA460600F9A74D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CardGuruWidget/CardGuruWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34UQ9VN4VQ;
+				INFOPLIST_FILE = CardGuruWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = work.CardGuru.CardGuruWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		807D960A2159147E00ABB0D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -600,6 +1037,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -654,6 +1092,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C40CD970302DBBB3E575CE71 /* Pods-CardGuru.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = CardGuru/CardGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -674,6 +1113,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F5B4B4F07FD8D38049C4AB0 /* Pods-CardGuru.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_ENTITLEMENTS = CardGuru/CardGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -693,6 +1133,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		805C26C621CA460600F9A74D /* Build configuration list for PBXNativeTarget "CardGuruWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805C26C421CA460600F9A74D /* Debug */,
+				805C26C521CA460600F9A74D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		807D95F52159147C00ABB0D2 /* Build configuration list for PBXProject "CardGuru" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

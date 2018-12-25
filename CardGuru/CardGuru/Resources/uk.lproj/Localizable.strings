@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  CardGuru
+
+  Created by Vova on 11/19/18.
+  Copyright © 2018 Vova. All rights reserved.
+*/
+
+"Camera access" = "Доступ до камери";
+"The CardGuru needs camera access. Enable it in Settings to continue" = "Програмі необхідно доступ до камери. Перейти в налаштування?";
+"Settings" = "Налаштування";
+"Cancel" = "Відмінити";
+"Error" = "Помилка";
+"Fill empty fields" = "Заповни порожні поля";
+"Ok" = "ОК";
+"Authentication failed" = "Помилка авторизації";
+"Info" = "Інформація";
+"License Agreement has been accepted!" = "Ліцензія прийнята";
+"I would like to share my card with you:" = "Я б хотів поділитися з тобою карткою:";
+"Signing in" = "З'єднуюся";
+"Cards" = "Картки";
+"Search card" = "Шукати картку";
+"Licence Agreement" = "Ліцензія";
+"Preferences" = "Налаштування";

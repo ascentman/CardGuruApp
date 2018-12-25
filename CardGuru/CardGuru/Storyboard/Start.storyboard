@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nOB-8Z-zVw">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Animated Start View Controller-->
+        <scene sceneID="RZY-IO-g5u">
+            <objects>
+                <viewController id="nOB-8Z-zVw" customClass="AnimatedStartViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ul-L5-CEG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rsz_cards" translatesAutoresizingMaskIntoConstraints="NO" id="XZC-4a-Vgl">
+                                <rect key="frame" x="-50" y="-30" width="475" height="747"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoCardGuru" translatesAutoresizingMaskIntoConstraints="NO" id="TCX-MV-muP" userLabel="Logo">
+                                <rect key="frame" x="107.5" y="148" width="160" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="gam-6s-LK6"/>
+                                    <constraint firstAttribute="width" constant="160" id="rxy-ZV-0xa"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XZC-4a-Vgl" firstAttribute="trailing" secondItem="vcs-Mo-bVx" secondAttribute="trailing" constant="50" id="21i-aV-fV2"/>
+                            <constraint firstItem="TCX-MV-muP" firstAttribute="centerX" secondItem="1ul-L5-CEG" secondAttribute="centerX" id="CtY-WB-5wP"/>
+                            <constraint firstItem="XZC-4a-Vgl" firstAttribute="topMargin" secondItem="TCX-MV-muP" secondAttribute="top" constant="-150" id="XrM-Rb-5lf"/>
+                            <constraint firstItem="XZC-4a-Vgl" firstAttribute="bottom" secondItem="vcs-Mo-bVx" secondAttribute="bottom" constant="50" id="ako-jf-EQO"/>
+                            <constraint firstItem="XZC-4a-Vgl" firstAttribute="top" secondItem="vcs-Mo-bVx" secondAttribute="top" constant="-50" id="eV7-nV-XTx"/>
+                            <constraint firstItem="XZC-4a-Vgl" firstAttribute="leading" secondItem="vcs-Mo-bVx" secondAttribute="leading" constant="-50" id="szE-xR-H62"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vcs-Mo-bVx"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundCardsImageView" destination="XZC-4a-Vgl" id="tPN-DM-xS8"/>
+                        <outlet property="logo" destination="TCX-MV-muP" id="Rjl-xl-W2W"/>
+                        <segue destination="djD-Wy-GHJ" kind="presentation" identifier="GoNext" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="iPB-XA-3Q5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DDW-ND-NC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="234"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="Dwk-r1-gd5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TabBar" id="djD-Wy-GHJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JO9-Ys-CqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1407" y="258"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoCardGuru" width="1024" height="316"/>
+        <image name="rsz_cards" width="851" height="650"/>
+    </resources>
+</document>

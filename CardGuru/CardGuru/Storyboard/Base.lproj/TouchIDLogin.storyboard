@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mh4-LU-he7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Touch Login View Controller-->
+        <scene sceneID="SDk-19-tZW">
+            <objects>
+                <viewController id="mh4-LU-he7" customClass="TouchLoginViewController" customModule="CardGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Q8-Md-eeg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoCardGuru" translatesAutoresizingMaskIntoConstraints="NO" id="S7b-Xc-MaZ">
+                                <rect key="frame" x="59.5" y="144" width="256" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="S7b-Xc-MaZ" secondAttribute="height" multiplier="256:83" id="Ler-Mb-Qtx"/>
+                                    <constraint firstAttribute="width" constant="256" id="aTW-aC-lmA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.83211849910000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="S7b-Xc-MaZ" firstAttribute="centerX" secondItem="5Q8-Md-eeg" secondAttribute="centerX" id="eph-xk-rv0"/>
+                            <constraint firstItem="S7b-Xc-MaZ" firstAttribute="top" secondItem="NMJ-c8-yTa" secondAttribute="top" constant="124" id="zZZ-qZ-4oS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NMJ-c8-yTa"/>
+                    </view>
+                    <connections>
+                        <segue destination="IvV-Ik-SDZ" kind="presentation" identifier="GoToMain" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="CzV-xI-8VJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kAk-Sj-g3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-159.19999999999999" y="62.518740629685162"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="7Il-PH-3TT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TabBar" id="IvV-Ik-SDZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="INN-xv-8ls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="62"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoCardGuru" width="1024" height="316"/>
+    </resources>
+</document>

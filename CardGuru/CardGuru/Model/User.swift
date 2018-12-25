@@ -8,14 +8,14 @@
 
 import Foundation
 
-final class User {
+final class User: Codable {
     var name: String
     var email: String
-    var imageURL: URL?
+    var absoluteURL: String?
     
-    init(name: String, email: String, imageURL: URL?) {
+    init(name: String, email: String, absoluteURL: String?) {
         self.name = name
         self.email = email
-        self.imageURL = imageURL
+        self.absoluteURL = absoluteURL
     }
 }

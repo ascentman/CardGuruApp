@@ -12,5 +12,6 @@ target 'CardGuru' do
     pod 'FBSDKLoginKit'
     pod 'FacebookLogin'
     pod 'SVProgressHUD'
-    
+    pod 'Alamofire'
+    pod 'AlamofireImage'
 end

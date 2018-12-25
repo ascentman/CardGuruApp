@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="CardGuruWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wce-cp-Pa7">
+                                <rect key="frame" x="100" y="28" width="120" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="7MO-fN-u4P"/>
+                                    <constraint firstAttribute="width" constant="120" id="bpe-kC-NuB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Emm-gG-ntd" appends="YES" id="Kuj-2i-DLP"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last used card:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oa9-lQ-Gqh">
+                                <rect key="frame" x="8" y="8" width="110" height="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itd-rG-cO7">
+                                <rect key="frame" x="8" y="50" width="70" height="20.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="itd-rG-cO7" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="Bh5-9M-agb"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oa9-lQ-Gqh" secondAttribute="trailing" constant="215" id="E6a-x8-qAc"/>
+                            <constraint firstItem="Wce-cp-Pa7" firstAttribute="leading" secondItem="itd-rG-cO7" secondAttribute="trailing" constant="22" id="IRw-2c-H7N"/>
+                            <constraint firstItem="Oa9-lQ-Gqh" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="Ma8-DN-xt3"/>
+                            <constraint firstItem="itd-rG-cO7" firstAttribute="centerY" secondItem="Wce-cp-Pa7" secondAttribute="centerY" id="hwS-c0-5mU"/>
+                            <constraint firstItem="Wce-cp-Pa7" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="lk2-SJ-0Ve"/>
+                            <constraint firstItem="Wce-cp-Pa7" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="p0d-HP-Vtn"/>
+                            <constraint firstItem="Oa9-lQ-Gqh" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="8" id="rUm-zF-ADn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="120"/>
+                    <connections>
+                        <outlet property="imageView" destination="Wce-cp-Pa7" id="qMb-MQ-d3y"/>
+                        <outlet property="nameLabel" destination="itd-rG-cO7" id="XUK-gU-L0j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Emm-gG-ntd">
+                    <connections>
+                        <action selector="cardImageClicked:" destination="M4Y-Lb-cyx" id="1kQ-mS-xaF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="131.19999999999999" y="133.13343328335833"/>
+        </scene>
+    </scenes>
+</document>
